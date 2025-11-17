@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 210 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 10%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 187 85% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 210 50% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 199 89% 48%;
+
+    --radius: 1rem;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(199 89% 48%), hsl(187 85% 55%));
+    --gradient-water: linear-gradient(180deg, hsl(199 89% 48% / 0.1), hsl(187 85% 55% / 0.1));
+    
+    --shadow-glow: 0 10px 40px hsl(199 89% 48% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --aqua-primary: 210 100% 40%;
+    --aqua-secondary: 177 70% 41%;
+    --badge-construction: 51 100% 50%;
+    --badge-construction-foreground: 0 0% 10%;
+    --badge-available: 160 84% 39%;
+    --badge-available-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 50% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 45% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 45% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 187 85% 65%;
+    --secondary-foreground: 210 50% 10%;
+
+    --muted: 210 40% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 43 96% 66%;
+    --accent-foreground: 210 50% 10%;
+
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 25%;
+    --input: 210 40% 25%;
+    --ring: 199 89% 58%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(199 89% 38%), hsl(187 85% 45%));
+    --gradient-water: linear-gradient(180deg, hsl(199 89% 38% / 0.2), hsl(187 85% 45% / 0.2));
+    
+    --shadow-glow: 0 10px 40px hsl(199 89% 48% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Safe area insets for notch devices */
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Touch-friendly interactions */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Focus visible styles for better accessibility */
+  .focus-visible\:ring-primary:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* GPU acceleration for smooth animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimize button interactions */
+  button,
+  a {
+    @apply gpu-accelerated;
+  }
+
+  /* Optimize dropdown animations */
+  [data-state="open"],
+  [data-state="closed"] {
+    @apply will-change-transform will-change-opacity;
+  }
+
+  /* Contain layout to improve paint performance */
+  .contain-layout {
+    contain: layout;
+  }
+
+  /* Optimize images */
+  img {
+    content-visibility: auto;
+  }
+  
+  /* Accessibility: High Contrast Mode */
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 220 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 20%;
+    --accent: 220 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 220 100% 30%;
+  }
+
+  .high-contrast.dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 220 100% 70%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 220 100% 60%;
+    --accent-foreground: 0 0% 0%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+  }
+  
+  /* Optimize animations for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .hover\:scale-105:hover,
+    .hover\:scale-110:hover {
+      transform: scale(1);
+    }
+  }
+}

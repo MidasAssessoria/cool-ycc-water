@@ -1,0 +1,118 @@
+import type { Config } from "tailwindcss";
+
+export default {
+  darkMode: ["class"],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+        orange: {
+          vibrant: "hsl(16, 100%, 60%)",
+        },
+        purple: {
+          ticket: "hsl(293, 84%, 61%)",
+        },
+        "aqua-primary": "hsl(var(--aqua-primary))",
+        "aqua-secondary": "hsl(var(--aqua-secondary))",
+        "badge-construction": {
+          DEFAULT: "hsl(var(--badge-construction))",
+          foreground: "hsl(var(--badge-construction-foreground))",
+        },
+        "badge-available": {
+          DEFAULT: "hsl(var(--badge-available))",
+          foreground: "hsl(var(--badge-available-foreground))",
+        },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-water": "var(--gradient-water)",
+      },
+      keyframes: {
+        ripple: {
+          '0%': { width: '0', height: '0', opacity: '0.5' },
+          '100%': { width: '500px', height: '500px', opacity: '0', transform: 'translate(-50%, -50%)' },
+        },
+        'gradient-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(249, 115, 22, 0.4)' },
+          '50%': { boxShadow: '0 0 40px rgba(249, 115, 22, 0.8)' },
+        },
+        'slide-down-fade': {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-in-right': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'bounce-icon': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+      },
+      animation: {
+        ripple: 'ripple 0.6s ease-out',
+        'gradient-shift': 'gradient-shift 3s ease infinite',
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+        'slide-down-fade': 'slide-down-fade 0.2s ease-out',
+        'slide-in-right': 'slide-in-right 0.3s ease-out',
+        'bounce-icon': 'bounce-icon 0.3s ease-out',
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
