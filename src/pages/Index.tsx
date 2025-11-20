@@ -6,6 +6,7 @@ import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
 import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import LocationSection from "@/components/LocationSection";
+import PlanYourVisitSection from "@/components/PlanYourVisitSection";
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
@@ -78,6 +79,9 @@ const Index = () => {
 
       {/* Bungalows Hero Section */}
       <BungalowsHeroSection />
+
+      {/* Plan Your Visit Section (FASE 1 - Temporary Preview) */}
+      <PlanYourVisitSection />
 
       {/* Location Section */}
       <LocationSection />
