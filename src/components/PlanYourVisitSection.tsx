@@ -502,8 +502,8 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {/* CARD 1: Interactive Map */}
-              <div className="relative h-64 rounded-2xl shadow-lg overflow-hidden" role="region" aria-label="Mapa de localização">
+              {/* CARD 1: Interactive Google Maps */}
+              <div className="relative h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de localização">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -527,71 +527,119 @@ const PlanYourVisitSection = () => {
                     bg-white hover:bg-gray-50
                     shadow-lg hover:shadow-xl
                     rounded-full
-                    px-4 py-2
-                    text-sm font-semibold text-gray-900
+                    px-5 py-2.5
+                    text-sm font-bold text-gray-900
                     transition-all duration-200
                     hover:scale-105
+                    border border-gray-200
                   "
                 >
                   <MapPin className="w-4 h-4 text-coral" />
-                  Abrir no Google Maps
+                  Ver no Google Maps
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
 
-              {/* CARD 2: Essential Info Grid */}
-              <div className="bg-gradient-to-br from-blue-50 to-turquoise-50 rounded-2xl p-6 shadow-lg">
+              {/* CARD 2: Essential Info Grid (4 Quick Cards) */}
+              <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200">
+                <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-coral" />
+                  Informações Essenciais
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Info Item 1: Horários */}
-                  <div className="flex items-center gap-3">
+                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
                       <Sunrise className="w-6 h-6 text-coral" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-700">Horários</p>
-                      <p className="text-base font-bold text-gray-900">Sáb-Dom 8h-18h</p>
+                      <p className="text-xs font-medium text-gray-600">Horários</p>
+                      <p className="text-sm font-bold text-gray-900">Sáb-Dom 8h-18h</p>
                     </div>
                   </div>
 
                   {/* Info Item 2: Localização */}
-                  <div className="flex items-center gap-3">
+                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-turquoise/20 flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-turquoise" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-700">Localização</p>
-                      <p className="text-base font-bold text-gray-900">Ypané, 30min de Asunción</p>
+                      <p className="text-xs font-medium text-gray-600">Localização</p>
+                      <p className="text-sm font-bold text-gray-900">Ypané, 30min</p>
                     </div>
                   </div>
 
                   {/* Info Item 3: Experiência */}
-                  <div className="flex items-center gap-3">
+                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
                       <Users className="w-6 h-6 text-coral" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-700">Experiência</p>
-                      <p className="text-base font-bold text-gray-900">Tour guiado 2 horas</p>
+                      <p className="text-xs font-medium text-gray-600">Duração</p>
+                      <p className="text-sm font-bold text-gray-900">Tour de 2h</p>
                     </div>
                   </div>
 
                   {/* Info Item 4: Incluído */}
-                  <div className="flex items-center gap-3">
+                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                       <Gift className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-700">Incluído</p>
-                      <p className="text-base font-bold text-gray-900">Entrada + Guia + Cortesia</p>
+                      <p className="text-xs font-medium text-gray-600">Bônus</p>
+                      <p className="text-sm font-bold text-gray-900">Lanche grátis</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 3: Quick Contact */}
+              {/* CARD 3: What's Included Checklist */}
+              <div className="bg-gradient-to-br from-coral/5 to-coral/10 rounded-2xl p-6 shadow-lg border border-coral/20">
+                <div className="flex items-center gap-2 mb-4">
+                  <Star className="w-5 h-5 text-coral" />
+                  <h3 className="text-lg font-bold text-gray-900">
+                    ✨ O que está incluído
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-coral" />
+                    </div>
+                    <span className="font-medium">🏊 Tour guiado pelo parque aquático completo</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-coral" />
+                    </div>
+                    <span className="font-medium">🏡 Visita aos bungalows de 66m² mobiliados</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-coral" />
+                    </div>
+                    <span className="font-medium">💼 Apresentação de investimento fracionado</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-coral" />
+                    </div>
+                    <span className="font-medium">🍹 Lanche e bebidas de cortesia</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-green-600" />
+                    </div>
+                    <span className="font-medium">✅ 100% gratuito, sem custo ou compromisso</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* CARD 4: Quick Contact WhatsApp */}
               <div className="bg-white rounded-xl p-4 shadow-md flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Dúvidas? Fale no WhatsApp</p>
+                  <p className="text-sm font-semibold text-gray-900">Dúvidas? Fale conosco</p>
+                  <p className="text-xs text-gray-600">Resposta rápida no WhatsApp</p>
                 </div>
                 <a
                   href="https://wa.me/595981234567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tour%20VIP%20no%20YCC%20Water%20Park"
@@ -611,27 +659,6 @@ const PlanYourVisitSection = () => {
                 >
                   <PhoneIcon className="w-6 h-6" />
                 </a>
-              </div>
-
-              {/* What to Expect Section */}
-              <div className="bg-white rounded-xl p-5 shadow-md">
-                <h3 className="text-sm font-semibold text-gray-700 mb-3">
-                  O Que Você Vai Ver:
-                </h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span>🏞️ Todas as atrações do parque</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span>🏡 Bungalows mobiliados de 66m²</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span>💼 Oportunidade de investimento fracionado</span>
-                  </li>
-                </ul>
               </div>
             </motion.div>
           </div>
