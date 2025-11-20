@@ -113,22 +113,25 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             {/* Column 1: Logo + Contact */}
             <div className="space-y-4">
-              <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-4" />
+              <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-2" />
+              <p className="text-white/80 text-sm mb-4">
+                Club, resort y parque acuático premium para toda la familia.
+              </p>
               <div className="space-y-2 text-white/70">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">Ruta 1 Km 13.5, Ypané</span>
+                  <span className="text-sm">Ruta 1 Km 13,5 – Ypané, Paraguay</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Sun className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">A 25 minutos de Asunción</span>
+                  <span className="text-sm">A solo 25 minutos de Asunción</span>
                 </div>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
             <div className="space-y-4">
-              <h4 className="font-bold text-white text-base">Navegación Rápida</h4>
+              <h4 className="font-bold text-white text-base">Navegación rápida</h4>
               <ul className="space-y-2">
                 <li>
                   <button 
@@ -140,10 +143,18 @@ const Index = () => {
                 </li>
                 <li>
                   <button 
+                    onClick={() => scrollToSection('attractions')}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Membresías
+                  </button>
+                </li>
+                <li>
+                  <button 
                     onClick={() => scrollToSection('booking')}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
-                    Contacto
+                    Tour VIP guiado
                   </button>
                 </li>
                 <li>
@@ -152,6 +163,14 @@ const Index = () => {
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Bungalows
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('booking')}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Contacto
                   </button>
                 </li>
               </ul>
