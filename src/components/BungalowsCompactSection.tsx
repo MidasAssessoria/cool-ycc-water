@@ -32,7 +32,7 @@ const BungalowsCompactSection = ({
     >
       {/* PART 1: Split Hero (40vh) */}
       <div 
-        className="h-[40vh] min-h-[350px] sm:min-h-[380px] md:min-h-[420px] grid grid-cols-1 md:grid-cols-2 gap-0 bg-gradient-to-r from-white via-white to-blue-50"
+        className="h-[40vh] min-h-[350px] sm:min-h-[380px] md:min-h-[420px] grid grid-cols-1 md:grid-cols-2 gap-0 bg-white"
         role="region" 
         aria-label="Apresentação dos bungalows A-frame"
       >
@@ -97,7 +97,7 @@ const BungalowsCompactSection = ({
           >
             {/* Card 1: USE */}
             <article 
-              className="group bg-gradient-to-b from-blue-50 to-white border-2 border-blue-100 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
               role="listitem"
               aria-labelledby="use-card-title"
             >
@@ -124,18 +124,18 @@ const BungalowsCompactSection = ({
 
             {/* Card 2: ALUGUE (FEATURED) */}
             <article 
-              className="group relative bg-gradient-to-b from-green-50 to-white border-3 border-green-300 rounded-2xl p-5 sm:p-6 md:p-8 text-center scale-100 md:scale-105 shadow-lg md:shadow-2xl hover:scale-102 md:hover:scale-108 hover:shadow-xl md:hover:shadow-3xl transition-all duration-300"
+              className="group relative bg-white border-3 border-green-500 rounded-2xl p-5 sm:p-6 md:p-8 text-center scale-100 md:scale-105 shadow-lg md:shadow-2xl hover:scale-102 md:hover:scale-108 hover:shadow-xl md:hover:shadow-3xl transition-all duration-300"
               role="listitem"
               aria-labelledby="alugue-card-title"
             >
               {/* Featured Badge */}
-              <div className="absolute -top-2.5 sm:-top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-[10px] sm:text-xs px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-md flex-shrink-0">
+              <div className="absolute -top-2.5 sm:-top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white font-bold text-[10px] sm:text-xs px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-md flex-shrink-0">
                 ⭐ MAIS POPULAR
               </div>
 
               {/* Icon Container */}
               <div className="bg-green-100 rounded-full p-3 sm:p-4 mx-auto mb-3 sm:mb-4 w-fit">
-                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-green-500" />
+                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
               </div>
 
               {/* Title */}
@@ -144,7 +144,7 @@ const BungalowsCompactSection = ({
               </h3>
 
               {/* ROI Display (LARGE) */}
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-green-600 to-emerald-700 bg-clip-text text-transparent leading-none mb-1">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black text-green-600 leading-none mb-1">
                 29,4%
               </div>
 
@@ -164,7 +164,7 @@ const BungalowsCompactSection = ({
 
             {/* Card 3: INTERCAMBIE */}
             <article 
-              className="group bg-gradient-to-b from-turquoise/10 to-white border-2 border-turquoise/20 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
               role="listitem"
               aria-labelledby="intercambie-card-title"
             >
@@ -193,7 +193,7 @@ const BungalowsCompactSection = ({
       </div>
 
       {/* PART 3: CTA Bar */}
-      <footer className="bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 py-8 px-6 text-center">
+      <footer className="bg-gray-50 border-t border-gray-200 py-8 px-6 text-center">
         {/* CTA Button */}
         <button
           onClick={handleCTAClick}
@@ -211,7 +211,7 @@ const BungalowsCompactSection = ({
         {/* REAL Casas Credit */}
         <div className="mt-6 flex items-center justify-center gap-2 text-sm">
           <span className="text-gray-500">Parceria com</span>
-          <div className="flex items-center gap-2 bg-gradient-to-r from-coral/10 to-red-50 px-4 py-2 rounded-lg border border-coral/20">
+          <div className="flex items-center gap-2 bg-coral/10 px-4 py-2 rounded-lg border border-coral/20">
             <div className="w-6 h-6 bg-coral rounded flex items-center justify-center flex-shrink-0">
               <span className="text-white font-black text-xs">R</span>
             </div>

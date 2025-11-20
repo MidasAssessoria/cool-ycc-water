@@ -32,23 +32,23 @@ const AquaParkSection = () => {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      {/* Card laranja centralizado */}
+      {/* Card branco com contraste adequado */}
       <div className="relative z-10 py-16 md:py-24 px-4">
-        <div className="w-full max-w-[90%] md:max-w-[75%] lg:max-w-[80%] xl:max-w-[1200px] mx-auto bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12">
+        <div className="w-full max-w-[90%] md:max-w-[75%] lg:max-w-[80%] xl:max-w-[1200px] mx-auto bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border-4 border-coral">
           
           {/* Grid 2 colunas (desktop) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 mb-6 md:mb-8 lg:mb-10">
             
             {/* Título */}
             <div className="flex items-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
                 Conheça o Aqua Park
               </h2>
             </div>
 
             {/* Parágrafo */}
             <div className="flex items-center">
-              <p className="text-white/95 text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed drop-shadow-md max-w-xl">
+              <p className="text-gray-700 text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed max-w-xl">
                 Eleito melhor parque aquático das Américas (Travellers' Choice 2024 - Best of the Best do TripAdvisor), o Aqua Park conta com mais de 30 atrações para toda a família se divertir.
               </p>
             </div>

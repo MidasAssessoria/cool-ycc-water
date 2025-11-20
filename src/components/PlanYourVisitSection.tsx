@@ -594,7 +594,7 @@ const PlanYourVisitSection = () => {
               </div>
 
               {/* CARD 3: What's Included Checklist */}
-              <div className="bg-gradient-to-br from-coral/5 to-coral/10 rounded-2xl p-6 shadow-lg border border-coral/20">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-coral/20">
                 <div className="flex items-center gap-2 mb-4">
                   <Star className="w-5 h-5 text-coral" />
                   <h3 className="text-lg font-bold text-gray-900">
@@ -666,7 +666,7 @@ const PlanYourVisitSection = () => {
       </div>
 
       {/* PART 3: TRUST BAR */}
-      <div className="w-full min-h-16 bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200 py-4">
+      <div className="w-full min-h-16 bg-white border-t border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
             {/* Stat 1: Famílias */}
