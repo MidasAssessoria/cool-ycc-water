@@ -32,6 +32,12 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
+// Image imports
+import waterparkHeroBg from "@/assets/waterpark-hero-bg.jpg";
+import bungalowsImg from "@/assets/attractions/bungalows.jpg";
+import heroWaterpark from "@/assets/hero-waterpark.jpg";
+import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
+
 const PlanYourVisitSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
@@ -65,19 +71,19 @@ const PlanYourVisitSection = () => {
   // Hero carousel images
   const heroImages = [
     {
-      src: "/src/assets/waterpark-hero-bg.jpg",
+      src: waterparkHeroBg,
       alt: "Vista aérea do parque aquático YCC",
     },
     {
-      src: "/src/assets/attractions/bungalows.jpg",
+      src: bungalowsImg,
       alt: "Bungalows modernos e luxuosos",
     },
     {
-      src: "/src/assets/hero-waterpark.jpg",
+      src: heroWaterpark,
       alt: "Família aproveitando os tobogãs aquáticos",
     },
     {
-      src: "/src/assets/attractions/wave-pool.jpg",
+      src: wavePoolImg,
       alt: "Experiência completa no parque",
     },
   ];
