@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Baby, Zap, Waves, ListFilter } from "lucide-react";
+import { Users, Baby, Zap, Waves, ListFilter, Ruler, Flame, Accessibility } from "lucide-react";
 import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
 import waterSlidesImg from "@/assets/attractions/water-slides.jpg";
 import lazyRiverImg from "@/assets/attractions/lazy-river.jpg";
@@ -228,6 +228,47 @@ const FilterChip = ({ label, icon: Icon, category, isActive, onClick, count }: F
   );
 };
 
+interface AttractionMetadataIconsProps {
+  minHeight?: number;
+  adrenalineLevel?: 1 | 2 | 3;
+  wheelchairAccessible?: boolean;
+}
+
+const AttractionMetadataIcons = ({ minHeight, adrenalineLevel, wheelchairAccessible }: AttractionMetadataIconsProps) => {
+  if (!minHeight && !adrenalineLevel && !wheelchairAccessible) {
+    return null;
+  }
+
+  return (
+    <div className="flex items-center gap-3 mt-3 pt-3 border-t border-border/50" role="list" aria-label="Informações da atração">
+      {/* Altura mínima */}
+      {minHeight && (
+        <div className="flex items-center gap-1.5 text-muted-foreground" role="listitem" title={`Altura mínima: ${minHeight}cm`}>
+          <Ruler className="w-4 h-4" aria-hidden="true" />
+          <span className="text-xs font-medium">{minHeight}cm</span>
+        </div>
+      )}
+
+      {/* Nível de adrenalina */}
+      {adrenalineLevel && (
+        <div className="flex items-center gap-0.5 text-orange-500" role="listitem" title={`Nível de adrenalina: ${adrenalineLevel}/3`}>
+          {Array.from({ length: adrenalineLevel }).map((_, i) => (
+            <Flame key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
+          ))}
+          <span className="sr-only">Nível de adrenalina: {adrenalineLevel} de 3</span>
+        </div>
+      )}
+
+      {/* Acessível para cadeirantes */}
+      {wheelchairAccessible && (
+        <div className="flex items-center gap-1.5 text-green-600" role="listitem" title="Acessível para cadeirantes">
+          <Accessibility className="w-4 h-4" aria-hidden="true" />
+          <span className="sr-only">Acessível para cadeirantes</span>
+        </div>
+      )}
+    </div>
+  );
+};
 
 interface AttractionCardProps {
   attraction: Attraction;
@@ -286,6 +327,13 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
         >
           {attraction.description}
         </p>
+
+        {/* Metadata Icons */}
+        <AttractionMetadataIcons 
+          minHeight={attraction.metadata?.minHeight}
+          adrenalineLevel={attraction.metadata?.adrenalineLevel}
+          wheelchairAccessible={attraction.metadata?.wheelchairAccessible}
+        />
       </div>
     </article>
   );
