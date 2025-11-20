@@ -268,41 +268,7 @@ const PlanYourVisitSection = () => {
         "
       >
         <div className="max-w-7xl mx-auto">
-          {/* CENTERED HEADER WITH BADGE - Mobile optimized */}
-          <div className="text-center mb-10 sm:mb-12">
-            {/* Badge */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-coral/10 border border-coral/20 rounded-full text-coral font-semibold text-xs sm:text-sm mb-3 sm:mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              🌟 Tour VIP guiado gratuito
-            </motion.div>
 
-            {/* Title */}
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4"
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Planea tu Tour VIP Gratuito
-            </motion.h2>
-
-            {/* Subtitle */}
-            <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4"
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Ven a visitar el  YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada
-            </motion.p>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[58%_42%] gap-6 lg:gap-8 items-start">
             {/* LEFT: Smart Booking Form - Mobile: order-2 (appears FIRST), Desktop: order-1 */}
