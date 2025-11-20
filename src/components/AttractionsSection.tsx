@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Users, Baby, Zap, Waves, ListFilter } from "lucide-react";
 import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
 import waterSlidesImg from "@/assets/attractions/water-slides.jpg";
 import lazyRiverImg from "@/assets/attractions/lazy-river.jpg";
@@ -10,6 +12,7 @@ import tennisCourtsImg from "@/assets/attractions/tennis-courts.jpg";
 import naturalLakesImg from "@/assets/attractions/natural-lakes.jpg";
 import ecoTrailsImg from "@/assets/attractions/eco-trails.jpg";
 import bbqAreaImg from "@/assets/attractions/bbq-area.jpg";
+import { Badge } from "@/components/ui/badge";
 
 interface Attraction {
   id: number;
@@ -187,7 +190,44 @@ const attractions: Attraction[] = [
   }
 ];
 
-import { Badge } from "@/components/ui/badge";
+type CategoryType = 'all' | 'familia' | 'infantil' | 'radical' | 'relax';
+
+interface FilterChipProps {
+  label: string;
+  icon: React.ElementType;
+  category: CategoryType;
+  isActive: boolean;
+  onClick: () => void;
+  count: number;
+}
+
+const FilterChip = ({ label, icon: Icon, category, isActive, onClick, count }: FilterChipProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        flex items-center gap-2 px-4 py-2.5 rounded-full font-semibold text-sm
+        transition-all duration-300 whitespace-nowrap
+        ${isActive 
+          ? 'bg-primary text-primary-foreground shadow-md scale-105' 
+          : 'bg-card border-2 border-border text-muted-foreground hover:border-primary hover:text-foreground hover:scale-105'
+        }
+      `}
+      aria-label={`Filtrar por ${label}`}
+      aria-pressed={isActive}
+    >
+      <Icon className="w-4 h-4" />
+      <span>{label}</span>
+      <span className={`
+        px-2 py-0.5 rounded-full text-xs font-bold
+        ${isActive ? 'bg-primary-foreground/20' : 'bg-muted'}
+      `}>
+        {count}
+      </span>
+    </button>
+  );
+};
+
 
 interface AttractionCardProps {
   attraction: Attraction;
@@ -252,6 +292,32 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
 };
 
 const AttractionsSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState<CategoryType>('all');
+
+  const getFilteredAttractions = () => {
+    if (selectedCategory === 'all') return attractions;
+    return attractions.filter(attraction => 
+      attraction.categories.includes(selectedCategory as 'familia' | 'infantil' | 'radical' | 'relax')
+    );
+  };
+
+  const getCategoryCount = (category: CategoryType) => {
+    if (category === 'all') return attractions.length;
+    return attractions.filter(attraction => 
+      attraction.categories.includes(category as 'familia' | 'infantil' | 'radical' | 'relax')
+    ).length;
+  };
+
+  const filteredAttractions = getFilteredAttractions();
+
+  const filterCategories = [
+    { label: 'Todas', icon: ListFilter, category: 'all' as CategoryType },
+    { label: 'Família', icon: Users, category: 'familia' as CategoryType },
+    { label: 'Infantil', icon: Baby, category: 'infantil' as CategoryType },
+    { label: 'Radical', icon: Zap, category: 'radical' as CategoryType },
+    { label: 'Relax', icon: Waves, category: 'relax' as CategoryType },
+  ];
+
   return (
     <section 
       className="relative z-10 bg-background py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
@@ -259,7 +325,7 @@ const AttractionsSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <header className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <header className="text-center mb-8 sm:mb-10">
           <h1 
             id="attractions-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4"
@@ -271,13 +337,41 @@ const AttractionsSection = () => {
           </p>
         </header>
 
+        {/* Filter Chips */}
+        <div className="mb-8 sm:mb-12 overflow-x-auto scrollbar-hide">
+          <div 
+            className="flex gap-3 px-4 pb-2 min-w-max mx-auto w-fit"
+            role="tablist"
+            aria-label="Filtros de categoria"
+          >
+            {filterCategories.map((filter) => (
+              <FilterChip
+                key={filter.category}
+                label={filter.label}
+                icon={filter.icon}
+                category={filter.category}
+                isActive={selectedCategory === filter.category}
+                onClick={() => setSelectedCategory(filter.category)}
+                count={getCategoryCount(filter.category)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Results Counter */}
+        <div className="text-center mb-6">
+          <p className="text-sm text-muted-foreground">
+            Mostrando <span className="font-semibold text-foreground">{filteredAttractions.length}</span> {filteredAttractions.length === 1 ? 'atração' : 'atrações'}
+          </p>
+        </div>
+
         {/* Grid Container - Responsive: 1 col mobile / 2 cols tablet / 3 cols desktop */}
         <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-          role="list"
+          role="tabpanel"
           aria-label="Lista de atrações do parque"
         >
-          {attractions.map((attraction, index) => (
+          {filteredAttractions.map((attraction, index) => (
             <AttractionCard key={attraction.id} attraction={attraction} index={index} />
           ))}
         </div>
