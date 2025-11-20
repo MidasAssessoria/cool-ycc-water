@@ -85,7 +85,7 @@ const TopBar = React.memo(() => {
             {/* Primary CTA - Responsive sizing */}
             <RippleButton 
               onClick={() => smoothScrollToElement('booking', 80)}
-              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
+              className="bg-gradient-to-r from-turquoise to-turquoise-dark hover:from-turquoise-dark hover:to-[hsl(187,100%,30%)] active:from-[hsl(187,100%,30%)] active:to-[hsl(187,100%,25%)] text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:shadow-turquoise/30 [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
               aria-label="Comprar entradas"
             >
               🎟️ Comprar Entradas
@@ -97,7 +97,7 @@ const TopBar = React.memo(() => {
             {/* CTA Compacto - Visível no mobile */}
             <RippleButton 
               onClick={() => smoothScrollToElement('booking', 80)}
-              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-sm px-4 py-2 rounded-full min-h-[44px] touch-manipulation shadow-lg"
+              className="bg-gradient-to-r from-turquoise to-turquoise-dark hover:from-turquoise-dark hover:to-[hsl(187,100%,30%)] text-white font-bold text-sm px-4 py-2 rounded-full min-h-[44px] touch-manipulation shadow-lg hover:shadow-turquoise/30"
               aria-label="Comprar entradas"
             >
               🎟️ Entradas
