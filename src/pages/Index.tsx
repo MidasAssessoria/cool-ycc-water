@@ -163,32 +163,6 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-
-            {/* Column 3: Account & Tools */}
-            <div className="space-y-4">
-              <h4 className="font-bold text-white text-base">Minha Conta</h4>
-              <ul className="space-y-2">
-                <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
-                    <User className="w-4 h-4" />
-                    <span>Login / Cadastro</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
-                    <Search className="w-4 h-4" />
-                    <span>Buscar</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
-                    <Globe className="w-4 h-4" />
-                    <span>PT-BR</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-
           </div>
 
           {/* Footer Bottom */}
