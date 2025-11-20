@@ -36,19 +36,19 @@ const Index = () => {
           <div 
             className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-coral/90 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-4 md:mb-6 animate-fade-in shadow-lg min-h-[36px]"
             role="status"
-            aria-label="Destaque: Maior Parque Aquático do Paraguai"
+            aria-label="Destaque: El Parque Acuático Más Grande de Paraguay"
           >
-            🏆 Maior Parque Aquático do Paraguai
+            🏆 El Parque Acuático Más Grande de Paraguay
           </div>
 
           {/* Headline - Mobile optimized with tighter line-height */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-2xl leading-[1.1] sm:leading-tight px-2">
-            Diversão Para Toda a Família
+            YCC water park a 25 minutos de Asunción
           </h1>
 
           {/* Subheadline - Mobile optimized spacing */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-4 sm:mb-6 md:mb-8 max-w-2xl drop-shadow-lg px-4 leading-relaxed">
-            Toboáguas, piscinas, áreas kids em 25 hectares
+            Club + resort + parque acuático premium – tu refugio familiar y oportunidad de inversión en un solo lugar
           </p>
 
           {/* CTAs - Mobile: stacked full-width, Desktop: inline auto-width */}
@@ -59,7 +59,7 @@ const Index = () => {
               onClick={() => scrollToSection('booking')}
               className="w-full sm:w-auto bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 min-h-[56px] sm:min-h-[60px] md:h-16 rounded-full shadow-2xl [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all animate-gentle-pulse touch-manipulation"
             >
-              🎟️ Comprar Ingressos
+              Descubrir YCC Water Park
             </Button>
 
             {/* SECONDARY CTA - Touch optimized */}
@@ -69,7 +69,7 @@ const Index = () => {
               onClick={() => scrollToSection('attractions')}
               className="w-full sm:w-auto bg-white/20 hover:bg-white/30 active:bg-white/40 text-white border-2 border-white/50 backdrop-blur-sm font-semibold text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3.5 sm:py-4 md:py-5 min-h-[52px] sm:min-h-[56px] md:h-14 rounded-full [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all touch-manipulation"
             >
-              Ver Atrações
+              Ver Atracciones
             </Button>
           </div>
         </div>
