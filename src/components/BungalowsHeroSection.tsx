@@ -1,5 +1,8 @@
 import { Home, Sparkles, Calendar, Globe, TrendingUp, Key } from "lucide-react";
 import BungalowCarousel from "./bungalows/BungalowCarousel";
+import StatsCounter from "./bungalows/StatsCounter";
+import ROICard from "./bungalows/ROICard";
+import FeatureCard from "./bungalows/FeatureCard";
 
 const BungalowsHeroSection = () => {
   return (
@@ -109,126 +112,99 @@ const BungalowsHeroSection = () => {
           </aside>
         </div>
 
-        {/* Feature Cards Grid - 3 Columns with Enhanced Glass Effects */}
+        {/* Feature Cards Grid - 3 Columns with Enhanced Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {/* Globe Card */}
-          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
-            {/* Animated background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-bungalow-primary/10 to-bungalow-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-bungalow-primary to-bungalow-secondary rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                <Globe className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Intercâmbio Global</h3>
-                <ul className="text-sm text-foreground/80 space-y-1">
-                  <li>Acesso a 4.000+ destinos</li>
-                  <li>110 países disponíveis</li>
-                  <li>Programa Férias Fácil incluído</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <FeatureCard
+            icon={Globe}
+            title="Intercâmbio Global"
+            features={[
+              "Acesso a 4.000+ destinos",
+              "110 países disponíveis",
+              "Programa Férias Fácil incluído",
+            ]}
+            colorClass="bg-gradient-to-br from-bungalow-primary to-bungalow-secondary"
+            bgClass="bg-gradient-to-br from-bungalow-primary/10 to-bungalow-secondary/10"
+            delay={0}
+          />
 
-          {/* ROI Card */}
-          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
-            {/* Animated background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                <TrendingUp className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">ROI Atrativo</h3>
-                <ul className="text-sm text-foreground/80 space-y-1">
-                  <li>Retorno de até 29,4% ao ano</li>
-                  <li>Payback entre 3,4 e 5,2 anos</li>
-                  <li>Gestão profissional inclusa</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <FeatureCard
+            icon={TrendingUp}
+            title="ROI Atrativo"
+            features={[
+              "Retorno de até 29,4% ao ano",
+              "Payback entre 3,4 e 5,2 anos",
+              "Gestão profissional inclusa",
+            ]}
+            colorClass="bg-gradient-to-br from-green-500 to-emerald-600"
+            bgClass="bg-gradient-to-br from-green-500/10 to-emerald-600/10"
+            delay={100}
+          />
 
-          {/* Property Card */}
-          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
-            {/* Animated background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-bungalow-coral/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-bungalow-coral to-orange-500 rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                <Key className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Propriedade Inteligente</h3>
-                <ul className="text-sm text-foreground/80 space-y-1">
-                  <li>Transferível e herdável</li>
-                  <li>80% da renda para você</li>
-                  <li>Zero preocupações operacionais</li>
-                </ul>
-              </div>
-            </div>
+          <FeatureCard
+            icon={Key}
+            title="Propriedade Inteligente"
+            features={[
+              "Transferível e herdável",
+              "80% da renda para você",
+              "Zero preocupações operacionais",
+            ]}
+            colorClass="bg-gradient-to-br from-bungalow-coral to-orange-500"
+            bgClass="bg-gradient-to-br from-bungalow-coral/10 to-orange-500/10"
+            delay={200}
+          />
+        </div>
+
+        {/* Stats Banner with Animated Counters */}
+        <div className="glass-card-strong rounded-3xl p-6 md:p-8 mb-12 shadow-xl">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <StatsCounter
+              end={64}
+              label="Unidades Exclusivas"
+              color="text-bungalow-primary"
+              duration={2000}
+            />
+            <StatsCounter
+              end={50}
+              label="Anos de Direito"
+              color="text-bungalow-secondary"
+              duration={2200}
+            />
+            <StatsCounter
+              end={80}
+              suffix="%"
+              label="Renda do Proprietário"
+              color="text-bungalow-coral"
+              duration={2400}
+            />
+            <StatsCounter
+              end={4000}
+              suffix="+"
+              label="Destinos"
+              color="text-green-600"
+              duration={2600}
+            />
           </div>
         </div>
 
-        {/* Stats Banner with Glass Effect */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 glass-card-strong rounded-3xl p-6 md:p-8">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-bungalow-primary mb-2">64</div>
-            <div className="text-sm md:text-base text-muted-foreground">Unidades Exclusivas</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-bungalow-secondary mb-2">50</div>
-            <div className="text-sm md:text-base text-muted-foreground">Anos de Direito</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-bungalow-coral mb-2">80%</div>
-            <div className="text-sm md:text-base text-muted-foreground">Renda do Proprietário</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-600 mb-2">4.000+</div>
-            <div className="text-sm md:text-base text-muted-foreground">Destinos</div>
-          </div>
-        </div>
-
-        {/* ROI Comparison Cards - Placeholder for Phase 3 */}
+        {/* ROI Comparison Cards - Enhanced with Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* Card 1 - 100% Occupancy */}
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative z-10">
-              <div className="text-sm font-semibold text-green-700 mb-2">Ocupação 100%</div>
-              <div className="text-6xl md:text-7xl font-bold text-green-600 mb-2">29,4%</div>
-              <div className="text-lg text-green-700 mb-4">Retorno Anual</div>
-              <div className="text-sm text-green-600 bg-white/80 rounded-full px-4 py-2 inline-block">
-                USD 4.940/ano líquido
-              </div>
-              <div className="mt-4 pt-4 border-t border-green-200">
-                <div className="text-xs text-green-700 bg-green-100 rounded-full px-3 py-1 inline-block">
-                  Payback: 3,4 anos
-                </div>
-              </div>
-            </div>
-          </div>
+          <ROICard
+            occupancy="Ocupação 100%"
+            percentage="29,4%"
+            subtitle="Retorno Anual"
+            annualReturn="USD 4.940/ano líquido"
+            payback="Payback: 3,4 anos"
+            variant="green"
+          />
 
-          {/* Card 2 - 70% Occupancy */}
-          <div className="bg-gradient-to-br from-blue-50 to-sky-50 border-2 border-blue-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative z-10">
-              <div className="text-sm font-semibold text-blue-700 mb-2">Cenário Conservador (70%)</div>
-              <div className="text-6xl md:text-7xl font-bold text-blue-600 mb-2">19,4%</div>
-              <div className="text-lg text-blue-700 mb-4">Retorno Anual</div>
-              <div className="text-sm text-blue-600 bg-white/80 rounded-full px-4 py-2 inline-block">
-                USD 3.260/ano líquido
-              </div>
-              <div className="mt-4 pt-4 border-t border-blue-200">
-                <div className="text-xs text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">
-                  Payback: 5,2 anos
-                </div>
-              </div>
-            </div>
-          </div>
+          <ROICard
+            occupancy="Cenário Conservador (70%)"
+            percentage="19,4%"
+            subtitle="Retorno Anual"
+            annualReturn="USD 3.260/ano líquido"
+            payback="Payback: 5,2 anos"
+            variant="blue"
+          />
         </div>
 
         {/* CTA Section - Placeholder for Phase 4 */}
