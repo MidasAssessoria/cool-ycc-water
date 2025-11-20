@@ -3,7 +3,8 @@ import heroImage from "@/assets/hero-waterpark.jpg";
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
-import BungalowsHeroSection from "@/components/BungalowsHeroSection";
+// BungalowsHeroSection disponível para uso futuro em página dedicada /bungalows
+// import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import BungalowsCompactSection from "@/components/BungalowsCompactSection";
 import PlanYourVisitSection from "@/components/PlanYourVisitSection";
 
