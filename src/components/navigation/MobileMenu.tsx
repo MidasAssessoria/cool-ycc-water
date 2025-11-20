@@ -27,7 +27,7 @@ const MobileMenu = React.memo(() => {
           variant="ghost"
           size="icon"
           className="lg:hidden text-foreground hover:bg-accent active:bg-accent/80 min-w-[44px] min-h-[44px] touch-manipulation"
-          aria-label="Abrir menu de navegação"
+          aria-label="Abrir menú de navegación"
           aria-expanded={isOpen}
         >
           <Menu className="h-6 w-6" />
@@ -37,7 +37,7 @@ const MobileMenu = React.memo(() => {
       <SheetContent 
         side="right" 
         className="w-[280px] sm:w-[320px] md:w-[400px] overflow-y-auto p-0 safe-area-inset flex flex-col"
-        aria-label="Menu de navegação principal"
+        aria-label="Menú de navegación principal"
       >
         {/* Header com gradiente laranja */}
         <div className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 text-white p-4 sm:p-6 shadow-lg">
@@ -54,24 +54,24 @@ const MobileMenu = React.memo(() => {
         
         {/* Nav Links */}
         <div className="flex flex-col p-4 sm:p-6 bg-background flex-1">
-          <nav className="flex flex-col gap-1" aria-label="Menu principal">
+          <nav className="flex flex-col gap-1" aria-label="Menú principal">
             <button
               onClick={() => handleNavigation('attractions')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-              🎢 Atrações
+              🎢 Atracciones
             </button>
             <button
               onClick={() => handleNavigation('booking')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-              🎟️ Ingressos
+              🎟️ Entradas
             </button>
             <button
               onClick={() => handleNavigation('contact')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-              📞 Contato
+              📞 Contacto
             </button>
             
             {/* Separator */}
@@ -93,9 +93,9 @@ const MobileMenu = React.memo(() => {
           <RippleButton 
             onClick={() => handleNavigation('booking')}
             className="w-full bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base sm:text-lg py-4 rounded-full shadow-xl min-h-[56px] touch-manipulation transition-all"
-            aria-label="Comprar ingressos"
+            aria-label="Comprar entradas"
           >
-            🎟️ Comprar Ingressos
+            🎟️ Comprar Entradas
           </RippleButton>
         </div>
       </SheetContent>

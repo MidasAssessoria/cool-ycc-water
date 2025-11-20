@@ -43,9 +43,9 @@ const TopBar = React.memo(() => {
                   smoothScrollToElement('attractions', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
-                aria-label="Ir para seção de atrações"
+                aria-label="Ir a la sección de atracciones"
               >
-                Atrações
+                Atracciones
               </button>
               <button 
                 onClick={(e) => {
@@ -53,9 +53,9 @@ const TopBar = React.memo(() => {
                   smoothScrollToElement('booking', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
-                aria-label="Ir para seção de compra de ingressos"
+                aria-label="Ir a la sección de compra de entradas"
               >
-                Ingressos
+                Entradas
               </button>
               <button 
                 onClick={(e) => {
@@ -63,9 +63,9 @@ const TopBar = React.memo(() => {
                   smoothScrollToElement('contact', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
-                aria-label="Ir para seção de contato"
+                aria-label="Ir a la sección de contacto"
               >
-                Contato
+                Contacto
               </button>
             </nav>
 
@@ -86,9 +86,9 @@ const TopBar = React.memo(() => {
             <RippleButton 
               onClick={() => smoothScrollToElement('booking', 80)}
               className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
-              aria-label="Comprar ingressos"
+              aria-label="Comprar entradas"
             >
-              🎟️ Comprar Ingressos
+              🎟️ Comprar Entradas
             </RippleButton>
           </div>
 
