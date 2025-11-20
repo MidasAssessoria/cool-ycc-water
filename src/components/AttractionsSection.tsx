@@ -35,7 +35,7 @@ const attractions: Attraction[] = [
   {
     id: 1,
     title: "Piscina de Ondas",
-    description: "La única piscina de ondas de Paraguay",
+    description: "La única piscina de olas del Paraguay",
     status: "construccion",
     badge: "Próximamente",
     image: wavePoolImg,
@@ -48,7 +48,7 @@ const attractions: Attraction[] = [
   {
     id: 2,
     title: "Toboganes de Adrenalina",
-    description: "Experiencias extremas de alta velocidad",
+    description: "Caídas de alta velocidad para valientes",
     status: "construccion",
     badge: "Próximamente",
     image: waterSlidesImg,
@@ -62,7 +62,7 @@ const attractions: Attraction[] = [
   {
     id: 3,
     title: "Ríos Lentos",
-    description: "Relajación total en corrientes tropicales",
+    description: "Relax total flotando en corrientes tropicales",
     status: "construccion",
     badge: "Próximamente",
     image: lazyRiverImg,
@@ -75,7 +75,7 @@ const attractions: Attraction[] = [
   {
     id: 4,
     title: "HidroSPA",
-    description: "Bienestar y relajación premium",
+    description: "Hidroterapia y relajación en nivel premium",
     status: "construccion",
     badge: "Próximamente",
     image: hydroSpaImg,
@@ -88,7 +88,7 @@ const attractions: Attraction[] = [
   {
     id: 5,
     title: "Restaurante Completo",
-    description: "Gastronomía exclusiva con vista al parque",
+    description: "Sabores exclusivos con vista al parque",
     status: "construccion",
     badge: "Próximamente",
     image: restaurantImg,
@@ -101,7 +101,7 @@ const attractions: Attraction[] = [
   {
     id: 6,
     title: "Bungalows RCI",
-    description: "Tu hogar de vacaciones en Paraguay",
+    description: "Tu hogar de vacaciones frente al agua",
     status: "construccion",
     badge: "Próximamente",
     image: bungalowsImg,
@@ -112,7 +112,7 @@ const attractions: Attraction[] = [
   {
     id: 7,
     title: "Piscinas Recreativas",
-    description: "Diversión familiar en aguas cristalinas",
+    description: "Diversión familiar en piscinas cristalinas",
     status: "disponible",
     badge: "Disponible Hoy",
     image: recreationalPoolsImg,
@@ -125,7 +125,7 @@ const attractions: Attraction[] = [
   {
     id: 8,
     title: "Zona Kids",
-    description: "Área infantil segura y divertida",
+    description: "Juegos de agua seguros para los niños",
     status: "disponible",
     badge: "Disponible Hoy",
     image: kidsZoneImg,
@@ -139,7 +139,7 @@ const attractions: Attraction[] = [
   {
     id: 9,
     title: "Canchas de Tenis",
-    description: "Deporte y entretenimiento",
+    description: "Deporte y competencia al aire libre",
     status: "disponible",
     badge: "Disponible Hoy",
     image: tennisCourtsImg,
@@ -152,7 +152,7 @@ const attractions: Attraction[] = [
   {
     id: 10,
     title: "Lagos Naturales",
-    description: "Paisajes naturales para relajarse",
+    description: "Paisajes de lago ideales para desconectar",
     status: "disponible",
     badge: "Disponible Hoy",
     image: naturalLakesImg,
@@ -165,7 +165,7 @@ const attractions: Attraction[] = [
   {
     id: 11,
     title: "Senderos Ecológicos",
-    description: "Caminatas en contacto con la naturaleza",
+    description: "Caminatas tranquilas en plena naturaleza",
     status: "disponible",
     badge: "Disponible Hoy",
     image: ecoTrailsImg,
@@ -178,7 +178,7 @@ const attractions: Attraction[] = [
   {
     id: 12,
     title: "Churrasqueiras",
-    description: "Espacios para reuniones familiares",
+    description: "Espacios equipados para asados en familia",
     status: "disponible",
     badge: "Disponible Hoy",
     image: bbqAreaImg,
@@ -391,10 +391,10 @@ const AttractionsSection = () => {
             id="attractions-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4"
           >
-            Diversión y bienestar para toda la familia
+            Atracciones para disfrutar en familia todo el año
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Más de 30 atracciones acuáticas, espacios deportivos y naturaleza para disfrutar todo el año
+            Más de 30 experiencias de agua, deporte y naturaleza: adrenalina, relax y momentos únicos juntos.
           </p>
         </header>
 
