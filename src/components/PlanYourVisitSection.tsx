@@ -1,7 +1,22 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Calendar as CalendarIcon, Clock, User, Phone as PhoneIcon, ChevronDown as ChevronDownIcon } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { planVisitSchema, type PlanVisitFormData } from "@/lib/validation/plan-visit-schema";
+import { usePhoneMask } from "@/hooks/usePhoneMask";
+import { toast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 const PlanYourVisitSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -11,6 +26,29 @@ const PlanYourVisitSection = () => {
     },
     [Autoplay({ delay: 6000, stopOnInteraction: false })]
   );
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [phoneValue, setPhoneValue] = useState("+595");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    watch,
+  } = useForm<PlanVisitFormData>({
+    resolver: zodResolver(planVisitSchema),
+    defaultValues: {
+      numberOfPeople: "3-4",
+      message: "",
+    },
+  });
+
+  const { formatPhoneNumber, handlePhonePaste, handlePhoneBackspace } = usePhoneMask();
+  const selectedDate = watch("visitDate");
+  const selectedTime = watch("visitTime");
+  const numberOfPeople = watch("numberOfPeople");
 
   // Hero carousel images
   const heroImages = [
@@ -53,6 +91,32 @@ const PlanYourVisitSection = () => {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi]);
+
+  const onSubmit = async (data: PlanVisitFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      
+      console.log("Form submitted:", data);
+      
+      toast({
+        title: "✅ Visita Agendada com Sucesso!",
+        description: `Sua visita foi confirmada para ${format(data.visitDate, "dd/MM/yyyy", { locale: ptBR })} no período da ${data.visitTime === "morning" ? "manhã" : "tarde"}. Em breve entraremos em contato via WhatsApp.`,
+      });
+      
+      // Reset form could be added here if needed
+    } catch (error) {
+      toast({
+        title: "❌ Erro ao Agendar",
+        description: "Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="relative w-full">
@@ -172,17 +236,220 @@ const PlanYourVisitSection = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* LEFT: Smart Booking Form (placeholder) */}
+            {/* LEFT: Smart Booking Form */}
             <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+              {/* Form Header */}
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
                 Reserve Seu Tour Gratuito
               </h2>
               <p className="text-lg text-gray-500 mb-6">
                 Preencha em 30 segundos ⚡
               </p>
-              <div className="text-gray-400 text-center py-12">
-                Formulário será implementado na Fase 2
+
+              {/* Quick Benefit Pills */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
+                  ✓ 100% Gratuito
+                </span>
+                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
+                  ✓ Sem Compromisso
+                </span>
+                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
+                  ✓ 2h de Experiência
+                </span>
               </div>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                {/* Date + Time Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Date Picker */}
+                  <div className="space-y-2">
+                    <Label htmlFor="visitDate">Data da Visita</Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal h-12 border-2 focus:border-coral",
+                            !selectedDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {selectedDate ? (
+                            format(selectedDate, "dd/MM/yyyy", { locale: ptBR })
+                          ) : (
+                            <span>Selecione a data</span>
+                          )}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={selectedDate}
+                          onSelect={(date) => setValue("visitDate", date as Date)}
+                          disabled={(date) => {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            const maxDate = new Date();
+                            maxDate.setDate(maxDate.getDate() + 90);
+                            return date < today || date > maxDate;
+                          }}
+                          initialFocus
+                          className={cn("p-3 pointer-events-auto")}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    {errors.visitDate && (
+                      <p className="text-sm text-red-600">{errors.visitDate.message}</p>
+                    )}
+                  </div>
+
+                  {/* Time Select */}
+                  <div className="space-y-2">
+                    <Label htmlFor="visitTime">Horário</Label>
+                    <Select
+                      value={selectedTime}
+                      onValueChange={(value) => setValue("visitTime", value as "morning" | "afternoon")}
+                    >
+                      <SelectTrigger className="h-12 border-2 focus:border-coral">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <SelectValue placeholder="Selecione o horário" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="morning">Manhã (9-12h)</SelectItem>
+                        <SelectItem value="afternoon">Tarde (14-17h)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    {errors.visitTime && (
+                      <p className="text-sm text-red-600">{errors.visitTime.message}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Name Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="fullName">Nome Completo</Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                    <Input
+                      id="fullName"
+                      {...register("fullName")}
+                      placeholder="Seu nome"
+                      className="h-12 pl-10 border-2 focus:border-coral"
+                    />
+                  </div>
+                  {errors.fullName && (
+                    <p className="text-sm text-red-600">{errors.fullName.message}</p>
+                  )}
+                </div>
+
+                {/* Phone Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="phone">WhatsApp</Label>
+                  <div className="relative">
+                    <PhoneIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={phoneValue}
+                      onChange={(e) => {
+                        const formatted = formatPhoneNumber(e.target.value);
+                        setPhoneValue(formatted);
+                        setValue("phone", formatted);
+                      }}
+                      onPaste={(e) => handlePhonePaste(e, (value) => {
+                        setPhoneValue(value);
+                        setValue("phone", value);
+                      })}
+                      onKeyDown={(e) => handlePhoneBackspace(e, phoneValue, (value) => {
+                        setPhoneValue(value);
+                        setValue("phone", value);
+                      })}
+                      placeholder="+595 XXX XXX XXX"
+                      className="h-12 pl-10 border-2 focus:border-coral"
+                    />
+                  </div>
+                  {errors.phone && (
+                    <p className="text-sm text-red-600">{errors.phone.message}</p>
+                  )}
+                </div>
+
+                {/* Number of People */}
+                <div className="space-y-2">
+                  <Label>Pessoas</Label>
+                  <div className="flex gap-2">
+                    {(["1-2", "3-4", "5+"] as const).map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => setValue("numberOfPeople", option)}
+                        className={cn(
+                          "flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all",
+                          numberOfPeople === option
+                            ? "bg-coral text-white border-coral"
+                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
+                        )}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                  {errors.numberOfPeople && (
+                    <p className="text-sm text-red-600">{errors.numberOfPeople.message}</p>
+                  )}
+                </div>
+
+                {/* Optional Message (Expandable) */}
+                <div className="space-y-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowMessage(!showMessage)}
+                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-coral transition-colors"
+                  >
+                    💬 Adicionar mensagem (opcional)
+                    <ChevronDownIcon
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        showMessage && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  {showMessage && (
+                    <Textarea
+                      {...register("message")}
+                      placeholder="Alguma necessidade especial?"
+                      maxLength={200}
+                      className="border-2 focus:border-coral resize-none"
+                      rows={3}
+                    />
+                  )}
+                  {errors.message && (
+                    <p className="text-sm text-red-600">{errors.message.message}</p>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-14 bg-gradient-to-r from-coral to-[#E63946] hover:from-coral/90 hover:to-[#E63946]/90 text-white font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin mr-2">⏳</span>
+                      Agendando...
+                    </>
+                  ) : (
+                    <>🎯 Confirmar Visita Gratuita</>
+                  )}
+                </Button>
+
+                {/* Helper Text */}
+                <p className="text-xs text-gray-500 text-center mt-3">
+                  ⚡ Confirmação em até 2 horas | 🔒 Dados protegidos
+                </p>
+              </form>
             </div>
 
             {/* RIGHT: Info Sidebar (placeholder) */}
