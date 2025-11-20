@@ -52,7 +52,7 @@ const BungalowsCompactSection = ({
               id="bungalows-compact-title"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-charcoal leading-tight mb-1.5 sm:mb-2"
             >
-              Bungalows A-Frame
+              Bungalows Premium YCC
             </h2>
 
             {/* Subtitle - Mobile optimized */}
