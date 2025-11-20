@@ -224,7 +224,7 @@ const FilterChip = ({ label, icon: Icon, category, isActive, onClick, count }: F
         }
       `}
       role="tab"
-      aria-label={`Filtrar por ${label} - ${count} ${count === 1 ? 'atração' : 'atrações'}`}
+      aria-label={`Filtrar por ${label} - ${count} ${count === 1 ? 'atracción' : 'atracciones'}`}
       aria-selected={isActive}
       aria-controls="attractions-grid"
       tabIndex={0}
@@ -253,7 +253,7 @@ const AttractionMetadataIcons = ({ minHeight, adrenalineLevel, wheelchairAccessi
   }
 
   return (
-    <div className="flex items-center gap-3 mt-3 pt-3 border-t border-border/50" role="list" aria-label="Informações da atração">
+    <div className="flex items-center gap-3 mt-3 pt-3 border-t border-border/50" role="list" aria-label="Información de la atracción">
       {/* Altura mínima */}
       {minHeight && (
         <div className="flex items-center gap-1.5 text-muted-foreground" role="listitem" title={`Altura mínima: ${minHeight}cm`}>
@@ -262,21 +262,21 @@ const AttractionMetadataIcons = ({ minHeight, adrenalineLevel, wheelchairAccessi
         </div>
       )}
 
-      {/* Nível de adrenalina */}
+      {/* Nivel de adrenalina */}
       {adrenalineLevel && (
-        <div className="flex items-center gap-0.5 text-orange-500" role="listitem" title={`Nível de adrenalina: ${adrenalineLevel}/3`}>
+        <div className="flex items-center gap-0.5 text-orange-500" role="listitem" title={`Nivel de adrenalina: ${adrenalineLevel}/3`}>
           {Array.from({ length: adrenalineLevel }).map((_, i) => (
             <Flame key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
           ))}
-          <span className="sr-only">Nível de adrenalina: {adrenalineLevel} de 3</span>
+          <span className="sr-only">Nivel de adrenalina: {adrenalineLevel} de 3</span>
         </div>
       )}
 
-      {/* Acessível para cadeirantes */}
+      {/* Accesible para sillas de ruedas */}
       {wheelchairAccessible && (
-        <div className="flex items-center gap-1.5 text-green-600" role="listitem" title="Acessível para cadeirantes">
+        <div className="flex items-center gap-1.5 text-green-600" role="listitem" title="Accesible para sillas de ruedas">
           <Accessibility className="w-4 h-4" aria-hidden="true" />
-          <span className="sr-only">Acessível para cadeirantes</span>
+          <span className="sr-only">Accesible para sillas de ruedas</span>
         </div>
       )}
     </div>
@@ -290,8 +290,8 @@ interface AttractionCardProps {
 
 const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
   const statusText = attraction.status === 'construccion' 
-    ? 'Em construção' 
-    : 'Disponível agora';
+    ? 'En construcción' 
+    : 'Disponible ahora';
   
   return (
     <article 
@@ -320,7 +320,7 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
           className="absolute top-3 right-3"
           id={`attraction-status-${attraction.id}`}
           role="status"
-          aria-label={`Status da atração: ${statusText}`}
+          aria-label={`Estado de la atracción: ${statusText}`}
         >
           {attraction.badge}
         </Badge>
@@ -373,7 +373,7 @@ const AttractionsSection = () => {
 
   const filterCategories = [
     { label: 'Todas', icon: ListFilter, category: 'all' as CategoryType },
-    { label: 'Família', icon: Users, category: 'familia' as CategoryType },
+    { label: 'Familia', icon: Users, category: 'familia' as CategoryType },
     { label: 'Infantil', icon: Baby, category: 'infantil' as CategoryType },
     { label: 'Radical', icon: Zap, category: 'radical' as CategoryType },
     { label: 'Relax', icon: Waves, category: 'relax' as CategoryType },
@@ -391,10 +391,10 @@ const AttractionsSection = () => {
             id="attractions-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4"
           >
-            Atrações
+            Diversión y bienestar para toda la familia
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Descubra tudo o que YCC Water Park tem para oferecer
+            Más de 30 atracciones acuáticas, espacios deportivos y naturaleza para disfrutar todo el año
           </p>
         </header>
 
@@ -416,7 +416,7 @@ const AttractionsSection = () => {
             <div 
               className="flex gap-3 px-4 pb-2 min-w-max mx-auto w-fit"
               role="tablist"
-              aria-label="Filtros de categoria de atrações"
+              aria-label="Filtros de categoría de atracciones"
             >
               {filterCategories.map((filter) => (
                 <FilterChip
@@ -436,7 +436,7 @@ const AttractionsSection = () => {
         {/* Results Counter */}
         <div className="text-center mb-6">
           <p className="text-sm text-muted-foreground">
-            Mostrando <span className="font-semibold text-foreground">{filteredAttractions.length}</span> {filteredAttractions.length === 1 ? 'atração' : 'atrações'}
+            Mostrando <span className="font-semibold text-foreground">{filteredAttractions.length}</span> {filteredAttractions.length === 1 ? 'atracción' : 'atracciones'}
           </p>
         </div>
 
@@ -447,7 +447,7 @@ const AttractionsSection = () => {
             key={selectedCategory}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             role="tabpanel"
-            aria-label={`Atrações da categoria ${filterCategories.find(f => f.category === selectedCategory)?.label}`}
+            aria-label={`Atracciones de la categoría ${filterCategories.find(f => f.category === selectedCategory)?.label}`}
           >
             {filteredAttractions.map((attraction, index) => (
               <AttractionCard key={attraction.id} attraction={attraction} index={index} />
@@ -464,10 +464,10 @@ const AttractionsSection = () => {
                 <ListFilter className="w-8 h-8 text-muted-foreground" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
-                Nenhuma atração encontrada
+                No se encontraron atracciones
               </h3>
               <p className="text-muted-foreground">
-                Não encontramos atrações para esta categoria. Tente selecionar outro filtro.
+                No encontramos atracciones para esta categoría. Intenta seleccionar otro filtro.
               </p>
             </div>
           </div>
