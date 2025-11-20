@@ -5,10 +5,25 @@ interface BungalowsCompactSectionProps {
   className?: string;
 }
 
+
 const BungalowsCompactSection = ({ 
   onCTAClick,
   className = "" 
 }: BungalowsCompactSectionProps) => {
+  const handleCTAClick = () => {
+    if (onCTAClick) {
+      onCTAClick();
+    } else {
+      const planVisitSection = document.getElementById('booking');
+      if (planVisitSection) {
+        planVisitSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+    }
+  };
+
   return (
     <section 
       aria-labelledby="bungalows-compact-title"
@@ -175,6 +190,23 @@ const BungalowsCompactSection = ({
           </div>
         </div>
       </div>
+
+      {/* PART 3: CTA Bar */}
+      <footer className="bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 py-8 px-6 text-center">
+        {/* CTA Button */}
+        <button
+          onClick={handleCTAClick}
+          className="max-w-lg mx-auto w-full h-14 bg-gradient-to-r from-coral to-red-600 hover:from-coral/90 hover:to-red-600/90 text-white font-bold text-lg rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-coral/50 focus-visible:ring-offset-2"
+          aria-label="Conhecer os bungalows pessoalmente - agendar tour guiado"
+        >
+          🎯 Conhecer os Bungalows Pessoalmente
+        </button>
+
+        {/* Helper Text */}
+        <p className="text-sm text-gray-500 mt-3">
+          ✨ Tour guiado + Apresentação sem compromisso
+        </p>
+      </footer>
     </section>
   );
 };
