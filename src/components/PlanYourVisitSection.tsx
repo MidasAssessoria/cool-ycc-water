@@ -3,17 +3,14 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { 
-  ChevronDown, 
   Calendar as CalendarIcon, 
   Clock, 
   User, 
-  Phone as PhoneIcon, 
-  ChevronDown as ChevronDownIcon,
+  Phone as PhoneIcon,
   MapPin,
   Users,
   Gift,
   ExternalLink,
-  MessageCircle,
   Check,
   Star,
   Home,
@@ -29,7 +26,7 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -45,7 +42,6 @@ const PlanYourVisitSection = () => {
   );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
   const [phoneValue, setPhoneValue] = useState("+595");
 
   const {
@@ -58,7 +54,6 @@ const PlanYourVisitSection = () => {
     resolver: zodResolver(planVisitSchema),
     defaultValues: {
       numberOfPeople: "3-4",
-      message: "",
     },
   });
 
@@ -138,7 +133,7 @@ const PlanYourVisitSection = () => {
   return (
     <section className="relative w-full">
       {/* PART 1: HERO VISUAL SECTION */}
-      <div className="relative w-full h-[50vh] min-h-[400px] max-h-[600px] overflow-hidden">
+      <div className="relative w-full h-[35vh] min-h-[300px] max-h-[450px] overflow-hidden">
         {/* Carousel Container */}
         <div className="absolute inset-0" ref={emblaRef}>
           <div className="flex h-full">
@@ -225,34 +220,6 @@ const PlanYourVisitSection = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator (bottom center) */}
-        <motion.button
-          onClick={scrollToForm}
-          className="
-            absolute 
-            bottom-6 
-            left-1/2 
-            -translate-x-1/2 
-            z-10
-            flex flex-col items-center
-            text-white/70
-            hover:text-white
-            transition-colors
-            cursor-pointer
-            group
-          "
-          aria-label="Rolar para o formulário de agendamento"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
-          <span className="text-sm mb-2">Role para agendar</span>
-          <ChevronDown 
-            className="w-6 h-6 animate-bounce-slow group-hover:text-white" 
-            strokeWidth={2}
-            aria-hidden="true"
-          />
-        </motion.button>
       </div>
 
       {/* PART 2: BOOKING FORM + INFO SIDEBAR */}
@@ -260,12 +227,48 @@ const PlanYourVisitSection = () => {
         id="plan-visit-form"
         className="
           w-full 
-          bg-gradient-to-b from-white to-blue-50
-          py-12 px-6
+          bg-gray-50
+          py-12 md:py-16 px-6
         "
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* CENTERED HEADER WITH BADGE */}
+          <div className="text-center mb-12">
+            {/* Badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 bg-coral/10 border border-coral/20 rounded-full text-coral font-semibold text-sm mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              🌟 Experiência VIP Gratuita
+            </motion.div>
+
+            {/* Title */}
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Planeje Sua Visita Guiada
+            </motion.h2>
+
+            {/* Subtitle */}
+            <motion.p
+              className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Tour completo: Parque + Bungalows + Apresentação
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 items-start">
             {/* LEFT: Smart Booking Form */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
@@ -284,18 +287,6 @@ const PlanYourVisitSection = () => {
                 </p>
               </div>
 
-              {/* Quick Benefit Pills */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
-                  ✓ 100% Gratuito
-                </span>
-                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
-                  ✓ Sem Compromisso
-                </span>
-                <span className="bg-green-50 text-green-700 rounded-full px-3 py-1 text-sm font-medium">
-                  ✓ 2h de Experiência
-                </span>
-              </div>
 
               {/* Form */}
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
@@ -448,56 +439,29 @@ const PlanYourVisitSection = () => {
                   )}
                 </div>
 
-                {/* Optional Message (Expandable) */}
-                <div className="space-y-2">
-                  <button
-                    type="button"
-                    onClick={() => setShowMessage(!showMessage)}
-                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-coral transition-colors"
-                  >
-                    💬 Adicionar mensagem (opcional)
-                    <ChevronDownIcon
-                      className={cn(
-                        "h-4 w-4 transition-transform",
-                        showMessage && "rotate-180"
-                      )}
-                    />
-                  </button>
-                  {showMessage && (
-                    <Textarea
-                      {...register("message")}
-                      placeholder="Alguma necessidade especial?"
-                      maxLength={200}
-                      className="border-2 focus:border-coral resize-none"
-                      rows={3}
-                      aria-describedby={errors.message ? "message-error" : undefined}
-                    />
-                  )}
-                  {errors.message && (
-                    <p className="text-sm text-red-600" id="message-error" role="alert">{errors.message.message}</p>
-                  )}
-                </div>
-
                 {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-14 bg-gradient-to-r from-coral to-[#E63946] hover:from-coral/90 hover:to-[#E63946]/90 text-white font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <span className="animate-spin mr-2">⏳</span>
-                      Agendando...
-                    </>
-                  ) : (
-                    <>🎯 Confirmar Visita Gratuita</>
-                  )}
-                </Button>
-
-                {/* Helper Text */}
-                <p className="text-xs text-gray-500 text-center mt-3" role="contentinfo">
-                  ⚡ Confirmação em até 2 horas | 🔒 Dados protegidos
-                </p>
+                <div className="space-y-3">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-14 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className="animate-spin mr-2">⏳</span>
+                        Enviando...
+                      </>
+                    ) : (
+                      "✅ Confirmar Minha Visita VIP"
+                    )}
+                  </Button>
+                  
+                  {/* Helper Text */}
+                  <p className="text-center text-sm text-gray-600 flex items-center justify-center gap-1">
+                    <span className="text-coral">⚡</span>
+                    Confirmação em até 2 horas
+                  </p>
+                </div>
               </form>
             </motion.div>
 
@@ -616,7 +580,7 @@ const PlanYourVisitSection = () => {
                   "
                   aria-label="Contatar via WhatsApp"
                 >
-                  <MessageCircle className="w-6 h-6" />
+                  <PhoneIcon className="w-6 h-6" />
                 </a>
               </div>
 

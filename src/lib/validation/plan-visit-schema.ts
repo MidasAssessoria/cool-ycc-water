@@ -20,10 +20,6 @@ export const planVisitSchema = z.object({
   numberOfPeople: z.enum(["1-2", "3-4", "5+"], {
     required_error: "Por favor, selecione o número de pessoas",
   }),
-  message: z
-    .string()
-    .max(200, { message: "Mensagem deve ter no máximo 200 caracteres" })
-    .optional(),
 });
 
 export type PlanVisitFormData = z.infer<typeof planVisitSchema>;
