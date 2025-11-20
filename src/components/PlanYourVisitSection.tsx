@@ -42,9 +42,15 @@ const PlanYourVisitSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
-      duration: 30,
+      duration: 25,
+      align: 'center',
+      containScroll: 'trimSnaps',
     },
-    [Autoplay({ delay: 6000, stopOnInteraction: false })]
+    [Autoplay({ 
+      delay: 7000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false
+    })]
   );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -133,21 +139,24 @@ const PlanYourVisitSection = () => {
   return (
     <section className="relative w-full">
       {/* PART 1: HERO VISUAL SECTION - Mobile optimized */}
-      <div className="relative w-full h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] max-h-[450px] overflow-hidden">
+      <div className="relative w-full h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] max-h-[450px] overflow-hidden bg-gray-900">
         {/* Carousel Container */}
-        <div className="absolute inset-0" ref={emblaRef}>
-          <div className="flex h-full">
+        <div className="absolute inset-0 overflow-hidden" ref={emblaRef}>
+          <div className="flex h-full touch-pan-y">
             {heroImages.map((image, index) => (
               <div
                 key={index}
                 className="relative flex-[0_0_100%] min-w-0 h-full"
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover animate-ken-burns"
-                  loading={index === 0 ? "eager" : "lazy"}
-                />
+                <div className="absolute inset-0 w-full h-full">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover object-center animate-ken-burns"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    draggable="false"
+                  />
+                </div>
               </div>
             ))}
           </div>
