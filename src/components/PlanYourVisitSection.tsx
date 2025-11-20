@@ -152,7 +152,7 @@ const PlanYourVisitSection = () => {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover object-center animate-ken-burns"
+                    className="w-full h-full object-cover object-center"
                     loading={index === 0 ? "eager" : "lazy"}
                     draggable="false"
                   />
