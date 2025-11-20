@@ -66,7 +66,7 @@ const BungalowsHeroSection = () => {
                   <Home className="w-6 h-6 text-bungalow-primary drop-shadow-lg" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">66m² de Conforto</h3>
+                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">81m² de Conforto</h3>
                   <ul className="text-sm text-foreground/80 space-y-1">
                     <li>• 1 dormitório + 1 suíte com closet</li>
                     <li>• Acomoda até 6 pessoas</li>
