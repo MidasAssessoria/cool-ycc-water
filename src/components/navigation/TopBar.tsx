@@ -1,9 +1,10 @@
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { RippleButton } from "@/components/ui/ripple-button";
-import { cn } from "@/lib/utils";
+import { cn, smoothScrollToElement } from "@/lib/utils";
 import React from "react";
 import MobileMenu from "./MobileMenu";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import { Calendar } from "lucide-react";
 
 const TopBar = React.memo(() => {
   const { scrollY } = useScrollDirection();
@@ -32,26 +33,35 @@ const TopBar = React.memo(() => {
             </button>
           </div>
 
-          {/* Desktop - Nav Links Center + CTA Right */}
-          <div className="hidden lg:flex items-center gap-8 flex-1 justify-end">
+          {/* Desktop - Nav Links Center + CTAs Right */}
+          <div className="hidden lg:flex items-center gap-6 flex-1 justify-end">
             {/* Nav Links */}
             <nav className="flex items-center gap-6" aria-label="Navegação principal">
               <button 
-                onClick={() => window.location.href = '/#attractions'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  smoothScrollToElement('attractions', 80);
+                }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de atrações"
               >
                 Atrações
               </button>
               <button 
-                onClick={() => window.location.href = '/#booking'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  smoothScrollToElement('booking', 80);
+                }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de compra de ingressos"
               >
                 Ingressos
               </button>
               <button 
-                onClick={() => window.location.href = '/#contact'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  smoothScrollToElement('contact', 80);
+                }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de contato"
               >
@@ -59,8 +69,22 @@ const TopBar = React.memo(() => {
               </button>
             </nav>
 
+            {/* Secondary CTA - Agendar Visita */}
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScrollToElement('plan-visit-form', 80);
+              }}
+              className="border-2 border-white bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-semibold px-5 py-2.5 rounded-full min-h-[44px] touch-manipulation transition-all flex items-center gap-2"
+              aria-label="Agendar visita guiada"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Agendar Visita</span>
+            </button>
+
             {/* Primary CTA - Responsive sizing */}
             <RippleButton 
+              onClick={() => smoothScrollToElement('booking', 80)}
               className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
               aria-label="Comprar ingressos"
             >
