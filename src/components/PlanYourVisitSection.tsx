@@ -171,32 +171,6 @@ const PlanYourVisitSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 z-10" />
 
         {/* Floating Badge (top-right) - Mobile optimized */}
-        <motion.div 
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 z-20"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <div
-            className="
-              relative
-              backdrop-blur-md 
-              bg-coral/95
-              border-2 border-white
-              text-white
-              px-3 sm:px-4 md:px-6 py-1.5 sm:py-2
-              rounded-full
-              text-xs sm:text-sm font-semibold
-              shadow-xl
-              animate-pulse
-              cursor-default
-            "
-            role="status"
-            aria-label="Tour VIP Guiado disponible"
-          >
-            🌟 Tour VIP guiado gratuito
-          </div>
-        </motion.div>
 
         {/* Center Content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
@@ -271,15 +245,6 @@ const PlanYourVisitSection = () => {
           {/* CENTERED HEADER WITH BADGE - Mobile optimized */}
           <div className="text-center mb-10 sm:mb-12">
             {/* Badge */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-coral/10 border border-coral/20 rounded-full text-coral font-semibold text-xs sm:text-sm mb-3 sm:mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              🌟 Tour VIP guiado gratuito
-            </motion.div>
 
             {/* Title */}
             <motion.h2
