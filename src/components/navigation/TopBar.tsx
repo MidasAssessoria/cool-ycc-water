@@ -3,7 +3,7 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import { cn, smoothScrollToElement } from "@/lib/utils";
 import React from "react";
 import MobileMenu from "./MobileMenu";
-import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import logoYCC from "@/assets/logo-ycc-waterpark-new.png";
 import { Calendar } from "lucide-react";
 
 const TopBar = React.memo(() => {
