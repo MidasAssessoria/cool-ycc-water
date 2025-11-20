@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Ticket, CalendarCheck, Waves, Loader2 } from "lucide-react";
+import { Ticket, CalendarCheck, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import backgroundImage from "@/assets/waterpark-hero-bg.jpg";
 
@@ -49,7 +49,8 @@ const AquaParkSection = () => {
             {/* Parágrafo - Mobile optimized */}
             <div className="flex items-center">
               <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
-                Elegido mejor parque acuático de las Américas (Travellers' Choice 2024 - Best of the Best de TripAdvisor), YCC cuenta con más de 30 atracciones para que toda la familia disfrute.
+                Más de 30 atracciones, club y resort acuático para disfrutar en familia.<br />
+                Elige cómo quieres empezar tu experiencia YCC.
               </p>
             </div>
           </div>
@@ -57,66 +58,66 @@ const AquaParkSection = () => {
           {/* 3 Botões brancos */}
           <nav className="space-y-2.5 md:space-y-0 md:flex md:flex-row md:gap-2 lg:gap-3 xl:gap-4">
             
-            {/* Botão 1: Comprar Entradas - Touch optimized */}
+            {/* Botão 1: Membresías YCC - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Comprar Entradas")}
+              onClick={() => handleButtonClick("Membresías YCC")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Ticket className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Comprar Entradas
+                Membresías YCC
               </span>
               <button 
-                disabled={loadingButton === "Comprar Entradas"}
+                disabled={loadingButton === "Membresías YCC"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Comprar entradas"
+                aria-label="Ver planes de membresías"
               >
-                {loadingButton === "Comprar Entradas" && <Loader2 className="w-3 h-3 animate-spin" />}
-                COMPRAR
+                {loadingButton === "Membresías YCC" && <Loader2 className="w-3 h-3 animate-spin" />}
+                VER PLANES
               </button>
             </div>
 
-            {/* Botão 2: Calendario - Touch optimized */}
+            {/* Botão 2: Tour VIP - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Calendario de Eventos")}
+              onClick={() => handleButtonClick("Tour VIP guiado gratuito")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <CalendarCheck className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Calendario de Eventos
+                Tour VIP guiado gratuito
               </span>
               <button 
-                disabled={loadingButton === "Calendario de Eventos"}
+                disabled={loadingButton === "Tour VIP guiado gratuito"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Acceder al calendario de eventos"
+                aria-label="Agendar tour VIP"
               >
-                {loadingButton === "Calendario de Eventos" && <Loader2 className="w-3 h-3 animate-spin" />}
-                ACCEDER
+                {loadingButton === "Tour VIP guiado gratuito" && <Loader2 className="w-3 h-3 animate-spin" />}
+                AGENDAR
               </button>
             </div>
 
-            {/* Botão 3: Atracciones - Touch optimized */}
+            {/* Botão 3: WhatsApp - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Nuestras Atracciones")}
+              onClick={() => handleButtonClick("Hablar por WhatsApp")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
-                <Waves className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Nuestras Atracciones
+                Hablar por WhatsApp
               </span>
               <button 
-                disabled={loadingButton === "Nuestras Atracciones"}
+                disabled={loadingButton === "Hablar por WhatsApp"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Conocer atracciones"
+                aria-label="Hablar por WhatsApp"
               >
-                {loadingButton === "Nuestras Atracciones" && <Loader2 className="w-3 h-3 animate-spin" />}
-                CONOCER
+                {loadingButton === "Hablar por WhatsApp" && <Loader2 className="w-3 h-3 animate-spin" />}
+                ESCRIBIR
               </button>
             </div>
 
