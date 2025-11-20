@@ -232,7 +232,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Sé de los primeros en conocer YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada de 2 horas.
+              Ven a visitar el  YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada
             </motion.p>
           </div>
         </div>
@@ -300,7 +300,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Sé de los primeros en conocer YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada de 2 horas.
+              Ven a visitar el  YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada
             </motion.p>
           </div>
 
