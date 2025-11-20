@@ -26,6 +26,7 @@ export default {
         coral: "#FF6B6B",
         turquoise: "#00BCD4",
         deepblue: "#0A4D8C",
+        charcoal: "#2C3E50",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
