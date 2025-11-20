@@ -140,8 +140,11 @@ const PlanYourVisitSection = () => {
     <section className="relative w-full">
       {/* PART 1: HERO VISUAL SECTION - Mobile optimized */}
       <div className="relative w-full h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] max-h-[450px] overflow-hidden bg-gray-900">
+        {/* Preload first image */}
+        <link rel="preload" as="image" href={heroImages[0].src} />
+        
         {/* Carousel Container */}
-        <div className="absolute inset-0 overflow-hidden" ref={emblaRef}>
+        <div className="absolute inset-0 overflow-hidden gpu-accelerated" ref={emblaRef}>
           <div className="flex h-full touch-pan-y">
             {heroImages.map((image, index) => (
               <div
@@ -152,9 +155,10 @@ const PlanYourVisitSection = () => {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center will-change-transform"
                     loading={index === 0 ? "eager" : "lazy"}
                     draggable="false"
+                    style={{ pointerEvents: 'none' }}
                   />
                 </div>
               </div>
