@@ -30,9 +30,9 @@ const BungalowsCompactSection = ({
       aria-labelledby="bungalows-compact-title"
       className={`relative ${className}`}
     >
-      {/* PART 1: Split Hero (40vh) */}
+      {/* PART 1: Split Hero - Mobile optimized height */}
       <div 
-        className="h-[40vh] min-h-[350px] sm:min-h-[380px] md:min-h-[420px] grid grid-cols-1 md:grid-cols-2 gap-0 bg-white"
+        className="h-[35vh] sm:h-[40vh] md:h-[40vh] min-h-[300px] sm:min-h-[350px] md:min-h-[420px] grid grid-cols-1 md:grid-cols-2 gap-0 bg-white"
         role="region" 
         aria-label="Apresentação dos bungalows A-frame"
       >
@@ -60,15 +60,15 @@ const BungalowsCompactSection = ({
               Design único + Investimento inteligente
             </p>
 
-            {/* Specs Pills (3 inline) - Optimized for mobile */}
+            {/* Specs Pills (3 inline) - Mobile optimized padding */}
             <div className="flex flex-nowrap gap-1.5 sm:gap-2">
-              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
                 🏠 81m²
               </span>
-              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
                 👥 6 pessoas
               </span>
-              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+              <span className="flex-shrink-0 bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold">
                 🛁 Hidro
               </span>
             </div>
@@ -97,7 +97,7 @@ const BungalowsCompactSection = ({
           >
             {/* Card 1: USE */}
             <article 
-              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center [@media(hover:hover)]:hover:scale-102 [@media(hover:hover)]:hover:shadow-xl transition-all duration-300"
               role="listitem"
               aria-labelledby="use-card-title"
             >
@@ -122,9 +122,9 @@ const BungalowsCompactSection = ({
               </span>
             </article>
 
-            {/* Card 2: ALUGUE (FEATURED) */}
+            {/* Card 2: ALUGUE (FEATURED) - Mobile: no scale, Desktop: scale-105 */}
             <article 
-              className="group relative bg-white border-3 border-green-500 rounded-2xl p-5 sm:p-6 md:p-8 text-center scale-100 md:scale-105 shadow-lg md:shadow-2xl hover:scale-102 md:hover:scale-108 hover:shadow-xl md:hover:shadow-3xl transition-all duration-300"
+              className="group relative bg-white border-3 border-green-500 rounded-2xl p-5 sm:p-6 md:p-8 text-center scale-100 md:scale-105 shadow-lg md:shadow-2xl [@media(hover:hover)]:hover:scale-102 md:[@media(hover:hover)]:hover:scale-108 [@media(hover:hover)]:hover:shadow-xl md:[@media(hover:hover)]:hover:shadow-3xl transition-all duration-300"
               role="listitem"
               aria-labelledby="alugue-card-title"
             >
@@ -164,7 +164,7 @@ const BungalowsCompactSection = ({
 
             {/* Card 3: INTERCAMBIE */}
             <article 
-              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              className="group bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 text-center [@media(hover:hover)]:hover:scale-102 [@media(hover:hover)]:hover:shadow-xl transition-all duration-300"
               role="listitem"
               aria-labelledby="intercambie-card-title"
             >
@@ -197,7 +197,7 @@ const BungalowsCompactSection = ({
         {/* CTA Button */}
         <button
           onClick={handleCTAClick}
-          className="max-w-lg mx-auto w-full h-14 bg-gradient-to-r from-coral to-red-600 hover:from-coral/90 hover:to-red-600/90 text-white font-bold text-lg rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-coral/50 focus-visible:ring-offset-2"
+          className="max-w-lg mx-auto w-full h-14 bg-gradient-to-r from-coral to-red-600 hover:from-coral/90 hover:to-red-600/90 active:from-coral/80 active:to-red-600/80 text-white font-bold text-base sm:text-lg rounded-full shadow-xl [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-coral/50 focus-visible:ring-offset-2 touch-manipulation"
           aria-label="Conhecer os bungalows pessoalmente - agendar tour guiado"
         >
           🎯 Conhecer os Bungalows Pessoalmente
