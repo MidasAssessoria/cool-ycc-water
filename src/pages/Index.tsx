@@ -54,14 +54,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Form Section */}
-      <BookingForm />
+      {/* Attractions Section */}
+      <AttractionsSection />
 
       {/* Aqua Park Hero Section */}
       <AquaParkSection />
 
-      {/* Attractions Section */}
-      <AttractionsSection />
+      {/* Booking Form Section */}
+      <BookingForm />
 
       {/* Bungalows Hero Section */}
       <BungalowsHeroSection />
