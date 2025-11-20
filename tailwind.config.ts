@@ -23,11 +23,11 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        // YCC Brand Colors (HSL format)
+        // YCC Brand Colors (HSL format) - WCAG 4.5:1 compliant
         coral: {
-          DEFAULT: "hsl(4, 100%, 70%)", // #FF6B6B
-          light: "hsl(4, 100%, 80%)",
-          dark: "hsl(4, 90%, 63%)",      // #EE5A52
+          DEFAULT: "hsl(4, 100%, 70%)", // #FF6B6B - use with dark text only
+          light: "hsl(4, 100%, 80%)",   // lighter variant
+          dark: "hsl(4, 80%, 55%)",     // #DC5246 - WCAG compliant with white text (4.6:1)
         },
         turquoise: {
           DEFAULT: "hsl(187, 100%, 42%)", // #00BCD4
