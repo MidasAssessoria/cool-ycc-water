@@ -10,7 +10,6 @@ import AttractionsSection from "@/components/AttractionsSection";
 // import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import BungalowsCompactSection from "@/components/BungalowsCompactSection";
 import PlanYourVisitSection from "@/components/PlanYourVisitSection";
-import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { smoothScrollToElement } from "@/lib/utils";
 
 const Index = () => {
@@ -166,9 +165,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
-      {/* Floating Action Button - Mobile Only */}
-      <FloatingActionButton variant="whatsapp" />
     </div>
   );
 };
