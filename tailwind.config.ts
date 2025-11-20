@@ -23,6 +23,9 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        coral: "#FF6B6B",
+        turquoise: "#00BCD4",
+        deepblue: "#0A4D8C",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -86,6 +89,10 @@ export default {
         "gradient-water": "var(--gradient-water)",
       },
       keyframes: {
+        "ken-burns": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
+        },
         ripple: {
           '0%': { width: '0', height: '0', opacity: '0.5' },
           '100%': { width: '500px', height: '500px', opacity: '0', transform: 'translate(-50%, -50%)' },
@@ -116,6 +123,8 @@ export default {
         },
       },
       animation: {
+        "ken-burns": "ken-burns 20s ease-in-out infinite alternate",
+        "bounce-slow": "bounce 2s infinite",
         ripple: 'ripple 0.6s ease-out',
         'gradient-shift': 'gradient-shift 3s ease infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
