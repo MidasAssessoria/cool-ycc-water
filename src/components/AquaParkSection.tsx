@@ -12,8 +12,8 @@ const AquaParkSection = () => {
     // Simular processamento
     setTimeout(() => {
       toast({
-        title: `${buttonName} selecionado`,
-        description: "Em breve você será redirecionado...",
+        title: `${buttonName} seleccionado`,
+        description: "Pronto serás redirigido...",
       });
       setLoadingButton(null);
     }, 1500);
@@ -42,14 +42,14 @@ const AquaParkSection = () => {
             {/* Título - Mobile optimized */}
             <div className="flex items-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
-                Conheça o Aqua Park
+                ¿Listo para vivir la experiencia YCC?
               </h2>
             </div>
 
             {/* Parágrafo - Mobile optimized */}
             <div className="flex items-center">
               <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
-                Eleito melhor parque aquático das Américas (Travellers' Choice 2024 - Best of the Best do TripAdvisor), o Aqua Park conta com mais de 30 atrações para toda a família se divertir.
+                Elegido mejor parque acuático de las Américas (Travellers' Choice 2024 - Best of the Best de TripAdvisor), YCC cuenta con más de 30 atracciones para que toda la familia disfrute.
               </p>
             </div>
           </div>
@@ -57,66 +57,66 @@ const AquaParkSection = () => {
           {/* 3 Botões brancos */}
           <nav className="space-y-2.5 md:space-y-0 md:flex md:flex-row md:gap-2 lg:gap-3 xl:gap-4">
             
-            {/* Botão 1: Ingresso - Touch optimized */}
+            {/* Botão 1: Comprar Entradas - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Ingresso")}
+              onClick={() => handleButtonClick("Comprar Entradas")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Ticket className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Ingresso
+                Comprar Entradas
               </span>
               <button 
-                disabled={loadingButton === "Ingresso"}
+                disabled={loadingButton === "Comprar Entradas"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Garantir ingresso"
+                aria-label="Comprar entradas"
               >
-                {loadingButton === "Ingresso" && <Loader2 className="w-3 h-3 animate-spin" />}
-                GARANTA
+                {loadingButton === "Comprar Entradas" && <Loader2 className="w-3 h-3 animate-spin" />}
+                COMPRAR
               </button>
             </div>
 
-            {/* Botão 2: Calendário - Touch optimized */}
+            {/* Botão 2: Calendario - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Calendário de Eventos")}
+              onClick={() => handleButtonClick("Calendario de Eventos")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <CalendarCheck className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Calendário de Eventos
+                Calendario de Eventos
               </span>
               <button 
-                disabled={loadingButton === "Calendário de Eventos"}
+                disabled={loadingButton === "Calendario de Eventos"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Acessar calendário de eventos"
+                aria-label="Acceder al calendario de eventos"
               >
-                {loadingButton === "Calendário de Eventos" && <Loader2 className="w-3 h-3 animate-spin" />}
-                ACESSE
+                {loadingButton === "Calendario de Eventos" && <Loader2 className="w-3 h-3 animate-spin" />}
+                ACCEDER
               </button>
             </div>
 
-            {/* Botão 3: Atrações - Touch optimized */}
+            {/* Botão 3: Atracciones - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Nossas Atrações")}
+              onClick={() => handleButtonClick("Nuestras Atracciones")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Waves className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Nossas Atrações
+                Nuestras Atracciones
               </span>
               <button 
-                disabled={loadingButton === "Nossas Atrações"}
+                disabled={loadingButton === "Nuestras Atracciones"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Conhecer atrações"
+                aria-label="Conocer atracciones"
               >
-                {loadingButton === "Nossas Atrações" && <Loader2 className="w-3 h-3 animate-spin" />}
-                CONHEÇA
+                {loadingButton === "Nuestras Atracciones" && <Loader2 className="w-3 h-3 animate-spin" />}
+                CONOCER
               </button>
             </div>
 
