@@ -57,7 +57,7 @@ const BungalowsCompactSection = ({
 
             {/* Subtitle - Mobile optimized */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-3 sm:mb-4 md:mb-6">
-              Tu hogar de vacaciones dentro del parque
+              Tu hogar de vacaciones dentro del parque.
             </p>
 
             {/* Specs Pills (3 inline) - Mobile optimized padding */}
@@ -113,12 +113,12 @@ const BungalowsCompactSection = ({
 
               {/* Description - Mobile optimized */}
               <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3">
-                Disfruta de tu bungalow con tu familia durante 50 años
+                Disfruta tu propio bungalow con tu familia durante 50 años.
               </p>
 
               {/* Stat Badge - Mobile optimized */}
               <span className="inline-block bg-blue-50 text-blue-600 font-semibold text-[10px] sm:text-xs md:text-sm px-2.5 sm:px-3 py-1 rounded-full">
-                50 años de derecho
+                50 años de derecho de uso
               </span>
             </article>
 
@@ -145,15 +145,15 @@ const BungalowsCompactSection = ({
 
               {/* ROI Display (LARGE) - Mobile optimized */}
               <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-600 leading-none mb-1">
-                29,4%
+                Hasta 29,4%
               </div>
 
               {/* ROI Label - Mobile optimized */}
-              <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-600 mb-2 sm:mb-3">al año neto</p>
+              <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-600 mb-2 sm:mb-3">ROI neto al año*</p>
 
               {/* Description - Mobile optimized */}
               <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 sm:mb-3">
-                Genera ingresos en dólares con gestión profesional incluida
+                Genera ingresos en dólares con gestión profesional incluida.
               </p>
 
               {/* Stat Badge - Mobile optimized */}
@@ -180,7 +180,7 @@ const BungalowsCompactSection = ({
 
               {/* Description - Mobile optimized */}
               <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3">
-                Viaja por el mundo con tu bungalow
+                Viaja por el mundo usando las semanas de tu bungalow.
               </p>
 
               {/* Stat Badge - Mobile optimized */}
@@ -198,14 +198,14 @@ const BungalowsCompactSection = ({
         <button
           onClick={handleCTAClick}
           className="max-w-lg mx-auto w-full h-14 bg-gradient-to-r from-coral to-red-600 hover:from-coral/90 hover:to-red-600/90 active:from-coral/80 active:to-red-600/80 text-white font-bold text-base sm:text-lg rounded-full shadow-xl [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-coral/50 focus-visible:ring-offset-2 touch-manipulation"
-          aria-label="Conocer los bungalows personalmente - agendar tour guiado"
+          aria-label="Conocer el proyecto de bungalows - agendar tour guiado"
         >
-          Conocer los Bungalows Personalmente
+          Conocer el proyecto de Bungalows
         </button>
 
         {/* Helper Text - Mobile optimized */}
         <p className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 px-4">
-          ✨ Tour guiado + Presentación sin compromiso
+          ✨ Tour guiado + presentación del proyecto sin compromiso
         </p>
 
         {/* REAL Casas Credit - Mobile optimized */}

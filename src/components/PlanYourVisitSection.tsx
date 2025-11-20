@@ -697,7 +697,7 @@ const PlanYourVisitSection = () => {
               </div>
               <div className="text-left">
                 <p className="text-xl font-bold text-gray-900">500+</p>
-                <p className="text-sm text-gray-600">Familias</p>
+                <p className="text-sm text-gray-600">Familias felices</p>
               </div>
             </div>
 
@@ -707,8 +707,8 @@ const PlanYourVisitSection = () => {
                 <Star className="w-5 h-5 text-yellow-600" aria-hidden="true" />
               </div>
               <div className="text-left">
-                <p className="text-xl font-bold text-gray-900">4.8/5</p>
-                <p className="text-sm text-gray-600">Valoración</p>
+                <p className="text-xl font-bold text-gray-900">4,8/5</p>
+                <p className="text-sm text-gray-600">Valoración promedio</p>
               </div>
             </div>
 
@@ -719,7 +719,7 @@ const PlanYourVisitSection = () => {
               </div>
               <div className="text-left">
                 <p className="text-xl font-bold text-gray-900">64</p>
-                <p className="text-sm text-gray-600">Bungalows</p>
+                <p className="text-sm text-gray-600">Bungalows exclusivos</p>
               </div>
             </div>
 
@@ -730,7 +730,7 @@ const PlanYourVisitSection = () => {
               </div>
               <div className="text-left">
                 <p className="text-xl font-bold text-gray-900">4.000+</p>
-                <p className="text-sm text-gray-600">Destinos</p>
+                <p className="text-sm text-gray-600">Destinos para intercambiar</p>
               </div>
             </div>
           </div>
