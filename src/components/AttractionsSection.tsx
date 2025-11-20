@@ -391,10 +391,10 @@ const AttractionsSection = () => {
             id="attractions-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4"
           >
-            Atracciones para disfrutar en familia todo el año
+            Atracciones
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Más de 30 experiencias de agua, deporte y naturaleza: adrenalina, relax y momentos únicos juntos.
+            Atracciones para disfrutar en familia todo el año
           </p>
         </header>
 
