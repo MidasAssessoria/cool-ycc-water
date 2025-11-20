@@ -8,6 +8,13 @@ import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import LocationSection from "@/components/LocationSection";
 
 const Index = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -32,6 +39,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4">
             <Button 
               size="lg" 
+              onClick={() => scrollToSection('booking')}
               className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-accent-foreground font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full shadow-glow transition-transform hover:scale-105 w-full sm:w-auto"
             >
               Comprar Ingressos
@@ -39,6 +47,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline"
+              onClick={() => scrollToSection('attractions')}
               className="bg-white/10 hover:bg-white/20 text-white border-white/50 backdrop-blur-sm font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-transform hover:scale-105 w-full sm:w-auto"
             >
               Ver Atrações
@@ -55,13 +64,17 @@ const Index = () => {
       </section>
 
       {/* Attractions Section */}
-      <AttractionsSection />
+      <section id="attractions">
+        <AttractionsSection />
+      </section>
 
       {/* Aqua Park Hero Section */}
       <AquaParkSection />
 
       {/* Booking Form Section */}
-      <BookingForm />
+      <section id="booking">
+        <BookingForm />
+      </section>
 
       {/* Bungalows Hero Section */}
       <BungalowsHeroSection />
