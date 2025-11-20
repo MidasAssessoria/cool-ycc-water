@@ -33,22 +33,22 @@ const AquaParkSection = () => {
       </div>
 
       {/* Card branco com contraste adequado */}
-      <div className="relative z-10 py-16 md:py-24 px-4">
+      <div className="relative z-10 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-[90%] md:max-w-[75%] lg:max-w-[80%] xl:max-w-[1200px] mx-auto bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border-4 border-coral">
           
           {/* Grid 2 colunas (desktop) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 mb-6 md:mb-8 lg:mb-10">
             
-            {/* Título */}
+            {/* Título - Mobile optimized */}
             <div className="flex items-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
                 Conheça o Aqua Park
               </h2>
             </div>
 
-            {/* Parágrafo */}
+            {/* Parágrafo - Mobile optimized */}
             <div className="flex items-center">
-              <p className="text-gray-700 text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed max-w-xl">
+              <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
                 Eleito melhor parque aquático das Américas (Travellers' Choice 2024 - Best of the Best do TripAdvisor), o Aqua Park conta com mais de 30 atrações para toda a família se divertir.
               </p>
             </div>
@@ -57,10 +57,10 @@ const AquaParkSection = () => {
           {/* 3 Botões brancos */}
           <nav className="space-y-2.5 md:space-y-0 md:flex md:flex-row md:gap-2 lg:gap-3 xl:gap-4">
             
-            {/* Botão 1: Ingresso */}
+            {/* Botão 1: Ingresso - Touch optimized */}
             <div 
               onClick={() => handleButtonClick("Ingresso")}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-3.5 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer hover:scale-[1.02] md:flex-1"
+              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Ticket className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
@@ -70,7 +70,7 @@ const AquaParkSection = () => {
               </span>
               <button 
                 disabled={loadingButton === "Ingresso"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1 md:py-1.5 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Garantir ingresso"
               >
                 {loadingButton === "Ingresso" && <Loader2 className="w-3 h-3 animate-spin" />}
@@ -78,10 +78,10 @@ const AquaParkSection = () => {
               </button>
             </div>
 
-            {/* Botão 2: Calendário */}
+            {/* Botão 2: Calendário - Touch optimized */}
             <div 
               onClick={() => handleButtonClick("Calendário de Eventos")}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-3.5 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer hover:scale-[1.02] md:flex-1"
+              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <CalendarCheck className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
@@ -91,7 +91,7 @@ const AquaParkSection = () => {
               </span>
               <button 
                 disabled={loadingButton === "Calendário de Eventos"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1 md:py-1.5 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Acessar calendário de eventos"
               >
                 {loadingButton === "Calendário de Eventos" && <Loader2 className="w-3 h-3 animate-spin" />}
@@ -99,10 +99,10 @@ const AquaParkSection = () => {
               </button>
             </div>
 
-            {/* Botão 3: Atrações */}
+            {/* Botão 3: Atrações - Touch optimized */}
             <div 
               onClick={() => handleButtonClick("Nossas Atrações")}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-3.5 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer hover:scale-[1.02] md:flex-1"
+              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Waves className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
@@ -112,7 +112,7 @@ const AquaParkSection = () => {
               </span>
               <button 
                 disabled={loadingButton === "Nossas Atrações"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1 md:py-1.5 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Conhecer atrações"
               >
                 {loadingButton === "Nossas Atrações" && <Loader2 className="w-3 h-3 animate-spin" />}

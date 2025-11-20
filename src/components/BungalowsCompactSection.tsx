@@ -38,25 +38,25 @@ const BungalowsCompactSection = ({
       >
         {/* LEFT SIDE: Text Content */}
         <div className="relative flex flex-col justify-center px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-0 order-2 md:order-1">
-          {/* Floating Badge - Moved to top right to avoid title overlap */}
-          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-8 md:right-8 z-10 animate-pulse">
-            <span className="inline-block bg-gradient-to-r from-coral to-red-600 text-white font-bold text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg flex-shrink-0">
+          {/* Floating Badge - Mobile optimized positioning */}
+          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 md:top-6 md:right-6 lg:top-8 lg:right-8 z-10 animate-pulse">
+            <span className="inline-block bg-gradient-to-r from-coral to-red-600 text-white font-bold text-[10px] sm:text-xs px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full shadow-lg flex-shrink-0">
               🔥 64 Unidades Exclusivas
             </span>
           </div>
 
           {/* Content Container */}
           <div className="max-w-full md:max-w-[90%] mx-auto md:mx-0 mt-2 sm:mt-4 md:mt-0">
-            {/* Main Title */}
+            {/* Main Title - Mobile optimized */}
             <h2 
               id="bungalows-compact-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-charcoal leading-tight mb-1.5 sm:mb-2"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-charcoal leading-tight mb-1.5 sm:mb-2"
             >
               Bungalows A-Frame
             </h2>
 
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6">
+            {/* Subtitle - Mobile optimized */}
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-3 sm:mb-4 md:mb-6">
               Design único + Investimento inteligente
             </p>
 
@@ -87,8 +87,8 @@ const BungalowsCompactSection = ({
         </div>
       </div>
 
-      {/* PART 2: Value Cards */}
-      <div className="bg-white py-8 sm:py-10 md:py-12 px-4 sm:px-6">
+      {/* PART 2: Value Cards - Mobile optimized spacing */}
+      <div className="bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div 
             className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 items-stretch"
@@ -106,18 +106,18 @@ const BungalowsCompactSection = ({
                 <Home className="h-6 w-6 sm:h-8 sm:w-8 text-coral" />
               </div>
 
-              {/* Title */}
-              <h3 id="use-card-title" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+              {/* Title - Mobile optimized */}
+              <h3 id="use-card-title" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
                 USE
               </h3>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-600 mb-3">
+              {/* Description - Mobile optimized */}
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3">
                 Suas férias em grande estilo
               </p>
 
-              {/* Stat Badge */}
-              <span className="inline-block bg-blue-50 text-blue-600 font-semibold text-xs sm:text-sm px-3 py-1 rounded-full">
+              {/* Stat Badge - Mobile optimized */}
+              <span className="inline-block bg-blue-50 text-blue-600 font-semibold text-[10px] sm:text-xs md:text-sm px-2.5 sm:px-3 py-1 rounded-full">
                 50 anos de direito
               </span>
             </article>
@@ -128,8 +128,8 @@ const BungalowsCompactSection = ({
               role="listitem"
               aria-labelledby="alugue-card-title"
             >
-              {/* Featured Badge */}
-              <div className="absolute -top-2.5 sm:-top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white font-bold text-[10px] sm:text-xs px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-md flex-shrink-0">
+              {/* Featured Badge - Mobile optimized */}
+              <div className="absolute -top-2.5 sm:-top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white font-bold text-[9px] sm:text-[10px] md:text-xs px-2.5 sm:px-3 md:px-4 py-1 sm:py-1 md:py-1.5 rounded-full shadow-md flex-shrink-0">
                 ⭐ MAIS POPULAR
               </div>
 
@@ -138,26 +138,26 @@ const BungalowsCompactSection = ({
                 <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
               </div>
 
-              {/* Title */}
-              <h3 id="alugue-card-title" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+              {/* Title - Mobile optimized */}
+              <h3 id="alugue-card-title" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                 ALUGUE
               </h3>
 
-              {/* ROI Display (LARGE) */}
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black text-green-600 leading-none mb-1">
+              {/* ROI Display (LARGE) - Mobile optimized */}
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-600 leading-none mb-1">
                 29,4%
               </div>
 
-              {/* ROI Label */}
-              <p className="text-xs sm:text-sm font-medium text-gray-600 mb-2 sm:mb-3">ao ano líquido</p>
+              {/* ROI Label - Mobile optimized */}
+              <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-600 mb-2 sm:mb-3">ao ano líquido</p>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-700 mb-2 sm:mb-3">
+              {/* Description - Mobile optimized */}
+              <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 sm:mb-3">
                 Renda passiva gerenciada 100% por nós
               </p>
 
-              {/* Stat Badge */}
-              <span className="inline-block bg-green-100 text-green-700 font-bold text-xs sm:text-sm px-3 py-1.5 rounded-full">
+              {/* Stat Badge - Mobile optimized */}
+              <span className="inline-block bg-green-100 text-green-700 font-bold text-[10px] sm:text-xs md:text-sm px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full">
                 80% da renda é sua
               </span>
             </article>
@@ -173,18 +173,18 @@ const BungalowsCompactSection = ({
                 <Globe className="h-6 w-6 sm:h-8 sm:w-8 text-turquoise" />
               </div>
 
-              {/* Title */}
-              <h3 id="intercambie-card-title" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+              {/* Title - Mobile optimized */}
+              <h3 id="intercambie-card-title" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
                 INTERCAMBIE
               </h3>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-600 mb-3">
+              {/* Description - Mobile optimized */}
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3">
                 Viaje o mundo com seu bungalow
               </p>
 
-              {/* Stat Badge */}
-              <span className="inline-block bg-turquoise/10 text-turquoise font-semibold text-xs sm:text-sm px-3 py-1 rounded-full">
+              {/* Stat Badge - Mobile optimized */}
+              <span className="inline-block bg-turquoise/10 text-turquoise font-semibold text-[10px] sm:text-xs md:text-sm px-2.5 sm:px-3 py-1 rounded-full">
                 4.000+ destinos em 110 países
               </span>
             </article>
@@ -192,8 +192,8 @@ const BungalowsCompactSection = ({
         </div>
       </div>
 
-      {/* PART 3: CTA Bar */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-8 px-6 text-center">
+      {/* PART 3: CTA Bar - Mobile optimized spacing */}
+      <footer className="bg-gray-50 border-t border-gray-200 py-8 sm:py-10 px-4 sm:px-6 text-center">
         {/* CTA Button */}
         <button
           onClick={handleCTAClick}
@@ -203,19 +203,19 @@ const BungalowsCompactSection = ({
           🎯 Conhecer os Bungalows Pessoalmente
         </button>
 
-        {/* Helper Text */}
-        <p className="text-sm text-gray-500 mt-3">
+        {/* Helper Text - Mobile optimized */}
+        <p className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 px-4">
           ✨ Tour guiado + Apresentação sem compromisso
         </p>
 
-        {/* REAL Casas Credit */}
-        <div className="mt-6 flex items-center justify-center gap-2 text-sm">
+        {/* REAL Casas Credit - Mobile optimized */}
+        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm px-4">
           <span className="text-gray-500">Parceria com</span>
-          <div className="flex items-center gap-2 bg-coral/10 px-4 py-2 rounded-lg border border-coral/20">
-            <div className="w-6 h-6 bg-coral rounded flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-xs">R</span>
+          <div className="flex items-center gap-2 bg-coral/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-coral/20">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-coral rounded flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-black text-[10px] sm:text-xs">R</span>
             </div>
-            <span className="font-bold text-coral">REAL Casas Pré Fabricadas</span>
+            <span className="font-bold text-coral text-xs sm:text-sm">REAL Casas Pré Fabricadas</span>
           </div>
         </div>
       </footer>

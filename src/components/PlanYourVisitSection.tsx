@@ -132,8 +132,8 @@ const PlanYourVisitSection = () => {
 
   return (
     <section className="relative w-full">
-      {/* PART 1: HERO VISUAL SECTION */}
-      <div className="relative w-full h-[35vh] min-h-[300px] max-h-[450px] overflow-hidden">
+      {/* PART 1: HERO VISUAL SECTION - Mobile optimized */}
+      <div className="relative w-full h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] max-h-[450px] overflow-hidden">
         {/* Carousel Container */}
         <div className="absolute inset-0" ref={emblaRef}>
           <div className="flex h-full">
@@ -156,9 +156,9 @@ const PlanYourVisitSection = () => {
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 z-10" />
 
-        {/* Floating Badge (top-right) - WCAG compliant */}
+        {/* Floating Badge (top-right) - Mobile optimized */}
         <motion.div 
-          className="absolute top-4 right-4 md:top-8 md:right-8 z-20"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 z-20"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -170,9 +170,9 @@ const PlanYourVisitSection = () => {
               bg-coral/95
               border-2 border-white
               text-white
-              px-6 py-2
+              px-3 sm:px-4 md:px-6 py-1.5 sm:py-2
               rounded-full
-              text-sm font-semibold
+              text-xs sm:text-sm font-semibold
               shadow-xl
               animate-pulse
               cursor-default
@@ -187,14 +187,16 @@ const PlanYourVisitSection = () => {
         {/* Center Content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
           <div className="max-w-4xl">
-            {/* Main Heading */}
+            {/* Main Heading - Mobile optimized */}
             <motion.h1
               className="
-                text-5xl md:text-6xl lg:text-7xl
+                text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
                 font-bold 
                 text-white
-                mb-4
+                mb-3 sm:mb-4
                 [text-shadow:_0_2px_10px_rgba(0,0,0,0.3)]
+                leading-tight
+                px-4
               "
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -203,13 +205,14 @@ const PlanYourVisitSection = () => {
               Planeje Sua Visita VIP
             </motion.h1>
 
-            {/* Subheading */}
+            {/* Subheading - Mobile optimized */}
             <motion.p
               className="
-                text-xl md:text-2xl lg:text-3xl
+                text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl
                 font-normal
                 text-white/90
                 [text-shadow:_0_1px_8px_rgba(0,0,0,0.3)]
+                px-4
               "
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,21 +225,21 @@ const PlanYourVisitSection = () => {
 
       </div>
 
-      {/* PART 2: BOOKING FORM + INFO SIDEBAR */}
+      {/* PART 2: BOOKING FORM + INFO SIDEBAR - Mobile optimized spacing */}
       <div 
         id="plan-visit-form"
         className="
           w-full 
           bg-gray-50
-          py-12 md:py-16 px-6
+          py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8
         "
       >
         <div className="max-w-7xl mx-auto">
-          {/* CENTERED HEADER WITH BADGE */}
-          <div className="text-center mb-12">
+          {/* CENTERED HEADER WITH BADGE - Mobile optimized */}
+          <div className="text-center mb-10 sm:mb-12">
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-coral/10 border border-coral/20 rounded-full text-coral font-semibold text-sm mb-4"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-coral/10 border border-coral/20 rounded-full text-coral font-semibold text-xs sm:text-sm mb-3 sm:mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -247,7 +250,7 @@ const PlanYourVisitSection = () => {
 
             {/* Title */}
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4"
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -258,7 +261,7 @@ const PlanYourVisitSection = () => {
 
             {/* Subtitle */}
             <motion.p
-              className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -670,9 +673,9 @@ const PlanYourVisitSection = () => {
         </div>
       </div>
 
-      {/* PART 3: TRUST BAR */}
-      <div className="w-full min-h-16 bg-white border-t border-gray-200 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* PART 3: TRUST BAR - Mobile optimized spacing */}
+      <div className="w-full min-h-16 bg-white border-t border-gray-200 py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
             {/* Stat 1: Famílias */}
             <div className="flex items-center justify-center gap-2">
