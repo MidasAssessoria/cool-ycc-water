@@ -82,64 +82,6 @@ const Index = () => {
         <BungalowsCompactSection />
       </section>
 
-      {/* Features Section */}
-      <section className="relative z-0 -mt-[80px] md:-mt-[120px] lg:-mt-[160px] pt-[100px] md:pt-[140px] lg:pt-[180px] py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
-            Diversão Para Toda a Família
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-glow transition-all hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6">
-                <span className="text-4xl">🌊</span>
-              </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-4">Toboáguas Radicais</h3>
-              <p className="text-muted-foreground text-lg">
-                Adrenalina pura nos toboáguas mais emocionantes da região. Para os aventureiros de plantão!
-              </p>
-            </div>
-
-            <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-glow transition-all hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6">
-                <span className="text-4xl">👨‍👩‍👧‍👦</span>
-              </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-4">Área Infantil</h3>
-              <p className="text-muted-foreground text-lg">
-                Espaço seguro e divertido para as crianças, com piscinas rasas e brinquedos aquáticos.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-glow transition-all hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6">
-                <span className="text-4xl">🏖️</span>
-              </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-4">Piscina de Ondas</h3>
-              <p className="text-muted-foreground text-lg">
-                Sinta-se na praia com nossa incrível piscina de ondas. Diversão garantida!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Pronto para a Aventura?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Garanta seus ingressos agora e aproveite um dia inesquecível no YCC Water Park
-          </p>
-          <Button 
-            size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-12 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
-          >
-            Comprar Agora
-          </Button>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-card py-12 px-4 sm:px-6 lg:px-8 border-t border-border">
