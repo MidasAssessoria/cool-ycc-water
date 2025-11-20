@@ -40,10 +40,10 @@ const BungalowsHeroSection = () => {
             Bungalows Exclusivos
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-bungalow-primary/80 font-light max-w-3xl mx-auto animate-fade-in">
-            Seu Refúgio Privado
+            Bungalows premium totalmente equipados con derecho de uso por 50 años
           </p>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Propriedade compartilhada inteligente com retorno garantido
+            Tu refugio privado dentro del parque con rentabilidad proyectada
           </p>
         </header>
 
@@ -66,11 +66,11 @@ const BungalowsHeroSection = () => {
                   <Home className="w-6 h-6 text-bungalow-primary" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">81m² de Conforto</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">81m² de Confort</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• 1 dormitório + 1 suíte com closet</li>
-                    <li>• Acomoda até 6 pessoas</li>
-                    <li>• Totalmente mobiliado e equipado</li>
+                    <li>• 1 dormitorio + 1 suite con vestidor</li>
+                    <li>• Capacidad para 6 personas</li>
+                    <li>• Totalmente amoblado y equipado</li>
                   </ul>
                 </div>
               </div>
@@ -85,9 +85,9 @@ const BungalowsHeroSection = () => {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Comodidades Premium</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Ar condicionado em todos os ambientes</li>
-                    <li>• Hidromassagem no terraço privado</li>
-                    <li>• WiFi, TV, cozinha completa</li>
+                    <li>• Aire acondicionado en todos los ambientes</li>
+                    <li>• Hidromasaje en la terraza privada</li>
+                    <li>• WiFi, TV, cocina completa</li>
                   </ul>
                 </div>
               </div>
@@ -100,10 +100,10 @@ const BungalowsHeroSection = () => {
                   <Calendar className="w-6 h-6 text-bungalow-coral" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Flexibilidade Total</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Flexibilidad Total</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Contrato de 50 anos</li>
-                    <li>• Use, alugue ou intercambie</li>
+                    <li>• Contrato de 50 años</li>
+                    <li>• Usa, alquila o intercambia</li>
                     <li>• Sistema rotativo inteligente</li>
                   </ul>
                 </div>
@@ -116,11 +116,11 @@ const BungalowsHeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <FeatureCard
             icon={Globe}
-            title="Intercâmbio Global"
+            title="Intercambio Global"
             features={[
-              "Acesso a 4.000+ destinos",
-              "110 países disponíveis",
-              "Programa Férias Fácil incluído",
+              "Acceso a 4.000+ destinos",
+              "110 países disponibles",
+              "Programa Ferias Fácil incluido",
             ]}
             colorClass="bg-gradient-to-br from-bungalow-primary to-bungalow-secondary"
             bgClass="bg-gradient-to-br from-bungalow-primary/10 to-bungalow-secondary/10"
@@ -129,11 +129,11 @@ const BungalowsHeroSection = () => {
 
           <FeatureCard
             icon={TrendingUp}
-            title="ROI Atrativo"
+            title="ROI Atractivo"
             features={[
-              "Retorno de até 29,4% ao ano",
-              "Payback entre 3,4 e 5,2 anos",
-              "Gestão profissional inclusa",
+              "Retorno de hasta 29,4% al año",
+              "Payback entre 3,4 y 5,2 años",
+              "Gestión profesional incluida",
             ]}
             colorClass="bg-gradient-to-br from-green-500 to-emerald-600"
             bgClass="bg-gradient-to-br from-green-500/10 to-emerald-600/10"
@@ -142,11 +142,11 @@ const BungalowsHeroSection = () => {
 
           <FeatureCard
             icon={Key}
-            title="Propriedade Inteligente"
+            title="Propiedad Inteligente"
             features={[
-              "Transferível e herdável",
-              "80% da renda para você",
-              "Zero preocupações operacionais",
+              "Transferible y heredable",
+              "80% de la renta es tuya",
+              "Cero preocupaciones operacionales",
             ]}
             colorClass="bg-gradient-to-br from-bungalow-coral to-orange-500"
             bgClass="bg-gradient-to-br from-bungalow-coral/10 to-orange-500/10"
@@ -165,14 +165,14 @@ const BungalowsHeroSection = () => {
             />
             <StatsCounter
               end={50}
-              label="Anos de Direito"
+              label="Años de Derecho"
               color="text-bungalow-secondary"
               duration={2200}
             />
             <StatsCounter
               end={80}
               suffix="%"
-              label="Renda do Proprietário"
+              label="Renta del Propietario"
               color="text-bungalow-coral"
               duration={2400}
             />
@@ -189,26 +189,26 @@ const BungalowsHeroSection = () => {
         {/* ROI Comparison Cards - Enhanced with Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <ROICard
-            occupancy="Ocupação 100%"
+            occupancy="Ocupación 100%"
             percentage="29,4%"
             subtitle="Retorno Anual"
-            annualReturn="USD 4.940/ano líquido"
-            payback="Payback: 3,4 anos"
+            annualReturn="USD 4.940/año neto"
+            payback="Payback: 3,4 años"
             variant="green"
           />
 
           <ROICard
-            occupancy="Cenário Conservador (70%)"
+            occupancy="Escenario Conservador (70%)"
             percentage="19,4%"
             subtitle="Retorno Anual"
-            annualReturn="USD 3.260/ano líquido"
-            payback="Payback: 5,2 anos"
+            annualReturn="USD 3.260/año neto"
+            payback="Payback: 5,2 años"
             variant="blue"
           />
         </div>
 
         {/* CTA Section with Premium Buttons */}
-        <footer className="text-center" aria-label="Ações de contato">
+        <footer className="text-center" aria-label="Acciones de contacto">
           <CTAButtons />
 
           {/* Trust Indicators with Icons */}

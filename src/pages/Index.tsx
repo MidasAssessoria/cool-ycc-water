@@ -116,25 +116,25 @@ const Index = () => {
               <div className="space-y-2 text-white/70">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">Fortaleza - CE</span>
+                  <span className="text-sm">Ruta 1 Km 13.5, Ypané</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Sun className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">32°C - Clima perfeito!</span>
+                  <span className="text-sm">A 25 minutos de Asunción</span>
                 </div>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
             <div className="space-y-4">
-              <h4 className="font-bold text-white text-base">Links Rápidos</h4>
+              <h4 className="font-bold text-white text-base">Navegación Rápida</h4>
               <ul className="space-y-2">
                 <li>
                   <button 
                     onClick={() => scrollToSection('attractions')}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
-                    Atrações
+                    Atracciones
                   </button>
                 </li>
                 <li>
@@ -142,7 +142,7 @@ const Index = () => {
                     onClick={() => scrollToSection('booking')}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
-                    Contato
+                    Contacto
                   </button>
                 </li>
                 <li>
@@ -160,7 +160,7 @@ const Index = () => {
           {/* Footer Bottom */}
           <div className="text-center text-white/50 pt-8 border-t border-white/10">
             <p className="text-sm">
-              © 2025 YCC Water Park. Todos os direitos reservados.
+              © 2025 YCC Water Park. Todos los derechos reservados.
             </p>
           </div>
         </div>
