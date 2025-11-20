@@ -297,20 +297,20 @@ All colors MUST be HSL.
     animation: ken-burns 20s ease-out infinite alternate;
   }
 
-  /* Glass Morphism Utility Classes */
+  /* Glass Morphism Utility Classes - WCAG compliant with solid backgrounds */
   .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   }
 
   .glass-card-strong {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   }
 

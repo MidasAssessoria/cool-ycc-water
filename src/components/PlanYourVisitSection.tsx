@@ -156,7 +156,7 @@ const PlanYourVisitSection = () => {
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 z-10" />
 
-        {/* Floating Badge (top-right) */}
+        {/* Floating Badge (top-right) - WCAG compliant */}
         <motion.div 
           className="absolute top-4 right-4 md:top-8 md:right-8 z-20"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -167,13 +167,13 @@ const PlanYourVisitSection = () => {
             className="
               relative
               backdrop-blur-md 
-              bg-white/20 
-              border border-white/30
+              bg-coral/95
+              border-2 border-white
               text-white
               px-6 py-2
               rounded-full
               text-sm font-semibold
-              shadow-lg
+              shadow-xl
               animate-pulse
               cursor-default
             "

@@ -35,22 +35,25 @@ const TopBar = React.memo(() => {
           {/* Desktop - Nav Links Center + CTA Right */}
           <div className="hidden lg:flex items-center gap-8 flex-1 justify-end">
             {/* Nav Links */}
-            <nav className="flex items-center gap-8">
+            <nav className="flex items-center gap-8" aria-label="Navegação principal">
               <button 
                 onClick={() => window.location.href = '/#attractions'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base"
+                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                aria-label="Ir para seção de atrações"
               >
                 Atrações
               </button>
               <button 
                 onClick={() => window.location.href = '/#booking'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base"
+                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                aria-label="Ir para seção de compra de ingressos"
               >
                 Ingressos
               </button>
               <button 
                 onClick={() => window.location.href = '/#contact'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base"
+                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                aria-label="Ir para seção de contato"
               >
                 Contato
               </button>
