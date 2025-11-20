@@ -55,6 +55,7 @@ const PlanYourVisitSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [phoneValue, setPhoneValue] = useState("+595");
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const {
     register,
@@ -99,7 +100,7 @@ const PlanYourVisitSection = () => {
     if (!emblaApi) return;
 
     const onSelect = () => {
-      // Carousel selection logic can be added here if needed
+      setSelectedIndex(emblaApi.selectedScrollSnap());
     };
 
     emblaApi.on("select", onSelect);
@@ -234,6 +235,24 @@ const PlanYourVisitSection = () => {
               Tour guiado + Parque + Bungalows + Oportunidade de investimento
             </motion.p>
           </div>
+        </div>
+
+        {/* Carousel Dots - Indicator */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300 touch-manipulation",
+                selectedIndex === index
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75 w-2"
+              )}
+              aria-label={`Ir para slide ${index + 1}`}
+              aria-current={selectedIndex === index ? "true" : "false"}
+            />
+          ))}
         </div>
 
       </div>
