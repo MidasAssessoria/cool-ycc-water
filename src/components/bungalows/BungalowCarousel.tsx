@@ -2,7 +2,16 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import bungalowsImage from "@/assets/attractions/bungalows.jpg";
+import { 
+  exteriorFront01, 
+  exteriorFront02,
+  exteriorSide01,
+  interiorLiving01,
+  interiorBalcony01,
+  interiorLiving02,
+  floorPlanGround,
+  floorPlanUpper
+} from "@/assets/bungalows";
 
 interface CarouselSlide {
   id: number;
@@ -15,38 +24,52 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    image: bungalowsImage,
+    image: exteriorFront01,
     title: "Vista Exterior",
-    description: "Bungalows modernos com paisagismo tropical",
-    alt: "Vista exterior de bungalows modernos com paisagismo tropical e piscina",
+    description: "Arquitetura A-frame com fachada de vidro",
+    alt: "Bungalow A-frame com fachada frontal de vidro, deck de madeira e vegetação ao redor",
   },
   {
     id: 2,
-    image: bungalowsImage,
-    title: "Sala de Estar",
-    description: "Espaço amplo com móveis contemporâneos",
-    alt: "Interior da sala de estar com móveis modernos e decoração sofisticada",
+    image: exteriorFront02,
+    title: "Fachada Frontal",
+    description: "Design icônico com telhado triangular",
+    alt: "Vista frontal do bungalow A-frame mostrando estrutura triangular característica",
   },
   {
     id: 3,
-    image: bungalowsImage,
-    title: "Suíte Master",
-    description: "Conforto e privacidade com closet completo",
-    alt: "Suíte master com cama king size, closet e acabamentos premium",
+    image: interiorLiving01,
+    title: "Interior Pé-Direito Duplo",
+    description: "Amplitude e conforto com madeira natural",
+    alt: "Interior do bungalow com pé-direito duplo, revestimento em madeira e escada para mezanino",
   },
   {
     id: 4,
-    image: bungalowsImage,
-    title: "Terraço Privado",
-    description: "Hidromassagem com vista privilegiada",
-    alt: "Terraço privativo com jacuzzi, espreguiçadeiras e área de relaxamento",
+    image: interiorBalcony01,
+    title: "Varanda Privativa",
+    description: "Espaço de relaxamento integrado",
+    alt: "Varanda interna com porta de madeira e vista para a área externa",
   },
   {
     id: 5,
-    image: bungalowsImage,
-    title: "Cozinha Gourmet",
-    description: "Totalmente equipada para suas refeições",
-    alt: "Cozinha moderna totalmente equipada com eletrodomésticos de última geração",
+    image: exteriorSide01,
+    title: "Vista Lateral Completa",
+    description: "Estrutura premium em madeira e vidro",
+    alt: "Vista lateral do bungalow mostrando telhado, paredes e janelas panorâmicas",
+  },
+  {
+    id: 6,
+    image: floorPlanGround,
+    title: "Planta Térrea",
+    description: "Layout: 58,70m² construídos + deck 13,61m²",
+    alt: "Planta baixa do pavimento térreo com medidas detalhadas e distribuição dos ambientes",
+  },
+  {
+    id: 7,
+    image: floorPlanUpper,
+    title: "Planta Superior",
+    description: "Mezanino: 22,32m² + sacada 3,94m²",
+    alt: "Planta do pavimento superior mostrando mezanino e sacada com dimensões",
   },
 ];
 
@@ -129,7 +152,8 @@ const BungalowCarousel = () => {
                   src={slide.image}
                   alt={slide.alt}
                   className="w-full h-full object-cover animate-ken-burns"
-                  loading="lazy"
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                  fetchPriority={slide.id === 1 ? "high" : "auto"}
                 />
                 
                 {/* Gradient Overlay - Dark bottom to transparent top */}
