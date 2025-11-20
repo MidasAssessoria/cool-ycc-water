@@ -207,6 +207,17 @@ const BungalowsCompactSection = ({
         <p className="text-sm text-gray-500 mt-3">
           ✨ Tour guiado + Apresentação sem compromisso
         </p>
+
+        {/* REAL Casas Credit */}
+        <div className="mt-6 flex items-center justify-center gap-2 text-sm">
+          <span className="text-gray-500">Parceria com</span>
+          <div className="flex items-center gap-2 bg-gradient-to-r from-coral/10 to-red-50 px-4 py-2 rounded-lg border border-coral/20">
+            <div className="w-6 h-6 bg-coral rounded flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-black text-xs">R</span>
+            </div>
+            <span className="font-bold text-coral">REAL Casas Pré Fabricadas</span>
+          </div>
+        </div>
       </footer>
     </section>
   );
