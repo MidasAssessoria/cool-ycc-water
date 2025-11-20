@@ -1,7 +1,20 @@
 import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronDown, Calendar as CalendarIcon, Clock, User, Phone as PhoneIcon, ChevronDown as ChevronDownIcon } from "lucide-react";
+import { 
+  ChevronDown, 
+  Calendar as CalendarIcon, 
+  Clock, 
+  User, 
+  Phone as PhoneIcon, 
+  ChevronDown as ChevronDownIcon,
+  MapPin,
+  Users,
+  Gift,
+  ExternalLink,
+  MessageCircle,
+  Check
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
@@ -452,12 +465,138 @@ const PlanYourVisitSection = () => {
               </form>
             </div>
 
-            {/* RIGHT: Info Sidebar (placeholder) */}
+            {/* RIGHT: Info Sidebar */}
             <div className="flex flex-col gap-6">
+              {/* CARD 1: Interactive Map */}
+              <div className="relative h-64 rounded-2xl shadow-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização YCC Water Park - Ypané, Paraguay"
+                  className="w-full h-full"
+                />
+                
+                {/* Button Overlay */}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ypané,Paraguay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    absolute bottom-4 left-1/2 -translate-x-1/2
+                    flex items-center gap-2
+                    bg-white hover:bg-gray-50
+                    shadow-lg hover:shadow-xl
+                    rounded-full
+                    px-4 py-2
+                    text-sm font-semibold text-gray-900
+                    transition-all duration-200
+                    hover:scale-105
+                  "
+                >
+                  <MapPin className="w-4 h-4 text-coral" />
+                  Abrir no Google Maps
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              {/* CARD 2: Essential Info Grid */}
               <div className="bg-gradient-to-br from-blue-50 to-turquoise-50 rounded-2xl p-6 shadow-lg">
-                <p className="text-gray-400 text-center py-12">
-                  Sidebar de informações será implementada na Fase 3
-                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Info Item 1: Horários */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
+                      <Clock className="w-6 h-6 text-coral" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Horários</p>
+                      <p className="text-base font-bold text-gray-900">Sáb-Dom 8h-18h</p>
+                    </div>
+                  </div>
+
+                  {/* Info Item 2: Localização */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-turquoise/20 flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-turquoise" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Localização</p>
+                      <p className="text-base font-bold text-gray-900">Ypané, 30min de Asunción</p>
+                    </div>
+                  </div>
+
+                  {/* Info Item 3: Experiência */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-coral" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Experiência</p>
+                      <p className="text-base font-bold text-gray-900">Tour guiado 2 horas</p>
+                    </div>
+                  </div>
+
+                  {/* Info Item 4: Incluído */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Gift className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Incluído</p>
+                      <p className="text-base font-bold text-gray-900">Entrada + Guia + Cortesia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CARD 3: Quick Contact */}
+              <div className="bg-white rounded-xl p-4 shadow-md flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600">Dúvidas? Fale no WhatsApp</p>
+                </div>
+                <a
+                  href="https://wa.me/595981234567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tour%20VIP%20no%20YCC%20Water%20Park"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex items-center justify-center
+                    w-12 h-12
+                    bg-green-500 hover:bg-green-600
+                    text-white
+                    rounded-full
+                    transition-all
+                    hover:scale-110
+                    shadow-md hover:shadow-lg
+                  "
+                  aria-label="Contatar via WhatsApp"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+              </div>
+
+              {/* What to Expect Section */}
+              <div className="bg-white rounded-xl p-5 shadow-md">
+                <h3 className="text-sm font-semibold text-gray-700 mb-3">
+                  O Que Você Vai Ver:
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
+                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
+                    <span>🏞️ Todas as atrações do parque</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
+                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
+                    <span>🏡 Bungalows mobiliados de 66m²</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
+                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
+                    <span>💼 Oportunidade de investimento fracionado</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
