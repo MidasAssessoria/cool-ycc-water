@@ -256,6 +256,37 @@ All colors MUST be HSL.
     }
   }
 
+  /* Ken Burns Effect - Subtle Zoom Animation */
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-ken-burns {
+    animation: ken-burns 20s ease-out infinite alternate;
+  }
+
+  /* Glass Morphism Utility Classes */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .glass-card-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  }
+
   /* Disable hover effects on touch devices */
   @media (hover: none) {
     .hover\:scale-105:hover,
