@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-waterpark.jpg";
 import Navigation from "@/components/navigation/Navigation";
-import { BookingForm } from "@/components/forms/BookingForm";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
 import BungalowsHeroSection from "@/components/BungalowsHeroSection";
-import LocationSection from "@/components/LocationSection";
 import PlanYourVisitSection from "@/components/PlanYourVisitSection";
 
 const Index = () => {
@@ -72,19 +70,10 @@ const Index = () => {
       {/* Aqua Park Hero Section */}
       <AquaParkSection />
 
-      {/* Booking Form Section */}
+      {/* Plan Your Visit Section - Replaces Booking Form + Location */}
       <section id="booking">
-        <BookingForm />
+        <PlanYourVisitSection />
       </section>
-
-      {/* Bungalows Hero Section */}
-      <BungalowsHeroSection />
-
-      {/* Plan Your Visit Section (FASE 1 - Temporary Preview) */}
-      <PlanYourVisitSection />
-
-      {/* Location Section */}
-      <LocationSection />
 
       {/* Features Section */}
       <section className="relative z-0 -mt-[80px] md:-mt-[120px] lg:-mt-[160px] pt-[100px] md:pt-[140px] lg:pt-[180px] py-20 px-4 sm:px-6 lg:px-8 bg-white">

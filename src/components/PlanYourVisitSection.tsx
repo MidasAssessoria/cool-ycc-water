@@ -1,6 +1,7 @@
 import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 import { 
   ChevronDown, 
   Calendar as CalendarIcon, 
@@ -13,7 +14,10 @@ import {
   Gift,
   ExternalLink,
   MessageCircle,
-  Check
+  Check,
+  Star,
+  Home,
+  Globe
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -158,7 +162,12 @@ const PlanYourVisitSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 z-10" />
 
         {/* Floating Badge (top-right) */}
-        <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20 animate-fade-in">
+        <motion.div 
+          className="absolute top-4 right-4 md:top-8 md:right-8 z-20"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div
             className="
               relative
@@ -173,47 +182,51 @@ const PlanYourVisitSection = () => {
               animate-pulse
               cursor-default
             "
+            role="status"
+            aria-label="Tour VIP Guiado disponível"
           >
             🎟️ Tour VIP Guiado
           </div>
-        </div>
+        </motion.div>
 
         {/* Center Content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
           <div className="max-w-4xl">
             {/* Main Heading */}
-            <h1
+            <motion.h1
               className="
                 text-5xl md:text-6xl lg:text-7xl
                 font-bold 
                 text-white
                 mb-4
-                animate-fade-in
                 [text-shadow:_0_2px_10px_rgba(0,0,0,0.3)]
               "
-              style={{ animationDelay: "500ms", animationFillMode: "backwards" }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               Planeje Sua Visita VIP
-            </h1>
+            </motion.h1>
 
             {/* Subheading */}
-            <p
+            <motion.p
               className="
                 text-xl md:text-2xl lg:text-3xl
                 font-normal
                 text-white/90
-                animate-fade-in
                 [text-shadow:_0_1px_8px_rgba(0,0,0,0.3)]
               "
-              style={{ animationDelay: "700ms", animationFillMode: "backwards" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
               Tour guiado + Parque + Bungalows + Oportunidade de investimento
-            </p>
+            </motion.p>
           </div>
         </div>
 
         {/* Scroll Indicator (bottom center) */}
-        <button
+        <motion.button
           onClick={scrollToForm}
           className="
             absolute 
@@ -229,13 +242,17 @@ const PlanYourVisitSection = () => {
             group
           "
           aria-label="Rolar para o formulário de agendamento"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
         >
           <span className="text-sm mb-2">Role para agendar</span>
           <ChevronDown 
             className="w-6 h-6 animate-bounce-slow group-hover:text-white" 
             strokeWidth={2}
+            aria-hidden="true"
           />
-        </button>
+        </motion.button>
       </div>
 
       {/* PART 2: BOOKING FORM + INFO SIDEBAR */}
@@ -250,14 +267,22 @@ const PlanYourVisitSection = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* LEFT: Smart Booking Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               {/* Form Header */}
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                Reserve Seu Tour Gratuito
-              </h2>
-              <p className="text-lg text-gray-500 mb-6">
-                Preencha em 30 segundos ⚡
-              </p>
+              <div role="heading" aria-level={2}>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  Reserve Seu Tour Gratuito
+                </h2>
+                <p className="text-lg text-gray-500 mb-6">
+                  Preencha em 30 segundos ⚡
+                </p>
+              </div>
 
               {/* Quick Benefit Pills */}
               <div className="flex flex-wrap gap-2 mb-8">
@@ -273,14 +298,14 @@ const PlanYourVisitSection = () => {
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
                 {/* Date + Time Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Date Picker */}
                   <div className="space-y-2">
-                    <Label htmlFor="visitDate">Data da Visita</Label>
+                    <Label htmlFor="visitDate" className="text-gray-700">Data da Visita *</Label>
                     <Popover>
-                      <PopoverTrigger asChild>
+                      <PopoverTrigger asChild aria-label="Selecionar data da visita">
                         <Button
                           variant="outline"
                           className={cn(
@@ -320,10 +345,11 @@ const PlanYourVisitSection = () => {
 
                   {/* Time Select */}
                   <div className="space-y-2">
-                    <Label htmlFor="visitTime">Horário</Label>
+                    <Label htmlFor="visitTime" className="text-gray-700">Horário *</Label>
                     <Select
                       value={selectedTime}
                       onValueChange={(value) => setValue("visitTime", value as "morning" | "afternoon")}
+                      aria-label="Selecionar horário da visita"
                     >
                       <SelectTrigger className="h-12 border-2 focus:border-coral">
                         <Clock className="mr-2 h-4 w-4" />
@@ -342,26 +368,29 @@ const PlanYourVisitSection = () => {
 
                 {/* Name Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="fullName">Nome Completo</Label>
+                  <Label htmlFor="fullName" className="text-gray-700">Nome Completo *</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
                     <Input
                       id="fullName"
                       {...register("fullName")}
                       placeholder="Seu nome"
                       className="h-12 pl-10 border-2 focus:border-coral"
+                      aria-required="true"
+                      aria-invalid={!!errors.fullName}
+                      aria-describedby={errors.fullName ? "fullName-error" : undefined}
                     />
                   </div>
                   {errors.fullName && (
-                    <p className="text-sm text-red-600">{errors.fullName.message}</p>
+                    <p className="text-sm text-red-600" id="fullName-error" role="alert">{errors.fullName.message}</p>
                   )}
                 </div>
 
                 {/* Phone Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="phone">WhatsApp</Label>
+                  <Label htmlFor="phone" className="text-gray-700">WhatsApp *</Label>
                   <div className="relative">
-                    <PhoneIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                    <PhoneIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
                     <Input
                       id="phone"
                       type="tel"
@@ -381,24 +410,30 @@ const PlanYourVisitSection = () => {
                       })}
                       placeholder="+595 XXX XXX XXX"
                       className="h-12 pl-10 border-2 focus:border-coral"
+                      aria-required="true"
+                      aria-invalid={!!errors.phone}
+                      aria-describedby={errors.phone ? "phone-error" : undefined}
                     />
                   </div>
                   {errors.phone && (
-                    <p className="text-sm text-red-600">{errors.phone.message}</p>
+                    <p className="text-sm text-red-600" id="phone-error" role="alert">{errors.phone.message}</p>
                   )}
                 </div>
 
                 {/* Number of People */}
                 <div className="space-y-2">
-                  <Label>Pessoas</Label>
-                  <div className="flex gap-2">
+                  <Label className="text-gray-700">Pessoas *</Label>
+                  <div className="flex gap-2" role="radiogroup" aria-label="Selecione o número de pessoas">
                     {(["1-2", "3-4", "5+"] as const).map((option) => (
                       <button
                         key={option}
                         type="button"
                         onClick={() => setValue("numberOfPeople", option)}
+                        role="radio"
+                        aria-checked={numberOfPeople === option}
+                        aria-label={`${option} pessoas`}
                         className={cn(
-                          "flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all",
+                          "flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2",
                           numberOfPeople === option
                             ? "bg-coral text-white border-coral"
                             : "bg-white text-gray-700 border-gray-300 hover:border-coral"
@@ -435,10 +470,11 @@ const PlanYourVisitSection = () => {
                       maxLength={200}
                       className="border-2 focus:border-coral resize-none"
                       rows={3}
+                      aria-describedby={errors.message ? "message-error" : undefined}
                     />
                   )}
                   {errors.message && (
-                    <p className="text-sm text-red-600">{errors.message.message}</p>
+                    <p className="text-sm text-red-600" id="message-error" role="alert">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -459,16 +495,22 @@ const PlanYourVisitSection = () => {
                 </Button>
 
                 {/* Helper Text */}
-                <p className="text-xs text-gray-500 text-center mt-3">
+                <p className="text-xs text-gray-500 text-center mt-3" role="contentinfo">
                   ⚡ Confirmação em até 2 horas | 🔒 Dados protegidos
                 </p>
               </form>
-            </div>
+            </motion.div>
 
             {/* RIGHT: Info Sidebar */}
-            <div className="flex flex-col gap-6">
+            <motion.div 
+              className="flex flex-col gap-6"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {/* CARD 1: Interactive Map */}
-              <div className="relative h-64 rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative h-64 rounded-2xl shadow-lg overflow-hidden" role="region" aria-label="Mapa de localização">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -598,17 +640,59 @@ const PlanYourVisitSection = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* PART 3: TRUST BAR */}
-      <div className="w-full h-16 bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
-          <p className="text-gray-400 text-sm">
-            Trust Bar será implementada na Fase 4
-          </p>
+      <div className="w-full min-h-16 bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200 py-4">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+            {/* Stat 1: Famílias */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center">
+                <Users className="w-5 h-5 text-coral" aria-hidden="true" />
+              </div>
+              <div className="text-left">
+                <p className="text-xl font-bold text-gray-900">500+</p>
+                <p className="text-sm text-gray-600">Famílias</p>
+              </div>
+            </div>
+
+            {/* Stat 2: Avaliação */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                <Star className="w-5 h-5 text-yellow-600" aria-hidden="true" />
+              </div>
+              <div className="text-left">
+                <p className="text-xl font-bold text-gray-900">4.8/5</p>
+                <p className="text-sm text-gray-600">Avaliação</p>
+              </div>
+            </div>
+
+            {/* Stat 3: Bungalows */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-turquoise/20 flex items-center justify-center">
+                <Home className="w-5 h-5 text-turquoise" aria-hidden="true" />
+              </div>
+              <div className="text-left">
+                <p className="text-xl font-bold text-gray-900">64</p>
+                <p className="text-sm text-gray-600">Bungalows</p>
+              </div>
+            </div>
+
+            {/* Stat 4: Destinos */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <Globe className="w-5 h-5 text-blue-600" aria-hidden="true" />
+              </div>
+              <div className="text-left">
+                <p className="text-xl font-bold text-gray-900">4.000+</p>
+                <p className="text-sm text-gray-600">Destinos</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
