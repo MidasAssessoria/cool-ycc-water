@@ -1,4 +1,4 @@
-import { Home } from "lucide-react";
+import { Home, TrendingUp, Globe } from "lucide-react";
 
 interface BungalowsCompactSectionProps {
   onCTAClick?: () => void;
@@ -68,6 +68,111 @@ const BungalowsCompactSection = ({
             decoding="async"
             className="w-full h-full object-cover rounded-b-3xl md:rounded-b-none md:rounded-l-3xl shadow-2xl"
           />
+        </div>
+      </div>
+
+      {/* PART 2: Value Cards */}
+      <div className="bg-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
+            role="list" 
+            aria-label="Opções de uso do bungalow"
+          >
+            {/* Card 1: USE */}
+            <article 
+              className="group bg-gradient-to-b from-blue-50 to-white border-2 border-blue-100 rounded-2xl p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              role="listitem"
+              aria-labelledby="use-card-title"
+            >
+              {/* Icon Container */}
+              <div className="bg-coral/10 rounded-full p-4 mx-auto mb-4 w-fit">
+                <Home className="h-8 w-8 text-coral" />
+              </div>
+
+              {/* Title */}
+              <h3 id="use-card-title" className="text-2xl font-bold text-gray-900 mb-2">
+                USE
+              </h3>
+
+              {/* Description */}
+              <p className="text-base text-gray-600 mb-3">
+                Suas férias em grande estilo
+              </p>
+
+              {/* Stat Badge */}
+              <span className="inline-block bg-blue-50 text-blue-600 font-semibold text-sm px-3 py-1 rounded-full">
+                50 anos de direito
+              </span>
+            </article>
+
+            {/* Card 2: ALUGUE (FEATURED) */}
+            <article 
+              className="group relative bg-gradient-to-b from-green-50 to-white border-3 border-green-300 rounded-2xl p-8 text-center md:scale-105 shadow-2xl hover:scale-108 hover:shadow-3xl transition-all duration-300"
+              role="listitem"
+              aria-labelledby="alugue-card-title"
+            >
+              {/* Featured Badge */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md">
+                ⭐ MAIS POPULAR
+              </div>
+
+              {/* Icon Container */}
+              <div className="bg-green-100 rounded-full p-4 mx-auto mb-4 w-fit">
+                <TrendingUp className="h-8 w-8 text-green-500" />
+              </div>
+
+              {/* Title */}
+              <h3 id="alugue-card-title" className="text-2xl font-bold text-gray-900 mb-3">
+                ALUGUE
+              </h3>
+
+              {/* ROI Display (LARGE) */}
+              <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-green-600 to-emerald-700 bg-clip-text text-transparent leading-none mb-1">
+                29,4%
+              </div>
+
+              {/* ROI Label */}
+              <p className="text-sm font-medium text-gray-600 mb-3">ao ano líquido</p>
+
+              {/* Description */}
+              <p className="text-base text-gray-700 mb-3">
+                Renda passiva gerenciada 100% por nós
+              </p>
+
+              {/* Stat Badge */}
+              <span className="inline-block bg-green-100 text-green-700 font-bold text-sm px-3 py-1.5 rounded-full">
+                80% da renda é sua
+              </span>
+            </article>
+
+            {/* Card 3: INTERCAMBIE */}
+            <article 
+              className="group bg-gradient-to-b from-turquoise/10 to-white border-2 border-turquoise/20 rounded-2xl p-6 text-center hover:scale-102 hover:shadow-xl transition-all duration-300"
+              role="listitem"
+              aria-labelledby="intercambie-card-title"
+            >
+              {/* Icon Container */}
+              <div className="bg-turquoise/10 rounded-full p-4 mx-auto mb-4 w-fit">
+                <Globe className="h-8 w-8 text-turquoise" />
+              </div>
+
+              {/* Title */}
+              <h3 id="intercambie-card-title" className="text-2xl font-bold text-gray-900 mb-2">
+                INTERCAMBIE
+              </h3>
+
+              {/* Description */}
+              <p className="text-base text-gray-600 mb-3">
+                Viaje o mundo com seu bungalow
+              </p>
+
+              {/* Stat Badge */}
+              <span className="inline-block bg-turquoise/10 text-turquoise font-semibold text-sm px-3 py-1 rounded-full">
+                4.000+ destinos em 110 países
+              </span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
