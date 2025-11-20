@@ -13,21 +13,21 @@ const TopBar = React.memo(() => {
     <div className={cn(
       "sticky top-0 z-50 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 text-white shadow-lg safe-area-inset transition-all duration-300",
       isScrolled ? "shadow-2xl" : "",
-      "h-14 sm:h-16 md:h-20"
+      "h-16 sm:h-18 md:h-20"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-between h-full">
+        <div className="flex items-center justify-between h-full gap-4">
           {/* Logo - Left */}
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex items-center flex-shrink-0 min-w-0">
             <button 
               onClick={() => window.location.href = '/'}
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-md transition-transform active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
               aria-label="Ir para página inicial"
             >
               <img 
                 src={logoYCC} 
                 alt="YCC Water Park" 
-                className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto transition-all duration-300"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-all duration-300"
               />
             </button>
           </div>
@@ -35,24 +35,24 @@ const TopBar = React.memo(() => {
           {/* Desktop - Nav Links Center + CTA Right */}
           <div className="hidden lg:flex items-center gap-8 flex-1 justify-end">
             {/* Nav Links */}
-            <nav className="flex items-center gap-8" aria-label="Navegação principal">
+            <nav className="flex items-center gap-6" aria-label="Navegação principal">
               <button 
                 onClick={() => window.location.href = '/#attractions'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de atrações"
               >
                 Atrações
               </button>
               <button 
                 onClick={() => window.location.href = '/#booking'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de compra de ingressos"
               >
                 Ingressos
               </button>
               <button 
                 onClick={() => window.location.href = '/#contact'}
-                className="text-white font-semibold hover:text-white/80 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded px-2 py-1"
+                className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir para seção de contato"
               >
                 Contato
@@ -61,7 +61,7 @@ const TopBar = React.memo(() => {
 
             {/* Primary CTA - Responsive sizing */}
             <RippleButton 
-              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-2.5 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-110 transition-all"
+              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
               aria-label="Comprar ingressos"
             >
               🎟️ Comprar Ingressos
