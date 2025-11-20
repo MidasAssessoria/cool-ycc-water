@@ -110,6 +110,10 @@ export default {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.1)' },
         },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         ripple: 'ripple 0.6s ease-out',
@@ -118,6 +122,7 @@ export default {
         'slide-down-fade': 'slide-down-fade 0.2s ease-out',
         'slide-in-right': 'slide-in-right 0.3s ease-out',
         'bounce-icon': 'bounce-icon 0.3s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out',
       },
     },
   },

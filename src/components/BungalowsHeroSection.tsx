@@ -3,6 +3,10 @@ import BungalowCarousel from "./bungalows/BungalowCarousel";
 import StatsCounter from "./bungalows/StatsCounter";
 import ROICard from "./bungalows/ROICard";
 import FeatureCard from "./bungalows/FeatureCard";
+import CTAButtons from "./bungalows/CTAButtons";
+import TrustBadges from "./bungalows/TrustBadges";
+import FloatingBadge from "./bungalows/FloatingBadge";
+import WaveSeparator from "./bungalows/WaveSeparator";
 
 const BungalowsHeroSection = () => {
   return (
@@ -11,11 +15,7 @@ const BungalowsHeroSection = () => {
       aria-labelledby="bungalows-title"
     >
       {/* Floating Badge */}
-      <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20">
-        <div className="bg-bungalow-coral/10 backdrop-blur-sm border border-bungalow-coral/30 text-bungalow-coral px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse">
-          64 unidades disponíveis
-        </div>
-      </div>
+      <FloatingBadge />
 
       {/* Decorative Wave Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
@@ -207,41 +207,17 @@ const BungalowsHeroSection = () => {
           />
         </div>
 
-        {/* CTA Section - Placeholder for Phase 4 */}
+        {/* CTA Section with Premium Buttons */}
         <footer className="text-center" aria-label="Ações de contato">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <button className="bg-bungalow-coral hover:bg-bungalow-coral/90 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
-              Agendar Visita Virtual
-            </button>
-            <button className="border-2 border-bungalow-primary text-bungalow-primary hover:bg-bungalow-primary hover:text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 w-full sm:w-auto">
-              Ver Detalhes Completos
-            </button>
-          </div>
+          <CTAButtons />
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-bungalow-primary rounded-full" />
-              <span>Gestão Profissional</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-bungalow-secondary rounded-full" />
-              <span>Contrato Seguro</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-bungalow-coral rounded-full" />
-              <span>Suporte 24/7</span>
-            </div>
-          </div>
+          {/* Trust Indicators with Icons */}
+          <TrustBadges />
         </footer>
       </div>
 
-      {/* Wave Separator - Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 -mb-1">
-        <svg className="w-full h-20 md:h-24 text-background" viewBox="0 0 1440 120" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
-        </svg>
-      </div>
+      {/* Animated Wave Separator - Bottom */}
+      <WaveSeparator />
     </section>
   );
 };
