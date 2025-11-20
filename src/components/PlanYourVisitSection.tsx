@@ -128,8 +128,8 @@ const PlanYourVisitSection = () => {
       // Reset form could be added here if needed
     } catch (error) {
       toast({
-        title: "❌ Erro ao Agendar",
-        description: "Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.",
+        title: "❌ Error al Agendar",
+        description: "Ocurrió un error al procesar tu solicitud. Por favor, intenta nuevamente.",
         variant: "destructive",
       });
     } finally {
@@ -192,7 +192,7 @@ const PlanYourVisitSection = () => {
               cursor-default
             "
             role="status"
-            aria-label="Tour VIP Guiado disponível"
+            aria-label="Tour VIP Guiado disponible"
           >
             🎟️ Tour VIP Guiado
           </div>
@@ -216,7 +216,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Planeje Sua Visita VIP
+              Planea tu Visita VIP Gratuita
             </motion.h1>
 
             {/* Subheading - Mobile optimized */}
@@ -232,7 +232,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Tour guiado + Parque + Bungalows + Oportunidade de investimento
+              Conoce el parque, los bungalows y la oportunidad de inversión en un tour guiado de 2 horas
             </motion.p>
           </div>
         </div>
@@ -249,7 +249,7 @@ const PlanYourVisitSection = () => {
                   ? "bg-white w-8"
                   : "bg-white/50 hover:bg-white/75 w-2"
               )}
-              aria-label={`Ir para slide ${index + 1}`}
+              aria-label={`Ir a la diapositiva ${index + 1}`}
               aria-current={selectedIndex === index ? "true" : "false"}
             />
           ))}
@@ -278,7 +278,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              🌟 Experiência VIP Gratuita
+              🌟 Experiencia VIP Gratuita
             </motion.div>
 
             {/* Title */}
@@ -289,7 +289,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Planeje Sua Visita Guiada
+              Planea tu Visita VIP Gratuita
             </motion.h2>
 
             {/* Subtitle */}
@@ -300,7 +300,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Tour completo: Parque + Bungalows + Apresentação
+              Conoce el parque, los bungalows y la oportunidad de inversión en un tour guiado de 2 horas
             </motion.p>
           </div>
 
@@ -316,10 +316,10 @@ const PlanYourVisitSection = () => {
               {/* Form Header */}
               <div role="heading" aria-level={2}>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                  Reserve Seu Tour Gratuito
+                  Reserva tu Tour Gratuito
                 </h2>
                 <p className="text-base sm:text-lg text-gray-500 mb-4 sm:mb-6">
-                  Preencha em 30 segundos ⚡
+                  Completa en 30 segundos ⚡
                 </p>
               </div>
 
@@ -330,11 +330,11 @@ const PlanYourVisitSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Date Picker */}
                   <div className="space-y-2">
-                    <Label htmlFor="visitDate" className="text-gray-700">Data da Visita *</Label>
-                    <Popover>
-                      <PopoverTrigger asChild aria-label="Selecionar data da visita">
-                        <Button
-                          variant="outline"
+                  <Label htmlFor="visitDate" className="text-gray-700">Fecha de la Visita *</Label>
+                  <Popover>
+                    <PopoverTrigger asChild aria-label="Seleccionar fecha de la visita">
+                      <Button
+                        variant="outline"
                         className={cn(
                           "w-full justify-start text-left font-normal h-12 border-2 focus:border-coral touch-manipulation",
                           !selectedDate && "text-muted-foreground"
@@ -344,7 +344,7 @@ const PlanYourVisitSection = () => {
                           {selectedDate ? (
                             format(selectedDate, "dd/MM/yyyy", { locale: ptBR })
                           ) : (
-                            <span>Selecione a data</span>
+                            <span>Selecciona una fecha</span>
                           )}
                         </Button>
                       </PopoverTrigger>
@@ -372,15 +372,15 @@ const PlanYourVisitSection = () => {
 
                   {/* Time Button Group */}
                   <div className="space-y-2">
-                    <Label className="text-gray-700">Horário *</Label>
-                    <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Selecione o horário da visita">
+                  <Label className="text-gray-700">Horario *</Label>
+                  <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Selecciona el horario de la visita">
                       {/* Morning Button */}
                       <button
                         type="button"
                         onClick={() => setValue("visitTime", "morning")}
                         role="radio"
                         aria-checked={selectedTime === "morning"}
-                        aria-label="Manhã - 9 às 12 horas"
+                        aria-label="Mañana - 9 a 12 horas"
                         className={cn(
                           "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
                           selectedTime === "morning"
@@ -390,7 +390,7 @@ const PlanYourVisitSection = () => {
                       >
                         <Sunrise className="w-4 h-4 sm:w-5 sm:h-5" />
                         <div className="flex flex-col items-start">
-                          <span className="text-xs sm:text-sm font-semibold">Manhã</span>
+                          <span className="text-xs sm:text-sm font-semibold">Mañana</span>
                           <span className="text-[10px] sm:text-xs opacity-90">9-12h</span>
                         </div>
                       </button>
@@ -401,7 +401,7 @@ const PlanYourVisitSection = () => {
                         onClick={() => setValue("visitTime", "afternoon")}
                         role="radio"
                         aria-checked={selectedTime === "afternoon"}
-                        aria-label="Tarde - 14 às 17 horas"
+                        aria-label="Tarde - 14 a 17 horas"
                         className={cn(
                           "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
                           selectedTime === "afternoon"
@@ -424,13 +424,13 @@ const PlanYourVisitSection = () => {
 
                 {/* Name Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="fullName" className="text-gray-700">Nome Completo *</Label>
+                  <Label htmlFor="fullName" className="text-gray-700">Nombre Completo *</Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
                     <Input
                       id="fullName"
                       {...register("fullName")}
-                      placeholder="Seu nome"
+                      placeholder="Tu nombre"
                       className="h-12 pl-10 border-2 focus:border-coral touch-manipulation"
                       aria-required="true"
                       aria-invalid={!!errors.fullName}
@@ -444,7 +444,7 @@ const PlanYourVisitSection = () => {
 
                 {/* Phone Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-gray-700">WhatsApp *</Label>
+                  <Label htmlFor="phone" className="text-gray-700">Tu WhatsApp *</Label>
                   <div className="relative">
                     <PhoneIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
                     <Input
@@ -478,8 +478,8 @@ const PlanYourVisitSection = () => {
 
                 {/* Number of People */}
                 <div className="space-y-2">
-                  <Label className="text-gray-700">Pessoas *</Label>
-                  <div className="flex gap-2" role="radiogroup" aria-label="Selecione o número de pessoas">
+                  <Label className="text-gray-700">Número de Personas *</Label>
+                  <div className="flex gap-2" role="radiogroup" aria-label="Selecciona el número de personas">
                     {(["1-2", "3-4", "5+"] as const).map((option) => (
                       <button
                         key={option}
@@ -487,7 +487,7 @@ const PlanYourVisitSection = () => {
                         onClick={() => setValue("numberOfPeople", option)}
                         role="radio"
                         aria-checked={numberOfPeople === option}
-                        aria-label={`${option} pessoas`}
+                        aria-label={`${option} personas`}
                         className={cn(
                           "flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2",
                           numberOfPeople === option
@@ -524,7 +524,7 @@ const PlanYourVisitSection = () => {
                   {/* Helper Text */}
                   <p className="text-center text-sm text-gray-600 flex items-center justify-center gap-1">
                     <span className="text-coral">⚡</span>
-                    Confirmação em até 2 horas
+                    Confirmación en hasta 2 horas
                   </p>
                 </div>
               </form>
@@ -539,7 +539,7 @@ const PlanYourVisitSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* CARD 1: Interactive Google Maps - Mobile optimized height */}
-              <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de localização">
+              <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de ubicación">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -548,7 +548,7 @@ const PlanYourVisitSection = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização YCC Water Park - Ypané, Paraguay"
+                  title="Ubicación YCC Water Park - Ypané, Paraguay"
                   className="w-full h-full"
                 />
                 
@@ -573,7 +573,7 @@ const PlanYourVisitSection = () => {
                   "
                 >
                   <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-coral" />
-                  <span className="whitespace-nowrap">Ver no Google Maps</span>
+                  <span className="whitespace-nowrap">Ver en Google Maps</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -582,7 +582,7 @@ const PlanYourVisitSection = () => {
               <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl border border-gray-200">
                 <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-coral" />
-                  Informações Essenciais
+                  Información Esencial
                 </h3>
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {/* Info Item 1: Horários */}
@@ -591,8 +591,8 @@ const PlanYourVisitSection = () => {
                       <Sunrise className="w-5 h-5 sm:w-6 sm:h-6 text-coral" />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Horários</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Sáb-Dom 8h-18h</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Horarios</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Sáb-Dom 8-18h</p>
                     </div>
                   </div>
 
@@ -602,8 +602,8 @@ const PlanYourVisitSection = () => {
                       <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-turquoise" />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Localização</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Ypané, 30min</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Ubicación</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Ypané, 25min</p>
                     </div>
                   </div>
 
@@ -624,8 +624,8 @@ const PlanYourVisitSection = () => {
                       <Gift className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Bônus</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Lanche grátis</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Bonus</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Snack gratis</p>
                     </div>
                   </div>
                 </div>
@@ -636,7 +636,7 @@ const PlanYourVisitSection = () => {
                 <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <Star className="w-4 h-4 sm:w-5 sm:h-5 text-coral" />
                   <h3 className="text-base sm:text-lg font-bold text-gray-900">
-                    ✨ O que está incluído
+                    ✨ Qué está incluido
                   </h3>
                 </div>
                 <ul className="space-y-2.5 sm:space-y-3">
@@ -644,43 +644,43 @@ const PlanYourVisitSection = () => {
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🏊 Tour guiado pelo parque aquático completo</span>
+                    <span className="font-medium">🏊 Tour guiado por el parque acuático completo</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🏡 Visita aos bungalows de 66m² mobiliados</span>
+                    <span className="font-medium">🏡 Visita a los bungalows premium de 66m²</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">💼 Apresentação de investimento fracionado</span>
+                    <span className="font-medium">💼 Presentación de la oportunidad de inversión</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🍹 Lanche e bebidas de cortesia</span>
+                    <span className="font-medium">🍹 Snack y bebidas de cortesía</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                     </div>
-                    <span className="font-medium">✅ 100% gratuito, sem custo ou compromisso</span>
+                    <span className="font-medium">✅ 100% gratuito y sin compromiso</span>
                   </li>
                 </ul>
               </div>
 
               {/* CARD 4: Quick Contact WhatsApp - Mobile optimized */}
               <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md flex items-center justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">Dúvidas? Fale conosco</p>
-                  <p className="text-[10px] sm:text-xs text-gray-600 truncate">Resposta rápida no WhatsApp</p>
-                </div>
-                <a
-                  href="https://wa.me/595981234567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tour%20VIP%20no%20YCC%20Water%20Park"
+              <div className="min-w-0 flex-1">
+                <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">¿Dudas? Contáctanos</p>
+                <p className="text-[10px] sm:text-xs text-gray-600 truncate">Respuesta rápida por WhatsApp</p>
+              </div>
+              <a
+                href="https://wa.me/595994306666?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20el%20Tour%20VIP%20en%20YCC%20Water%20Park"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -696,7 +696,7 @@ const PlanYourVisitSection = () => {
                     touch-manipulation
                     flex-shrink-0
                   "
-                  aria-label="Contatar via WhatsApp"
+                  aria-label="Contactar por WhatsApp"
                 >
                   <PhoneIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
@@ -717,7 +717,7 @@ const PlanYourVisitSection = () => {
               </div>
               <div className="text-left">
                 <p className="text-xl font-bold text-gray-900">500+</p>
-                <p className="text-sm text-gray-600">Famílias</p>
+                <p className="text-sm text-gray-600">Familias</p>
               </div>
             </div>
 
@@ -728,7 +728,7 @@ const PlanYourVisitSection = () => {
               </div>
               <div className="text-left">
                 <p className="text-xl font-bold text-gray-900">4.8/5</p>
-                <p className="text-sm text-gray-600">Avaliação</p>
+                <p className="text-sm text-gray-600">Valoración</p>
               </div>
             </div>
 
