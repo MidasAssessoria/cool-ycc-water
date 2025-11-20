@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, MapPin, Sun, Globe, User, Search } from "lucide-react";
 import heroImage from "@/assets/hero-waterpark.jpg";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
-import { AccessibilityControls } from "@/components/accessibility/AccessibilityControls";
+
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
@@ -189,13 +189,6 @@ const Index = () => {
               </ul>
             </div>
 
-            {/* Column 4: Accessibility */}
-            <div className="space-y-4">
-              <h4 className="font-bold text-white text-base">Acessibilidade</h4>
-              <div className="bg-charcoal-light rounded-lg overflow-hidden">
-                <AccessibilityControls />
-              </div>
-            </div>
           </div>
 
           {/* Footer Bottom */}
