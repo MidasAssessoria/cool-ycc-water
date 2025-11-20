@@ -60,7 +60,7 @@ const Index = () => {
               onClick={() => scrollToSection('booking')}
               className="w-full sm:w-auto bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 min-h-[56px] sm:min-h-[60px] md:h-16 rounded-full shadow-2xl [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all animate-gentle-pulse touch-manipulation"
             >
-              Descubrir YCC Water Park
+              Agendar una visita
             </Button>
 
             {/* SECONDARY CTA - Touch optimized */}
@@ -70,7 +70,7 @@ const Index = () => {
               onClick={() => scrollToSection('attractions')}
               className="w-full sm:w-auto bg-white/20 hover:bg-white/30 active:bg-white/40 text-white border-2 border-white/50 backdrop-blur-sm font-semibold text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3.5 sm:py-4 md:py-5 min-h-[52px] sm:min-h-[56px] md:h-14 rounded-full [@media(hover:hover)]:hover:scale-105 active:scale-95 transition-all touch-manipulation"
             >
-              Ver Atracciones
+              Ver atracciones
             </Button>
           </div>
         </div>
