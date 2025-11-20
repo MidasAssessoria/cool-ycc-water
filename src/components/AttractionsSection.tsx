@@ -294,7 +294,7 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
   
   return (
     <article 
-      className="group bg-card rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-aqua-primary/20 hover:scale-[1.02] animate-fade-in will-change-transform focus-within:ring-2 focus-within:ring-aqua-primary focus-within:ring-offset-2 focus-within:ring-offset-background"
+      className="group bg-card rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-aqua-primary/20 [@media(hover:hover)]:hover:scale-[1.02] animate-fade-in will-change-transform focus-within:ring-2 focus-within:ring-aqua-primary focus-within:ring-offset-2 focus-within:ring-offset-background"
       style={{ 
         animationDelay: `${index * 100}ms`,
         animationFillMode: 'backwards'
@@ -304,12 +304,12 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
       aria-describedby={`attraction-desc-${attraction.id} attraction-status-${attraction.id}`}
       tabIndex={0}
     >
-      {/* Image Container */}
-      <div className="relative h-48 sm:h-52 md:h-56 overflow-hidden">
+      {/* Image Container - 16:9 Aspect Ratio */}
+      <div className="relative w-full aspect-video overflow-hidden bg-muted">
         <img
           src={attraction.image}
           alt={attraction.altText}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -325,8 +325,8 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
         </Badge>
       </div>
 
-      {/* Content */}
-      <div className="p-5 sm:p-6">
+      {/* Content - Mobile optimized padding */}
+      <div className="p-4 sm:p-5 md:p-6">
         <h3 
           id={`attraction-title-${attraction.id}`}
           className="text-lg sm:text-xl font-semibold text-card-foreground mb-2 line-clamp-2"
@@ -439,7 +439,7 @@ const AttractionsSection = () => {
           <div 
             id="attractions-grid"
             key={selectedCategory}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             role="tabpanel"
             aria-label={`Atrações da categoria ${filterCategories.find(f => f.category === selectedCategory)?.label}`}
           >
