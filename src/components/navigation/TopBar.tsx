@@ -92,8 +92,18 @@ const TopBar = React.memo(() => {
             </RippleButton>
           </div>
 
-          {/* Mobile - Hamburger Only */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile - CTA + Menu */}
+          <div className="lg:hidden flex items-center gap-2">
+            {/* CTA Compacto - Visível no mobile */}
+            <RippleButton 
+              onClick={() => smoothScrollToElement('booking', 80)}
+              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-sm px-4 py-2 rounded-full min-h-[44px] touch-manipulation shadow-lg"
+              aria-label="Comprar entradas"
+            >
+              🎟️ Entradas
+            </RippleButton>
+            
+            {/* Menu Hambúrguer */}
             <MobileMenu />
           </div>
         </div>
