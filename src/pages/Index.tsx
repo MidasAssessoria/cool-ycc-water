@@ -109,7 +109,7 @@ const Index = () => {
       {/* Footer Expandido - FASE 7: Touch targets optimized */}
       <footer className="bg-charcoal text-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             {/* Column 1: Logo + Contact */}
             <div className="space-y-4">
               <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-4" />
