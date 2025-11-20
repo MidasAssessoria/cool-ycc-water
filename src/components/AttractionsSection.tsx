@@ -202,21 +202,33 @@ interface FilterChipProps {
 }
 
 const FilterChip = ({ label, icon: Icon, category, isActive, onClick, count }: FilterChipProps) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <button
       onClick={onClick}
+      onKeyDown={handleKeyDown}
       className={`
         flex items-center gap-2 px-4 py-2.5 rounded-full font-semibold text-sm
         transition-all duration-300 whitespace-nowrap
+        focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
         ${isActive 
           ? 'bg-primary text-primary-foreground shadow-md scale-105' 
           : 'bg-card border-2 border-border text-muted-foreground hover:border-primary hover:text-foreground hover:scale-105'
         }
       `}
-      aria-label={`Filtrar por ${label}`}
-      aria-pressed={isActive}
+      role="tab"
+      aria-label={`Filtrar por ${label} - ${count} ${count === 1 ? 'atração' : 'atrações'}`}
+      aria-selected={isActive}
+      aria-controls="attractions-grid"
+      tabIndex={0}
     >
-      <Icon className="w-4 h-4" />
+      <Icon className="w-4 h-4" aria-hidden="true" />
       <span>{label}</span>
       <span className={`
         px-2 py-0.5 rounded-full text-xs font-bold
@@ -386,23 +398,32 @@ const AttractionsSection = () => {
         </header>
 
         {/* Filter Chips */}
-        <div className="mb-8 sm:mb-12 overflow-x-auto scrollbar-hide">
+        <div className="mb-8 sm:mb-12 relative">
+          {/* Scroll gradient indicators */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10 hidden sm:block" aria-hidden="true" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10 hidden sm:block" aria-hidden="true" />
+          
           <div 
-            className="flex gap-3 px-4 pb-2 min-w-max mx-auto w-fit"
-            role="tablist"
-            aria-label="Filtros de categoria"
+            className="overflow-x-auto scrollbar-hide scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {filterCategories.map((filter) => (
-              <FilterChip
-                key={filter.category}
-                label={filter.label}
-                icon={filter.icon}
-                category={filter.category}
-                isActive={selectedCategory === filter.category}
-                onClick={() => setSelectedCategory(filter.category)}
-                count={getCategoryCount(filter.category)}
-              />
-            ))}
+            <div 
+              className="flex gap-3 px-4 pb-2 min-w-max mx-auto w-fit"
+              role="tablist"
+              aria-label="Filtros de categoria de atrações"
+            >
+              {filterCategories.map((filter) => (
+                <FilterChip
+                  key={filter.category}
+                  label={filter.label}
+                  icon={filter.icon}
+                  category={filter.category}
+                  isActive={selectedCategory === filter.category}
+                  onClick={() => setSelectedCategory(filter.category)}
+                  count={getCategoryCount(filter.category)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -413,16 +434,38 @@ const AttractionsSection = () => {
           </p>
         </div>
 
-        {/* Grid Container - Responsive: 1 col mobile / 2 cols tablet / 3 cols desktop */}
-        <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-          role="tabpanel"
-          aria-label="Lista de atrações do parque"
-        >
-          {filteredAttractions.map((attraction, index) => (
-            <AttractionCard key={attraction.id} attraction={attraction} index={index} />
-          ))}
-        </div>
+        {/* Grid Container or Empty State */}
+        {filteredAttractions.length > 0 ? (
+          <div 
+            id="attractions-grid"
+            key={selectedCategory}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            role="tabpanel"
+            aria-label={`Atrações da categoria ${filterCategories.find(f => f.category === selectedCategory)?.label}`}
+          >
+            {filteredAttractions.map((attraction, index) => (
+              <AttractionCard key={attraction.id} attraction={attraction} index={index} />
+            ))}
+          </div>
+        ) : (
+          <div 
+            className="text-center py-16 sm:py-20 animate-fade-in"
+            role="status"
+            aria-live="polite"
+          >
+            <div className="max-w-md mx-auto px-4">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
+                <ListFilter className="w-8 h-8 text-muted-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Nenhuma atração encontrada
+              </h3>
+              <p className="text-muted-foreground">
+                Não encontramos atrações para esta categoria. Tente selecionar outro filtro.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
