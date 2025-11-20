@@ -213,13 +213,14 @@ const FilterChip = ({ label, icon: Icon, category, isActive, onClick, count }: F
     <button
       onClick={onClick}
       onKeyDown={handleKeyDown}
+      style={{ scrollSnapAlign: 'center' }}
       className={`
         flex items-center gap-2 px-4 py-2.5 rounded-full font-semibold text-sm
         transition-all duration-300 whitespace-nowrap
         focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
         ${isActive 
           ? 'bg-primary text-primary-foreground shadow-md scale-105' 
-          : 'bg-card border-2 border-border text-muted-foreground hover:border-primary hover:text-foreground hover:scale-105'
+          : 'bg-card border-2 border-border text-muted-foreground hover:border-primary hover:text-foreground [@media(hover:hover)]:hover:scale-105'
         }
       `}
       role="tab"
@@ -397,15 +398,20 @@ const AttractionsSection = () => {
           </p>
         </header>
 
-        {/* Filter Chips */}
+        {/* Filter Chips - Mobile optimized with scroll-snap */}
         <div className="mb-8 sm:mb-12 relative">
-          {/* Scroll gradient indicators */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10 hidden sm:block" aria-hidden="true" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10 hidden sm:block" aria-hidden="true" />
+          {/* Scroll gradient indicators - Always visible, responsive width */}
+          <div className="absolute left-0 top-0 bottom-0 w-4 sm:w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" aria-hidden="true" />
+          <div className="absolute right-0 top-0 bottom-0 w-4 sm:w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" aria-hidden="true" />
           
           <div 
             className="overflow-x-auto scrollbar-hide scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              scrollSnapType: 'x mandatory',
+              scrollPadding: '16px'
+            }}
           >
             <div 
               className="flex gap-3 px-4 pb-2 min-w-max mx-auto w-fit"
