@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MapPin, Sun, Globe, User, Search } from "lucide-react";
 import heroImage from "@/assets/hero-waterpark.jpg";
+import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import { AccessibilityControls } from "@/components/accessibility/AccessibilityControls";
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
@@ -22,8 +24,8 @@ const Index = () => {
       {/* Navigation */}
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] overflow-hidden pt-[64px] sm:pt-[80px] lg:pt-[80px]">
+      {/* Hero Section - FASE 7: Responsividade otimizada */}
+      <section className="relative h-[85vh] min-h-[600px] overflow-hidden pt-[64px] sm:pt-[72px] lg:pt-[80px]">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -32,52 +34,52 @@ const Index = () => {
         </div>
         
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-          {/* USP Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 animate-fade-in">
+          {/* USP Badge - Responsive */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 animate-fade-in">
             🏆 Maior Parque Aquático do Paraguai
           </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
+          {/* Headline - Responsive Typography */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl leading-tight px-2">
             Diversão Para Toda a Família
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl drop-shadow-lg">
+          {/* Subheadline - Responsive */}
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-2xl drop-shadow-lg px-4">
             Toboáguas, piscinas, áreas kids em 25 hectares
           </p>
 
-          {/* CTAs with Clear Hierarchy */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            {/* PRIMARY CTA - Extra large and prominent */}
+          {/* CTAs with Clear Hierarchy - Responsive */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center w-full sm:w-auto max-w-md sm:max-w-none px-4">
+            {/* PRIMARY CTA - Mobile: full width, Desktop: auto */}
             <Button 
               size="lg"
               onClick={() => scrollToSection('booking')}
-              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-xl px-10 py-8 h-16 rounded-full shadow-2xl hover:scale-110 transition-all animate-gentle-pulse"
+              className="w-full sm:w-auto bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-8 h-14 sm:h-16 rounded-full shadow-2xl hover:scale-110 transition-all animate-gentle-pulse"
             >
               🎟️ Comprar Ingressos
             </Button>
 
-            {/* SECONDARY CTA - Smaller and less prominent */}
+            {/* SECONDARY CTA - Less prominent */}
             <Button 
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('attractions')}
-              className="bg-white/20 hover:bg-white/30 text-white border-white/50 backdrop-blur-sm font-semibold text-lg px-8 py-6 h-14 rounded-full hover:scale-105 transition-all"
+              className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white border-white/50 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-12 sm:h-14 rounded-full hover:scale-105 transition-all"
             >
               Ver Atrações
             </Button>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 animate-bounce">
+        {/* Scroll Indicator - Hidden on mobile */}
+        <div className="hidden sm:block absolute bottom-32 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-8 h-8 text-white/70" />
         </div>
 
         {/* Decorative wave */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg className="w-full h-24 text-background" viewBox="0 0 1440 120" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-full h-16 sm:h-20 md:h-24 text-background" viewBox="0 0 1440 120" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
           </svg>
         </div>
@@ -102,13 +104,104 @@ const Index = () => {
       </section>
 
 
-      {/* Footer */}
-      <footer className="bg-card py-12 px-4 sm:px-6 lg:px-8 border-t border-border">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-card-foreground mb-4">YCC Water Park</h3>
-          <p className="text-muted-foreground">
-            © 2025 YCC Water Park. Todos os direitos reservados.
-          </p>
+      {/* Footer Expandido - FASE 8 */}
+      <footer className="bg-charcoal text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {/* Column 1: Logo + Contact */}
+            <div className="space-y-4">
+              <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-4" />
+              <div className="space-y-2 text-white/70">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">Fortaleza - CE</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Sun className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">32°C - Clima perfeito!</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2: Quick Links */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white text-base">Links Rápidos</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('attractions')}
+                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                  >
+                    Atrações
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('booking')}
+                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                  >
+                    Ingressos
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('contact')}
+                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                  >
+                    Contato
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('bungalows')}
+                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                  >
+                    Bangalôs
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Account & Tools */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white text-base">Minha Conta</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                    <User className="w-4 h-4" />
+                    <span>Login / Cadastro</span>
+                  </button>
+                </li>
+                <li>
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                    <Search className="w-4 h-4" />
+                    <span>Buscar</span>
+                  </button>
+                </li>
+                <li>
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                    <Globe className="w-4 h-4" />
+                    <span>PT-BR</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Accessibility */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white text-base">Acessibilidade</h4>
+              <div className="bg-charcoal-light rounded-lg overflow-hidden">
+                <AccessibilityControls />
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="text-center text-white/50 pt-8 border-t border-white/10">
+            <p className="text-sm">
+              © 2025 YCC Water Park. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
