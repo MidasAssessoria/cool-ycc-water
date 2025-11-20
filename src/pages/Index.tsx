@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-waterpark.jpg";
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
@@ -22,38 +23,56 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden pt-[104px] sm:pt-[110px] lg:pt-[136px]">
+      <section className="relative h-[85vh] min-h-[600px] overflow-hidden pt-[64px] sm:pt-[80px] lg:pt-[80px]">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-primary/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70" />
         </div>
         
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-4 sm:mb-6 animate-float drop-shadow-2xl leading-tight">
-            YCC WATER PARK
+          {/* USP Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 animate-fade-in">
+            🏆 Maior Parque Aquático do Paraguai
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
+            Diversão Para Toda a Família
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-6 sm:mb-8 max-w-3xl drop-shadow-lg font-medium px-4">
-            Mergulhe na diversão! O maior parque aquático da região
+
+          {/* Subheadline */}
+          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl drop-shadow-lg">
+            Toboáguas, piscinas, áreas kids em 25 hectares
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4">
+
+          {/* CTAs with Clear Hierarchy */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            {/* PRIMARY CTA - Extra large and prominent */}
             <Button 
-              size="lg" 
+              size="lg"
               onClick={() => scrollToSection('booking')}
-              className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-accent-foreground font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full shadow-glow transition-transform hover:scale-105 w-full sm:w-auto"
+              className="bg-gradient-to-r from-[#FF6B6B] to-[#EE5A52] hover:from-[#EE5A52] hover:to-[#DD4A42] text-white font-bold text-xl px-10 py-8 h-16 rounded-full shadow-2xl hover:scale-110 transition-all animate-gentle-pulse"
             >
-              Comprar Ingressos
+              🎟️ Comprar Ingressos
             </Button>
+
+            {/* SECONDARY CTA - Smaller and less prominent */}
             <Button 
-              size="lg" 
+              size="lg"
               variant="outline"
               onClick={() => scrollToSection('attractions')}
-              className="bg-white/10 hover:bg-white/20 text-white border-white/50 backdrop-blur-sm font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-transform hover:scale-105 w-full sm:w-auto"
+              className="bg-white/20 hover:bg-white/30 text-white border-white/50 backdrop-blur-sm font-semibold text-lg px-8 py-6 h-14 rounded-full hover:scale-105 transition-all"
             >
               Ver Atrações
             </Button>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-white/70" />
         </div>
 
         {/* Decorative wave */}
