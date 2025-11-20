@@ -34,8 +34,12 @@ const Index = () => {
         </div>
         
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-          {/* USP Badge - Responsive */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 animate-fade-in">
+          {/* USP Badge - Responsive with WCAG compliant contrast */}
+          <div 
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-coral/90 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 animate-fade-in shadow-lg"
+            role="status"
+            aria-label="Destaque: Maior Parque Aquático do Paraguai"
+          >
             🏆 Maior Parque Aquático do Paraguai
           </div>
 

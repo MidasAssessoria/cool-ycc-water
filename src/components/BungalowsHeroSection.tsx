@@ -57,17 +57,17 @@ const BungalowsHeroSection = () => {
             </article>
           </div>
 
-          {/* Right Side - Feature Cards (40%) with Glass Morphism */}
+          {/* Right Side - Feature Cards (40%) with Solid backgrounds for WCAG compliance */}
           <aside className="lg:col-span-2 space-y-4">
             {/* Feature Card 1 */}
-            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group border border-gray-200">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-primary/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-primary/30 transition-all duration-300 group-hover:scale-110">
-                  <Home className="w-6 h-6 text-bungalow-primary drop-shadow-lg" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-primary/10 rounded-xl group-hover:bg-bungalow-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <Home className="w-6 h-6 text-bungalow-primary" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">81m² de Conforto</h3>
-                  <ul className="text-sm text-foreground/80 space-y-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">81m² de Conforto</h3>
+                  <ul className="text-sm text-gray-700 space-y-1">
                     <li>• 1 dormitório + 1 suíte com closet</li>
                     <li>• Acomoda até 6 pessoas</li>
                     <li>• Totalmente mobiliado e equipado</li>
@@ -77,14 +77,14 @@ const BungalowsHeroSection = () => {
             </div>
 
             {/* Feature Card 2 */}
-            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group border border-gray-200">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-secondary/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-secondary/30 transition-all duration-300 group-hover:scale-110">
-                  <Sparkles className="w-6 h-6 text-bungalow-secondary drop-shadow-lg" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-secondary/10 rounded-xl group-hover:bg-bungalow-secondary/20 transition-all duration-300 group-hover:scale-110">
+                  <Sparkles className="w-6 h-6 text-bungalow-secondary" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Comodidades Premium</h3>
-                  <ul className="text-sm text-foreground/80 space-y-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Comodidades Premium</h3>
+                  <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Ar condicionado em todos os ambientes</li>
                     <li>• Hidromassagem no terraço privado</li>
                     <li>• WiFi, TV, cozinha completa</li>
@@ -94,14 +94,14 @@ const BungalowsHeroSection = () => {
             </div>
 
             {/* Feature Card 3 */}
-            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group border border-gray-200">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-coral/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-coral/30 transition-all duration-300 group-hover:scale-110">
-                  <Calendar className="w-6 h-6 text-bungalow-coral drop-shadow-lg" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-coral/10 rounded-xl group-hover:bg-bungalow-coral/20 transition-all duration-300 group-hover:scale-110">
+                  <Calendar className="w-6 h-6 text-bungalow-coral" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Flexibilidade Total</h3>
-                  <ul className="text-sm text-foreground/80 space-y-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Flexibilidade Total</h3>
+                  <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Contrato de 50 anos</li>
                     <li>• Use, alugue ou intercambie</li>
                     <li>• Sistema rotativo inteligente</li>
