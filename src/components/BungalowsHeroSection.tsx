@@ -1,5 +1,5 @@
 import { Home, Sparkles, Calendar, Globe, TrendingUp, Key } from "lucide-react";
-import bungalowsImage from "@/assets/attractions/bungalows.jpg";
+import BungalowCarousel from "./bungalows/BungalowCarousel";
 
 const BungalowsHeroSection = () => {
   return (
@@ -47,55 +47,24 @@ const BungalowsHeroSection = () => {
         {/* Main Content Grid - 60/40 Split on Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
           
-          {/* Left Side - Image Carousel Placeholder (60%) */}
+          {/* Left Side - Image Carousel (60%) */}
           <div className="lg:col-span-3">
-            <article className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
-              {/* Hero Image with Gradient Overlay */}
-              <div className="absolute inset-0">
-                <img 
-                  src={bungalowsImage}
-                  alt="Vista exterior de bungalows modernos com paisagismo tropical"
-                  className="w-full h-full object-cover transition-transform duration-[20000ms] group-hover:scale-105"
-                  loading="lazy"
-                />
-                {/* Gradient Overlay - Dark bottom to transparent top */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              </div>
-
-              {/* Carousel Navigation Placeholder */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {[...Array(5)].map((_, i) => (
-                  <button
-                    key={i}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === 0 
-                        ? 'bg-white w-8' 
-                        : 'bg-white/50 hover:bg-white/75'
-                    }`}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* Image Caption */}
-              <div className="absolute bottom-20 left-6 right-6 text-white z-10">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Bungalows Modernos</h3>
-                <p className="text-sm md:text-base opacity-90">66m² de conforto e exclusividade</p>
-              </div>
+            <article className="relative h-[400px] sm:h-[500px] lg:h-[600px] shadow-2xl">
+              <BungalowCarousel />
             </article>
           </div>
 
-          {/* Right Side - Feature Cards (40%) */}
+          {/* Right Side - Feature Cards (40%) with Glass Morphism */}
           <aside className="lg:col-span-2 space-y-4">
             {/* Feature Card 1 */}
-            <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-primary/10 rounded-xl group-hover:bg-bungalow-primary/20 transition-colors">
-                  <Home className="w-6 h-6 text-bungalow-primary" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-primary/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-primary/30 transition-all duration-300 group-hover:scale-110">
+                  <Home className="w-6 h-6 text-bungalow-primary drop-shadow-lg" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2">66m² de Conforto</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">66m² de Conforto</h3>
+                  <ul className="text-sm text-foreground/80 space-y-1">
                     <li>• 1 dormitório + 1 suíte com closet</li>
                     <li>• Acomoda até 6 pessoas</li>
                     <li>• Totalmente mobiliado e equipado</li>
@@ -105,14 +74,14 @@ const BungalowsHeroSection = () => {
             </div>
 
             {/* Feature Card 2 */}
-            <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-secondary/10 rounded-xl group-hover:bg-bungalow-secondary/20 transition-colors">
-                  <Sparkles className="w-6 h-6 text-bungalow-secondary" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-secondary/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-secondary/30 transition-all duration-300 group-hover:scale-110">
+                  <Sparkles className="w-6 h-6 text-bungalow-secondary drop-shadow-lg" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2">Comodidades Premium</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Comodidades Premium</h3>
+                  <ul className="text-sm text-foreground/80 space-y-1">
                     <li>• Ar condicionado em todos os ambientes</li>
                     <li>• Hidromassagem no terraço privado</li>
                     <li>• WiFi, TV, cozinha completa</li>
@@ -122,14 +91,14 @@ const BungalowsHeroSection = () => {
             </div>
 
             {/* Feature Card 3 */}
-            <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
+            <div className="glass-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] group">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-bungalow-coral/10 rounded-xl group-hover:bg-bungalow-coral/20 transition-colors">
-                  <Calendar className="w-6 h-6 text-bungalow-coral" aria-hidden="true" />
+                <div className="p-3 bg-bungalow-coral/20 backdrop-blur-sm rounded-xl group-hover:bg-bungalow-coral/30 transition-all duration-300 group-hover:scale-110">
+                  <Calendar className="w-6 h-6 text-bungalow-coral drop-shadow-lg" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2">Flexibilidade Total</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="text-lg font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Flexibilidade Total</h3>
+                  <ul className="text-sm text-foreground/80 space-y-1">
                     <li>• Contrato de 50 anos</li>
                     <li>• Use, alugue ou intercambie</li>
                     <li>• Sistema rotativo inteligente</li>
@@ -140,17 +109,20 @@ const BungalowsHeroSection = () => {
           </aside>
         </div>
 
-        {/* Feature Cards Grid - 3 Columns */}
+        {/* Feature Cards Grid - 3 Columns with Enhanced Glass Effects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {/* Globe Card */}
-          <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-[1.02] group">
-            <div className="flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-bungalow-primary to-bungalow-secondary rounded-2xl group-hover:scale-110 transition-transform">
-                <Globe className="w-8 h-8 text-white" aria-hidden="true" />
+          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-bungalow-primary/10 to-bungalow-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="relative z-10 flex flex-col items-center text-center gap-4">
+              <div className="p-4 bg-gradient-to-br from-bungalow-primary to-bungalow-secondary rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <Globe className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2">Intercâmbio Global</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Intercâmbio Global</h3>
+                <ul className="text-sm text-foreground/80 space-y-1">
                   <li>Acesso a 4.000+ destinos</li>
                   <li>110 países disponíveis</li>
                   <li>Programa Férias Fácil incluído</li>
@@ -160,14 +132,17 @@ const BungalowsHeroSection = () => {
           </div>
 
           {/* ROI Card */}
-          <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-[1.02] group">
-            <div className="flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl group-hover:scale-110 transition-transform">
-                <TrendingUp className="w-8 h-8 text-white" aria-hidden="true" />
+          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="relative z-10 flex flex-col items-center text-center gap-4">
+              <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <TrendingUp className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2">ROI Atrativo</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">ROI Atrativo</h3>
+                <ul className="text-sm text-foreground/80 space-y-1">
                   <li>Retorno de até 29,4% ao ano</li>
                   <li>Payback entre 3,4 e 5,2 anos</li>
                   <li>Gestão profissional inclusa</li>
@@ -177,14 +152,17 @@ const BungalowsHeroSection = () => {
           </div>
 
           {/* Property Card */}
-          <div className="bg-white/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-[1.02] group">
-            <div className="flex flex-col items-center text-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-bungalow-coral to-orange-500 rounded-2xl group-hover:scale-110 transition-transform">
-                <Key className="w-8 h-8 text-white" aria-hidden="true" />
+          <div className="glass-card-strong rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] group relative overflow-hidden">
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-bungalow-coral/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="relative z-10 flex flex-col items-center text-center gap-4">
+              <div className="p-4 bg-gradient-to-br from-bungalow-coral to-orange-500 rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <Key className="w-8 h-8 text-white drop-shadow-lg" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2">Propriedade Inteligente</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <h3 className="text-xl font-bold text-bungalow-charcoal mb-2 drop-shadow-sm">Propriedade Inteligente</h3>
+                <ul className="text-sm text-foreground/80 space-y-1">
                   <li>Transferível e herdável</li>
                   <li>80% da renda para você</li>
                   <li>Zero preocupações operacionais</li>
@@ -194,8 +172,8 @@ const BungalowsHeroSection = () => {
           </div>
         </div>
 
-        {/* Stats Banner - Placeholder for Phase 3 */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-border/50">
+        {/* Stats Banner with Glass Effect */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 glass-card-strong rounded-3xl p-6 md:p-8">
           <div className="text-center">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-bungalow-primary mb-2">64</div>
             <div className="text-sm md:text-base text-muted-foreground">Unidades Exclusivas</div>
