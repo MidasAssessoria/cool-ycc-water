@@ -216,7 +216,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Planea tu Tour VIP Gratuito
+              Planea tu Tour Gratuito
             </motion.h1>
 
             {/* Subheading - Mobile optimized */}
@@ -232,7 +232,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Ven a visitar el  YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada
+              Ven y realiza una visita <span className="font-bold">guiada</span> al YCC. Water Park, el proyecto completo y tus opciones de inversión en una visita <span className="font-bold">guiada</span>
             </motion.p>
           </div>
         </div>
