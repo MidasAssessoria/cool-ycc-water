@@ -1,4 +1,5 @@
 import { Home, TrendingUp, Globe } from "lucide-react";
+import { exteriorFront02 } from "@/assets/bungalows";
 
 interface BungalowsCompactSectionProps {
   onCTAClick?: () => void;
@@ -77,8 +78,8 @@ const BungalowsCompactSection = ({
         {/* RIGHT SIDE: Hero Image */}
         <div className="relative h-full order-1 md:order-2">
           <img
-            src="https://www.genspark.ai/api/files/s/9DAMjy5a"
-            alt="Bungalow A-frame exclusivo com fachada de vidro no YCC Water Park"
+            src={exteriorFront02}
+            alt="Bungalow A-frame com fachada de vidro, deck de madeira e estrutura triangular característica - YCC Water Park"
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover rounded-b-3xl md:rounded-b-none md:rounded-l-3xl shadow-2xl"
