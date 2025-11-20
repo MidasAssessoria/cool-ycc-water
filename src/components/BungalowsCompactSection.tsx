@@ -63,7 +63,7 @@ const BungalowsCompactSection = ({
             {/* Specs Pills (3 inline) */}
             <div className="flex flex-wrap gap-2">
               <span className="bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-3 py-1.5 rounded-full text-sm font-semibold">
-                🏠 66m²
+                🏠 81m² (+ 15m² deck)
               </span>
               <span className="bg-turquoise/10 border-2 border-turquoise/30 text-turquoise px-3 py-1.5 rounded-full text-sm font-semibold">
                 👥 6 pessoas
