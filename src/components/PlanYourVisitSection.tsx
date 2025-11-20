@@ -268,10 +268,10 @@ const PlanYourVisitSection = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 items-start">
-            {/* LEFT: Smart Booking Form */}
+          <div className="grid grid-cols-1 lg:grid-cols-[58%_42%] gap-6 lg:gap-8 items-start">
+            {/* LEFT: Smart Booking Form - Mobile: order-2 (appears FIRST), Desktop: order-1 */}
             <motion.div 
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+              className="bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-100 order-2 lg:order-1"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -279,10 +279,10 @@ const PlanYourVisitSection = () => {
             >
               {/* Form Header */}
               <div role="heading" aria-level={2}>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   Reserve Seu Tour Gratuito
                 </h2>
-                <p className="text-lg text-gray-500 mb-6">
+                <p className="text-base sm:text-lg text-gray-500 mb-4 sm:mb-6">
                   Preencha em 30 segundos ⚡
                 </p>
               </div>
@@ -299,10 +299,10 @@ const PlanYourVisitSection = () => {
                       <PopoverTrigger asChild aria-label="Selecionar data da visita">
                         <Button
                           variant="outline"
-                          className={cn(
-                            "w-full justify-start text-left font-normal h-12 border-2 focus:border-coral",
-                            !selectedDate && "text-muted-foreground"
-                          )}
+                        className={cn(
+                          "w-full justify-start text-left font-normal h-12 border-2 focus:border-coral touch-manipulation",
+                          !selectedDate && "text-muted-foreground"
+                        )}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {selectedDate ? (
@@ -337,7 +337,7 @@ const PlanYourVisitSection = () => {
                   {/* Time Button Group */}
                   <div className="space-y-2">
                     <Label className="text-gray-700">Horário *</Label>
-                    <div className="flex gap-3" role="radiogroup" aria-label="Selecione o horário da visita">
+                    <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Selecione o horário da visita">
                       {/* Morning Button */}
                       <button
                         type="button"
@@ -346,16 +346,16 @@ const PlanYourVisitSection = () => {
                         aria-checked={selectedTime === "morning"}
                         aria-label="Manhã - 9 às 12 horas"
                         className={cn(
-                          "flex-1 h-12 px-4 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-2",
+                          "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
                           selectedTime === "morning"
                             ? "bg-coral text-white border-coral shadow-lg"
                             : "bg-white text-gray-700 border-gray-300 hover:border-coral"
                         )}
                       >
-                        <Sunrise className="w-5 h-5" />
+                        <Sunrise className="w-4 h-4 sm:w-5 sm:h-5" />
                         <div className="flex flex-col items-start">
-                          <span className="text-sm font-semibold">Manhã</span>
-                          <span className="text-xs opacity-90">9-12h</span>
+                          <span className="text-xs sm:text-sm font-semibold">Manhã</span>
+                          <span className="text-[10px] sm:text-xs opacity-90">9-12h</span>
                         </div>
                       </button>
 
@@ -367,16 +367,16 @@ const PlanYourVisitSection = () => {
                         aria-checked={selectedTime === "afternoon"}
                         aria-label="Tarde - 14 às 17 horas"
                         className={cn(
-                          "flex-1 h-12 px-4 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-2",
+                          "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
                           selectedTime === "afternoon"
                             ? "bg-coral text-white border-coral shadow-lg"
                             : "bg-white text-gray-700 border-gray-300 hover:border-coral"
                         )}
                       >
-                        <Sunset className="w-5 h-5" />
+                        <Sunset className="w-4 h-4 sm:w-5 sm:h-5" />
                         <div className="flex flex-col items-start">
-                          <span className="text-sm font-semibold">Tarde</span>
-                          <span className="text-xs opacity-90">14-17h</span>
+                          <span className="text-xs sm:text-sm font-semibold">Tarde</span>
+                          <span className="text-[10px] sm:text-xs opacity-90">14-17h</span>
                         </div>
                       </button>
                     </div>
@@ -395,7 +395,7 @@ const PlanYourVisitSection = () => {
                       id="fullName"
                       {...register("fullName")}
                       placeholder="Seu nome"
-                      className="h-12 pl-10 border-2 focus:border-coral"
+                      className="h-12 pl-10 border-2 focus:border-coral touch-manipulation"
                       aria-required="true"
                       aria-invalid={!!errors.fullName}
                       aria-describedby={errors.fullName ? "fullName-error" : undefined}
@@ -429,7 +429,7 @@ const PlanYourVisitSection = () => {
                         setValue("phone", value);
                       })}
                       placeholder="+595 XXX XXX XXX"
-                      className="h-12 pl-10 border-2 focus:border-coral"
+                      className="h-12 pl-10 border-2 focus:border-coral touch-manipulation"
                       aria-required="true"
                       aria-invalid={!!errors.phone}
                       aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -473,7 +473,7 @@ const PlanYourVisitSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-14 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+                    className="w-full h-14 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral active:from-coral active:to-coral-dark text-white font-bold text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all touch-manipulation"
                   >
                     {isSubmitting ? (
                       <>
@@ -494,16 +494,16 @@ const PlanYourVisitSection = () => {
               </form>
             </motion.div>
 
-            {/* RIGHT: Info Sidebar */}
+            {/* RIGHT: Info Sidebar - Mobile: order-1 (appears AFTER form), Desktop: order-2 */}
             <motion.div 
-              className="flex flex-col gap-6"
+              className="flex flex-col gap-4 sm:gap-5 md:gap-6 order-1 lg:order-2"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {/* CARD 1: Interactive Google Maps */}
-              <div className="relative h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de localização">
+              {/* CARD 1: Interactive Google Maps - Mobile optimized height */}
+              <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de localização">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -522,124 +522,126 @@ const PlanYourVisitSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    absolute bottom-4 left-1/2 -translate-x-1/2
-                    flex items-center gap-2
+                    absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2
+                    flex items-center gap-1.5 sm:gap-2
                     bg-white hover:bg-gray-50
                     shadow-lg hover:shadow-xl
                     rounded-full
-                    px-5 py-2.5
-                    text-sm font-bold text-gray-900
+                    px-4 sm:px-5 py-2 sm:py-2.5
+                    text-xs sm:text-sm font-bold text-gray-900
                     transition-all duration-200
-                    hover:scale-105
+                    [@media(hover:hover)]:hover:scale-105
                     border border-gray-200
+                    touch-manipulation
+                    min-h-[44px]
                   "
                 >
-                  <MapPin className="w-4 h-4 text-coral" />
-                  Ver no Google Maps
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-coral" />
+                  <span className="whitespace-nowrap">Ver no Google Maps</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
 
-              {/* CARD 2: Essential Info Grid (4 Quick Cards) */}
-              <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200">
-                <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-coral" />
+              {/* CARD 2: Essential Info Grid (4 Quick Cards) - Mobile optimized */}
+              <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl border border-gray-200">
+                <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-coral" />
                   Informações Essenciais
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {/* Info Item 1: Horários */}
-                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
-                      <Sunrise className="w-6 h-6 text-coral" />
+                  <div className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-coral/20 flex items-center justify-center">
+                      <Sunrise className="w-5 h-5 sm:w-6 sm:h-6 text-coral" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-600">Horários</p>
-                      <p className="text-sm font-bold text-gray-900">Sáb-Dom 8h-18h</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Horários</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Sáb-Dom 8h-18h</p>
                     </div>
                   </div>
 
                   {/* Info Item 2: Localização */}
-                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-turquoise/20 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-turquoise" />
+                  <div className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-turquoise/20 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-turquoise" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-600">Localização</p>
-                      <p className="text-sm font-bold text-gray-900">Ypané, 30min</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Localização</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Ypané, 30min</p>
                     </div>
                   </div>
 
                   {/* Info Item 3: Experiência */}
-                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-coral" />
+                  <div className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-coral/20 flex items-center justify-center">
+                      <Users className="w-5 h-5 sm:w-6 sm:h-6 text-coral" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-600">Duração</p>
-                      <p className="text-sm font-bold text-gray-900">Tour de 2h</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Duração</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Tour de 2h</p>
                     </div>
                   </div>
 
                   {/* Info Item 4: Incluído */}
-                  <div className="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
-                      <Gift className="w-6 h-6 text-green-600" />
+                  <div className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Gift className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-600">Bônus</p>
-                      <p className="text-sm font-bold text-gray-900">Lanche grátis</p>
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-600">Bônus</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Lanche grátis</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 3: What's Included Checklist */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-coral/20">
-                <div className="flex items-center gap-2 mb-4">
-                  <Star className="w-5 h-5 text-coral" />
-                  <h3 className="text-lg font-bold text-gray-900">
+              {/* CARD 3: What's Included Checklist - Mobile optimized */}
+              <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border-2 border-coral/20">
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                  <Star className="w-4 h-4 sm:w-5 sm:h-5 text-coral" />
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900">
                     ✨ O que está incluído
                   </h3>
                 </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-coral" />
+                <ul className="space-y-2.5 sm:space-y-3">
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
                     <span className="font-medium">🏊 Tour guiado pelo parque aquático completo</span>
                   </li>
-                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-coral" />
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
                     <span className="font-medium">🏡 Visita aos bungalows de 66m² mobiliados</span>
                   </li>
-                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-coral" />
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
                     <span className="font-medium">💼 Apresentação de investimento fracionado</span>
                   </li>
-                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-coral" />
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
                     <span className="font-medium">🍹 Lanche e bebidas de cortesia</span>
                   </li>
-                  <li className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-green-600" />
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                     </div>
                     <span className="font-medium">✅ 100% gratuito, sem custo ou compromisso</span>
                   </li>
                 </ul>
               </div>
 
-              {/* CARD 4: Quick Contact WhatsApp */}
-              <div className="bg-white rounded-xl p-4 shadow-md flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">Dúvidas? Fale conosco</p>
-                  <p className="text-xs text-gray-600">Resposta rápida no WhatsApp</p>
+              {/* CARD 4: Quick Contact WhatsApp - Mobile optimized */}
+              <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md flex items-center justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">Dúvidas? Fale conosco</p>
+                  <p className="text-[10px] sm:text-xs text-gray-600 truncate">Resposta rápida no WhatsApp</p>
                 </div>
                 <a
                   href="https://wa.me/595981234567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tour%20VIP%20no%20YCC%20Water%20Park"
@@ -647,17 +649,20 @@ const PlanYourVisitSection = () => {
                   rel="noopener noreferrer"
                   className="
                     flex items-center justify-center
-                    w-12 h-12
-                    bg-green-500 hover:bg-green-600
+                    w-11 h-11 sm:w-12 sm:h-12
+                    bg-green-500 hover:bg-green-600 active:bg-green-700
                     text-white
                     rounded-full
                     transition-all
-                    hover:scale-110
+                    [@media(hover:hover)]:hover:scale-110
+                    active:scale-95
                     shadow-md hover:shadow-lg
+                    touch-manipulation
+                    flex-shrink-0
                   "
                   aria-label="Contatar via WhatsApp"
                 >
-                  <PhoneIcon className="w-6 h-6" />
+                  <PhoneIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </div>
             </motion.div>
