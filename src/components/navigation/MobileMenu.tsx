@@ -1,6 +1,6 @@
-import { Menu } from "lucide-react";
+import { Calendar, Menu } from "lucide-react";
 import { RippleButton } from "@/components/ui/ripple-button";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,17 +10,25 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import { smoothScrollToElement } from "@/lib/utils";
 
 const MobileMenu = React.memo(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavigation = (sectionId: string) => {
+    smoothScrollToElement(sectionId, 80);
+    setIsOpen(false);
+  };
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
           className="lg:hidden text-foreground hover:bg-accent active:bg-accent/80 min-w-[44px] min-h-[44px] touch-manipulation"
           aria-label="Abrir menu de navegação"
-          aria-expanded="false"
+          aria-expanded={isOpen}
         >
           <Menu className="h-6 w-6" />
         </Button>
@@ -48,28 +56,34 @@ const MobileMenu = React.memo(() => {
         <div className="flex flex-col p-4 sm:p-6 bg-background flex-1">
           <nav className="flex flex-col gap-1" aria-label="Menu principal">
             <button
-              onClick={() => {
-                window.location.href = '/#attractions';
-              }}
+              onClick={() => handleNavigation('attractions')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               🎢 Atrações
             </button>
             <button
-              onClick={() => {
-                window.location.href = '/#booking';
-              }}
+              onClick={() => handleNavigation('booking')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               🎟️ Ingressos
             </button>
             <button
-              onClick={() => {
-                window.location.href = '/#contact';
-              }}
+              onClick={() => handleNavigation('contact')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               📞 Contato
+            </button>
+            
+            {/* Separator */}
+            <div className="border-t border-border my-2" />
+            
+            {/* Agendar Visita - Destaque */}
+            <button
+              onClick={() => handleNavigation('plan-visit-form')}
+              className="py-3.5 text-base sm:text-lg font-semibold text-coral hover:bg-coral/10 active:bg-coral/20 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 flex items-center gap-2"
+            >
+              <Calendar className="w-5 h-5" />
+              <span>📅 Agendar Visita</span>
             </button>
           </nav>
         </div>
@@ -77,9 +91,7 @@ const MobileMenu = React.memo(() => {
         {/* CTA at bottom */}
         <div className="p-4 sm:p-6 bg-background border-t border-border shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
           <RippleButton 
-            onClick={() => {
-              window.location.href = '/#booking';
-            }}
+            onClick={() => handleNavigation('booking')}
             className="w-full bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base sm:text-lg py-4 rounded-full shadow-xl min-h-[56px] touch-manipulation transition-all"
             aria-label="Comprar ingressos"
           >

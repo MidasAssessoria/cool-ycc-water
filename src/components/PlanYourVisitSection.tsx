@@ -82,12 +82,6 @@ const PlanYourVisitSection = () => {
     },
   ];
 
-  const scrollToForm = useCallback(() => {
-    const formSection = document.getElementById("plan-visit-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -232,6 +226,7 @@ const PlanYourVisitSection = () => {
           w-full 
           bg-gray-50
           py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8
+          scroll-mt-20 md:scroll-mt-24
         "
       >
         <div className="max-w-7xl mx-auto">

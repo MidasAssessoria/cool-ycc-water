@@ -10,13 +10,11 @@ import AttractionsSection from "@/components/AttractionsSection";
 // import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import BungalowsCompactSection from "@/components/BungalowsCompactSection";
 import PlanYourVisitSection from "@/components/PlanYourVisitSection";
+import { smoothScrollToElement } from "@/lib/utils";
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    smoothScrollToElement(sectionId, 80);
   };
 
   return (
