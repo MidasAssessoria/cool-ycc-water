@@ -73,6 +73,13 @@ export default {
           DEFAULT: "hsl(var(--badge-available))",
           foreground: "hsl(var(--badge-available-foreground))",
         },
+        "bungalow": {
+          primary: "hsl(var(--bungalow-primary))",
+          secondary: "hsl(var(--bungalow-secondary))",
+          coral: "hsl(var(--bungalow-coral))",
+          charcoal: "hsl(var(--bungalow-charcoal))",
+          "warm-white": "hsl(var(--bungalow-warm-white))",
+        },
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",

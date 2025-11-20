@@ -66,6 +66,13 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Bungalows Section Colors */
+    --bungalow-primary: 210 100% 40%;
+    --bungalow-secondary: 177 70% 41%;
+    --bungalow-coral: 0 84% 60%;
+    --bungalow-charcoal: 210 50% 20%;
+    --bungalow-warm-white: 0 0% 98%;
   }
 
   .dark {
@@ -109,6 +116,13 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Bungalows Section Colors - Dark Mode */
+    --bungalow-primary: 210 100% 50%;
+    --bungalow-secondary: 177 70% 51%;
+    --bungalow-coral: 0 84% 70%;
+    --bungalow-charcoal: 210 40% 80%;
+    --bungalow-warm-white: 0 0% 10%;
   }
 }
 

@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation/Navigation";
 import { BookingForm } from "@/components/forms/BookingForm";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
+import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import LocationSection from "@/components/LocationSection";
 
 const Index = () => {
@@ -61,6 +62,9 @@ const Index = () => {
 
       {/* Attractions Section */}
       <AttractionsSection />
+
+      {/* Bungalows Hero Section */}
+      <BungalowsHeroSection />
 
       {/* Location Section */}
       <LocationSection />
