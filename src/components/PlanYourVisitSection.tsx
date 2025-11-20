@@ -194,7 +194,7 @@ const PlanYourVisitSection = () => {
             role="status"
             aria-label="Tour VIP Guiado disponible"
           >
-            🎟️ Tour VIP Guiado
+            🌟 Tour VIP guiado gratuito
           </div>
         </motion.div>
 
@@ -216,7 +216,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Planea tu Visita VIP Gratuita
+              Planea tu Tour VIP Gratuito
             </motion.h1>
 
             {/* Subheading - Mobile optimized */}
@@ -232,7 +232,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Conoce el parque, los bungalows y la oportunidad de inversión en un tour guiado de 2 horas
+              Sé de los primeros en conocer YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada de 2 horas.
             </motion.p>
           </div>
         </div>
@@ -278,7 +278,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              🌟 Experiencia VIP Gratuita
+              🌟 Tour VIP guiado gratuito
             </motion.div>
 
             {/* Title */}
@@ -289,7 +289,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Planea tu Visita VIP Gratuita
+              Planea tu Tour VIP Gratuito
             </motion.h2>
 
             {/* Subtitle */}
@@ -300,7 +300,7 @@ const PlanYourVisitSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Conoce el parque, los bungalows y la oportunidad de inversión en un tour guiado de 2 horas
+              Sé de los primeros en conocer YCC Water Park, el proyecto completo y tus opciones de inversión en una visita guiada de 2 horas.
             </motion.p>
           </div>
 
@@ -318,8 +318,11 @@ const PlanYourVisitSection = () => {
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   Reserva tu Tour Gratuito
                 </h2>
-                <p className="text-base sm:text-lg text-gray-500 mb-4 sm:mb-6">
+                <p className="text-base sm:text-lg text-gray-500 mb-1">
                   Completa en 30 segundos ⚡
+                </p>
+                <p className="text-sm text-gray-500 mb-4 sm:mb-6">
+                  Cupos limitados por horario.
                 </p>
               </div>
 
@@ -517,7 +520,7 @@ const PlanYourVisitSection = () => {
                         Enviando...
                       </>
                     ) : (
-                      "✅ Confirmar Minha Visita VIP"
+                      "Confirmar mi Tour VIP"
                     )}
                   </Button>
                   
@@ -592,7 +595,7 @@ const PlanYourVisitSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-xs font-medium text-gray-600">Horarios</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Sáb-Dom 8-18h</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Sáb–Dom, turnos mañana y tarde</p>
                     </div>
                   </div>
 
@@ -603,7 +606,7 @@ const PlanYourVisitSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-xs font-medium text-gray-600">Ubicación</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Ypané, 25min</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Ypané, a solo 25 min de Asunción</p>
                     </div>
                   </div>
 
@@ -614,7 +617,7 @@ const PlanYourVisitSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-xs font-medium text-gray-600">Duração</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Tour de 2h</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Tour guiado de aprox. 2 horas</p>
                     </div>
                   </div>
 
@@ -625,7 +628,7 @@ const PlanYourVisitSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-xs font-medium text-gray-600">Bonus</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Snack gratis</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">Snack y bebidas de cortesía</p>
                     </div>
                   </div>
                 </div>
@@ -644,33 +647,44 @@ const PlanYourVisitSection = () => {
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🏊 Tour guiado por el parque acuático completo</span>
+                    <span className="font-medium">Recorrido guiado por el parque y áreas del proyecto</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🏡 Visita a los bungalows premium de 66m²</span>
+                    <span className="font-medium">Presentación del masterplan, maquetas y bungalows premium</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">💼 Presentación de la oportunidad de inversión</span>
+                    <span className="font-medium">Explicación de las membresías y del sistema de time share</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
                     </div>
-                    <span className="font-medium">🍹 Snack y bebidas de cortesía</span>
+                    <span className="font-medium">Asesoría personalizada para elegir tu mejor opción</span>
+                  </li>
+                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
+                    </div>
+                    <span className="font-medium">Snack y bebidas de cortesía</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                     </div>
-                    <span className="font-medium">✅ 100% gratuito y sin compromiso</span>
+                    <span className="font-medium">100% gratuito y sin compromiso de compra</span>
                   </li>
                 </ul>
+                
+                {/* Disclaimer Text */}
+                <p className="mt-4 text-xs text-gray-500 italic">
+                  La visita es comercial y no incluye uso de las atracciones del parque.
+                </p>
               </div>
 
               {/* CARD 4: Quick Contact WhatsApp - Mobile optimized */}
