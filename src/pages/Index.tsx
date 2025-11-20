@@ -36,19 +36,20 @@ const Index = () => {
           <div 
             className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-coral/90 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-4 md:mb-6 animate-fade-in shadow-lg min-h-[36px]"
             role="status"
-            aria-label="Destaque: El Parque Acuático Más Grande de Paraguay"
+            aria-label="El mayor parque acuático del Paraguay"
           >
-            🏆 El Parque Acuático Más Grande de Paraguay
+            🏆 El mayor parque acuático del Paraguay
           </div>
 
           {/* Headline - Mobile optimized with tighter line-height */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-2xl leading-[1.1] sm:leading-tight px-2">
-            YCC water park a 25 minutos de Asunción
+            YCC Water Park a 25 minutos de Asunción
           </h1>
 
           {/* Subheadline - Mobile optimized spacing */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-4 sm:mb-6 md:mb-8 max-w-2xl drop-shadow-lg px-4 leading-relaxed">
-            Club + resort + parque acuático premium – tu refugio familiar y oportunidad de inversión en un solo lugar
+            Club, resort y parque acuático premium.<br />
+            Tu refugio familiar y tu mejor inversión.
           </p>
 
           {/* CTAs - Mobile: stacked full-width, Desktop: inline auto-width */}
