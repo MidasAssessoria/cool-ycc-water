@@ -25,12 +25,12 @@ const MobileMenu = React.memo(() => {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
-          className="lg:hidden text-foreground hover:bg-accent active:bg-accent/80 min-w-[44px] min-h-[44px] touch-manipulation"
+          className="lg:hidden text-white hover:bg-white/10 active:bg-white/20 min-h-[44px] touch-manipulation flex items-center gap-2 px-3"
           aria-label="Abrir menú de navegación"
           aria-expanded={isOpen}
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-5 w-5" />
+          <span className="font-semibold text-sm">Menú</span>
         </Button>
       </SheetTrigger>
       
@@ -56,6 +56,12 @@ const MobileMenu = React.memo(() => {
         <div className="flex flex-col p-4 sm:p-6 bg-background flex-1">
           <nav className="flex flex-col gap-1" aria-label="Menú principal">
             <button
+              onClick={() => handleNavigation('hero')}
+              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              🏠 Inicio
+            </button>
+            <button
               onClick={() => handleNavigation('attractions')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
@@ -66,6 +72,18 @@ const MobileMenu = React.memo(() => {
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               🎟️ Entradas
+            </button>
+            <button
+              onClick={() => handleNavigation('bungalows')}
+              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              🏡 Bungalows
+            </button>
+            <button
+              onClick={() => handleNavigation('membership')}
+              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              💎 Membresias
             </button>
             <button
               onClick={() => handleNavigation('contact')}
