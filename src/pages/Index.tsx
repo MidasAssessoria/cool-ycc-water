@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
 import AttractionsSection from "@/components/AttractionsSection";
 import BungalowsHeroSection from "@/components/BungalowsHeroSection";
+import BungalowsCompactSection from "@/components/BungalowsCompactSection";
 import PlanYourVisitSection from "@/components/PlanYourVisitSection";
 
 const Index = () => {
@@ -73,6 +74,11 @@ const Index = () => {
       {/* Plan Your Visit Section - Replaces Booking Form + Location */}
       <section id="booking">
         <PlanYourVisitSection />
+      </section>
+
+      {/* Bungalows Compact Section */}
+      <section id="bungalows">
+        <BungalowsCompactSection />
       </section>
 
       {/* Features Section */}
