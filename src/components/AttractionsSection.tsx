@@ -381,7 +381,7 @@ const AttractionsSection = () => {
 
   return (
     <section 
-      className="relative z-10 bg-background py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
+      className="relative z-10 bg-background py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
       aria-labelledby="attractions-heading"
     >
       <div className="max-w-7xl mx-auto">

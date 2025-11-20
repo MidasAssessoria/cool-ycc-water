@@ -108,8 +108,8 @@ const Index = () => {
       </section>
 
 
-      {/* Footer Expandido - FASE 8 */}
-      <footer className="bg-charcoal text-white py-12">
+      {/* Footer Expandido - FASE 7: Touch targets optimized */}
+      <footer className="bg-charcoal text-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Column 1: Logo + Contact */}
@@ -134,7 +134,7 @@ const Index = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('attractions')}
-                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Atrações
                   </button>
@@ -142,7 +142,7 @@ const Index = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('booking')}
-                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Ingressos
                   </button>
@@ -150,7 +150,7 @@ const Index = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('contact')}
-                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Contato
                   </button>
@@ -158,7 +158,7 @@ const Index = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('bungalows')}
-                    className="text-white/70 hover:text-white transition-colors text-sm text-left"
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Bangalôs
                   </button>
@@ -171,19 +171,19 @@ const Index = () => {
               <h4 className="font-bold text-white text-base">Minha Conta</h4>
               <ul className="space-y-2">
                 <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
                     <User className="w-4 h-4" />
                     <span>Login / Cadastro</span>
                   </button>
                 </li>
                 <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
                     <Search className="w-4 h-4" />
                     <span>Buscar</span>
                   </button>
                 </li>
                 <li>
-                  <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+                  <button className="flex items-center gap-2 text-white/70 hover:text-white active:text-white/90 transition-colors text-sm py-2 min-h-[44px] touch-manipulation">
                     <Globe className="w-4 h-4" />
                     <span>PT-BR</span>
                   </button>
