@@ -23,10 +23,25 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        coral: "#FF6B6B",
-        turquoise: "#00BCD4",
-        deepblue: "#0A4D8C",
-        charcoal: "#2C3E50",
+        // YCC Brand Colors (HSL format)
+        coral: {
+          DEFAULT: "hsl(4, 100%, 70%)", // #FF6B6B
+          light: "hsl(4, 100%, 80%)",
+          dark: "hsl(4, 90%, 63%)",      // #EE5A52
+        },
+        turquoise: {
+          DEFAULT: "hsl(187, 100%, 42%)", // #00BCD4
+          light: "hsl(187, 100%, 60%)",
+          dark: "hsl(187, 100%, 35%)",
+        },
+        deepblue: {
+          DEFAULT: "hsl(205, 81%, 30%)", // #0A4D8C
+        },
+        charcoal: {
+          DEFAULT: "hsl(210, 29%, 24%)", // #2C3E50
+          light: "hsl(210, 29%, 35%)",
+          dark: "hsl(210, 29%, 18%)",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

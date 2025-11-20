@@ -53,7 +53,7 @@ const Index = () => {
             <Button 
               size="lg"
               onClick={() => scrollToSection('booking')}
-              className="bg-gradient-to-r from-[#FF6B6B] to-[#EE5A52] hover:from-[#EE5A52] hover:to-[#DD4A42] text-white font-bold text-xl px-10 py-8 h-16 rounded-full shadow-2xl hover:scale-110 transition-all animate-gentle-pulse"
+              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-xl px-10 py-8 h-16 rounded-full shadow-2xl hover:scale-110 transition-all animate-gentle-pulse"
             >
               🎟️ Comprar Ingressos
             </Button>

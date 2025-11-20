@@ -57,7 +57,7 @@ const TopBar = React.memo(() => {
 
             {/* Primary CTA */}
             <RippleButton 
-              className="bg-gradient-to-r from-[#FF6B6B] to-[#EE5A52] hover:from-[#EE5A52] hover:to-[#DD4A42] text-white font-bold text-xl px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-110 transition-all"
+              className="bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-xl px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl [@media(hover:hover)]:hover:scale-110 transition-all"
               aria-label="Comprar ingressos"
             >
               🎟️ Comprar Ingressos

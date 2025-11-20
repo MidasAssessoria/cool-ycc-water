@@ -77,7 +77,7 @@ const MobileMenu = React.memo(() => {
         {/* CTA at bottom */}
         <div className="p-6 bg-background border-t border-border">
           <RippleButton 
-            className="w-full bg-gradient-to-r from-[#FF6B6B] to-[#EE5A52] hover:from-[#EE5A52] hover:to-[#DD4A42] text-white font-bold text-lg py-4 rounded-full shadow-xl min-h-[56px] touch-manipulation"
+            className="w-full bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] text-white font-bold text-lg py-4 rounded-full shadow-xl min-h-[56px] touch-manipulation"
             aria-label="Comprar ingressos"
           >
             🎟️ Comprar Ingressos
