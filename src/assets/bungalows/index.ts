@@ -1,0 +1,10 @@
+export { default as exteriorFront01 } from './exterior-front-01.jpg';
+export { default as exteriorFront02 } from './exterior-front-02.jpg';
+export { default as exteriorSide01 } from './exterior-side-01.jpg';
+export { default as exteriorSide02 } from './exterior-side-02.jpg';
+export { default as interiorLiving01 } from './interior-living-01.jpg';
+export { default as interiorLiving02 } from './interior-living-02.jpg';
+export { default as interiorBalcony01 } from './interior-balcony-01.jpg';
+export { default as interiorBalcony02 } from './interior-balcony-02.jpg';
+export { default as floorPlanGround } from './floor-plan-ground.jpg';
+export { default as floorPlanUpper } from './floor-plan-upper.jpg';
