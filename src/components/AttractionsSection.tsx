@@ -19,6 +19,12 @@ interface Attraction {
   badge: string;
   image: string;
   altText: string;
+  categories: ('familia' | 'infantil' | 'radical' | 'relax')[];
+  metadata?: {
+    minHeight?: number; // em cm
+    adrenalineLevel?: 1 | 2 | 3; // 1=leve, 2=moderado, 3=radical
+    wheelchairAccessible?: boolean;
+  };
 }
 
 const attractions: Attraction[] = [
@@ -30,7 +36,11 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: wavePoolImg,
-    altText: "Piscina de ondas com águas cristalinas turquesa em ambiente tropical com palmeiras"
+    altText: "Piscina de ondas com águas cristalinas turquesa em ambiente tropical com palmeiras",
+    categories: ['familia', 'radical'],
+    metadata: {
+      adrenalineLevel: 2
+    }
   },
   {
     id: 2,
@@ -39,7 +49,12 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: waterSlidesImg,
-    altText: "Tobogãs aquáticos coloridos de alta velocidade com tubos em espiral"
+    altText: "Tobogãs aquáticos coloridos de alta velocidade com tubos em espiral",
+    categories: ['radical'],
+    metadata: {
+      minHeight: 120,
+      adrenalineLevel: 3
+    }
   },
   {
     id: 3,
@@ -48,7 +63,11 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: lazyRiverImg,
-    altText: "Rio lento tranquilo com boias flutuando em ambiente tropical com vegetação exuberante"
+    altText: "Rio lento tranquilo com boias flutuando em ambiente tropical com vegetação exuberante",
+    categories: ['familia', 'relax'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 4,
@@ -57,7 +76,11 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: hydroSpaImg,
-    altText: "Spa luxuoso com piscinas de hidromassagem e jacuzzi em design moderno"
+    altText: "Spa luxuoso com piscinas de hidromassagem e jacuzzi em design moderno",
+    categories: ['relax'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 5,
@@ -66,7 +89,11 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: restaurantImg,
-    altText: "Restaurante moderno ao ar livre com mesas sob guarda-sóis e vista panorâmica do parque"
+    altText: "Restaurante moderno ao ar livre com mesas sob guarda-sóis e vista panorâmica do parque",
+    categories: ['familia', 'relax'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 6,
@@ -75,7 +102,8 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: bungalowsImg,
-    altText: "Bangalôs de madeira luxuosos à beira d'água cercados por palmeiras em ambiente tropical"
+    altText: "Bangalôs de madeira luxuosos à beira d'água cercados por palmeiras em ambiente tropical",
+    categories: ['familia', 'relax']
   },
   // YA DISPONIBLES
   {
@@ -85,7 +113,11 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: recreationalPoolsImg,
-    altText: "Piscinas recreativas com água cristalina azul, famílias nadando e guarda-sóis coloridos"
+    altText: "Piscinas recreativas com água cristalina azul, famílias nadando e guarda-sóis coloridos",
+    categories: ['familia', 'infantil'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 8,
@@ -94,7 +126,12 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: kidsZoneImg,
-    altText: "Área aquática infantil colorida com escorregadores pequenos e crianças brincando"
+    altText: "Área aquática infantil colorida com escorregadores pequenos e crianças brincando",
+    categories: ['infantil', 'familia'],
+    metadata: {
+      adrenalineLevel: 1,
+      wheelchairAccessible: true
+    }
   },
   {
     id: 9,
@@ -103,7 +140,11 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: tennisCourtsImg,
-    altText: "Quadras de tênis profissionais cercadas por palmeiras em ambiente tropical"
+    altText: "Quadras de tênis profissionais cercadas por palmeiras em ambiente tropical",
+    categories: ['familia'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 10,
@@ -112,7 +153,11 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: naturalLakesImg,
-    altText: "Lagos naturais serenos com reflexos no céu, vegetação exuberante e pássaros"
+    altText: "Lagos naturais serenos com reflexos no céu, vegetação exuberante e pássaros",
+    categories: ['relax', 'familia'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 11,
@@ -121,7 +166,11 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: ecoTrailsImg,
-    altText: "Trilha ecológica de madeira através de floresta tropical com vegetação verde exuberante"
+    altText: "Trilha ecológica de madeira através de floresta tropical com vegetação verde exuberante",
+    categories: ['relax', 'familia'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   },
   {
     id: 12,
@@ -130,7 +179,11 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: bbqAreaImg,
-    altText: "Área de churrasqueiras ao ar livre com mesas de piquenique e áreas sombreadas"
+    altText: "Área de churrasqueiras ao ar livre com mesas de piquenique e áreas sombreadas",
+    categories: ['familia', 'relax'],
+    metadata: {
+      wheelchairAccessible: true
+    }
   }
 ];
 
