@@ -58,65 +58,65 @@ const AquaParkSection = () => {
           {/* 3 Botões brancos */}
           <nav className="space-y-2.5 md:space-y-0 md:flex md:flex-row md:gap-2 lg:gap-3 xl:gap-4">
             
-            {/* Botão 1: Membresías YCC - Touch optimized */}
+            {/* Botão 1: Membresías - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Membresías YCC")}
+              onClick={() => handleButtonClick("Membresías")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Ticket className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Membresías YCC
+                Membresías
               </span>
               <button 
-                disabled={loadingButton === "Membresías YCC"}
+                disabled={loadingButton === "Membresías"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Ver planes de membresías"
               >
-                {loadingButton === "Membresías YCC" && <Loader2 className="w-3 h-3 animate-spin" />}
+                {loadingButton === "Membresías" && <Loader2 className="w-3 h-3 animate-spin" />}
                 VER PLANES
               </button>
             </div>
 
-            {/* Botão 2: Tour VIP - Touch optimized */}
+            {/* Botão 2: Visita gratis - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Tour VIP guiado gratuito")}
+              onClick={() => handleButtonClick("Visita gratis")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <CalendarCheck className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Tour VIP guiado gratuito
+                Visita gratis
               </span>
               <button 
-                disabled={loadingButton === "Tour VIP guiado gratuito"}
+                disabled={loadingButton === "Visita gratis"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Agendar tour VIP"
               >
-                {loadingButton === "Tour VIP guiado gratuito" && <Loader2 className="w-3 h-3 animate-spin" />}
+                {loadingButton === "Visita gratis" && <Loader2 className="w-3 h-3 animate-spin" />}
                 AGENDAR
               </button>
             </div>
 
             {/* Botão 3: WhatsApp - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Hablar por WhatsApp")}
+              onClick={() => handleButtonClick("Whatsapp")}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
-                Hablar por WhatsApp
+                Whatsapp
               </span>
               <button 
-                disabled={loadingButton === "Hablar por WhatsApp"}
+                disabled={loadingButton === "Whatsapp"}
                 className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Hablar por WhatsApp"
               >
-                {loadingButton === "Hablar por WhatsApp" && <Loader2 className="w-3 h-3 animate-spin" />}
+                {loadingButton === "Whatsapp" && <Loader2 className="w-3 h-3 animate-spin" />}
                 ESCRIBIR
               </button>
             </div>
