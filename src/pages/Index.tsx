@@ -142,14 +142,6 @@ const Index = () => {
                     onClick={() => scrollToSection('booking')}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
-                    Ingressos
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('contact')}
-                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
-                  >
                     Contato
                   </button>
                 </li>
@@ -158,7 +150,7 @@ const Index = () => {
                     onClick={() => scrollToSection('bungalows')}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
-                    Bangalôs
+                    Bungalows
                   </button>
                 </li>
               </ul>
