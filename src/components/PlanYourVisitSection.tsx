@@ -232,7 +232,7 @@ const PlanYourVisitSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Ven y realiza una visita <span className="font-bold">guiada</span> al YCC. Water Park, el proyecto completo y tus opciones de inversión en una visita <span className="font-bold">guiada</span>
+              Ven y descubre el  YCC Water Park, el proyecto completo y tus opciones de inversión  en una visita <span className="font-bold">guiada</span>
             </motion.p>
           </div>
         </div>
