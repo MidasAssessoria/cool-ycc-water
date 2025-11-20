@@ -4,7 +4,6 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { 
   Calendar as CalendarIcon, 
-  Clock, 
   User, 
   Phone as PhoneIcon,
   MapPin,
@@ -14,7 +13,9 @@ import {
   Check,
   Star,
   Home,
-  Globe
+  Globe,
+  Sunrise,
+  Sunset
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,7 +30,6 @@ import { Label } from "@/components/ui/label";
 
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
 const PlanYourVisitSection = () => {
@@ -334,23 +334,52 @@ const PlanYourVisitSection = () => {
                     )}
                   </div>
 
-                  {/* Time Select */}
+                  {/* Time Button Group */}
                   <div className="space-y-2">
-                    <Label htmlFor="visitTime" className="text-gray-700">Horário *</Label>
-                    <Select
-                      value={selectedTime}
-                      onValueChange={(value) => setValue("visitTime", value as "morning" | "afternoon")}
-                      aria-label="Selecionar horário da visita"
-                    >
-                      <SelectTrigger className="h-12 border-2 focus:border-coral">
-                        <Clock className="mr-2 h-4 w-4" />
-                        <SelectValue placeholder="Selecione o horário" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="morning">Manhã (9-12h)</SelectItem>
-                        <SelectItem value="afternoon">Tarde (14-17h)</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Label className="text-gray-700">Horário *</Label>
+                    <div className="flex gap-3" role="radiogroup" aria-label="Selecione o horário da visita">
+                      {/* Morning Button */}
+                      <button
+                        type="button"
+                        onClick={() => setValue("visitTime", "morning")}
+                        role="radio"
+                        aria-checked={selectedTime === "morning"}
+                        aria-label="Manhã - 9 às 12 horas"
+                        className={cn(
+                          "flex-1 h-12 px-4 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-2",
+                          selectedTime === "morning"
+                            ? "bg-coral text-white border-coral shadow-lg"
+                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
+                        )}
+                      >
+                        <Sunrise className="w-5 h-5" />
+                        <div className="flex flex-col items-start">
+                          <span className="text-sm font-semibold">Manhã</span>
+                          <span className="text-xs opacity-90">9-12h</span>
+                        </div>
+                      </button>
+
+                      {/* Afternoon Button */}
+                      <button
+                        type="button"
+                        onClick={() => setValue("visitTime", "afternoon")}
+                        role="radio"
+                        aria-checked={selectedTime === "afternoon"}
+                        aria-label="Tarde - 14 às 17 horas"
+                        className={cn(
+                          "flex-1 h-12 px-4 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-2",
+                          selectedTime === "afternoon"
+                            ? "bg-coral text-white border-coral shadow-lg"
+                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
+                        )}
+                      >
+                        <Sunset className="w-5 h-5" />
+                        <div className="flex flex-col items-start">
+                          <span className="text-sm font-semibold">Tarde</span>
+                          <span className="text-xs opacity-90">14-17h</span>
+                        </div>
+                      </button>
+                    </div>
                     {errors.visitTime && (
                       <p className="text-sm text-red-600">{errors.visitTime.message}</p>
                     )}
@@ -516,7 +545,7 @@ const PlanYourVisitSection = () => {
                   {/* Info Item 1: Horários */}
                   <div className="flex items-center gap-3">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
-                      <Clock className="w-6 h-6 text-coral" />
+                      <Sunrise className="w-6 h-6 text-coral" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-700">Horários</p>
