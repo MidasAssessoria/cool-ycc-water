@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { smoothScrollToElement } from "@/lib/utils";
-import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
+import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
