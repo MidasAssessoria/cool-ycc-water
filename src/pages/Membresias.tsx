@@ -95,33 +95,33 @@ const Membresias = () => {
           aria-label="Parque acuático YCC Water Park"
         />
         
-        {/* Gradient Overlay - Diagonal - Using exact colors from prompt */}
-        <div className="absolute inset-0 bg-gradient-to-br from-hero-cyan/80 via-hero-cyan/60 to-hero-orange/70" />
+        {/* Gradient Overlay - Simplified for better performance */}
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-cyan/75 to-hero-orange/65" />
         
         {/* Floating Elements - respects prefers-reduced-motion */}
         {!prefersReducedMotion && (
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            {/* Circle 1 - Top Left - Cyan */}
+            {/* Circle 1 - Top Left - Cyan - Optimized blur */}
             <div 
-              className="absolute top-16 left-8 w-48 h-48 bg-cyan-400/40 rounded-full blur-[100px] animate-float will-change-transform"
+              className="absolute top-16 left-8 w-48 h-48 bg-cyan-400/40 rounded-full blur-[60px] animate-float will-change-transform"
               style={{ animationDelay: '0s', animationDuration: '6s' }}
             />
             
-            {/* Circle 2 - Bottom Right - Orange */}
+            {/* Circle 2 - Bottom Right - Orange - Optimized blur */}
             <div 
-              className="absolute bottom-32 right-16 w-64 h-64 bg-orange-400/35 rounded-full blur-[120px] animate-float will-change-transform"
+              className="absolute bottom-32 right-16 w-64 h-64 bg-orange-400/35 rounded-full blur-[70px] animate-float will-change-transform"
               style={{ animationDelay: '1.5s', animationDuration: '7s' }}
             />
             
-            {/* Circle 3 - Center Left - White/Cyan */}
+            {/* Circle 3 - Center Left - White/Cyan - Optimized blur */}
             <div 
-              className="absolute top-1/2 left-1/4 w-56 h-56 bg-white/30 rounded-full blur-[110px] animate-float will-change-transform"
+              className="absolute top-1/2 left-1/4 w-56 h-56 bg-white/30 rounded-full blur-[65px] animate-float will-change-transform"
               style={{ animationDelay: '3s', animationDuration: '8s' }}
             />
             
-            {/* Circle 4 - Top Right - Additional depth */}
+            {/* Circle 4 - Top Right - Additional depth - Optimized blur */}
             <div 
-              className="absolute top-24 right-1/4 w-40 h-40 bg-cyan-300/25 rounded-full blur-[90px] animate-float will-change-transform"
+              className="absolute top-24 right-1/4 w-40 h-40 bg-cyan-300/25 rounded-full blur-[50px] animate-float will-change-transform"
               style={{ animationDelay: '2s', animationDuration: '5.5s' }}
             />
           </div>
