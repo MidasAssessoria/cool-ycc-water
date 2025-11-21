@@ -147,6 +147,10 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         "ken-burns": "ken-burns 20s ease-in-out infinite alternate",
@@ -159,6 +163,7 @@ export default {
         'slide-in-right': 'slide-in-right 0.3s ease-out',
         'bounce-icon': 'bounce-icon 0.3s ease-out',
         'fade-in': 'fade-in 0.5s ease-out',
+        'float': 'float 3s ease-in-out infinite',
       },
     },
   },
