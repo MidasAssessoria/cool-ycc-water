@@ -221,7 +221,7 @@ export default function MembresiaPricingSection({
                   </div>
                 </div>
 
-                <CardHeader className="text-left pt-8">
+                <CardHeader className="text-left pt-14">
                   <div className="flex justify-between mb-4">
                     <h3 id={`plan-title-${index}`} className="text-2xl sm:text-3xl font-black">{plan.name}</h3>
                   </div>
