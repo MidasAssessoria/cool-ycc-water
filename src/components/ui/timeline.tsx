@@ -36,10 +36,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black max-w-4xl">
+        <h2 className="text-2xl md:text-5xl mb-6 font-black bg-gradient-to-r from-cyan-600 to-orange-500 bg-clip-text text-transparent">
           ¿Qué incluye tu membresía?
         </h2>
-        <p className="text-neutral-700 text-sm md:text-base max-w-sm">
+        <p className="text-neutral-600 text-base md:text-lg max-w-2xl leading-relaxed">
           Un recorrido por todas las instalaciones actuales y futuras del parque
         </p>
       </div>
