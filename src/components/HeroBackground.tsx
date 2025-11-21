@@ -15,21 +15,16 @@ export const HeroBackground = ({
   ...ariaProps 
 }: HeroBackgroundProps) => {
   return (
-    <div 
-      className={`absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat ${className || ''}`}
-      style={{
-        backgroundImage: `image-set(
-          url('/assets/hero-waterpark.webp') type('image/webp'),
-          url('/assets/hero-waterpark.jpg') type('image/jpeg')
-        )`,
-        // @ts-ignore - WebkitBackgroundImage for Safari compatibility
-        WebkitBackgroundImage: `image-set(
-          url('/assets/hero-waterpark.webp') type('image/webp'),
-          url('/assets/hero-waterpark.jpg') type('image/jpeg')
-        )`,
-      }}
-      role={role}
-      {...ariaProps}
-    />
+    <picture className={`absolute inset-0 w-full h-full ${className || ''}`}>
+      <source srcSet="/assets/hero-waterpark.webp" type="image/webp" />
+      <img 
+        src="/assets/hero-waterpark.jpg" 
+        alt={ariaProps['aria-label'] || 'YCC Water Park'}
+        className="w-full h-full object-cover object-center"
+        loading="eager"
+        fetchPriority="high"
+        role={role}
+      />
+    </picture>
   );
 };
