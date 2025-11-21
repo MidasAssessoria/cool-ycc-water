@@ -2,7 +2,7 @@ import React, { useState, lazy, Suspense } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { smoothScrollToElement, cn } from "@/lib/utils";
-import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
+import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin, Sun } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VIPComparisonTable } from "@/components/pricing/VIPComparisonTable";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
@@ -11,6 +11,7 @@ import Navigation from "@/components/navigation/Navigation";
 import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
 import { SEOHead } from "@/components/SEOHead";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import logoYCC from "@/assets/logo-ycc-waterpark.png";
 
 // Code splitting: lazy load Timeline component
 const Timeline = lazy(() => import("@/components/ui/timeline").then(m => ({ default: m.Timeline })));
@@ -37,6 +38,10 @@ const Membresias = () => {
     // URL real de registro de membresías
     window.open('https://yccwaterpark.com.py/registro-membresias', '_blank');
     setIsModalOpen(false);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    smoothScrollToElement(sectionId, 80);
   };
 
   const timelineData = [
@@ -476,36 +481,6 @@ const Membresias = () => {
         onContratarVIP={() => handleOpenModal('vip')}
       />
       
-      {/* Calculadora de Ahorro VIP - Sub-Fase 2.1 */}
-      <section className="bg-white py-16 sm:py-20 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center justify-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-4">
-              <Calculator className="w-5 h-5 mr-2" />
-              <span className="text-sm font-bold">Calculadora de Ahorro</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-              ¿Por qué elegir VIP?
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground">
-              Ahorro acumulado comparado con Membresía Familiar
-            </p>
-          </div>
-
-          {/* Tabla comparativa interactiva */}
-          <VIPComparisonTable />
-
-          {/* Texto explicativo */}
-          <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-xl">
-            <p className="text-base sm:text-lg text-purple-900 font-semibold text-center">
-              💡 A partir del año 9, VIP ahorra USD 480 anuales
-            </p>
-          </div>
-        </div>
-      </section>
-
-
       {/* FAQ Section - Sub-Fase 3.1 */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -678,82 +653,84 @@ const Membresias = () => {
         </div>
       </section>
 
-      {/* CTA Final Section - Sub-Fase 3.2 */}
-      <section className="bg-gradient-to-br from-primary via-secondary to-primary py-16 sm:py-20 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 drop-shadow-lg">
-              ¿Listo para disfrutar del parque todo el año?
-            </h2>
-            <p className="text-lg sm:text-xl text-white/90 drop-shadow-md">
-              Elige tu membresía y comienza a crear recuerdos con tu familia
-            </p>
-          </div>
-
-          {/* Botões CTA lado a lado */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-            <Button
-              size="lg"
-              onClick={() => handleOpenModal('familiar')}
-              className="w-full h-16 bg-white text-blue-600 hover:bg-white/90 font-bold text-lg rounded-full transition-all duration-300 hover:scale-105"
-            >
-              Contratar Membresía Familiar
-            </Button>
-            <Button
-              size="lg"
-              onClick={() => handleOpenModal('vip')}
-              className="w-full h-16 bg-white text-purple-600 hover:bg-white/90 font-bold text-lg rounded-full transition-all duration-300 hover:scale-105"
-            >
-              Contratar Membresía VIP
-            </Button>
-          </div>
-
-          {/* Seção de contato alternativo */}
-          <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white text-center mb-6">
-              ¿Tienes dudas? Habla con nosotros
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* WhatsApp */}
-              <a 
-                href="https://wa.me/595994306666" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="bg-white/20 hover:bg-white/30 p-6 rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <Phone className="w-8 h-8 text-white mb-3 mx-auto" />
-                  <p className="text-white font-semibold text-center mb-1">WhatsApp</p>
-                  <p className="text-white/80 text-sm text-center">+595 994 306666</p>
+      {/* Footer - Igual ao da página principal */}
+      <footer className="bg-charcoal text-white py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+            {/* Column 1: Logo + Contact */}
+            <div className="space-y-4">
+              <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-2" />
+              <p className="text-white/80 text-sm mb-4">
+                Club, resort y parque acuático premium para toda la familia.
+              </p>
+              <div className="space-y-2 text-white/70">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">Ruta 1 Km 13,5 – Ypané, Paraguay</span>
                 </div>
-              </a>
-
-              {/* Instagram */}
-              <a 
-                href="https://instagram.com/yccwaterparkpy" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="bg-white/20 hover:bg-white/30 p-6 rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <Instagram className="w-8 h-8 text-white mb-3 mx-auto" />
-                  <p className="text-white font-semibold text-center mb-1">Instagram</p>
-                  <p className="text-white/80 text-sm text-center">@yccwaterparkpy</p>
+                <div className="flex items-center gap-2">
+                  <Sun className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">A solo 25 minutos de Asunción</span>
                 </div>
-              </a>
-
-              {/* Ubicación */}
-              <div className="bg-white/20 p-6 rounded-xl">
-                <MapPin className="w-8 h-8 text-white mb-3 mx-auto" />
-                <p className="text-white font-semibold text-center mb-1">Ubicación</p>
-                <p className="text-white/80 text-sm text-center">Ruta 1 Km 13.5, Ypané</p>
               </div>
             </div>
+
+            {/* Column 2: Quick Links */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white text-base">Navegación rápida</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button 
+                    onClick={() => window.location.href = '/'}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Inicio
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => window.location.href = '/#attractions'}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Atracciones
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('faq-section')}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Preguntas Frecuentes
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => window.location.href = '/#bungalows'}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Bungalows
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => window.location.href = '/#booking'}
+                    className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
+                  >
+                    Contacto
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="text-center text-white/50 pt-8 border-t border-white/10">
+            <p className="text-sm">
+              © 2025 YCC Water Park. Todos los derechos reservados.
+            </p>
           </div>
         </div>
-      </section>
+      </footer>
 
       {/* Modal de Redirecionamento - Sub-Fase 2.4 */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
