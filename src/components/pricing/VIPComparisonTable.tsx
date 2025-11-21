@@ -12,8 +12,6 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { XCircle, CheckCircle, Scale } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useResponsiveTable } from "@/hooks/useResponsiveTable";
-import { MobileCardsView } from "./MobileCardsView";
 
 interface VIPComparisonData {
   id: string;
@@ -186,9 +184,6 @@ const StatusIcon = ({ status }: { status: VIPComparisonData['status'] }) => {
 };
 
 export const VIPComparisonTable = () => {
-  const viewMode = useResponsiveTable();
-  const isMobile = viewMode === 'mobile';
-  
   const columns: ColumnDef<VIPComparisonData>[] = [
     {
       accessorKey: "years",
@@ -273,42 +268,16 @@ export const VIPComparisonTable = () => {
     },
   ];
 
-  // Render mobile cards view on small screens
-  if (isMobile) {
-    return (
-      <div className="w-full">
-        <MobileCardsView data={comparisonData} />
-        
-        {/* Legend with animation */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '600ms', animationFillMode: 'both' }}>
-          <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
-            <XCircle className="h-4 w-4 text-orange-500" />
-            <span>Desfavorable</span>
-          </div>
-          <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
-            <Scale className="h-4 w-4 text-cyan-500" />
-            <span>Punto de Equilibrio</span>
-          </div>
-          <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
-            <CheckCircle className="h-4 w-4 text-emerald-500" />
-            <span>Ahorro VIP</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Render desktop table view on larger screens
   return (
     <div className="w-full animate-fade-in">
-      {/* Scroll indicator for tablet */}
-      <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground lg:hidden">
+      {/* Scroll indicator for mobile */}
+      <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground md:hidden">
         <span>← Desliza para ver más →</span>
       </div>
       
       <div className="relative max-h-[60vh] overflow-auto rounded-lg border-2 border-border shadow-xl">
         {/* Gradient overlay for scroll indication */}
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent lg:hidden" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
         
         <TableProvider
           columns={columns}
