@@ -37,9 +37,8 @@ const Membresias = () => {
             <div className="group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/50 group-hover:scale-110 transition-transform duration-300">
-                  <Waves className="w-7 h-7 text-white" />
-                  <div className="absolute inset-0 rounded-2xl bg-cyan-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
+                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl">🌊</div>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors">
@@ -56,9 +55,8 @@ const Membresias = () => {
             <div className="group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/50 group-hover:scale-110 transition-transform duration-300">
-                  <Trophy className="w-7 h-7 text-white" />
-                  <div className="absolute inset-0 rounded-2xl bg-orange-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
+                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl">🏆</div>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
@@ -75,9 +73,8 @@ const Membresias = () => {
             <div className="group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative bg-gradient-to-br from-green-400 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/50 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="w-7 h-7 text-white" />
-                  <div className="absolute inset-0 rounded-2xl bg-green-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
+                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl">🛡️</div>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
@@ -94,9 +91,8 @@ const Membresias = () => {
             <div className="group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative bg-gradient-to-br from-emerald-400 to-emerald-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/50 group-hover:scale-110 transition-transform duration-300">
-                  <Trees className="w-7 h-7 text-white" />
-                  <div className="absolute inset-0 rounded-2xl bg-emerald-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
+                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl">🌳</div>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
@@ -110,18 +106,34 @@ const Membresias = () => {
             </div>
           </div>
 
-          {/* Imagens Ilustrativas */}
+          {/* Galeria moderna com overlay */}
           <div className="grid grid-cols-2 gap-4 mt-8">
-            <img
-              src="/assets/attractions/natural-lakes.jpg"
-              alt="Lagos naturales"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
-            <img
-              src="/assets/attractions/tennis-courts.jpg"
-              alt="Canchas deportivas"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/natural-lakes.jpg"
+                alt="Lagos naturales"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Lagos Naturales</p>
+                  <p className="text-sm opacity-90">3 lagos cristalinos</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/tennis-courts.jpg"
+                alt="Canchas deportivas"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Canchas Deportivas</p>
+                  <p className="text-sm opacity-90">Tenis, fútbol y más</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -155,16 +167,32 @@ const Membresias = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/assets/attractions/wave-pool.jpg"
-              alt="Piscina de olas"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
-            <img
-              src="/assets/attractions/water-slides.jpg"
-              alt="Toboganes"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/wave-pool.jpg"
+                alt="Piscina de olas"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Piscina de Olas</p>
+                  <p className="text-sm opacity-90">Emociones garantizadas</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/water-slides.jpg"
+                alt="Toboganes"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Toboganes Gigantes</p>
+                  <p className="text-sm opacity-90">Adrenalina pura</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -198,16 +226,32 @@ const Membresias = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/assets/attractions/hydro-spa.jpg"
-              alt="HidroSPA"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
-            <img
-              src="/assets/attractions/restaurant.jpg"
-              alt="Eventos exclusivos"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
-            />
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/hydro-spa.jpg"
+                alt="HidroSPA"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">HidroSPA</p>
+                  <p className="text-sm opacity-90">Relax y bienestar</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src="/assets/attractions/restaurant.jpg"
+                alt="Eventos exclusivos"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Eventos Exclusivos</p>
+                  <p className="text-sm opacity-90">Solo para miembros</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 bg-gradient-to-r from-cyan-50 to-orange-50 border-l-4 border-cyan-500 p-6 rounded-r-xl">
