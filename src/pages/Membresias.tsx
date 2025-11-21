@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { smoothScrollToElement } from "@/lib/utils";
-import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check } from "lucide-react";
+import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2 } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 
 const Membresias = () => {
   return (
@@ -164,6 +165,91 @@ const Membresias = () => {
         </div>
       </section>
       
+      {/* Calculadora de Ahorro VIP - Sub-Fase 2.1 */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center justify-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-4">
+              <Calculator className="w-5 h-5 mr-2" />
+              <span className="text-sm font-bold">Calculadora de Ahorro</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+              ¿Por qué elegir VIP?
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">
+              Ahorro acumulado comparado con Membresía Familiar
+            </p>
+          </div>
+
+          {/* Tabla comparativa */}
+          <div className="overflow-x-auto rounded-2xl border-2 border-border shadow-lg mb-6">
+            <Table>
+              <TableCaption className="sr-only">
+                Comparación de costos acumulados entre Membresía Familiar y VIP a lo largo del tiempo
+              </TableCaption>
+              <TableHeader>
+                <TableRow className="bg-muted hover:bg-muted">
+                  <TableHead className="font-bold text-foreground text-base">Tiempo</TableHead>
+                  <TableHead className="font-bold text-foreground text-base">Familiar Total</TableHead>
+                  <TableHead className="font-bold text-foreground text-base">VIP Total</TableHead>
+                  <TableHead className="font-bold text-foreground text-base">Diferencia</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {/* 5 años - Desfavorável */}
+                <TableRow className="hover:bg-muted/50">
+                  <TableCell className="font-semibold">5 años</TableCell>
+                  <TableCell>USD 3.750</TableCell>
+                  <TableCell>USD 4.500</TableCell>
+                  <TableCell className="text-orange-600 font-semibold">+USD 750</TableCell>
+                </TableRow>
+
+                {/* 8 años - Punto de equilibrio */}
+                <TableRow className="bg-yellow-50 hover:bg-yellow-100 border-l-4 border-yellow-500">
+                  <TableCell className="font-bold">8 años</TableCell>
+                  <TableCell className="font-bold">USD 5.550</TableCell>
+                  <TableCell className="font-bold">USD 4.500</TableCell>
+                  <TableCell className="font-bold text-yellow-700 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5" />
+                    Equilibrio
+                  </TableCell>
+                </TableRow>
+
+                {/* 10 años - Economía */}
+                <TableRow className="hover:bg-muted/50">
+                  <TableCell className="font-semibold">10 años</TableCell>
+                  <TableCell>USD 6.150</TableCell>
+                  <TableCell>USD 4.500</TableCell>
+                  <TableCell className="text-green-600 font-bold flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5" />
+                    -USD 1.650
+                  </TableCell>
+                </TableRow>
+
+                {/* 20 años - Economía grande */}
+                <TableRow className="hover:bg-muted/50">
+                  <TableCell className="font-semibold">20 años</TableCell>
+                  <TableCell>USD 10.950</TableCell>
+                  <TableCell>USD 4.500</TableCell>
+                  <TableCell className="text-green-600 font-bold flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5" />
+                    -USD 6.450
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+
+          {/* Texto explicativo */}
+          <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-xl">
+            <p className="text-base sm:text-lg text-purple-900 font-semibold text-center">
+              💡 A partir del año 9, VIP ahorra USD 480 anuales
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Section - Fase 4 */}
       <section id="comparison-section" className="bg-muted py-16 sm:py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
