@@ -21,10 +21,10 @@ export const InteractiveCalculator = () => {
   const difference = familiarTotal - vipTotal;
   const annualSavings = difference > 0 ? FAMILIAR_MENSUAL : 0;
 
-  // Determine status
+  // Determine status with more precise threshold
   const getStatus = () => {
-    if (difference < -100) return 'desfavorable';
-    if (Math.abs(difference) <= 100) return 'equilibrio';
+    if (difference < -50) return 'desfavorable';
+    if (Math.abs(difference) <= 50) return 'equilibrio';
     return 'ahorro';
   };
 
