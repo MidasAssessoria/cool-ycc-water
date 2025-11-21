@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { smoothScrollToElement } from "@/lib/utils";
+import { smoothScrollToElement, cn } from "@/lib/utils";
 import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VIPComparisonTable } from "@/components/pricing/VIPComparisonTable";
@@ -9,10 +9,17 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCap
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
 import Navigation from "@/components/navigation/Navigation";
 import { Timeline } from "@/components/ui/timeline";
+import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
 
 const Membresias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'familiar' | 'vip' | null>(null);
+
+  // Intersection observers para cards timeline
+  const card1Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card2Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card3Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card4Animation = useIntersectionAnimation({ threshold: 0.2 });
 
   const handleOpenModal = (plan: 'familiar' | 'vip') => {
     setSelectedPlan(plan);
@@ -40,7 +47,14 @@ const Membresias = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Card 1: Acceso Ilimitado */}
-            <div className="group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1">
+            <div 
+              ref={card1Animation.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1",
+                card1Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: '0ms' }}
+            >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
                 <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -58,7 +72,14 @@ const Membresias = () => {
             </div>
 
             {/* Card 2: Deportes */}
-            <div className="group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1">
+            <div 
+              ref={card2Animation.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1",
+                card2Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: '100ms' }}
+            >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
                 <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -76,7 +97,14 @@ const Membresias = () => {
             </div>
 
             {/* Card 3: Zona Kids */}
-            <div className="group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1">
+            <div 
+              ref={card3Animation.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1",
+                card3Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: '200ms' }}
+            >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
                 <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -94,7 +122,14 @@ const Membresias = () => {
             </div>
 
             {/* Card 4: Áreas Verdes */}
-            <div className="group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1">
+            <div 
+              ref={card4Animation.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1",
+                card4Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: '300ms' }}
+            >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
                 <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">

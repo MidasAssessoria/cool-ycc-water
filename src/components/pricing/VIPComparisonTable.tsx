@@ -10,7 +10,8 @@ import {
 } from "@/components/ui/data-table";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { XCircle, CheckCircle, Scale } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { XCircle, CheckCircle, Scale, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobileTable } from "@/hooks/useResponsiveTable";
 import { MobileCardsView } from "./MobileCardsView";
@@ -232,7 +233,24 @@ export const VIPComparisonTable = () => {
     {
       accessorKey: "difference",
       header: ({ column }) => (
-        <TableColumnHeader column={column} title="Diferencia" />
+        <div className="flex items-center gap-2">
+          <TableColumnHeader column={column} title="Diferencia" />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button type="button" className="cursor-help">
+                  <HelpCircle className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="text-sm">
+                  <strong className="text-emerald-600">Positivo:</strong> VIP ahorra ese monto<br/>
+                  <strong className="text-orange-600">Negativo:</strong> VIP cuesta más
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
       ),
       cell: ({ row }) => {
         const diff = row.original.difference;

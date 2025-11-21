@@ -6,8 +6,8 @@ import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 import { cn } from "@/lib/utils";
 import NumberFlow from "@number-flow/react";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import { Check } from "lucide-react";
+import { useRef, useState } from "react";
+import { Check, Loader2 } from "lucide-react";
 
 interface Plan {
   name: string;
@@ -73,6 +73,7 @@ export default function MembresiaPricingSection({
   onContratarVIP 
 }: MembresiaPricingSectionProps) {
   const pricingRef = useRef<HTMLDivElement>(null);
+  const [loadingPlan, setLoadingPlan] = useState<'familiar' | 'vip' | null>(null);
 
   const revealVariants = {
     visible: (i: number) => ({
@@ -176,7 +177,20 @@ export default function MembresiaPricingSection({
 
       <div className="grid md:grid-cols-2 max-w-6xl gap-8 py-6 mx-auto px-4 relative z-10">
         {planes.map((plan, index) => {
-          const handleClick = index === 0 ? onContratarFamiliar : onContratarVIP;
+          const planType = index === 0 ? 'familiar' : 'vip';
+          
+          const handleClick = () => {
+            setLoadingPlan(planType);
+            
+            setTimeout(() => {
+              if (index === 0) {
+                onContratarFamiliar();
+              } else {
+                onContratarVIP();
+              }
+              setLoadingPlan(null);
+            }, 300);
+          };
           
           return (
             <TimelineContent
@@ -262,14 +276,23 @@ export default function MembresiaPricingSection({
                 <CardContent className="pt-0 flex-1 flex flex-col">
                   <button
                     onClick={handleClick}
+                    disabled={loadingPlan !== null}
                     className={cn(
-                      "w-full mb-6 p-4 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105",
+                      "w-full mb-6 p-4 text-lg font-bold rounded-xl transition-all duration-300",
+                      loadingPlan === planType ? "opacity-70 cursor-wait" : "hover:scale-105",
                       plan.badgeColor === "blue"
                         ? "bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800/50 border border-blue-500 text-white hover:shadow-blue-700/70"
                         : "bg-gradient-to-t from-purple-500 to-purple-600 shadow-lg shadow-purple-800/50 border border-purple-500 text-white hover:shadow-purple-700/70"
                     )}
                   >
-                    Contratar {index === 0 ? "Familiar" : "VIP"}
+                    {loadingPlan === planType ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Cargando...
+                      </span>
+                    ) : (
+                      `Contratar ${index === 0 ? "Familiar" : "VIP"}`
+                    )}
                   </button>
 
                   <div className="space-y-3 pt-4 border-t border-gray-700 flex-1">
