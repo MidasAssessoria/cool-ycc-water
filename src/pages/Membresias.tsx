@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
 import Navigation from "@/components/navigation/Navigation";
+import { Timeline } from "@/components/ui/timeline";
 
 const Membresias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,6 +23,187 @@ const Membresias = () => {
     window.open('https://example.com/registro-membresias', '_blank');
     setIsModalOpen(false);
   };
+
+  const timelineData = [
+    {
+      title: "Hoy",
+      content: (
+        <div>
+          <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
+            Disfruta desde el primer día de todas estas instalaciones incluidas en tu membresía
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Acceso Ilimitado */}
+            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-cyan-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-200 transition-colors">
+                  <Waves className="w-6 h-6 text-cyan-700" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-2">Acceso ilimitado</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Piscinas recreativas y lagos naturales para toda la familia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Deportes */}
+            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-orange-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-orange-200 transition-colors">
+                  <Trophy className="w-6 h-6 text-orange-700" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-2">Deportes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Canchas de tenis, fútbol, básquet, vóley
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Zona Kids */}
+            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                  <Shield className="w-6 h-6 text-green-700" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-2">Zona kids 100% segura</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Áreas infantiles supervisadas con salvavidas
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Áreas Verdes */}
+            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-emerald-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-200 transition-colors">
+                  <Trees className="w-6 h-6 text-emerald-700" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-2">Áreas verdes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Senderos ecológicos y churrasqueras
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Imagens Ilustrativas */}
+          <div className="grid grid-cols-2 gap-4 mt-8">
+            <img
+              src="/src/assets/attractions/natural-lakes.jpg"
+              alt="Lagos naturales"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+            <img
+              src="/src/assets/attractions/tennis-courts.jpg"
+              alt="Canchas deportivas"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2025-2026",
+      content: (
+        <div>
+          <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
+            Instalaciones en construcción que estarán disponibles durante tu membresía
+          </p>
+          <div className="mb-8 space-y-3">
+            <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
+              <div className="bg-purple-100 p-2 rounded-lg">
+                <Sparkles className="w-5 h-5 text-purple-700" />
+              </div>
+              <div>
+                <span className="font-bold">Water Park Premium</span>
+                <p className="text-xs text-muted-foreground">Piscina de olas, toboganes gigantes</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
+              <div className="bg-orange-100 p-2 rounded-lg">
+                <Dumbbell className="w-5 h-5 text-orange-700" />
+              </div>
+              <div>
+                <span className="font-bold">Gimnasio moderno</span>
+                <p className="text-xs text-muted-foreground">Equipamiento de última generación</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/src/assets/attractions/wave-pool.jpg"
+              alt="Piscina de olas"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+            <img
+              src="/src/assets/attractions/water-slides.jpg"
+              alt="Toboganes"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Próximamente",
+      content: (
+        <div>
+          <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
+            Expansiones planificadas incluidas en tu membresía sin costo adicional
+          </p>
+          <div className="mb-8 space-y-3">
+            <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
+              <div className="bg-pink-100 p-2 rounded-lg">
+                <Heart className="w-5 h-5 text-pink-700" />
+              </div>
+              <div>
+                <span className="font-bold">HidroSPA</span>
+                <p className="text-xs text-muted-foreground">Saunas, jacuzzis, masajes terapéuticos</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
+              <div className="bg-blue-100 p-2 rounded-lg">
+                <Calendar className="w-5 h-5 text-blue-700" />
+              </div>
+              <div>
+                <span className="font-bold">Eventos exclusivos para miembros</span>
+                <p className="text-xs text-muted-foreground">Acceso prioritario a fiestas temáticas y festivales</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/src/assets/attractions/hydro-spa.jpg"
+              alt="HidroSPA"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+            <img
+              src="/src/assets/attractions/restaurant.jpg"
+              alt="Eventos exclusivos"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
+            />
+          </div>
+
+          <div className="mt-8 bg-gradient-to-r from-cyan-50 to-orange-50 border-l-4 border-cyan-500 p-6 rounded-r-xl">
+            <p className="text-sm md:text-base text-foreground font-semibold">
+              💎 <span className="text-cyan-700">Tu membresía te garantiza acceso de por vida</span> a todas las mejoras futuras del parque
+            </p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -84,127 +266,8 @@ const Membresias = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Fase 3 */}
-      <section className="bg-white py-16 sm:py-20 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-              ¿Qué incluye tu membresía?
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Acceso completo a todas las instalaciones actuales y futuras
-            </p>
-          </div>
-
-          {/* Grid de benefícios */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {/* Benefício 1 - Acceso ilimitado */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <Waves className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Acceso ilimitado
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Piscinas recreativas y lagos naturales
-              </p>
-            </div>
-
-            {/* Benefício 2 - Deportes */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-secondary/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-                <Trophy className="w-7 h-7 text-secondary" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Deportes
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Canchas de tenis, fútbol, básquet, vóley
-              </p>
-            </div>
-
-            {/* Benefício 3 - Zona kids */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-accent/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                <Shield className="w-7 h-7 text-accent-foreground" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Zona kids 100% segura
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Áreas infantiles supervisadas
-              </p>
-            </div>
-
-            {/* Benefício 4 - Áreas verdes */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
-                <Trees className="w-7 h-7 text-green-700" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Áreas verdes
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Senderos ecológicos y churrasqueras
-              </p>
-            </div>
-
-            {/* Benefício 5 - Water Park Premium */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
-                <Sparkles className="w-7 h-7 text-purple-700" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Water Park Premium
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Piscina de olas, toboganes (en construcción)
-              </p>
-            </div>
-
-            {/* Benefício 6 - HidroSPA */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-pink-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-pink-200 transition-colors">
-                <Heart className="w-7 h-7 text-pink-700" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                HidroSPA
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Saunas, jacuzzis, masajes (próximamente)
-              </p>
-            </div>
-
-            {/* Benefício 7 - Gimnasio moderno */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
-                <Dumbbell className="w-7 h-7 text-orange-700" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Gimnasio moderno
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Equipamiento de última generación (en construcción)
-              </p>
-            </div>
-
-            {/* Benefício 8 - Eventos exclusivos */}
-            <div className="group bg-card border-2 border-border rounded-2xl p-6 hover:bg-accent/5 hover:border-primary hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
-                <Calendar className="w-7 h-7 text-blue-700" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Eventos exclusivos
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Acceso prioritario a eventos
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Timeline Benefits Section */}
+      <Timeline data={timelineData} />
 
       {/* Comparison Section - Nova versão com animações */}
       <MembresiaPricingSection 
