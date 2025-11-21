@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { smoothScrollToElement } from "@/lib/utils";
 import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { VIPComparisonTable } from "@/components/pricing/VIPComparisonTable";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
 import Navigation from "@/components/navigation/Navigation";
@@ -387,64 +388,8 @@ const Membresias = () => {
             </p>
           </div>
 
-          {/* Tabla comparativa */}
-          <div className="overflow-x-auto rounded-2xl border-2 border-border shadow-lg mb-6">
-            <Table>
-              <TableCaption className="sr-only">
-                Comparación de costos acumulados entre Membresía Familiar y VIP a lo largo del tiempo
-              </TableCaption>
-              <TableHeader>
-                <TableRow className="bg-muted hover:bg-muted">
-                  <TableHead className="font-bold text-foreground text-base">Tiempo</TableHead>
-                  <TableHead className="font-bold text-foreground text-base">Familiar Total</TableHead>
-                  <TableHead className="font-bold text-foreground text-base">VIP Total</TableHead>
-                  <TableHead className="font-bold text-foreground text-base">Diferencia</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {/* 5 años - Desfavorável */}
-                <TableRow className="hover:bg-muted/50">
-                  <TableCell className="font-semibold">5 años</TableCell>
-                  <TableCell>USD 3.750</TableCell>
-                  <TableCell>USD 4.500</TableCell>
-                  <TableCell className="text-orange-600 font-semibold">+USD 750</TableCell>
-                </TableRow>
-
-                {/* 8 años - Punto de equilibrio */}
-                <TableRow className="bg-yellow-50 hover:bg-yellow-100 border-l-4 border-yellow-500">
-                  <TableCell className="font-bold">8 años</TableCell>
-                  <TableCell className="font-bold">USD 5.550</TableCell>
-                  <TableCell className="font-bold">USD 4.500</TableCell>
-                  <TableCell className="font-bold text-yellow-700 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5" />
-                    Equilibrio
-                  </TableCell>
-                </TableRow>
-
-                {/* 10 años - Economía */}
-                <TableRow className="hover:bg-muted/50">
-                  <TableCell className="font-semibold">10 años</TableCell>
-                  <TableCell>USD 6.150</TableCell>
-                  <TableCell>USD 4.500</TableCell>
-                  <TableCell className="text-green-600 font-bold flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5" />
-                    -USD 1.650
-                  </TableCell>
-                </TableRow>
-
-                {/* 20 años - Economía grande */}
-                <TableRow className="hover:bg-muted/50">
-                  <TableCell className="font-semibold">20 años</TableCell>
-                  <TableCell>USD 10.950</TableCell>
-                  <TableCell>USD 4.500</TableCell>
-                  <TableCell className="text-green-600 font-bold flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5" />
-                    -USD 6.450
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
+          {/* Tabla comparativa interactiva */}
+          <VIPComparisonTable />
 
           {/* Texto explicativo */}
           <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-xl">
