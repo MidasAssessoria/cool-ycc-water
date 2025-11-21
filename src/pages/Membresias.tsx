@@ -412,8 +412,8 @@ const Membresias = () => {
           aria-label="Parque acuático YCC Water Park"
         />
         
-        {/* Gradient Overlay - Diagonal */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/80 via-cyan-600/60 to-orange-500/70" />
+        {/* Gradient Overlay - Diagonal - Using exact colors from prompt */}
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-cyan/80 via-hero-cyan/60 to-hero-orange/70" />
         
         {/* Floating Elements - respects prefers-reduced-motion */}
         {!prefersReducedMotion && (
