@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { smoothScrollToElement } from "@/lib/utils";
-import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2 } from "lucide-react";
+import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 
 const Membresias = () => {
@@ -247,6 +247,150 @@ const Membresias = () => {
               💡 A partir del año 9, VIP ahorra USD 480 anuales
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Formas de Pago - Sub-Fase 2.2 */}
+      <section className="bg-muted py-16 sm:py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+              Opciones de pago
+            </h2>
+          </div>
+
+          {/* Grid de 2 cards - Familiar e VIP */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            {/* Card Membresía Familiar */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-blue-600 mb-2">Membresía Familiar</h3>
+                <p className="text-3xl font-black text-foreground">USD 1.500</p>
+              </div>
+
+              <div className="space-y-4">
+                {/* Opción Contado */}
+                <div className="bg-green-50 border-2 border-green-200 rounded-xl p-5">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <span className="font-bold text-foreground">Contado</span>
+                    </div>
+                    <div className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      Ahorra USD 150
+                    </div>
+                  </div>
+                  <p className="text-2xl font-black text-green-700 ml-7">USD 1.350</p>
+                  <p className="text-sm text-muted-foreground ml-7">(10% de descuento)</p>
+                </div>
+
+                {/* Opción Parcelado */}
+                <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CreditCard className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span className="font-bold text-foreground">Parcelado</span>
+                  </div>
+                  <div className="ml-7 space-y-1">
+                    <p className="text-lg font-semibold text-foreground">
+                      USD 300 <span className="text-sm text-muted-foreground font-normal">entrada</span>
+                    </p>
+                    <p className="text-lg font-semibold text-blue-600">
+                      + 12 × USD 100
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Membresía VIP */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-200">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-purple-600 mb-2">Membresía VIP</h3>
+                <p className="text-3xl font-black text-foreground">USD 4.500</p>
+              </div>
+
+              <div className="space-y-4">
+                {/* Opción Contado */}
+                <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <span className="font-bold text-foreground">Contado</span>
+                  </div>
+                  <p className="text-2xl font-black text-purple-700 ml-7">USD 4.500</p>
+                  <p className="text-sm text-muted-foreground ml-7">Pago único</p>
+                </div>
+
+                {/* Opción Parcelado */}
+                <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CreditCard className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <span className="font-bold text-foreground">Parcelado</span>
+                  </div>
+                  <div className="ml-7 space-y-1">
+                    <p className="text-lg font-semibold text-foreground">
+                      USD 1.000 <span className="text-sm text-muted-foreground font-normal">entrada</span>
+                    </p>
+                    <p className="text-lg font-semibold text-purple-600">
+                      + 10 × USD 400
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Métodos de pago aceitos */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Métodos de pago aceptados</h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              
+              {/* Tarjetas de crédito */}
+              <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-muted/50 transition-colors">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                  <CreditCard className="w-8 h-8 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-sm text-foreground mb-1">Tarjetas</h4>
+                <p className="text-xs text-muted-foreground">Visa, Mastercard, Amex</p>
+              </div>
+
+              {/* Transferencia bancaria */}
+              <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-muted/50 transition-colors">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                  <Banknote className="w-8 h-8 text-green-600" />
+                </div>
+                <h4 className="font-semibold text-sm text-foreground mb-1">Transferencia</h4>
+                <p className="text-xs text-muted-foreground">Bancaria</p>
+              </div>
+
+              {/* Billeteras digitales */}
+              <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-muted/50 transition-colors">
+                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                  <Smartphone className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-sm text-foreground mb-1">Billeteras Digitales</h4>
+                <p className="text-xs text-muted-foreground">QR Bancard, Tigo Money, Personal Pay</p>
+              </div>
+
+              {/* Cheques diferidos */}
+              <div className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-muted/50 transition-colors">
+                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                  <FileText className="w-8 h-8 text-orange-600" />
+                </div>
+                <h4 className="font-semibold text-sm text-foreground mb-1">Cheques</h4>
+                <p className="text-xs text-muted-foreground">Diferidos</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Nota de conversão */}
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            💱 Conversión USD → Gs según cotización BCP del día
+          </p>
         </div>
       </section>
 
