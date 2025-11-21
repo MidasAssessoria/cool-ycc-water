@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense, useMemo, useEffect, useRef } from 'react';
+import React, { useState, lazy, Suspense, useMemo, useEffect, useCallback } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,8 @@ import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
 import { SEOHead } from "@/components/SEOHead";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useLazyAccordion } from "@/hooks/useLazyAccordion";
+import { useDebouncedValue } from "@/hooks/useDebouncedValue";
+import { FAQItem } from "@/components/FAQItem";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { getTimelineData } from "@/data/timeline-data";
@@ -56,16 +58,19 @@ const Membresias = () => {
   const card3Animation = useIntersectionAnimation({ threshold: 0.2 });
   const card4Animation = useIntersectionAnimation({ threshold: 0.2 });
 
-  // Lazy rendering for FAQ Accordion - improves initial load
+  // Lazy rendering for FAQ Accordion - improves initial load with responsive rootMargin
   const { renderedCount, containerRef } = useLazyAccordion(10, 5);
 
-  // FAQ Data Structure
+  // Debounce search term to reduce re-renders (300ms delay)
+  const debouncedSearchTerm = useDebouncedValue(searchTerm, 300);
+
+  // FAQ Data Structure - Memoized
   const faqData = useMemo(() => [
     {
       id: 'item-1',
       category: 'cobertura',
       categoryLabel: 'Cobertura y Beneficios',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Quiénes están cubiertos en la membresía?',
       answer: 'Titular + padres + cónyuge + todos los hijos menores de 18 años. Puedes agregar suegros por USD 250 cada uno + USD 20/mes.'
     },
@@ -73,7 +78,7 @@ const Membresias = () => {
       id: 'item-2',
       category: 'cobertura',
       categoryLabel: 'Cobertura y Beneficios',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Puedo transferir o heredar mi membresía?',
       answer: 'Sí, ambas membresías son transferibles a herederos o terceros.'
     },
@@ -81,7 +86,7 @@ const Membresias = () => {
       id: 'item-3',
       category: 'activacion',
       categoryLabel: 'Activación y Uso',
-      categoryColor: 'orange',
+      categoryColor: 'orange' as const,
       question: '¿Cuándo puedo comenzar a usar el parque?',
       answer: 'Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.'
     },
@@ -89,7 +94,7 @@ const Membresias = () => {
       id: 'item-4',
       category: 'pago',
       categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Cuáles son las opciones de pago para la Membresía Familiar?',
       answer: 'Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.'
     },
@@ -97,7 +102,7 @@ const Membresias = () => {
       id: 'item-5',
       category: 'pago',
       categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Cuáles son las opciones de pago para la Membresía VIP?',
       answer: 'Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).'
     },
@@ -105,7 +110,7 @@ const Membresias = () => {
       id: 'item-6',
       category: 'pago',
       categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Qué métodos de pago aceptan?',
       answer: 'Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.'
     },
@@ -113,7 +118,7 @@ const Membresias = () => {
       id: 'item-7',
       category: 'pago',
       categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Hay descuento por pago en contado?',
       answer: 'Sí, la Membresía Familiar ofrece un 10% de descuento en pago contado (USD 1.350 en lugar de USD 1.500), ahorrando USD 150. La Membresía VIP mantiene el mismo precio de USD 4.500.'
     },
@@ -121,7 +126,7 @@ const Membresias = () => {
       id: 'item-8',
       category: 'pago',
       categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan',
+      categoryColor: 'cyan' as const,
       question: '¿Puedo pagar en Guaraníes?',
       answer: 'Sí, todos los precios en dólares pueden pagarse en Guaraníes según la cotización del BCP del día del pago.'
     },
@@ -129,7 +134,7 @@ const Membresias = () => {
       id: 'item-9',
       category: 'contratacion',
       categoryLabel: 'Proceso de Contratación',
-      categoryColor: 'orange',
+      categoryColor: 'orange' as const,
       question: '¿Cómo funciona el proceso de contratación?',
       answer: 'El proceso tiene 4 pasos simples: 1) Elegir tu membresía (Familiar o VIP), 2) Completar el registro online en nuestro sistema externo para generar tu recibo digital, 3) Realizar el pago presencialmente en YCC Water Park (Ruta 1 Km 13.5, Ypané), y 4) Activación inmediata tras pagar el 50% - recibes tu carnet y acceso al parque.'
     },
@@ -137,13 +142,14 @@ const Membresias = () => {
       id: 'item-10',
       category: 'contratacion',
       categoryLabel: 'Proceso de Contratación',
-      categoryColor: 'orange',
+      categoryColor: 'orange' as const,
       question: '¿Dónde realizo el pago presencial?',
       answer: 'El pago se realiza en YCC Water Park, ubicado en Ruta 1 Km 13.5, Ypané, Paraguay. Lleva tu recibo digital generado en el registro online.'
     }
   ], []);
 
-  // Filter FAQs based on search term and active category
+  // Filter FAQs based on debounced search term and active category
+  // Using debounced value prevents excessive re-renders during typing
   const filteredFAQs = useMemo(() => {
     let filtered = faqData;
 
@@ -152,9 +158,9 @@ const Membresias = () => {
       filtered = filtered.filter(faq => faq.category === activeCategory);
     }
 
-    // Filter by search term
-    if (searchTerm.trim()) {
-      const searchLower = searchTerm.toLowerCase().trim();
+    // Filter by debounced search term (300ms delay)
+    if (debouncedSearchTerm.trim()) {
+      const searchLower = debouncedSearchTerm.toLowerCase().trim();
       filtered = filtered.filter(faq => 
         faq.question.toLowerCase().includes(searchLower) ||
         faq.answer.toLowerCase().includes(searchLower)
@@ -162,19 +168,19 @@ const Membresias = () => {
     }
 
     return filtered;
-  }, [faqData, searchTerm, activeCategory]);
+  }, [faqData, debouncedSearchTerm, activeCategory]);
 
-  // Highlight search terms
-  const highlightText = (text: string, search: string) => {
-    if (!search.trim()) return text;
+  // Highlight search terms - Memoized callback
+  const highlightText = useCallback((text: string) => {
+    if (!debouncedSearchTerm.trim()) return text;
     
-    const parts = text.split(new RegExp(`(${search})`, 'gi'));
+    const parts = text.split(new RegExp(`(${debouncedSearchTerm})`, 'gi'));
     return parts.map((part, index) => 
-      part.toLowerCase() === search.toLowerCase() 
+      part.toLowerCase() === debouncedSearchTerm.toLowerCase() 
         ? <mark key={index} className="bg-yellow-200 text-foreground font-semibold px-0.5 rounded">{part}</mark>
         : part
     );
-  };
+  }, [debouncedSearchTerm]);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -412,7 +418,7 @@ const Membresias = () => {
             ))}
           </div>
 
-          {/* Accordion with filtered FAQs - Dynamic */}
+          {/* Accordion with filtered FAQs - Optimized with React.memo */}
           {filteredFAQs.length === 0 ? (
             <div className="text-center py-12 text-muted-foreground">
               <p className="text-lg font-semibold mb-2">No se encontraron preguntas</p>
@@ -423,7 +429,7 @@ const Membresias = () => {
               <div ref={containerRef}>
                 {filteredFAQs.map((faq, index) => {
                   // Only render category headers when not filtering
-                  const showCategoryHeader = !searchTerm && !activeCategory && 
+                  const showCategoryHeader = !debouncedSearchTerm && !activeCategory && 
                     (index === 0 || filteredFAQs[index - 1].category !== faq.category);
                   
                   // Lazy loading logic - render first 5, then load more
@@ -432,37 +438,17 @@ const Membresias = () => {
                   if (!shouldRender) return null;
 
                   return (
-                    <React.Fragment key={faq.id}>
-                      {showCategoryHeader && (
-                        <div className={cn(
-                          "text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 flex items-center gap-2",
-                          index > 0 && "mt-6 sm:mt-8",
-                          faq.categoryColor === 'cyan' ? "text-cyan-700" : "text-orange-700"
-                        )}>
-                          <span className={cn(
-                            "w-6 sm:w-8 h-0.5",
-                            faq.categoryColor === 'cyan' ? "bg-cyan-600/30" : "bg-orange-600/30"
-                          )}></span>
-                          <span>{faq.categoryLabel}</span>
-                          <span className={cn(
-                            "flex-1 h-0.5",
-                            faq.categoryColor === 'cyan' ? "bg-cyan-600/30" : "bg-orange-600/30"
-                          )}></span>
-                        </div>
-                      )}
-                      
-                      <AccordionItem 
-                        value={faq.id} 
-                        className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6"
-                      >
-                        <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
-                          {highlightText(faq.question, searchTerm)}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                          {highlightText(faq.answer, searchTerm)}
-                        </AccordionContent>
-                      </AccordionItem>
-                    </React.Fragment>
+                    <FAQItem
+                      key={faq.id}
+                      id={faq.id}
+                      question={faq.question}
+                      answer={faq.answer}
+                      categoryLabel={faq.categoryLabel}
+                      categoryColor={faq.categoryColor}
+                      showCategoryHeader={showCategoryHeader}
+                      isFirstInCategory={index > 0}
+                      highlightText={highlightText}
+                    />
                   );
                 })}
               </div>
