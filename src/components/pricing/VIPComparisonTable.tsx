@@ -12,8 +12,10 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { XCircle, CheckCircle, Scale } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobileTable } from "@/hooks/useResponsiveTable";
+import { MobileCardsView } from "./MobileCardsView";
 
-interface VIPComparisonData {
+export interface VIPComparisonData {
   id: string;
   years: number;
   familiarTotal: number;
@@ -184,6 +186,7 @@ const StatusIcon = ({ status }: { status: VIPComparisonData['status'] }) => {
 };
 
 export const VIPComparisonTable = () => {
+  const isMobile = useIsMobileTable();
   const columns: ColumnDef<VIPComparisonData>[] = [
     {
       accessorKey: "years",
@@ -270,68 +273,76 @@ export const VIPComparisonTable = () => {
 
   return (
     <div className="w-full animate-fade-in">
-      {/* Scroll indicator for mobile */}
-      <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground md:hidden">
-        <span>← Desliza para ver más →</span>
-      </div>
-      
-      <div className="relative max-h-[60vh] overflow-auto rounded-lg border-2 border-border shadow-xl">
-        {/* Gradient overlay for scroll indication */}
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
-        
-        <TableProvider
-          columns={columns}
-          data={comparisonData}
-          className="border-0"
-        >
-          <TableHeader className="bg-muted/50 sticky top-0 z-10 backdrop-blur-sm">
-            {({ headerGroup }) => (
-              <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup}>
-                {({ header }) => (
-                  <TableHead 
-                    key={header.id} 
-                    header={header}
-                    className="font-bold text-foreground transition-colors duration-200 hover:bg-muted/70"
-                  />
+      {isMobile ? (
+        // 📱 Mobile: Cards empilháveis
+        <MobileCardsView data={comparisonData} />
+      ) : (
+        // 💻 Desktop/Tablet: Tabela completa
+        <>
+          {/* Scroll indicator para tablet */}
+          <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground lg:hidden">
+            <span>← Desliza para ver más →</span>
+          </div>
+          
+          <div className="relative max-h-[60vh] overflow-auto rounded-lg border-2 border-border shadow-xl">
+            {/* Gradient overlay for scroll indication */}
+            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent lg:hidden" />
+            
+            <TableProvider
+              columns={columns}
+              data={comparisonData}
+              className="border-0"
+            >
+              <TableHeader className="bg-muted/50 sticky top-0 z-10 backdrop-blur-sm">
+                {({ headerGroup }) => (
+                  <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup}>
+                    {({ header }) => (
+                      <TableHead 
+                        key={header.id} 
+                        header={header}
+                        className="font-bold text-foreground transition-colors duration-200 hover:bg-muted/70"
+                      />
+                    )}
+                  </TableHeaderGroup>
                 )}
-              </TableHeaderGroup>
-            )}
-          </TableHeader>
-          <TableBody>
-            {({ row }) => {
-              const rowData = row.original as VIPComparisonData;
-              const rowIndex = parseInt(row.id);
-              
-              return (
-                <TableRow 
-                  key={row.id} 
-                  row={row}
-                  className={cn(
-                    "transition-all duration-300 animate-fade-in hover:shadow-md",
-                    rowData.status === 'equilibrio' && "bg-cyan-500/10 hover:bg-cyan-500/20 border-l-4 border-cyan-500",
-                    rowData.status === 'ahorro' && "hover:bg-emerald-500/5",
-                    rowData.status === 'desfavorable' && "hover:bg-orange-500/5"
-                  )}
-                  style={{
-                    animationDelay: `${rowIndex * 50}ms`,
-                    animationFillMode: 'both'
-                  }}
-                >
-                  {({ cell }) => (
-                    <TableCell 
-                      key={cell.id} 
-                      cell={cell}
-                      className="py-4 transition-all duration-200"
-                    />
-                  )}
-                </TableRow>
-              );
-            }}
-          </TableBody>
-        </TableProvider>
-      </div>
+              </TableHeader>
+              <TableBody>
+                {({ row }) => {
+                  const rowData = row.original as VIPComparisonData;
+                  const rowIndex = parseInt(row.id);
+                  
+                  return (
+                    <TableRow 
+                      key={row.id} 
+                      row={row}
+                      className={cn(
+                        "transition-all duration-300 animate-fade-in hover:shadow-md",
+                        rowData.status === 'equilibrio' && "bg-cyan-500/10 hover:bg-cyan-500/20 border-l-4 border-cyan-500",
+                        rowData.status === 'ahorro' && "hover:bg-emerald-500/5",
+                        rowData.status === 'desfavorable' && "hover:bg-orange-500/5"
+                      )}
+                      style={{
+                        animationDelay: `${rowIndex * 50}ms`,
+                        animationFillMode: 'both'
+                      }}
+                    >
+                      {({ cell }) => (
+                        <TableCell 
+                          key={cell.id} 
+                          cell={cell}
+                          className="py-4 transition-all duration-200"
+                        />
+                      )}
+                    </TableRow>
+                  );
+                }}
+              </TableBody>
+            </TableProvider>
+          </div>
+        </>
+      )}
       
-      {/* Legend with animation */}
+      {/* Legend com animação - sempre visível */}
       <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '600ms', animationFillMode: 'both' }}>
         <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
           <XCircle className="h-4 w-4 text-orange-500" />
