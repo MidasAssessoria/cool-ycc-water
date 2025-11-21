@@ -738,7 +738,14 @@ const Membresias = () => {
 
           {/* Accordion */}
           <Accordion type="single" collapsible className="w-full space-y-4">
-            {/* Pregunta 1 */}
+            {/* ========== GRUPO 1: COBERTURA Y BENEFICIOS ========== */}
+            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-4 mb-2 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
+              <span>Cobertura y Beneficios</span>
+              <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
+            </div>
+
+            {/* P1 */}
             <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿Quiénes están cubiertos en la membresía?
@@ -749,17 +756,7 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 2 */}
-            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuándo puedo comenzar a usar el parque?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 3 */}
+            {/* P3 */}
             <AccordionItem value="item-3" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿La membresía es vitalicia?
@@ -769,7 +766,7 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 4 */}
+            {/* P4 */}
             <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿Puedo transferir o heredar mi membresía?
@@ -779,127 +776,24 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 5 */}
-            <AccordionItem value="item-5" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Hay reembolso si cancelo?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                No. Tras firmar el contrato, no hay devolución de valores pagados.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 6 */}
-            <AccordionItem value="item-6" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Qué pasa si no pago la cuota de mantenimiento?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Atraso de 90+ días: YCC puede rescindir contrato y retener valores pagados.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 7 */}
-            <AccordionItem value="item-7" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuál membresía me conviene más?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Familiar: ideal si prefieres pagos menores iniciales. VIP: mejor a largo plazo (equilibrio en año 8, ahorras desde año 9).
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 8 */}
-            <AccordionItem value="item-8" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Puedo cambiar de Familiar a VIP después?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Consulta con nuestro equipo comercial sobre opciones de upgrade.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Divisor - Opciones de Pago */}
-            <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mt-8 mb-4">
-              Opciones de Pago
+            {/* ========== GRUPO 2: ACTIVACIÓN Y USO ========== */}
+            <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-orange-600/30"></span>
+              <span>Activación y Uso</span>
+              <span className="flex-1 h-0.5 bg-orange-600/30"></span>
             </div>
 
-            {/* Pregunta 9 */}
-            <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+            {/* P2 */}
+            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuáles son las opciones de pago para la Membresía Familiar?
+                ¿Cuándo puedo comenzar a usar el parque?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.
+                Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 10 */}
-            <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuáles son las opciones de pago para la Membresía VIP?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 11 */}
-            <AccordionItem value="item-11" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Qué métodos de pago aceptan?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 12 */}
-            <AccordionItem value="item-12" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Hay descuento por pago en contado?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Sí, la Membresía Familiar ofrece un 10% de descuento en pago contado (USD 1.350 en lugar de USD 1.500), ahorrando USD 150. La Membresía VIP mantiene el mismo precio de USD 4.500.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 13 */}
-            <AccordionItem value="item-13" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Puedo pagar en Guaraníes?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Sí, todos los precios en dólares pueden pagarse en Guaraníes según la cotización del BCP del día del pago.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Divisor - Proceso de Contratación */}
-            <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mt-8 mb-4">
-              Proceso de Contratación
-            </div>
-
-            {/* Pregunta 14 */}
-            <AccordionItem value="item-14" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cómo funciona el proceso de contratación?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                El proceso tiene 4 pasos simples: 1) Elegir tu membresía (Familiar o VIP), 2) Completar el registro online en nuestro sistema externo para generar tu recibo digital, 3) Realizar el pago presencialmente en YCC Water Park (Ruta 1 Km 13.5, Ypané), y 4) Activación inmediata tras pagar el 50% - recibes tu carnet y acceso al parque.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 15 */}
-            <AccordionItem value="item-15" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿El pago se puede hacer online?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                No, el pago se realiza presencialmente en YCC Water Park. El registro online solo genera tu recibo digital, pero debes visitarnos en Ruta 1 Km 13.5, Ypané para efectuar el pago.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Pregunta 16 */}
+            {/* P16 */}
             <AccordionItem value="item-16" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿Cuándo recibo mi carnet de membresía?
@@ -909,7 +803,91 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 17 */}
+            {/* ========== GRUPO 3: OPCIONES DE PAGO ========== */}
+            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
+              <span>Opciones de Pago</span>
+              <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
+            </div>
+
+            {/* P9 */}
+            <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuáles son las opciones de pago para la Membresía Familiar?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P10 */}
+            <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuáles son las opciones de pago para la Membresía VIP?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P11 */}
+            <AccordionItem value="item-11" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Qué métodos de pago aceptan?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P12 */}
+            <AccordionItem value="item-12" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Hay descuento por pago en contado?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Sí, la Membresía Familiar ofrece un 10% de descuento en pago contado (USD 1.350 en lugar de USD 1.500), ahorrando USD 150. La Membresía VIP mantiene el mismo precio de USD 4.500.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P13 */}
+            <AccordionItem value="item-13" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Puedo pagar en Guaraníes?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Sí, todos los precios en dólares pueden pagarse en Guaraníes según la cotización del BCP del día del pago.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* ========== GRUPO 4: PROCESO DE CONTRATACIÓN ========== */}
+            <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-orange-600/30"></span>
+              <span>Proceso de Contratación</span>
+              <span className="flex-1 h-0.5 bg-orange-600/30"></span>
+            </div>
+
+            {/* P14 */}
+            <AccordionItem value="item-14" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cómo funciona el proceso de contratación?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                El proceso tiene 4 pasos simples: 1) Elegir tu membresía (Familiar o VIP), 2) Completar el registro online en nuestro sistema externo para generar tu recibo digital, 3) Realizar el pago presencialmente en YCC Water Park (Ruta 1 Km 13.5, Ypané), y 4) Activación inmediata tras pagar el 50% - recibes tu carnet y acceso al parque.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P15 */}
+            <AccordionItem value="item-15" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿El pago se puede hacer online?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                No, el pago se realiza presencialmente en YCC Water Park. El registro online solo genera tu recibo digital, pero debes visitarnos en Ruta 1 Km 13.5, Ypané para efectuar el pago.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P17 */}
             <AccordionItem value="item-17" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿Dónde realizo el pago presencial?
@@ -919,13 +897,60 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Pregunta 18 */}
+            {/* P18 */}
             <AccordionItem value="item-18" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
                 ¿Necesito llevar algo al momento del pago?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 Sí, debes llevar tu recibo digital generado durante el registro online y el método de pago elegido (tarjeta, efectivo, cheques, etc.).
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* ========== GRUPO 5: POLÍTICAS Y CONSIDERACIONES ========== */}
+            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
+              <span>Políticas y Consideraciones</span>
+              <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
+            </div>
+
+            {/* P5 */}
+            <AccordionItem value="item-5" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Hay reembolso si cancelo?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                No. Tras firmar el contrato, no hay devolución de valores pagados.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P6 */}
+            <AccordionItem value="item-6" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Qué pasa si no pago la cuota de mantenimiento?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Atraso de 90+ días: YCC puede rescindir contrato y retener valores pagados.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P7 */}
+            <AccordionItem value="item-7" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuál membresía me conviene más?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Familiar: ideal si prefieres pagos menores iniciales. VIP: mejor a largo plazo (equilibrio en año 8, ahorras desde año 9).
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* P8 */}
+            <AccordionItem value="item-8" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Puedo cambiar de Familiar a VIP después?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Consulta con nuestro equipo comercial sobre opciones de upgrade.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
