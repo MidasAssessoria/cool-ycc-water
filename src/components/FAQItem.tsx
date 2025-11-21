@@ -75,10 +75,10 @@ export const FAQItem = memo<FAQItemProps>(({
       
       <AccordionItem 
         value={id} 
-        className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6"
+        className="bg-muted/30 rounded-xl border-2 border-border px-4 sm:px-5 md:px-6 lg:px-7"
       >
         <AccordionTrigger 
-          className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal"
+          className="text-left font-bold text-foreground hover:text-primary transition-colors py-4 sm:py-5 md:py-6 text-base sm:text-lg leading-tight sm:leading-normal"
           aria-label={question}
         >
           <div className="flex items-start gap-3 w-full">
@@ -93,7 +93,7 @@ export const FAQItem = memo<FAQItemProps>(({
           </div>
         </AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-          <div className="pl-8 sm:pl-9">
+          <div className="pl-8 sm:pl-9 pr-2 sm:pr-4 pt-2 pb-1">
             <p className="mb-3">{highlightText(answer)}</p>
             
             {actionButton && (
