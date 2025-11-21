@@ -62,14 +62,6 @@ const Membresias = () => {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-28 md:py-32">
-          {/* Badge promocional */}
-          <div className="inline-flex items-center justify-center mb-6 sm:mb-8">
-            <div className="bg-destructive text-destructive-foreground px-6 py-2.5 rounded-full shadow-lg animate-pulse backdrop-blur-sm">
-              <span className="text-sm sm:text-base font-bold tracking-wide">
-                🎉 Promoción de lanzamiento - 50% OFF
-              </span>
-            </div>
-          </div>
 
           {/* Título principal */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4 sm:mb-6 drop-shadow-lg">
