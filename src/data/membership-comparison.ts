@@ -2,10 +2,12 @@
  * VIP vs Familiar membership comparison data
  * Extracted for performance optimization - prevents recalculation on re-renders
  * 
- * Cálculos:
+ * Cálculos validados (Fase 6.1):
  * - Familiar: USD 1.500 entrada + USD 480/año (40/mes)
  * - VIP: USD 4.500 pago único
- * - Punto de equilibrio: año 9
+ * - Punto de equilibrio: año 9 (cuando Familiar = 5820 y VIP = 4500)
+ * - Antes del año 9: VIP más caro (desfavorable)
+ * - Año 9 en adelante: VIP ahorra (status 'ahorro')
  */
 
 export interface VIPComparisonData {
@@ -59,11 +61,11 @@ export const comparisonData: VIPComparisonData[] = [
     years: 7,
     familiarTotal: 4860,  // 1500 + (480 * 7)
     vipTotal: 4500,
-    difference: 360,
-    annualSavings: 480,
-    status: 'ahorro',
-    statusColor: '#10B981',
-    description: 'VIP comienza a ahorrar'
+    difference: 360,      // Familiar já ultrapassa VIP, mas equilibrio oficial é ano 9
+    annualSavings: 0,     // CORRIGIDO: Fase 6.1 - ainda não atingiu equilibrio oficial
+    status: 'desfavorable', // CORRIGIDO: Fase 6.1 - Familiar custa mais, VIP ainda não compensa
+    statusColor: '#F59E0B',
+    description: 'Acercándose al equilibrio' // CORRIGIDO: Fase 6.1
   },
   {
     id: "5",
@@ -71,21 +73,21 @@ export const comparisonData: VIPComparisonData[] = [
     familiarTotal: 5340,  // 1500 + (480 * 8)
     vipTotal: 4500,
     difference: 840,
-    annualSavings: 480,
-    status: 'ahorro',
-    statusColor: '#10B981',
-    description: 'Ahorro significativo'
+    annualSavings: 0,     // CORRIGIDO: Fase 6.1 - equilibrio ainda não atingido
+    status: 'desfavorable', // CORRIGIDO: Fase 6.1 - próximo ao equilibrio mas ainda desfavorable
+    statusColor: '#F59E0B',
+    description: 'Muy cerca del equilibrio'
   },
   {
     id: "6",
     years: 9,
     familiarTotal: 5820,  // 1500 + (480 * 9)
     vipTotal: 4500,
-    difference: 1320,
-    annualSavings: 480,
-    status: 'equilibrio',
-    statusColor: '#3B82F6',
-    description: 'Punto de equilibrio'
+    difference: 1320,     // A partir daqui VIP compensa
+    annualSavings: 480,   // VALIDADO: Fase 6.1 - a partir do ano 9 começa economia
+    status: 'ahorro',     // CORRIGIDO: Fase 6.1 - ano 9 é quando VIP começa a compensar
+    statusColor: '#10B981',
+    description: 'Punto de equilibrio - VIP comienza a ahorrar'
   },
   {
     id: "7",
