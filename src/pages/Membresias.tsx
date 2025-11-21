@@ -198,7 +198,7 @@ const Membresias = () => {
       />
       
       {/* FAQ Section - Sub-Fase 3.1 */}
-      <section className="bg-white py-16 sm:py-20 md:py-24">
+      <section id="faq-section" className="bg-white py-16 sm:py-20 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
@@ -467,6 +467,17 @@ const Membresias = () => {
         <DialogContent 
           className="sm:max-w-md"
           aria-describedby="modal-description"
+          onOpenAutoFocus={(e) => {
+            // Focus first interactive element (Continuar button) for better UX
+            e.preventDefault();
+            const target = e.currentTarget as HTMLElement;
+            const continueButton = target.querySelector('[aria-label*="Continuar"]') as HTMLElement;
+            continueButton?.focus();
+          }}
+          onCloseAutoFocus={(e) => {
+            // Prevent auto-focus on close to avoid unwanted scroll
+            e.preventDefault();
+          }}
         >
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Vas a ser redirigido</DialogTitle>
