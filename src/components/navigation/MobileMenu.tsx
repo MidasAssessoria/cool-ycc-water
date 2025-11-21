@@ -68,10 +68,10 @@ const MobileMenu = React.memo(() => {
               🎢 Atracciones
             </button>
             <button
-              onClick={() => handleNavigation('booking')}
+              onClick={() => handleNavigation('plan-visit-form')}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-              🎟️ Entradas
+              📅 Visitar
             </button>
             <button
               onClick={() => handleNavigation('bungalows')}
@@ -106,16 +106,6 @@ const MobileMenu = React.memo(() => {
           </nav>
         </div>
 
-        {/* CTA at bottom */}
-        <div className="p-4 sm:p-6 bg-background border-t border-border shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-          <RippleButton 
-            onClick={() => handleNavigation('booking')}
-            className="w-full bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-[hsl(4,90%,58%)] active:from-[hsl(4,90%,58%)] active:to-coral-dark text-white font-bold text-base sm:text-lg py-4 rounded-full shadow-xl min-h-[56px] touch-manipulation transition-all"
-            aria-label="Comprar entradas"
-          >
-            🎟️ Comprar Entradas
-          </RippleButton>
-        </div>
       </SheetContent>
     </Sheet>
   );
