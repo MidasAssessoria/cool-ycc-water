@@ -203,13 +203,15 @@ export type TableRowProps = {
   row: Row<unknown>;
   children: (props: { cell: Cell<unknown, unknown> }) => ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 };
 
-export const TableRow = ({ row, children, className }: TableRowProps) => (
+export const TableRow = ({ row, children, className, style }: TableRowProps) => (
   <TableRowRaw
     key={row.id}
     data-state={row.getIsSelected() && 'selected'}
     className={className}
+    style={style}
   >
     {row.getVisibleCells().map((cell) => children({ cell }))}
   </TableRowRaw>
