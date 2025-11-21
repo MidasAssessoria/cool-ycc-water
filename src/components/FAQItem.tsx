@@ -81,7 +81,7 @@ export const FAQItem = memo<FAQItemProps>(({
           className="text-left font-bold text-foreground hover:text-primary transition-colors py-4 sm:py-5 md:py-6 text-base sm:text-lg leading-tight sm:leading-normal"
           aria-label={question}
         >
-          <div className="flex items-start gap-3 w-full">
+          <div className="flex items-start gap-3 sm:gap-4 w-full">
             <Icon 
               className={cn(
                 "w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5",
@@ -94,14 +94,14 @@ export const FAQItem = memo<FAQItemProps>(({
         </AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
           <div className="pl-8 sm:pl-9 pr-2 sm:pr-4 pt-2 pb-1">
-            <p className="mb-3">{highlightText(answer)}</p>
+            <p className="mb-4 sm:mb-5">{highlightText(answer)}</p>
             
             {actionButton && (
               <Button
                 size="sm"
                 variant="outline"
                 onClick={handleActionClick}
-                className="mt-2 text-xs sm:text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="mt-4 sm:mt-5 text-xs sm:text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label={actionButton.label}
               >
                 {actionButton.label}
