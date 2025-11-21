@@ -12,6 +12,7 @@ import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
 import { SEOHead } from "@/components/SEOHead";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // Code splitting: lazy load Timeline component
 const Timeline = lazy(() => import("@/components/ui/timeline").then(m => ({ default: m.Timeline })));
@@ -183,6 +184,7 @@ const Membresias = () => {
                 alt="Lagos naturales"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -198,6 +200,7 @@ const Membresias = () => {
                 alt="Canchas deportivas"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -251,6 +254,7 @@ const Membresias = () => {
                 alt="Piscina de olas"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -266,6 +270,7 @@ const Membresias = () => {
                 alt="Toboganes"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -319,6 +324,7 @@ const Membresias = () => {
                 alt="HidroSPA"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -334,6 +340,7 @@ const Membresias = () => {
                 alt="Eventos exclusivos"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -420,25 +427,25 @@ const Membresias = () => {
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             {/* Circle 1 - Top Left - Cyan */}
             <div 
-              className="absolute top-16 left-8 w-48 h-48 bg-cyan-400/40 rounded-full blur-[100px] animate-float"
+              className="absolute top-16 left-8 w-48 h-48 bg-cyan-400/40 rounded-full blur-[100px] animate-float will-change-transform"
               style={{ animationDelay: '0s', animationDuration: '6s' }}
             />
             
             {/* Circle 2 - Bottom Right - Orange */}
             <div 
-              className="absolute bottom-32 right-16 w-64 h-64 bg-orange-400/35 rounded-full blur-[120px] animate-float"
+              className="absolute bottom-32 right-16 w-64 h-64 bg-orange-400/35 rounded-full blur-[120px] animate-float will-change-transform"
               style={{ animationDelay: '1.5s', animationDuration: '7s' }}
             />
             
             {/* Circle 3 - Center Left - White/Cyan */}
             <div 
-              className="absolute top-1/2 left-1/4 w-56 h-56 bg-white/30 rounded-full blur-[110px] animate-float"
+              className="absolute top-1/2 left-1/4 w-56 h-56 bg-white/30 rounded-full blur-[110px] animate-float will-change-transform"
               style={{ animationDelay: '3s', animationDuration: '8s' }}
             />
             
             {/* Circle 4 - Top Right - Additional depth */}
             <div 
-              className="absolute top-24 right-1/4 w-40 h-40 bg-cyan-300/25 rounded-full blur-[90px] animate-float"
+              className="absolute top-24 right-1/4 w-40 h-40 bg-cyan-300/25 rounded-full blur-[90px] animate-float will-change-transform"
               style={{ animationDelay: '2s', animationDuration: '5.5s' }}
             />
           </div>
@@ -470,16 +477,25 @@ const Membresias = () => {
       </section>
 
       {/* Timeline Benefits Section - Code Splitting with Lazy Loading */}
-      <Suspense fallback={
-        <div className="flex items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="text-lg font-semibold text-muted-foreground">Cargando beneficios...</p>
+      <ErrorBoundary fallback={
+        <div className="flex items-center justify-center min-h-[400px] bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="text-center space-y-4 p-8">
+            <p className="text-lg font-semibold text-muted-foreground">Error al cargar la línea de tiempo</p>
+            <Button onClick={() => window.location.reload()} variant="outline">Recargar página</Button>
           </div>
         </div>
       }>
-        <Timeline data={timelineData} />
-      </Suspense>
+        <Suspense fallback={
+          <div className="flex items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+              <p className="text-lg font-semibold text-muted-foreground">Cargando beneficios...</p>
+            </div>
+          </div>
+        }>
+          <Timeline data={timelineData} />
+        </Suspense>
+      </ErrorBoundary>
 
       {/* Comparison Section - Nova versão com animações */}
       <MembresiaPricingSection 
