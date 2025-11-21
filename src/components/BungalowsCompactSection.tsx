@@ -208,16 +208,6 @@ const BungalowsCompactSection = ({
           ✨ Tour guiado + presentación del proyecto sin compromiso
         </p>
 
-        {/* REAL Casas Credit - Mobile optimized */}
-        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm px-4">
-          <span className="text-gray-500">En alianza con</span>
-          <div className="flex items-center gap-2 bg-coral/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-coral/20">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-coral rounded flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-[10px] sm:text-xs">R</span>
-            </div>
-            <span className="font-bold text-coral text-xs sm:text-sm">REAL Casas Pré Fabricadas</span>
-          </div>
-        </div>
       </footer>
     </section>
   );
