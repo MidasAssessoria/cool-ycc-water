@@ -394,6 +394,125 @@ const Membresias = () => {
         </div>
       </section>
 
+      {/* Cómo Funciona - Timeline - Sub-Fase 2.3 */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+              Proceso de contratación
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">
+              4 pasos simples para tu membresía
+            </p>
+          </div>
+
+          {/* Timeline - Desktop: horizontal, Mobile: vertical */}
+          <div className="relative">
+            
+            {/* Linha conectora - Desktop */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-green-200" style={{ width: 'calc(100% - 8rem)', marginLeft: '4rem' }}></div>
+            
+            {/* Grid de passos */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
+              
+              {/* Paso 1: Elegir Membresía */}
+              <div className="flex flex-col items-center text-center relative">
+                {/* Linha vertical mobile */}
+                <div className="md:hidden absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 to-purple-200"></div>
+                
+                {/* Círculo numerado */}
+                <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg mb-4">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                
+                {/* Ícone */}
+                <div className="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-3">
+                  <CheckCircle2 className="w-7 h-7 text-blue-600" />
+                </div>
+                
+                {/* Conteúdo */}
+                <h3 className="text-lg font-bold text-foreground mb-2">Elegir Membresía</h3>
+                <p className="text-sm text-muted-foreground">
+                  Selecciona Familiar o VIP según tus necesidades
+                </p>
+              </div>
+
+              {/* Paso 2: Registro Online */}
+              <div className="flex flex-col items-center text-center relative">
+                {/* Linha vertical mobile */}
+                <div className="md:hidden absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 to-green-200"></div>
+                
+                {/* Círculo numerado */}
+                <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg mb-4">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                
+                {/* Ícone */}
+                <div className="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-3">
+                  <FileText className="w-7 h-7 text-purple-600" />
+                </div>
+                
+                {/* Conteúdo */}
+                <h3 className="text-lg font-bold text-foreground mb-2">Registro Online</h3>
+                <p className="text-sm text-muted-foreground">
+                  Completa tus datos en sistema externo y genera recibo digital
+                </p>
+              </div>
+
+              {/* Paso 3: Pago Presencial */}
+              <div className="flex flex-col items-center text-center relative">
+                {/* Linha vertical mobile */}
+                <div className="md:hidden absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-green-200 to-orange-200"></div>
+                
+                {/* Círculo numerado */}
+                <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg mb-4">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                
+                {/* Ícone */}
+                <div className="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-3">
+                  <Banknote className="w-7 h-7 text-green-600" />
+                </div>
+                
+                {/* Conteúdo */}
+                <h3 className="text-lg font-bold text-foreground mb-2">Pago Presencial</h3>
+                <p className="text-sm text-muted-foreground">
+                  Visita YCC en Ruta 1 Km 13.5, Ypané y realiza el pago
+                </p>
+              </div>
+
+              {/* Paso 4: Activación */}
+              <div className="flex flex-col items-center text-center relative">
+                {/* Círculo numerado */}
+                <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg mb-4">
+                  <span className="text-2xl font-bold text-white">4</span>
+                </div>
+                
+                {/* Ícone */}
+                <div className="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-3">
+                  <Trophy className="w-7 h-7 text-orange-600" />
+                </div>
+                
+                {/* Conteúdo */}
+                <h3 className="text-lg font-bold text-foreground mb-2">Activación</h3>
+                <p className="text-sm text-muted-foreground">
+                  Tras pagar 50%, recibes carnet y acceso inmediato
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Nota destacada */}
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mt-12">
+            <p className="text-base sm:text-lg text-blue-900 font-semibold">
+              📝 <strong>Importante:</strong> El pago se realiza presencialmente. El registro online genera tu recibo.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Section - Fase 4 */}
       <section id="comparison-section" className="bg-muted py-16 sm:py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
