@@ -54,7 +54,7 @@ const Membresias = () => {
   const card4Animation = useIntersectionAnimation({ threshold: 0.2 });
 
   // Lazy rendering for FAQ Accordion - improves initial load
-  const { renderedCount, containerRef } = useLazyAccordion(11, 6); // 11 total items, render 6 initially
+  const { renderedCount, containerRef } = useLazyAccordion(10, 5); // 11 total items, render 6 initially
 
   const handleOpenModal = (plan: 'familiar' | 'vip') => {
     setSelectedPlan(plan);
@@ -197,183 +197,163 @@ const Membresias = () => {
         onContratarVIP={() => handleOpenModal('vip')}
       />
       
-      {/* FAQ Section - Sub-Fase 3.1 */}
-      <section id="faq-section" className="bg-white py-16 sm:py-20 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* FAQ Section - Mobile-First Optimized */}
+      <section id="faq-section" className="bg-white py-12 sm:py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center bg-blue-100 px-4 py-2 rounded-full mb-4">
               <HelpCircle className="w-5 h-5 mr-2 text-blue-600" />
               <span className="text-sm font-bold text-blue-700">FAQ</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 sm:mb-4 leading-tight">
               Preguntas frecuentes
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               Resuelve tus dudas sobre las membresías
             </p>
           </div>
 
-          {/* Accordion with lazy rendering */}
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          {/* Accordion with lazy rendering - Mobile Optimized */}
+          <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
             <div ref={containerRef}>
             {/* ========== GRUPO 1: COBERTURA Y BENEFICIOS ========== */}
-            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-4 mb-2 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
+            <div className="text-xs sm:text-sm font-bold text-cyan-700 uppercase tracking-wider mt-2 mb-3 flex items-center gap-2">
+              <span className="w-6 sm:w-8 h-0.5 bg-cyan-600/30"></span>
               <span>Cobertura y Beneficios</span>
               <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
             </div>
 
-            {/* P1 - Items 1-6 always rendered initially */}
-            <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+            {/* Item 1 - Always rendered */}
+            <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                 ¿Quiénes están cubiertos en la membresía?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Titular + padres + cónyuge + todos los hijos menores de 18 años. 
                 Puedes agregar suegros por USD 250 cada uno + USD 20/mes.
               </AccordionContent>
             </AccordionItem>
 
-            {/* P4 */}
-            <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+            {/* Item 2 */}
+            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                 ¿Puedo transferir o heredar mi membresía?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Sí, ambas membresías son transferibles a herederos o terceros.
               </AccordionContent>
             </AccordionItem>
 
             {/* ========== GRUPO 2: ACTIVACIÓN Y USO ========== */}
-            <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-orange-600/30"></span>
+            <div className="text-xs sm:text-sm font-bold text-orange-700 uppercase tracking-wider mt-6 sm:mt-8 mb-3 flex items-center gap-2">
+              <span className="w-6 sm:w-8 h-0.5 bg-orange-600/30"></span>
               <span>Activación y Uso</span>
               <span className="flex-1 h-0.5 bg-orange-600/30"></span>
             </div>
 
-            {/* P2 */}
-            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+            {/* Item 3 */}
+            <AccordionItem value="item-3" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                 ¿Cuándo puedo comenzar a usar el parque?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
               </AccordionContent>
             </AccordionItem>
 
             {/* ========== GRUPO 3: OPCIONES DE PAGO ========== */}
-            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
+            <div className="text-xs sm:text-sm font-bold text-cyan-700 uppercase tracking-wider mt-6 sm:mt-8 mb-3 flex items-center gap-2">
+              <span className="w-6 sm:w-8 h-0.5 bg-cyan-600/30"></span>
               <span>Opciones de Pago</span>
               <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
             </div>
 
-            {/* P9 */}
-            <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+            {/* Item 4 */}
+            <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                 ¿Cuáles son las opciones de pago para la Membresía Familiar?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.
               </AccordionContent>
             </AccordionItem>
 
-            {/* P10 */}
-            <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+            {/* Item 5 */}
+            <AccordionItem value="item-5" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                 ¿Cuáles son las opciones de pago para la Membresía VIP?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).
               </AccordionContent>
             </AccordionItem>
 
-            {/* P11 */}
-            <AccordionItem value="item-11" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Qué métodos de pago aceptan?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
-              </AccordionContent>
-            </AccordionItem>
+            {/* Item 6 - Lazy loaded from here */}
+            {renderedCount >= 6 && (
+              <AccordionItem value="item-6" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+                <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
+                  ¿Qué métodos de pago aceptan?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                  Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
+                </AccordionContent>
+              </AccordionItem>
+            )}
 
-            {/* P12 */}
+            {/* Item 7 */}
             {renderedCount >= 7 && (
-              <AccordionItem value="item-12" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+              <AccordionItem value="item-7" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+                <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                   ¿Hay descuento por pago en contado?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   Sí, la Membresía Familiar ofrece un 10% de descuento en pago contado (USD 1.350 en lugar de USD 1.500), ahorrando USD 150. La Membresía VIP mantiene el mismo precio de USD 4.500.
                 </AccordionContent>
               </AccordionItem>
             )}
 
-            {/* P13 */}
+            {/* Item 8 */}
             {renderedCount >= 8 && (
-              <AccordionItem value="item-13" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+              <AccordionItem value="item-8" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+                <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                   ¿Puedo pagar en Guaraníes?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   Sí, todos los precios en dólares pueden pagarse en Guaraníes según la cotización del BCP del día del pago.
                 </AccordionContent>
               </AccordionItem>
             )}
 
             {/* ========== GRUPO 4: PROCESO DE CONTRATACIÓN ========== */}
-            <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-orange-600/30"></span>
-              <span>Proceso de Contratación</span>
-              <span className="flex-1 h-0.5 bg-orange-600/30"></span>
-            </div>
+            {renderedCount >= 8 && (
+              <div className="text-xs sm:text-sm font-bold text-orange-700 uppercase tracking-wider mt-6 sm:mt-8 mb-3 flex items-center gap-2">
+                <span className="w-6 sm:w-8 h-0.5 bg-orange-600/30"></span>
+                <span>Proceso de Contratación</span>
+                <span className="flex-1 h-0.5 bg-orange-600/30"></span>
+              </div>
+            )}
 
-            {/* P14 */}
+            {/* Item 9 */}
             {renderedCount >= 9 && (
-              <AccordionItem value="item-14" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+              <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+                <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                   ¿Cómo funciona el proceso de contratación?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   El proceso tiene 4 pasos simples: 1) Elegir tu membresía (Familiar o VIP), 2) Completar el registro online en nuestro sistema externo para generar tu recibo digital, 3) Realizar el pago presencialmente en YCC Water Park (Ruta 1 Km 13.5, Ypané), y 4) Activación inmediata tras pagar el 50% - recibes tu carnet y acceso al parque.
                 </AccordionContent>
               </AccordionItem>
             )}
 
-            {/* P15 */}
+            {/* Item 10 */}
             {renderedCount >= 10 && (
-              <AccordionItem value="item-15" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿El pago se puede hacer online?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  No, el pago se realiza presencialmente en YCC Water Park. El registro online solo genera tu recibo digital, pero debes visitarnos en Ruta 1 Km 13.5, Ypané para efectuar el pago.
-                </AccordionContent>
-              </AccordionItem>
-            )}
-
-            {/* P17 */}
-            {renderedCount >= 10 && (
-              <AccordionItem value="item-17" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+              <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-3 sm:px-6">
+                <AccordionTrigger className="text-left font-bold text-foreground hover:text-primary transition-colors py-5 sm:py-4 text-base sm:text-lg leading-tight sm:leading-normal">
                   ¿Dónde realizo el pago presencial?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   El pago se realiza en YCC Water Park, ubicado en Ruta 1 Km 13.5, Ypané, Paraguay. Lleva tu recibo digital generado en el registro online.
-                </AccordionContent>
-              </AccordionItem>
-            )}
-
-            {/* P18 */}
-            {renderedCount >= 11 && (
-              <AccordionItem value="item-18" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Necesito llevar algo al momento del pago?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Sí, debes llevar tu recibo digital generado durante el registro online y el método de pago elegido (tarjeta, efectivo, cheques, etc.).
                 </AccordionContent>
               </AccordionItem>
             )}
