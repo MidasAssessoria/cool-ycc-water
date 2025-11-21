@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { smoothScrollToElement } from "@/lib/utils";
-import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText, ExternalLink } from "lucide-react";
+import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText, ExternalLink, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 
 const Membresias = () => {
@@ -686,6 +687,109 @@ const Membresias = () => {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Sub-Fase 3.1 */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center bg-blue-100 px-4 py-2 rounded-full mb-4">
+              <HelpCircle className="w-5 h-5 mr-2 text-blue-600" />
+              <span className="text-sm font-bold text-blue-700">FAQ</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+              Preguntas frecuentes
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">
+              Resuelve tus dudas sobre las membresías
+            </p>
+          </div>
+
+          {/* Accordion */}
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {/* Pregunta 1 */}
+            <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Quiénes están cubiertos en la membresía?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Titular + padres + cónyuge + todos los hijos menores de 18 años. 
+                Puedes agregar suegros por USD 250 cada uno + USD 20/mes.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 2 */}
+            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuándo puedo comenzar a usar el parque?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 3 */}
+            <AccordionItem value="item-3" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿La membresía es vitalicia?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Sí, se renueva anualmente mediante el pago de la cuota de mantenimiento (Familiar: USD 40/mes, VIP: USD 0).
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 4 */}
+            <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Puedo transferir o heredar mi membresía?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Sí, ambas membresías son transferibles a herederos o terceros.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 5 */}
+            <AccordionItem value="item-5" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Hay reembolso si cancelo?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                No. Tras firmar el contrato, no hay devolución de valores pagados.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 6 */}
+            <AccordionItem value="item-6" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Qué pasa si no pago la cuota de mantenimiento?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Atraso de 90+ días: YCC puede rescindir contrato y retener valores pagados.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 7 */}
+            <AccordionItem value="item-7" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuál membresía me conviene más?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Familiar: ideal si prefieres pagos menores iniciales. VIP: mejor a largo plazo (equilibrio en año 8, ahorras desde año 9).
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Pregunta 8 */}
+            <AccordionItem value="item-8" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Puedo cambiar de Familiar a VIP después?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Consulta con nuestro equipo comercial sobre opciones de upgrade.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
