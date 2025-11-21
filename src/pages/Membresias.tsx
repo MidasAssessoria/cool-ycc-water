@@ -300,11 +300,20 @@ const Membresias = () => {
         </Suspense>
       </ErrorBoundary>
 
-      {/* Comparison Section - Nova versão com animações */}
-      <MembresiaPricingSection 
-        onContratarFamiliar={() => handleOpenModal('familiar')}
-        onContratarVIP={() => handleOpenModal('vip')}
-      />
+      {/* Comparison Section - Fase 5.4: Error Boundary para pricing */}
+      <ErrorBoundary fallback={
+        <div className="flex items-center justify-center min-h-[400px] bg-gradient-to-br from-cyan-50 to-orange-50">
+          <div className="text-center space-y-4 p-8">
+            <p className="text-lg font-semibold text-muted-foreground">Error al cargar las opciones de membresía</p>
+            <Button onClick={() => window.location.reload()} variant="outline">Recargar página</Button>
+          </div>
+        </div>
+      }>
+        <MembresiaPricingSection 
+          onContratarFamiliar={() => handleOpenModal('familiar')}
+          onContratarVIP={() => handleOpenModal('vip')}
+        />
+      </ErrorBoundary>
       
       {/* Skip link for FAQ section - Accessibility */}
       <a
@@ -314,12 +323,20 @@ const Membresias = () => {
         Saltar a preguntas frecuentes
       </a>
 
-      {/* FAQ Section - Interactive with Search & Filtering + A11y */}
-      <section 
-        id="faq-section" 
-        className="bg-white py-12 sm:py-16 md:py-20"
-        aria-labelledby="faq-heading"
-      >
+      {/* FAQ Section - Fase 5.4: Error Boundary para FAQ + Interactive with Search & Filtering + A11y */}
+      <ErrorBoundary fallback={
+        <div className="flex items-center justify-center min-h-[300px] bg-white">
+          <div className="text-center space-y-4 p-8">
+            <p className="text-lg font-semibold text-muted-foreground">Error al cargar las preguntas frecuentes</p>
+            <Button onClick={() => window.location.reload()} variant="outline">Recargar página</Button>
+          </div>
+        </div>
+      }>
+        <section 
+          id="faq-section" 
+          className="bg-white py-12 sm:py-16 md:py-20"
+          aria-labelledby="faq-heading"
+        >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -466,6 +483,7 @@ const Membresias = () => {
           )}
         </div>
       </section>
+      </ErrorBoundary>
 
       {/* Footer - Igual ao da página principal */}
       <footer className="bg-charcoal text-white py-12 sm:py-16 lg:py-20">
