@@ -267,9 +267,9 @@ const Membresias = () => {
         className="bg-white py-12 sm:py-16 md:py-20"
         aria-labelledby="faq-heading"
       >
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
           {/* Header */}
-          <div className="text-center mb-6 sm:mb-8">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <div className="inline-flex items-center bg-blue-100 px-4 py-2 rounded-full mb-4">
               <HelpCircle className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
               <span className="text-sm font-bold text-blue-700">FAQ</span>
@@ -286,7 +286,7 @@ const Membresias = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="mb-6 sm:mb-8">
+          <div className="mb-8 sm:mb-10">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
               <Input
@@ -320,7 +320,7 @@ const Membresias = () => {
           </div>
 
           {/* Category Index */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
             <button
               onClick={() => setActiveCategory(null)}
               className={cn(
