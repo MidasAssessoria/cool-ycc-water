@@ -493,16 +493,6 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* P3 */}
-            <AccordionItem value="item-3" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿La membresía es vitalicia?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Sí, se renueva anualmente mediante el pago de la cuota de mantenimiento (Familiar: USD 40/mes, VIP: USD 0).
-              </AccordionContent>
-            </AccordionItem>
-
             {/* P4 */}
             <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
               <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
@@ -527,16 +517,6 @@ const Membresias = () => {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* P16 */}
-            <AccordionItem value="item-16" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuándo recibo mi carnet de membresía?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Recibes tu carnet y acceso inmediato al parque tras pagar el 50% del valor total de tu membresía. No necesitas esperar a completar el pago total para comenzar a disfrutar.
               </AccordionContent>
             </AccordionItem>
 
@@ -644,52 +624,6 @@ const Membresias = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* ========== GRUPO 5: POLÍTICAS Y CONSIDERACIONES ========== */}
-            <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-cyan-600/30"></span>
-              <span>Políticas y Consideraciones</span>
-              <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
-            </div>
-
-            {/* P5 */}
-            <AccordionItem value="item-5" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Hay reembolso si cancelo?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                No. Tras firmar el contrato, no hay devolución de valores pagados.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* P6 */}
-            <AccordionItem value="item-6" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Qué pasa si no pago la cuota de mantenimiento?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Atraso de 90+ días: YCC puede rescindir contrato y retener valores pagados.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* P7 */}
-            <AccordionItem value="item-7" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Cuál membresía me conviene más?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Familiar: ideal si prefieres pagos menores iniciales. VIP: mejor a largo plazo (equilibrio en año 8, ahorras desde año 9).
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* P8 */}
-            <AccordionItem value="item-8" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                ¿Puedo cambiar de Familiar a VIP después?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Consulta con nuestro equipo comercial sobre opciones de upgrade.
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </section>
