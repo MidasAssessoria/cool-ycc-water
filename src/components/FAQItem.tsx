@@ -54,8 +54,8 @@ export const FAQItem = memo<FAQItemProps>(({
       {showCategoryHeader && (
         <div 
           className={cn(
-            "text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 flex items-center gap-2",
-            isFirstInCategory && "mt-6 sm:mt-8",
+            "text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 sm:mb-5 flex items-center gap-2 py-2",
+            isFirstInCategory && "mt-8 sm:mt-10 md:mt-12",
             categoryColor === 'cyan' ? "text-cyan-700" : "text-orange-700"
           )}
           role="separator"
