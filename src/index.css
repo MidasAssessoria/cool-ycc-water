@@ -98,6 +98,10 @@ All colors MUST be HSL.
     --bungalow-coral: 0 84% 60%;
     --bungalow-charcoal: 210 50% 20%;
     --bungalow-warm-white: 0 0% 98%;
+    
+    /* Hero Gradient Colors - Exact colors from prompt */
+    --hero-cyan: 187 100% 42%; /* #00B8D4 */
+    --hero-orange: 14 100% 63%; /* #FF7043 */
   }
 
   .dark {
@@ -148,6 +152,10 @@ All colors MUST be HSL.
     --bungalow-coral: 0 84% 70%;
     --bungalow-charcoal: 210 40% 80%;
     --bungalow-warm-white: 0 0% 10%;
+    
+    /* Hero Gradient Colors - Dark Mode */
+    --hero-cyan: 187 100% 52%; /* Slightly lighter for dark mode */
+    --hero-orange: 14 100% 70%; /* Slightly lighter for dark mode */
   }
 }
 

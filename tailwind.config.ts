@@ -99,6 +99,10 @@ export default {
           charcoal: "hsl(var(--bungalow-charcoal))",
           "warm-white": "hsl(var(--bungalow-warm-white))",
         },
+        "hero": {
+          cyan: "hsl(var(--hero-cyan))",
+          orange: "hsl(var(--hero-orange))",
+        },
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
