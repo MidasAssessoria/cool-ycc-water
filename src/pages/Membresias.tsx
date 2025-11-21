@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { smoothScrollToElement } from "@/lib/utils";
-import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText } from "lucide-react";
+import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText, ExternalLink } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 
 const Membresias = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<'familiar' | 'vip' | null>(null);
+
+  const handleOpenModal = (plan: 'familiar' | 'vip') => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const handleContinue = () => {
+    // Placeholder URL - será substituído posteriormente
+    window.open('https://example.com/registro-membresias', '_blank');
+    setIsModalOpen(false);
+  };
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Fase 2 */}
@@ -593,13 +607,12 @@ const Membresias = () => {
 
                 {/* CTA Button */}
                 <Button
-                  disabled
                   size="lg"
-                  className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-full opacity-50 cursor-not-allowed"
+                  onClick={() => handleOpenModal('familiar')}
+                  className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-full"
                 >
                   Contratar Familiar
                 </Button>
-                <p className="text-xs text-center text-muted-foreground mt-2">Próximamente disponible</p>
               </div>
             </div>
 
@@ -663,19 +676,81 @@ const Membresias = () => {
 
                 {/* CTA Button */}
                 <Button
-                  disabled
                   size="lg"
-                  className="w-full h-14 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-full opacity-50 cursor-not-allowed"
+                  onClick={() => handleOpenModal('vip')}
+                  className="w-full h-14 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-full"
                 >
                   Contratar VIP
                 </Button>
-                <p className="text-xs text-center text-muted-foreground mt-2">Próximamente disponible</p>
               </div>
             </div>
 
           </div>
         </div>
       </section>
+
+      {/* Modal de Redirecionamento - Sub-Fase 2.4 */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Vas a ser redirigido</DialogTitle>
+            <DialogDescription className="text-base pt-2">
+              Serás redirigido a nuestro sistema de registro externo. Completa tus datos para generar tu recibo y confirmar el pago presencialmente en YCC Water Park.
+            </DialogDescription>
+          </DialogHeader>
+
+          {/* Info del plan seleccionado */}
+          {selectedPlan && (
+            <div className={`p-5 rounded-xl border-2 ${
+              selectedPlan === 'familiar' 
+                ? 'bg-blue-50 border-blue-200' 
+                : 'bg-purple-50 border-purple-200'
+            }`}>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Membresía seleccionada:</p>
+                <p className={`text-2xl font-black ${
+                  selectedPlan === 'familiar' ? 'text-blue-600' : 'text-purple-600'
+                }`}>
+                  {selectedPlan === 'familiar' ? 'Membresía Familiar' : 'Membresía VIP'}
+                </p>
+                <div className="flex items-baseline gap-2 pt-1">
+                  <span className="text-sm text-muted-foreground">Precio:</span>
+                  <span className="text-xl font-bold text-foreground">
+                    USD {selectedPlan === 'familiar' ? '1.500' : '4.500'}
+                  </span>
+                </div>
+                {selectedPlan === 'familiar' && (
+                  <p className="text-sm text-muted-foreground">+ USD 40/mes tras pagar 50%</p>
+                )}
+                {selectedPlan === 'vip' && (
+                  <p className="text-sm font-semibold text-purple-700">Sin cuota mensual NUNCA</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          <DialogFooter className="flex-col sm:flex-row gap-3 sm:gap-2">
+            <Button 
+              variant="outline" 
+              onClick={() => setIsModalOpen(false)}
+              className="w-full sm:w-auto order-2 sm:order-1"
+            >
+              Cancelar
+            </Button>
+            <Button 
+              onClick={handleContinue}
+              className={`w-full sm:w-auto gap-2 order-1 sm:order-2 ${
+                selectedPlan === 'familiar' 
+                  ? 'bg-blue-600 hover:bg-blue-700' 
+                  : 'bg-purple-600 hover:bg-purple-700'
+              }`}
+            >
+              Continuar al Registro
+              <ExternalLink className="w-4 h-4" />
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
