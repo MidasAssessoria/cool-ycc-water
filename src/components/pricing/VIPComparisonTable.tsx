@@ -191,9 +191,9 @@ export const VIPComparisonTable = () => {
         <TableColumnHeader column={column} title="Tiempo" />
       ),
       cell: ({ row }) => (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 transition-transform duration-200 hover:scale-105">
           {row.original.status === 'equilibrio' ? (
-            <Badge variant="default" className="bg-cyan-500 hover:bg-cyan-600 font-bold">
+            <Badge variant="default" className="bg-cyan-500 hover:bg-cyan-600 font-bold shadow-md transition-all duration-200 hover:shadow-lg">
               ⭐ {row.original.years} {row.original.years === 1 ? 'año' : 'años'}
             </Badge>
           ) : (
@@ -210,7 +210,7 @@ export const VIPComparisonTable = () => {
         <TableColumnHeader column={column} title="Familiar Total" />
       ),
       cell: ({ row }) => (
-        <span className="font-semibold text-orange-600">
+        <span className="font-semibold text-orange-600 transition-all duration-200 hover:text-orange-700">
           {formatCurrency(row.original.familiarTotal)}
         </span>
       ),
@@ -221,7 +221,7 @@ export const VIPComparisonTable = () => {
         <TableColumnHeader column={column} title="VIP Total" />
       ),
       cell: ({ row }) => (
-        <span className="font-semibold text-cyan-600">
+        <span className="font-semibold text-cyan-600 transition-all duration-200 hover:text-cyan-700">
           {formatCurrency(row.original.vipTotal)}
         </span>
       ),
@@ -236,11 +236,11 @@ export const VIPComparisonTable = () => {
         const isPositive = diff > 0;
         
         return (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
             <StatusIcon status={row.original.status} />
             <span className={cn(
-              "font-bold",
-              isPositive ? "text-emerald-600" : "text-orange-600"
+              "font-bold transition-colors duration-200",
+              isPositive ? "text-emerald-600 hover:text-emerald-700" : "text-orange-600 hover:text-orange-700"
             )}>
               {isPositive ? '+' : ''}{formatCurrency(Math.abs(diff))}
             </span>
@@ -269,21 +269,29 @@ export const VIPComparisonTable = () => {
   ];
 
   return (
-    <div className="w-full">
-      <div className="max-h-[60vh] overflow-auto rounded-lg border-2 border-border">
+    <div className="w-full animate-fade-in">
+      {/* Scroll indicator for mobile */}
+      <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground md:hidden">
+        <span>← Desliza para ver más →</span>
+      </div>
+      
+      <div className="relative max-h-[60vh] overflow-auto rounded-lg border-2 border-border shadow-xl">
+        {/* Gradient overlay for scroll indication */}
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
+        
         <TableProvider
           columns={columns}
           data={comparisonData}
           className="border-0"
         >
-          <TableHeader className="bg-muted/50 sticky top-0 z-10">
+          <TableHeader className="bg-muted/50 sticky top-0 z-10 backdrop-blur-sm">
             {({ headerGroup }) => (
               <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup}>
                 {({ header }) => (
                   <TableHead 
                     key={header.id} 
                     header={header}
-                    className="font-bold text-foreground"
+                    className="font-bold text-foreground transition-colors duration-200 hover:bg-muted/70"
                   />
                 )}
               </TableHeaderGroup>
@@ -292,23 +300,28 @@ export const VIPComparisonTable = () => {
           <TableBody>
             {({ row }) => {
               const rowData = row.original as VIPComparisonData;
+              const rowIndex = parseInt(row.id);
               
               return (
                 <TableRow 
                   key={row.id} 
                   row={row}
                   className={cn(
-                    "transition-colors",
-                    rowData.status === 'equilibrio' && "bg-cyan-500/10 hover:bg-cyan-500/20",
+                    "transition-all duration-300 animate-fade-in hover:shadow-md",
+                    rowData.status === 'equilibrio' && "bg-cyan-500/10 hover:bg-cyan-500/20 border-l-4 border-cyan-500",
                     rowData.status === 'ahorro' && "hover:bg-emerald-500/5",
                     rowData.status === 'desfavorable' && "hover:bg-orange-500/5"
                   )}
+                  style={{
+                    animationDelay: `${rowIndex * 50}ms`,
+                    animationFillMode: 'both'
+                  }}
                 >
-                {({ cell }) => (
+                  {({ cell }) => (
                     <TableCell 
                       key={cell.id} 
                       cell={cell}
-                      className="py-4"
+                      className="py-4 transition-all duration-200"
                     />
                   )}
                 </TableRow>
@@ -318,16 +331,17 @@ export const VIPComparisonTable = () => {
         </TableProvider>
       </div>
       
-      <div className="mt-4 flex items-start gap-6 text-sm text-muted-foreground">
-        <div className="flex items-center gap-2">
+      {/* Legend with animation */}
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '600ms', animationFillMode: 'both' }}>
+        <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
           <XCircle className="h-4 w-4 text-orange-500" />
           <span>Desfavorable</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
           <Scale className="h-4 w-4 text-cyan-500" />
           <span>Punto de Equilibrio</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 transition-all duration-200 hover:scale-105">
           <CheckCircle className="h-4 w-4 text-emerald-500" />
           <span>Ahorro VIP</span>
         </div>
