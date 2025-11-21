@@ -50,12 +50,12 @@ const TopBar = React.memo(() => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  smoothScrollToElement('booking', 80);
+                  smoothScrollToElement('plan-visit-form', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
-                aria-label="Ir a la sección de compra de entradas"
+                aria-label="Agendar visita guiada"
               >
-                Entradas
+                Visitar
               </button>
               <button 
                 onClick={(e) => {
@@ -82,27 +82,10 @@ const TopBar = React.memo(() => {
               <span>Agendar Visita</span>
             </button>
 
-            {/* Primary CTA - Responsive sizing */}
-            <RippleButton 
-              onClick={() => smoothScrollToElement('booking', 80)}
-              className="bg-[#0EA5E9] hover:bg-[hsl(199,89%,42%)] active:bg-[hsl(199,89%,38%)] text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:shadow-[#0EA5E9]/30 [@media(hover:hover)]:hover:scale-105 transition-all min-h-[48px] touch-manipulation"
-              aria-label="Comprar entradas"
-            >
-              🎟️ Comprar Entradas
-            </RippleButton>
           </div>
 
-          {/* Mobile - CTA + Menu */}
+          {/* Mobile - Menu */}
           <div className="lg:hidden flex items-center gap-2">
-            {/* CTA Compacto - Visível no mobile */}
-            <RippleButton 
-              onClick={() => smoothScrollToElement('booking', 80)}
-              className="bg-[#0EA5E9] hover:bg-[hsl(199,89%,42%)] text-white font-bold text-sm px-4 py-2 rounded-full min-h-[44px] touch-manipulation shadow-lg hover:shadow-[#0EA5E9]/30"
-              aria-label="Comprar entradas"
-            >
-              🎟️ Entradas
-            </RippleButton>
-            
             {/* Menu Hambúrguer */}
             <MobileMenu />
           </div>
