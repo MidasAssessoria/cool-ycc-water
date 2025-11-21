@@ -40,61 +40,31 @@ const Membresias = () => {
         {/* Gradient Overlay - Diagonal */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/80 via-cyan-600/60 to-orange-500/70" />
         
-        {/* Animated Waves */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-          {/* Wave 1 - Slow */}
-          <div className="absolute bottom-0 left-0 w-[200%] h-32">
-            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-slow" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,60 C150,100 350,0 600,60 C850,120 1050,60 1200,60 L1200,120 L0,120 Z" fill="white" fillOpacity="0.1"/>
-            </svg>
-          </div>
-          
-          {/* Wave 2 - Medium */}
-          <div className="absolute bottom-0 left-0 w-[200%] h-40">
-            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-medium" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,40 C200,80 400,20 600,50 C800,80 1000,30 1200,60 L1200,120 L0,120 Z" fill="cyan" fillOpacity="0.08"/>
-            </svg>
-          </div>
-          
-          {/* Wave 3 - Fast */}
-          <div className="absolute bottom-0 left-0 w-[200%] h-36">
-            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-fast" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,80 C250,120 450,40 600,80 C750,120 950,50 1200,90 L1200,120 L0,120 Z" fill="white" fillOpacity="0.05"/>
-            </svg>
-          </div>
-        </div>
-        
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Circle 1 - Turquoise/Cyan (água) */}
+          {/* Circle 1 */}
           <div 
-            className="absolute top-20 left-10 w-40 h-40 bg-cyan-400/40 rounded-full blur-3xl animate-float"
+            className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '0s' }}
           />
           
-          {/* Circle 2 - Coral/Orange (vibrante) */}
+          {/* Circle 2 */}
           <div 
-            className="absolute bottom-32 right-16 w-56 h-56 bg-orange-400/35 rounded-full blur-3xl animate-float"
+            className="absolute bottom-40 right-20 w-48 h-48 bg-orange-400/30 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '1s' }}
           />
           
-          {/* Circle 3 - Teal/Aqua (tropical) */}
+          {/* Circle 3 */}
           <div 
-            className="absolute top-1/2 left-1/4 w-48 h-48 bg-teal-400/30 rounded-full blur-3xl animate-float"
+            className="absolute top-1/2 left-1/3 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '2s' }}
-          />
-          
-          {/* Circle 4 - Yellow/Sun (sol tropical) */}
-          <div 
-            className="absolute top-1/3 right-1/3 w-36 h-36 bg-yellow-300/25 rounded-full blur-3xl animate-float"
-            style={{ animationDelay: '1.5s' }}
           />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20 md:py-24">
 
           {/* Título principal */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 drop-shadow-lg bg-gradient-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 sm:mb-8 drop-shadow-lg">
             Membresías YCC Water Park
           </h1>
 

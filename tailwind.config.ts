@@ -151,18 +151,6 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
-        'wave-slow': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'wave-medium': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'wave-fast': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
       },
       animation: {
         "ken-burns": "ken-burns 20s ease-in-out infinite alternate",
@@ -176,9 +164,6 @@ export default {
         'bounce-icon': 'bounce-icon 0.3s ease-out',
         'fade-in': 'fade-in 0.5s ease-out',
         'float': 'float 3s ease-in-out infinite',
-        'wave-slow': 'wave-slow 20s linear infinite',
-        'wave-medium': 'wave-medium 15s linear infinite',
-        'wave-fast': 'wave-fast 10s linear infinite',
       },
     },
   },
