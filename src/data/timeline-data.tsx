@@ -161,7 +161,7 @@ export const getTimelineData = (
             <img
               src="/assets/attractions/natural-lakes.jpg"
               alt="Lagos naturales"
-              loading="lazy"
+              loading="eager"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -177,7 +177,7 @@ export const getTimelineData = (
             <img
               src="/assets/attractions/tennis-courts.jpg"
               alt="Canchas deportivas"
-              loading="lazy"
+              loading="eager"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
