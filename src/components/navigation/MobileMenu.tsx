@@ -80,7 +80,10 @@ const MobileMenu = React.memo(() => {
               🏡 Bungalows
             </button>
             <button
-              onClick={() => handleNavigation('membership')}
+              onClick={() => {
+                setIsOpen(false);
+                window.location.href = '/membresias';
+              }}
               className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               💎 Membresias

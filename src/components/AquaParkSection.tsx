@@ -60,7 +60,7 @@ const AquaParkSection = () => {
             
             {/* Botão 1: Membresías - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Membresías")}
+              onClick={() => window.location.href = '/membresias'}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
@@ -70,11 +70,9 @@ const AquaParkSection = () => {
                 Membresías
               </span>
               <button 
-                disabled={loadingButton === "Membresías"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Ver planes de membresías"
               >
-                {loadingButton === "Membresías" && <Loader2 className="w-3 h-3 animate-spin" />}
                 VER PLANES
               </button>
             </div>
