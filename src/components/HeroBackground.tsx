@@ -16,9 +16,9 @@ export const HeroBackground = ({
 }: HeroBackgroundProps) => {
   return (
     <picture className={`absolute inset-0 w-full h-full ${className || ''}`}>
-      <source srcSet="/assets/hero-waterpark.webp" type="image/webp" />
+      <source srcSet="/assets/hero-waterpark-new.webp" type="image/webp" />
       <img 
-        src="/assets/hero-waterpark.jpg" 
+        src="/assets/hero-waterpark-new.webp" 
         alt={ariaProps['aria-label'] || 'YCC Water Park'}
         className="w-full h-full object-cover object-center"
         loading="eager"
