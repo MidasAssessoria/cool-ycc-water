@@ -274,6 +274,26 @@ const Membresias = () => {
               💎 <span className="text-cyan-700">Tu membresía te garantiza acceso de por vida</span> a todas las mejoras futuras del parque
             </p>
           </div>
+
+          {/* Seção de destaque final */}
+          <div className="mt-16 text-center max-w-4xl mx-auto">
+            <div className="relative inline-block">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-orange-500 rounded-3xl blur-2xl opacity-20" />
+              <div className="relative bg-gradient-to-br from-cyan-50 to-orange-50 border-2 border-cyan-200 rounded-3xl p-8 md:p-12">
+                <div className="text-5xl md:text-6xl mb-4">🎉</div>
+                <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">
+                  ¡Todo esto y más con tu membresía!
+                </h3>
+                <p className="text-gray-600 text-lg mb-6">
+                  Tu inversión de hoy te garantiza acceso de por vida a todas las mejoras futuras
+                </p>
+                <div className="flex items-center justify-center gap-2 text-cyan-700 font-bold">
+                  <span className="text-3xl">∞</span>
+                  <span className="text-lg">Valor ilimitado</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       ),
     },
