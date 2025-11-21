@@ -32,16 +32,20 @@ const Membresias = () => {
           <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
             Disfruta desde el primer día de todas estas instalaciones incluidas en tu membresía
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Card 1: Acceso Ilimitado */}
-            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="bg-cyan-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-200 transition-colors">
-                  <Waves className="w-6 h-6 text-cyan-700" />
+            <div className="group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/50 group-hover:scale-110 transition-transform duration-300">
+                  <Waves className="w-7 h-7 text-white" />
+                  <div className="absolute inset-0 rounded-2xl bg-cyan-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-foreground mb-2">Acceso ilimitado</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors">
+                    Acceso ilimitado
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Piscinas recreativas y lagos naturales para toda la familia
                   </p>
                 </div>
@@ -49,14 +53,18 @@ const Membresias = () => {
             </div>
 
             {/* Card 2: Deportes */}
-            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="bg-orange-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-orange-200 transition-colors">
-                  <Trophy className="w-6 h-6 text-orange-700" />
+            <div className="group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/50 group-hover:scale-110 transition-transform duration-300">
+                  <Trophy className="w-7 h-7 text-white" />
+                  <div className="absolute inset-0 rounded-2xl bg-orange-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-foreground mb-2">Deportes</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
+                    Deportes
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Canchas de tenis, fútbol, básquet, vóley
                   </p>
                 </div>
@@ -64,14 +72,18 @@ const Membresias = () => {
             </div>
 
             {/* Card 3: Zona Kids */}
-            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="bg-green-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
-                  <Shield className="w-6 h-6 text-green-700" />
+            <div className="group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative bg-gradient-to-br from-green-400 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/50 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-7 h-7 text-white" />
+                  <div className="absolute inset-0 rounded-2xl bg-green-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-foreground mb-2">Zona kids 100% segura</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
+                    Zona kids 100% segura
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Áreas infantiles supervisadas con salvavidas
                   </p>
                 </div>
@@ -79,14 +91,18 @@ const Membresias = () => {
             </div>
 
             {/* Card 4: Áreas Verdes */}
-            <div className="group bg-white border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="bg-emerald-100 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-200 transition-colors">
-                  <Trees className="w-6 h-6 text-emerald-700" />
+            <div className="group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative bg-gradient-to-br from-emerald-400 to-emerald-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/50 group-hover:scale-110 transition-transform duration-300">
+                  <Trees className="w-7 h-7 text-white" />
+                  <div className="absolute inset-0 rounded-2xl bg-emerald-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-foreground mb-2">Áreas verdes</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                    Áreas verdes
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Senderos ecológicos y churrasqueras
                   </p>
                 </div>
