@@ -4,6 +4,7 @@ import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp, TrendingDown, Scale } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { formatCurrency } from '@/lib/currency';
 
 const FAMILIAR_ENTRADA = 1500;
 const FAMILIAR_MENSUAL = 480; // 40/mes * 12 meses
@@ -28,15 +29,6 @@ export const InteractiveCalculator = () => {
   };
 
   const status = getStatus();
-
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('es-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(value);
-  };
 
   return (
     <Card className="p-6 mt-8 bg-gradient-to-br from-purple-50 to-cyan-50">

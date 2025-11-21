@@ -30,14 +30,21 @@ const Membresias = () => {
 
   // Prefetch Timeline component on mount for faster loading
   useEffect(() => {
+    let isCancelled = false;
+    
     // Prefetch Timeline after initial render
     const timer = setTimeout(() => {
-      import("@/components/ui/timeline").catch(() => {
-        // Silently fail if prefetch fails
-      });
+      if (!isCancelled) {
+        import("@/components/ui/timeline").catch(() => {
+          // Silently fail if prefetch fails
+        });
+      }
     }, 1000);
     
-    return () => clearTimeout(timer);
+    return () => {
+      isCancelled = true;
+      clearTimeout(timer);
+    };
   }, []);
 
   // Intersection observers para cards timeline
@@ -217,30 +224,26 @@ const Membresias = () => {
               <span className="flex-1 h-0.5 bg-cyan-600/30"></span>
             </div>
 
-            {/* P1 - Always rendered */}
-            {renderedCount >= 1 && (
-              <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Quiénes están cubiertos en la membresía?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Titular + padres + cónyuge + todos los hijos menores de 18 años. 
-                  Puedes agregar suegros por USD 250 cada uno + USD 20/mes.
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            {/* P1 - Items 1-6 always rendered initially */}
+            <AccordionItem value="item-1" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Quiénes están cubiertos en la membresía?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Titular + padres + cónyuge + todos los hijos menores de 18 años. 
+                Puedes agregar suegros por USD 250 cada uno + USD 20/mes.
+              </AccordionContent>
+            </AccordionItem>
 
             {/* P4 */}
-            {renderedCount >= 2 && (
-              <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Puedo transferir o heredar mi membresía?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Sí, ambas membresías son transferibles a herederos o terceros.
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            <AccordionItem value="item-4" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Puedo transferir o heredar mi membresía?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Sí, ambas membresías son transferibles a herederos o terceros.
+              </AccordionContent>
+            </AccordionItem>
 
             {/* ========== GRUPO 2: ACTIVACIÓN Y USO ========== */}
             <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
@@ -250,16 +253,14 @@ const Membresias = () => {
             </div>
 
             {/* P2 */}
-            {renderedCount >= 3 && (
-              <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Cuándo puedo comenzar a usar el parque?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            <AccordionItem value="item-2" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuándo puedo comenzar a usar el parque?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.
+              </AccordionContent>
+            </AccordionItem>
 
             {/* ========== GRUPO 3: OPCIONES DE PAGO ========== */}
             <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mt-8 mb-2 flex items-center gap-2">
@@ -269,40 +270,34 @@ const Membresias = () => {
             </div>
 
             {/* P9 */}
-            {renderedCount >= 4 && (
-              <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Cuáles son las opciones de pago para la Membresía Familiar?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            <AccordionItem value="item-9" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuáles son las opciones de pago para la Membresía Familiar?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.
+              </AccordionContent>
+            </AccordionItem>
 
             {/* P10 */}
-            {renderedCount >= 5 && (
-              <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Cuáles son las opciones de pago para la Membresía VIP?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            <AccordionItem value="item-10" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Cuáles son las opciones de pago para la Membresía VIP?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).
+              </AccordionContent>
+            </AccordionItem>
 
             {/* P11 */}
-            {renderedCount >= 6 && (
-              <AccordionItem value="item-11" className="bg-muted/30 rounded-xl border-2 border-border px-6">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
-                  ¿Qué métodos de pago aceptan?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
-                </AccordionContent>
-              </AccordionItem>
-            )}
+            <AccordionItem value="item-11" className="bg-muted/30 rounded-xl border-2 border-border px-6">
+              <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">
+                ¿Qué métodos de pago aceptan?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.
+              </AccordionContent>
+            </AccordionItem>
 
             {/* P12 */}
             {renderedCount >= 7 && (

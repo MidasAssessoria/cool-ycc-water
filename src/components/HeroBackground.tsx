@@ -1,6 +1,6 @@
 /**
  * Optimized Hero Background with WebP support
- * Falls back gracefully to JPG if WebP is not available
+ * Uses CSS image-set() with proper fallback for browsers without support
  */
 
 interface HeroBackgroundProps {
@@ -18,8 +18,15 @@ export const HeroBackground = ({
     <div 
       className={`absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat ${className || ''}`}
       style={{
-        // Try WebP first, fallback to JPG
-        backgroundImage: `url('/assets/hero-waterpark.jpg')`,
+        backgroundImage: `image-set(
+          url('/assets/hero-waterpark.webp') type('image/webp'),
+          url('/assets/hero-waterpark.jpg') type('image/jpeg')
+        )`,
+        // @ts-ignore - WebkitBackgroundImage for Safari compatibility
+        WebkitBackgroundImage: `image-set(
+          url('/assets/hero-waterpark.webp') type('image/webp'),
+          url('/assets/hero-waterpark.jpg') type('image/jpeg')
+        )`,
       }}
       role={role}
       {...ariaProps}
