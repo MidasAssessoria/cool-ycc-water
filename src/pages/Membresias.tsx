@@ -396,10 +396,10 @@ const Membresias = () => {
       {/* Navigation */}
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section - Responsive: min-h adjusts per breakpoint */}
       <section 
         id="main-content"
-        className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20"
+        className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[75vh] xl:min-h-[80vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20"
         aria-label="Hero section"
       >
         {/* Background Image */}
@@ -444,25 +444,25 @@ const Membresias = () => {
           </div>
         )}
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20 md:py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-16 md:py-20 lg:py-24">
 
-          {/* Título principal */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 sm:mb-8 drop-shadow-lg">
+          {/* Título principal - Responsive font sizing */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-4 sm:mb-6 md:mb-8 drop-shadow-lg">
             Membresías YCC Water Park
           </h1>
 
-          {/* Subtítulo */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white/95 font-semibold max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-14 drop-shadow-md leading-relaxed">
+          {/* Subtítulo - Responsive font sizing */}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 font-semibold max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-14 drop-shadow-md leading-relaxed px-4">
             Acceso ilimitado para toda tu familia al mayor parque acuático del Paraguay
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Responsive sizing */}
           <Button
             size="lg"
             onClick={() => smoothScrollToElement('comparison-section')}
             tabIndex={0}
             aria-label="Ver opciones de membresía - scroll a la sección de comparación"
-            className="bg-white text-primary hover:bg-white/90 font-bold text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 rounded-full shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+            className="bg-white text-primary hover:bg-white/90 font-bold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 lg:px-12 py-5 sm:py-6 md:py-7 rounded-full shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 backdrop-blur-sm"
           >
             Ver Opciones de Membresía
           </Button>
