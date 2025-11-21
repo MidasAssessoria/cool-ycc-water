@@ -1,22 +1,13 @@
-import { useState } from "react";
-import { Ticket, CalendarCheck, MessageCircle, Loader2 } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
+import { Ticket, CalendarCheck, MessageCircle } from "lucide-react";
+import { smoothScrollToElement } from "@/lib/utils";
 import backgroundImage from "@/assets/waterpark-hero-bg.jpg";
 
 const AquaParkSection = () => {
-  const [loadingButton, setLoadingButton] = useState<string | null>(null);
-
-  const handleButtonClick = (buttonName: string) => {
-    setLoadingButton(buttonName);
-    
-    // Simular processamento
-    setTimeout(() => {
-      toast({
-        title: `${buttonName} seleccionado`,
-        description: "Pronto serás redirigido...",
-      });
-      setLoadingButton(null);
-    }, 1500);
+  const handleWhatsApp = () => {
+    const phoneNumber = "595994306666";
+    const message = "Hola, me gustaría más información sobre YCC Water Park.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -79,7 +70,7 @@ const AquaParkSection = () => {
 
             {/* Botão 2: Visita gratis - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Visita gratis")}
+              onClick={() => smoothScrollToElement('plan-visit-form', 80)}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
@@ -89,18 +80,16 @@ const AquaParkSection = () => {
                 Visita gratis
               </span>
               <button 
-                disabled={loadingButton === "Visita gratis"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Agendar tour VIP"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
+                aria-label="Agendar visita guiada"
               >
-                {loadingButton === "Visita gratis" && <Loader2 className="w-3 h-3 animate-spin" />}
                 AGENDAR
               </button>
             </div>
 
             {/* Botão 3: WhatsApp - Touch optimized */}
             <div 
-              onClick={() => handleButtonClick("Whatsapp")}
+              onClick={handleWhatsApp}
               className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
             >
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
@@ -110,11 +99,9 @@ const AquaParkSection = () => {
                 Whatsapp
               </span>
               <button 
-                disabled={loadingButton === "Whatsapp"}
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto disabled:opacity-70 flex items-center gap-1.5 min-h-[36px]"
+                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
                 aria-label="Hablar por WhatsApp"
               >
-                {loadingButton === "Whatsapp" && <Loader2 className="w-3 h-3 animate-spin" />}
                 ESCRIBIR
               </button>
             </div>
