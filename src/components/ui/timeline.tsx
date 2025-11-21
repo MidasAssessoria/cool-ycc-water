@@ -1,6 +1,7 @@
 import {
   useScroll,
   useTransform,
+  useSpring,
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
@@ -14,6 +15,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [isHeightStable, setIsHeightStable] = useState(false);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -23,6 +25,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       // Fallback: usar apenas altura inicial
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
+      setIsHeightStable(true);
       return;
     }
     
@@ -32,9 +35,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     
     // Adicionar ResizeObserver para recalcular quando imagens carregam
     let timeoutId: NodeJS.Timeout;
+    let stabilityTimeoutId: NodeJS.Timeout;
     let lastHeight = rect.height;
+    let unchangedCount = 0;
     
     const resizeObserver = new ResizeObserver((entries) => {
+      // Se já estabilizou, parar de processar
+      if (isHeightStable) return;
+      
       // Debounce para evitar muitas atualizações
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -47,6 +55,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         if (Math.abs(newHeight - lastHeight) > 5) {
           lastHeight = newHeight;
           setHeight(newHeight);
+          unchangedCount = 0;
+        } else {
+          unchangedCount++;
+          
+          // Se altura não mudou por 3 verificações consecutivas, considerar estável
+          if (unchangedCount >= 3) {
+            clearTimeout(stabilityTimeoutId);
+            stabilityTimeoutId = setTimeout(() => {
+              setIsHeightStable(true);
+            }, 500);
+          }
         }
       }, 150); // Debounce aumentado para 150ms
     });
@@ -55,17 +74,25 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     
     return () => {
       clearTimeout(timeoutId);
+      clearTimeout(stabilityTimeoutId);
       resizeObserver.disconnect();
     };
-  }, [ref]);
+  }, [ref, isHeightStable]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 20%", "end 80%"],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height || 0]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  // Suavizar o scroll progress com spring para animação mais fluida
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const heightTransform = useTransform(smoothScrollProgress, [0, 1], [0, height || 0]);
+  const opacityTransform = useTransform(smoothScrollProgress, [0, 0.1], [0, 1]);
 
   return (
     <div
