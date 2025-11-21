@@ -418,22 +418,28 @@ const Membresias = () => {
         {/* Floating Elements - respects prefers-reduced-motion */}
         {!prefersReducedMotion && (
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            {/* Circle 1 */}
+            {/* Circle 1 - Top Left - Cyan */}
             <div 
-              className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
-              style={{ animationDelay: '0s' }}
+              className="absolute top-16 left-8 w-48 h-48 bg-cyan-400/40 rounded-full blur-[100px] animate-float"
+              style={{ animationDelay: '0s', animationDuration: '6s' }}
             />
             
-            {/* Circle 2 */}
+            {/* Circle 2 - Bottom Right - Orange */}
             <div 
-              className="absolute bottom-40 right-20 w-48 h-48 bg-orange-400/30 rounded-full blur-3xl animate-float"
-              style={{ animationDelay: '1s' }}
+              className="absolute bottom-32 right-16 w-64 h-64 bg-orange-400/35 rounded-full blur-[120px] animate-float"
+              style={{ animationDelay: '1.5s', animationDuration: '7s' }}
             />
             
-            {/* Circle 3 */}
+            {/* Circle 3 - Center Left - White/Cyan */}
             <div 
-              className="absolute top-1/2 left-1/3 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl animate-float"
-              style={{ animationDelay: '2s' }}
+              className="absolute top-1/2 left-1/4 w-56 h-56 bg-white/30 rounded-full blur-[110px] animate-float"
+              style={{ animationDelay: '3s', animationDuration: '8s' }}
+            />
+            
+            {/* Circle 4 - Top Right - Additional depth */}
+            <div 
+              className="absolute top-24 right-1/4 w-40 h-40 bg-cyan-300/25 rounded-full blur-[90px] animate-float"
+              style={{ animationDelay: '2s', animationDuration: '5.5s' }}
             />
           </div>
         )}
