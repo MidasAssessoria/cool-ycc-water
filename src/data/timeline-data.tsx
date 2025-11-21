@@ -42,17 +42,18 @@ export const getTimelineData = (
           <div 
             ref={animations.card1.elementRef}
             className={cn(
-              "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1",
-              animations.card1.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+              "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-300 transition-all duration-300 hover:-translate-y-0.5",
+              animations.card1.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "",
+              !animations.card1.isVisible && !prefersReducedMotion ? "opacity-0 translate-y-4" : "",
               prefersReducedMotion && "opacity-100 translate-y-0"
             )}
             style={{ transitionDelay: prefersReducedMotion ? '0ms' : '0ms' }}
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
               <div className={cn(
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-110"
+                !prefersReducedMotion && "group-hover:scale-105"
               )}>
                 <div className="text-4xl">🌊</div>
               </div>
@@ -71,17 +72,18 @@ export const getTimelineData = (
           <div 
             ref={animations.card2.elementRef}
             className={cn(
-              "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1",
-              animations.card2.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+              "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-300 transition-all duration-300 hover:-translate-y-0.5",
+              animations.card2.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "",
+              !animations.card2.isVisible && !prefersReducedMotion ? "opacity-0 translate-y-4" : "",
               prefersReducedMotion && "opacity-100 translate-y-0"
             )}
             style={{ transitionDelay: prefersReducedMotion ? '0ms' : '100ms' }}
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
               <div className={cn(
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-110"
+                !prefersReducedMotion && "group-hover:scale-105"
               )}>
                 <div className="text-4xl">🏆</div>
               </div>
@@ -100,17 +102,18 @@ export const getTimelineData = (
           <div 
             ref={animations.card3.elementRef}
             className={cn(
-              "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1",
-              animations.card3.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+              "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-green-500/10 hover:border-green-300 transition-all duration-300 hover:-translate-y-0.5",
+              animations.card3.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "",
+              !animations.card3.isVisible && !prefersReducedMotion ? "opacity-0 translate-y-4" : "",
               prefersReducedMotion && "opacity-100 translate-y-0"
             )}
             style={{ transitionDelay: prefersReducedMotion ? '0ms' : '200ms' }}
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
               <div className={cn(
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-110"
+                !prefersReducedMotion && "group-hover:scale-105"
               )}>
                 <div className="text-4xl">🛡️</div>
               </div>
@@ -129,17 +132,18 @@ export const getTimelineData = (
           <div 
             ref={animations.card4.elementRef}
             className={cn(
-              "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1",
-              animations.card4.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+              "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-0.5",
+              animations.card4.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "",
+              !animations.card4.isVisible && !prefersReducedMotion ? "opacity-0 translate-y-4" : "",
               prefersReducedMotion && "opacity-100 translate-y-0"
             )}
             style={{ transitionDelay: prefersReducedMotion ? '0ms' : '300ms' }}
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
               <div className={cn(
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-110"
+                !prefersReducedMotion && "group-hover:scale-105"
               )}>
                 <div className="text-4xl">🌳</div>
               </div>
@@ -163,8 +167,9 @@ export const getTimelineData = (
               alt="Lagos naturales"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -179,8 +184,9 @@ export const getTimelineData = (
               alt="Canchas deportivas"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -234,7 +240,7 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -250,7 +256,7 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -304,7 +310,7 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -320,7 +326,7 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
