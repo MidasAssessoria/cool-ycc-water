@@ -42,22 +42,28 @@ const Membresias = () => {
         
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Circle 1 */}
+          {/* Circle 1 - Turquoise/Cyan (água) */}
           <div 
-            className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
+            className="absolute top-20 left-10 w-40 h-40 bg-cyan-400/40 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '0s' }}
           />
           
-          {/* Circle 2 */}
+          {/* Circle 2 - Coral/Orange (vibrante) */}
           <div 
-            className="absolute bottom-40 right-20 w-48 h-48 bg-orange-400/30 rounded-full blur-3xl animate-float"
+            className="absolute bottom-32 right-16 w-56 h-56 bg-orange-400/35 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '1s' }}
           />
           
-          {/* Circle 3 */}
+          {/* Circle 3 - Teal/Aqua (tropical) */}
           <div 
-            className="absolute top-1/2 left-1/3 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl animate-float"
+            className="absolute top-1/2 left-1/4 w-48 h-48 bg-teal-400/30 rounded-full blur-3xl animate-float"
             style={{ animationDelay: '2s' }}
+          />
+          
+          {/* Circle 4 - Yellow/Sun (sol tropical) */}
+          <div 
+            className="absolute top-1/3 right-1/3 w-36 h-36 bg-yellow-300/25 rounded-full blur-3xl animate-float"
+            style={{ animationDelay: '1.5s' }}
           />
         </div>
         
