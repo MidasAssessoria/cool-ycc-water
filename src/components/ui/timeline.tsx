@@ -16,10 +16,32 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
+    if (!ref.current) return;
+    
+    // Calcular altura inicial
+    const rect = ref.current.getBoundingClientRect();
+    setHeight(rect.height);
+    
+    // Adicionar ResizeObserver para recalcular quando imagens carregam
+    let timeoutId: NodeJS.Timeout;
+    
+    const resizeObserver = new ResizeObserver((entries) => {
+      // Debounce para evitar muitas atualizações
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        for (let entry of entries) {
+          const newHeight = entry.contentRect.height;
+          setHeight(newHeight);
+        }
+      }, 100);
+    });
+    
+    resizeObserver.observe(ref.current);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      resizeObserver.disconnect();
+    };
   }, [ref]);
 
   const { scrollYProgress } = useScroll({
@@ -27,7 +49,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     offset: ["start 10%", "end 50%"],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
+  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height || 0]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
