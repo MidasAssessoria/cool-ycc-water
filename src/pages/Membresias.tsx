@@ -378,10 +378,10 @@ const Membresias = () => {
             <Accordion 
               type="single" 
               collapsible 
-              className="w-full space-y-3 sm:space-y-4"
+              className="w-full space-y-4 sm:space-y-5 md:space-y-6"
               aria-label={`Acordeón de preguntas frecuentes con ${filteredFAQs.length} preguntas`}
             >
-              <div ref={containerRef}>
+              <div ref={containerRef} className="space-y-4 sm:space-y-5">
                 {filteredFAQs.map((faq, index) => {
                   // Only render category headers when not filtering
                   const showCategoryHeader = !debouncedSearchTerm && !activeCategory && 
