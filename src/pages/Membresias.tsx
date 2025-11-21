@@ -32,14 +32,14 @@ const Membresias = () => {
   useEffect(() => {
     let isCancelled = false;
     
-    // Prefetch Timeline after initial render
+    // Prefetch Timeline after initial render - reduced timeout for faster loading
     const timer = setTimeout(() => {
       if (!isCancelled) {
         import("@/components/ui/timeline").catch(() => {
           // Silently fail if prefetch fails
         });
       }
-    }, 1000);
+    }, 500); // Reduced from 1000ms to 500ms
     
     return () => {
       isCancelled = true;
@@ -180,10 +180,10 @@ const Membresias = () => {
         </div>
       }>
         <Suspense fallback={
-          <div className="flex items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="flex items-center justify-center min-h-[400px] py-20 bg-white">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-              <p className="text-lg font-semibold text-muted-foreground">Cargando beneficios...</p>
+              <div className="w-12 h-12 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto" />
+              <p className="text-sm font-medium text-muted-foreground">Cargando beneficios...</p>
             </div>
           </div>
         }>
