@@ -10,6 +10,7 @@ import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSectio
 import Navigation from "@/components/navigation/Navigation";
 import { Timeline } from "@/components/ui/timeline";
 import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
+import { SEOHead } from "@/components/SEOHead";
 
 const Membresias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -337,24 +338,46 @@ const Membresias = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title="Membresías - Acceso Ilimitado para toda tu Familia"
+        description="Elige entre Membresía Familiar o VIP y disfruta de acceso ilimitado al mayor parque acuático del Paraguay. Desde USD 1.500 con beneficios exclusivos."
+        image="/assets/hero-waterpark.jpg"
+        url="https://yccwaterpark.com.py/membresias"
+      />
+
+      {/* Skip Navigation for Keyboard Users */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-white focus:rounded-md focus:top-4 focus:left-4 focus:outline-none focus:ring-2 focus:ring-ring"
+      >
+        Saltar al contenido principal
+      </a>
+      
       {/* Navigation */}
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20">
+      <section 
+        id="main-content"
+        className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20"
+        aria-label="Hero section"
+      >
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('/assets/hero-waterpark.jpg')`,
           }}
+          role="img"
+          aria-label="Parque acuático YCC Water Park"
         />
         
         {/* Gradient Overlay - Diagonal */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/80 via-cyan-600/60 to-orange-500/70" />
         
         {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           {/* Circle 1 */}
           <div 
             className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
@@ -390,6 +413,8 @@ const Membresias = () => {
           <Button
             size="lg"
             onClick={() => smoothScrollToElement('comparison-section')}
+            tabIndex={0}
+            aria-label="Ver opciones de membresía - scroll a la sección de comparación"
             className="bg-white text-primary hover:bg-white/90 font-bold text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 rounded-full shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 backdrop-blur-sm"
           >
             Ver Opciones de Membresía
@@ -687,10 +712,13 @@ const Membresias = () => {
 
       {/* Modal de Redirecionamento - Sub-Fase 2.4 */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent 
+          className="sm:max-w-md"
+          aria-describedby="modal-description"
+        >
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Vas a ser redirigido</DialogTitle>
-            <DialogDescription className="text-base pt-2">
+            <DialogDescription id="modal-description" className="text-base pt-2">
               Serás redirigido a nuestro sistema de registro externo. Completa tus datos para generar tu recibo y confirmar el pago presencialmente en YCC Water Park.
             </DialogDescription>
           </DialogHeader>
@@ -729,12 +757,16 @@ const Membresias = () => {
             <Button 
               variant="outline" 
               onClick={() => setIsModalOpen(false)}
+              tabIndex={0}
+              aria-label="Cancelar redirección"
               className="w-full sm:w-auto order-2 sm:order-1"
             >
               Cancelar
             </Button>
             <Button 
               onClick={handleContinue}
+              tabIndex={0}
+              aria-label={`Continuar a registro de membresía ${selectedPlan === 'familiar' ? 'Familiar' : 'VIP'}`}
               className={`w-full sm:w-auto gap-2 order-1 sm:order-2 ${
                 selectedPlan === 'familiar' 
                   ? 'bg-blue-600 hover:bg-blue-700' 
@@ -742,7 +774,7 @@ const Membresias = () => {
               }`}
             >
               Continuar al Registro
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
             </Button>
           </DialogFooter>
         </DialogContent>
