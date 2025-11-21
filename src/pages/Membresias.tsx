@@ -113,12 +113,12 @@ const Membresias = () => {
           {/* Imagens Ilustrativas */}
           <div className="grid grid-cols-2 gap-4 mt-8">
             <img
-              src="/src/assets/attractions/natural-lakes.jpg"
+              src="/assets/attractions/natural-lakes.jpg"
               alt="Lagos naturales"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
             <img
-              src="/src/assets/attractions/tennis-courts.jpg"
+              src="/assets/attractions/tennis-courts.jpg"
               alt="Canchas deportivas"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
@@ -156,12 +156,12 @@ const Membresias = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/src/assets/attractions/wave-pool.jpg"
+              src="/assets/attractions/wave-pool.jpg"
               alt="Piscina de olas"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
             <img
-              src="/src/assets/attractions/water-slides.jpg"
+              src="/assets/attractions/water-slides.jpg"
               alt="Toboganes"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
@@ -199,12 +199,12 @@ const Membresias = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/src/assets/attractions/hydro-spa.jpg"
+              src="/assets/attractions/hydro-spa.jpg"
               alt="HidroSPA"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
             <img
-              src="/src/assets/attractions/restaurant.jpg"
+              src="/assets/attractions/restaurant.jpg"
               alt="Eventos exclusivos"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg"
             />
