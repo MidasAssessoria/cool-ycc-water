@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   TableBody,
   TableCell,
@@ -35,7 +35,9 @@ const StatusIcon = ({ status }: { status: VIPComparisonData['status'] }) => {
 export const VIPComparisonTable = () => {
   const isMobile = useIsMobileTable();
   const [comparisonMode, setComparisonMode] = useState<ComparisonMode>('table');
-  const columns: ColumnDef<VIPComparisonData>[] = [
+  
+  // Memoize columns to prevent recreation on every render
+  const columns: ColumnDef<VIPComparisonData>[] = useMemo(() => [
     {
       accessorKey: "years",
       header: ({ column }) => (
@@ -134,7 +136,7 @@ export const VIPComparisonTable = () => {
         );
       },
     },
-  ];
+  ], []); // Empty deps array - columns definition never changes
 
   return (
     <div className="w-full animate-fade-in space-y-6">
