@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { smoothScrollToElement, cn } from "@/lib/utils";
-import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin, Sun, Search, X } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Sparkles, Heart, Dumbbell, Calendar, Calculator, CheckCircle2, ExternalLink, HelpCircle, Phone, Instagram, MapPin, Sun, Search, X, MessageCircle } from "lucide-react";
+import { Accordion } from "@/components/ui/accordion";
 import { VIPComparisonTable } from "@/components/pricing/VIPComparisonTable";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
@@ -15,6 +15,7 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useLazyAccordion } from "@/hooks/useLazyAccordion";
 import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 import { FAQItem } from "@/components/FAQItem";
+import { faqData } from "@/data/faq-data";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { getTimelineData } from "@/data/timeline-data";
@@ -63,90 +64,6 @@ const Membresias = () => {
 
   // Debounce search term to reduce re-renders (300ms delay)
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 300);
-
-  // FAQ Data Structure - Memoized
-  const faqData = useMemo(() => [
-    {
-      id: 'item-1',
-      category: 'cobertura',
-      categoryLabel: 'Cobertura y Beneficios',
-      categoryColor: 'cyan' as const,
-      question: '¿Quiénes están cubiertos en la membresía?',
-      answer: 'Titular + padres + cónyuge + todos los hijos menores de 18 años. Puedes agregar suegros por USD 250 cada uno + USD 20/mes.'
-    },
-    {
-      id: 'item-2',
-      category: 'cobertura',
-      categoryLabel: 'Cobertura y Beneficios',
-      categoryColor: 'cyan' as const,
-      question: '¿Puedo transferir o heredar mi membresía?',
-      answer: 'Sí, ambas membresías son transferibles a herederos o terceros.'
-    },
-    {
-      id: 'item-3',
-      category: 'activacion',
-      categoryLabel: 'Activación y Uso',
-      categoryColor: 'orange' as const,
-      question: '¿Cuándo puedo comenzar a usar el parque?',
-      answer: 'Tras pagar el 50% de la membresía, recibes tu carnet y acceso inmediato.'
-    },
-    {
-      id: 'item-4',
-      category: 'pago',
-      categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan' as const,
-      question: '¿Cuáles son las opciones de pago para la Membresía Familiar?',
-      answer: 'Puedes pagar en contado (USD 1.350 con 10% de descuento) o parcelado (USD 300 de entrada + 12 cuotas de USD 100). El precio total es USD 1.500.'
-    },
-    {
-      id: 'item-5',
-      category: 'pago',
-      categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan' as const,
-      question: '¿Cuáles son las opciones de pago para la Membresía VIP?',
-      answer: 'Puedes pagar en contado (USD 4.500 en pago único) o parcelado (USD 1.000 de entrada + 10 cuotas de USD 400).'
-    },
-    {
-      id: 'item-6',
-      category: 'pago',
-      categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan' as const,
-      question: '¿Qué métodos de pago aceptan?',
-      answer: 'Aceptamos tarjetas de crédito (Visa, Mastercard, Amex), transferencia bancaria, billeteras digitales (QR Bancard, Tigo Money, Personal Pay) y cheques diferidos. La conversión de USD a Guaraníes se realiza según la cotización del BCP del día.'
-    },
-    {
-      id: 'item-7',
-      category: 'pago',
-      categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan' as const,
-      question: '¿Hay descuento por pago en contado?',
-      answer: 'Sí, la Membresía Familiar ofrece un 10% de descuento en pago contado (USD 1.350 en lugar de USD 1.500), ahorrando USD 150. La Membresía VIP mantiene el mismo precio de USD 4.500.'
-    },
-    {
-      id: 'item-8',
-      category: 'pago',
-      categoryLabel: 'Opciones de Pago',
-      categoryColor: 'cyan' as const,
-      question: '¿Puedo pagar en Guaraníes?',
-      answer: 'Sí, todos los precios en dólares pueden pagarse en Guaraníes según la cotización del BCP del día del pago.'
-    },
-    {
-      id: 'item-9',
-      category: 'contratacion',
-      categoryLabel: 'Proceso de Contratación',
-      categoryColor: 'orange' as const,
-      question: '¿Cómo funciona el proceso de contratación?',
-      answer: 'El proceso tiene 4 pasos simples: 1) Elegir tu membresía (Familiar o VIP), 2) Completar el registro online en nuestro sistema externo para generar tu recibo digital, 3) Realizar el pago presencialmente en YCC Water Park (Ruta 1 Km 13.5, Ypané), y 4) Activación inmediata tras pagar el 50% - recibes tu carnet y acceso al parque.'
-    },
-    {
-      id: 'item-10',
-      category: 'contratacion',
-      categoryLabel: 'Proceso de Contratación',
-      categoryColor: 'orange' as const,
-      question: '¿Dónde realizo el pago presencial?',
-      answer: 'El pago se realiza en YCC Water Park, ubicado en Ruta 1 Km 13.5, Ypané, Paraguay. Lleva tu recibo digital generado en el registro online.'
-    }
-  ], []);
 
   // Filter FAQs based on debounced search term and active category
   // Using debounced value prevents excessive re-renders during typing
@@ -336,16 +253,31 @@ const Membresias = () => {
         onContratarVIP={() => handleOpenModal('vip')}
       />
       
-      {/* FAQ Section - Interactive with Search & Filtering */}
-      <section id="faq-section" className="bg-white py-12 sm:py-16 md:py-20">
+      {/* Skip link for FAQ section - Accessibility */}
+      <a
+        href="#faq-section"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-white focus:rounded-md focus:top-20 focus:left-4 focus:outline-none focus:ring-2 focus:ring-ring"
+      >
+        Saltar a preguntas frecuentes
+      </a>
+
+      {/* FAQ Section - Interactive with Search & Filtering + A11y */}
+      <section 
+        id="faq-section" 
+        className="bg-white py-12 sm:py-16 md:py-20"
+        aria-labelledby="faq-heading"
+      >
         <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center bg-blue-100 px-4 py-2 rounded-full mb-4">
-              <HelpCircle className="w-5 h-5 mr-2 text-blue-600" />
+              <HelpCircle className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
               <span className="text-sm font-bold text-blue-700">FAQ</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 sm:mb-4 leading-tight">
+            <h2 
+              id="faq-heading"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 sm:mb-4 leading-tight"
+            >
               Preguntas frecuentes
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -418,14 +350,37 @@ const Membresias = () => {
             ))}
           </div>
 
-          {/* Accordion with filtered FAQs - Optimized with React.memo */}
+          {/* Accordion with filtered FAQs - Optimized with React.memo + A11y */}
           {filteredFAQs.length === 0 ? (
-            <div className="text-center py-12 text-muted-foreground">
-              <p className="text-lg font-semibold mb-2">No se encontraron preguntas</p>
-              <p className="text-sm">Intenta con otros términos de búsqueda o categorías</p>
+            <div className="text-center py-12 px-4 bg-blue-50 rounded-xl border-2 border-blue-100">
+              <HelpCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" aria-hidden="true" />
+              <p className="text-lg font-semibold mb-2 text-foreground">No se encontraron preguntas</p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Intenta con otros términos de búsqueda o categorías
+              </p>
+              <div className="p-4 bg-white rounded-lg border border-blue-200 max-w-md mx-auto">
+                <p className="text-sm text-foreground mb-3 font-medium">
+                  ¿No encontraste lo que buscabas?
+                </p>
+                <Button
+                  variant="default"
+                  size="sm"
+                  onClick={() => window.open('https://wa.me/595981123456', '_blank', 'noopener,noreferrer')}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" aria-hidden="true" />
+                  Contacta con nosotros por WhatsApp
+                </Button>
+              </div>
             </div>
           ) : (
-            <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
+            <Accordion 
+              type="single" 
+              collapsible 
+              className="w-full space-y-3 sm:space-y-4"
+              aria-label={`Acordeón de preguntas frecuentes con ${filteredFAQs.length} preguntas`}
+            >
               <div ref={containerRef}>
                 {filteredFAQs.map((faq, index) => {
                   // Only render category headers when not filtering
@@ -445,9 +400,11 @@ const Membresias = () => {
                       answer={faq.answer}
                       categoryLabel={faq.categoryLabel}
                       categoryColor={faq.categoryColor}
+                      icon={faq.icon}
                       showCategoryHeader={showCategoryHeader}
                       isFirstInCategory={index > 0}
                       highlightText={highlightText}
+                      actionButton={faq.actionButton}
                     />
                   );
                 })}
