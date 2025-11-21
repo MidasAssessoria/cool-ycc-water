@@ -18,22 +18,37 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   useEffect(() => {
     if (!ref.current) return;
     
+    // Verificar suporte ao ResizeObserver
+    if (typeof ResizeObserver === "undefined") {
+      // Fallback: usar apenas altura inicial
+      const rect = ref.current.getBoundingClientRect();
+      setHeight(rect.height);
+      return;
+    }
+    
     // Calcular altura inicial
     const rect = ref.current.getBoundingClientRect();
     setHeight(rect.height);
     
     // Adicionar ResizeObserver para recalcular quando imagens carregam
     let timeoutId: NodeJS.Timeout;
+    let lastHeight = rect.height;
     
     const resizeObserver = new ResizeObserver((entries) => {
       // Debounce para evitar muitas atualizações
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        for (let entry of entries) {
-          const newHeight = entry.contentRect.height;
+        if (!ref.current) return;
+        
+        // Pegar altura final do container completo
+        const newHeight = ref.current.getBoundingClientRect().height;
+        
+        // Só atualizar se houver mudança significativa (>5px)
+        if (Math.abs(newHeight - lastHeight) > 5) {
+          lastHeight = newHeight;
           setHeight(newHeight);
         }
-      }, 100);
+      }, 150); // Debounce aumentado para 150ms
     });
     
     resizeObserver.observe(ref.current);
@@ -46,7 +61,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 20%", "end 80%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height || 0]);
