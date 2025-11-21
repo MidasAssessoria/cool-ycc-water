@@ -15,6 +15,8 @@ import { useLazyAccordion } from "@/hooks/useLazyAccordion";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { getTimelineData } from "@/data/timeline-data";
+import { OptimizedPicture } from "@/components/OptimizedPicture";
+import { HeroBackground } from "@/components/HeroBackground";
 
 // Code splitting: lazy load Timeline component
 const Timeline = lazy(() => import("@/components/ui/timeline").then(m => ({ default: m.Timeline })));
@@ -101,15 +103,8 @@ const Membresias = () => {
         className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[75vh] xl:min-h-[80vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20"
         aria-label="Hero section"
       >
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/assets/hero-waterpark.jpg')`,
-          }}
-          role="img"
-          aria-label="Parque acuático YCC Water Park"
-        />
+        {/* Background Image with WebP support */}
+        <HeroBackground aria-label="Parque acuático YCC Water Park" />
         
         {/* Gradient Overlay - Simplified for better performance */}
         <div className="absolute inset-0 bg-gradient-to-br from-hero-cyan/75 to-hero-orange/65" />
