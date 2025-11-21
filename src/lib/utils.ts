@@ -30,3 +30,21 @@ export function smoothScrollToElement(elementId: string, offset: number = 80) {
     }
   }, 500);
 }
+
+/**
+ * Navigate to section with intelligent routing
+ * - If on /membresias page, redirect to /#section
+ * - Otherwise, smooth scroll to section
+ */
+export function navigateToSection(sectionId: string, offset: number = 80) {
+  const currentPath = window.location.pathname;
+  
+  // If on /membresias page, redirect to main page with hash
+  if (currentPath === '/membresias') {
+    window.location.href = `/#${sectionId}`;
+    return;
+  }
+  
+  // Otherwise, smooth scroll
+  smoothScrollToElement(sectionId, offset);
+}

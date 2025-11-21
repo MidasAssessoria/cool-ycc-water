@@ -1,6 +1,6 @@
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { RippleButton } from "@/components/ui/ripple-button";
-import { cn, smoothScrollToElement } from "@/lib/utils";
+import { cn, navigateToSection } from "@/lib/utils";
 import React from "react";
 import MobileMenu from "./MobileMenu";
 import logoYCC from "@/assets/logo-ycc-waterpark-new.png";
@@ -40,7 +40,7 @@ const TopBar = React.memo(() => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  smoothScrollToElement('attractions', 80);
+                  navigateToSection('attractions', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir a la sección de atracciones"
@@ -50,7 +50,7 @@ const TopBar = React.memo(() => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  smoothScrollToElement('plan-visit-form', 80);
+                  navigateToSection('plan-visit-form', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Agendar visita guiada"
@@ -60,7 +60,7 @@ const TopBar = React.memo(() => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  smoothScrollToElement('contact', 80);
+                  navigateToSection('contact', 80);
                 }}
                 className="text-white font-semibold hover:text-white/80 active:text-white/70 transition-all text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 rounded-md px-3 py-2 min-h-[44px] touch-manipulation"
                 aria-label="Ir a la sección de contacto"
@@ -73,7 +73,7 @@ const TopBar = React.memo(() => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                smoothScrollToElement('plan-visit-form', 80);
+                navigateToSection('plan-visit-form', 80);
               }}
               className="border-2 border-white bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-semibold px-5 py-2.5 rounded-full min-h-[44px] touch-manipulation transition-all flex items-center gap-2"
               aria-label="Agendar visita guiada"

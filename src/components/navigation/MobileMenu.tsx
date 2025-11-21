@@ -10,13 +10,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
-import { smoothScrollToElement } from "@/lib/utils";
+import { navigateToSection } from "@/lib/utils";
 
 const MobileMenu = React.memo(() => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavigation = (sectionId: string) => {
-    smoothScrollToElement(sectionId, 80);
+    navigateToSection(sectionId, 80);
     setIsOpen(false);
   };
 
