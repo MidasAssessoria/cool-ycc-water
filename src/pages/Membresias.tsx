@@ -47,11 +47,11 @@ const Membresias = () => {
     };
   }, []);
 
-  // Intersection observers para cards timeline - usando useRef para estabilidade
-  const card1AnimationRef = useRef(useIntersectionAnimation({ threshold: 0.2 }));
-  const card2AnimationRef = useRef(useIntersectionAnimation({ threshold: 0.2 }));
-  const card3AnimationRef = useRef(useIntersectionAnimation({ threshold: 0.2 }));
-  const card4AnimationRef = useRef(useIntersectionAnimation({ threshold: 0.2 }));
+  // Intersection observers para cards timeline - chamada direta de hooks
+  const card1Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card2Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card3Animation = useIntersectionAnimation({ threshold: 0.2 });
+  const card4Animation = useIntersectionAnimation({ threshold: 0.2 });
 
   // Lazy rendering for FAQ Accordion - improves initial load
   const { renderedCount, containerRef } = useLazyAccordion(11, 6); // 11 total items, render 6 initially
@@ -71,17 +71,16 @@ const Membresias = () => {
     smoothScrollToElement(sectionId, 80);
   };
 
-  // Memoize timelineData corretamente - só depende de prefersReducedMotion
-  // Os objetos de animação são estáveis via useRef
+  // Memoize timelineData com todas as dependências corretas
   const timelineData = useMemo(
     () =>
       getTimelineData(prefersReducedMotion, {
-        card1: card1AnimationRef.current,
-        card2: card2AnimationRef.current,
-        card3: card3AnimationRef.current,
-        card4: card4AnimationRef.current,
+        card1: card1Animation,
+        card2: card2Animation,
+        card3: card3Animation,
+        card4: card4Animation,
       }),
-    [prefersReducedMotion]
+    [prefersReducedMotion, card1Animation, card2Animation, card3Animation, card4Animation]
   );
 
   return (
