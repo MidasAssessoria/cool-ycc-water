@@ -1,6 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card } from '@/components/ui/card';
-import type { VIPComparisonData } from './VIPComparisonTable';
+import type { VIPComparisonData } from '@/data/membership-comparison';
 
 interface SavingsChartProps {
   data: VIPComparisonData[];
