@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   TableBody,
   TableCell,
@@ -15,6 +16,9 @@ import { XCircle, CheckCircle, Scale, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobileTable } from "@/hooks/useResponsiveTable";
 import { MobileCardsView } from "./MobileCardsView";
+import { SavingsChart } from "./SavingsChart";
+import { InteractiveCalculator } from "./InteractiveCalculator";
+import { ComparisonToggle, type ComparisonMode } from "./ComparisonToggle";
 
 export interface VIPComparisonData {
   id: string;
@@ -188,6 +192,7 @@ const StatusIcon = ({ status }: { status: VIPComparisonData['status'] }) => {
 
 export const VIPComparisonTable = () => {
   const isMobile = useIsMobileTable();
+  const [comparisonMode, setComparisonMode] = useState<ComparisonMode>('table');
   const columns: ColumnDef<VIPComparisonData>[] = [
     {
       accessorKey: "years",
@@ -290,10 +295,66 @@ export const VIPComparisonTable = () => {
   ];
 
   return (
-    <div className="w-full animate-fade-in">
-      {isMobile ? (
+    <div className="w-full animate-fade-in space-y-6">
+      {/* Toggle Mode - Only on desktop */}
+      {!isMobile && (
+        <ComparisonToggle mode={comparisonMode} onModeChange={setComparisonMode} />
+      )}
+
+      {/* Interactive Calculator */}
+      {comparisonMode === 'compare' && !isMobile ? (
+        <InteractiveCalculator />
+      ) : isMobile ? (
         // 📱 Mobile: Cards empilháveis
         <MobileCardsView data={comparisonData} />
+      ) : comparisonMode === 'cards' ? (
+        // 🃏 Desktop Cards Mode
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {comparisonData.map((item, index) => (
+            <div
+              key={item.id}
+              className={cn(
+                "p-6 rounded-lg border-2 transition-all duration-300 hover:shadow-lg",
+                item.status === 'equilibrio' && "bg-cyan-50 border-cyan-300",
+                item.status === 'ahorro' && "bg-emerald-50 border-emerald-300",
+                item.status === 'desfavorable' && "bg-orange-50 border-orange-300"
+              )}
+              style={{
+                animationDelay: `${index * 50}ms`,
+              }}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <Badge variant="outline" className="text-base font-bold">
+                  {item.years} {item.years === 1 ? 'año' : 'años'}
+                </Badge>
+                <StatusIcon status={item.status} />
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-xs text-muted-foreground">Familiar</p>
+                  <p className="text-xl font-bold text-orange-600">
+                    {formatCurrency(item.familiarTotal)}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">VIP</p>
+                  <p className="text-xl font-bold text-cyan-600">
+                    {formatCurrency(item.vipTotal)}
+                  </p>
+                </div>
+                <div className="pt-3 border-t">
+                  <p className="text-xs text-muted-foreground">Diferencia</p>
+                  <p className={cn(
+                    "text-2xl font-black",
+                    item.difference > 0 ? "text-emerald-600" : "text-orange-600"
+                  )}>
+                    {item.difference > 0 ? '+' : ''}{formatCurrency(Math.abs(item.difference))}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
         // 💻 Desktop/Tablet: Tabela completa
         <>
@@ -375,6 +436,14 @@ export const VIPComparisonTable = () => {
           <span>Ahorro VIP</span>
         </div>
       </div>
+
+      {/* Charts - Only in table mode on desktop */}
+      {comparisonMode === 'table' && !isMobile && (
+        <>
+          <SavingsChart data={comparisonData} />
+          <InteractiveCalculator />
+        </>
+      )}
     </div>
   );
 };
