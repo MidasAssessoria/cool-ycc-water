@@ -5,6 +5,7 @@ import { smoothScrollToElement } from "@/lib/utils";
 import { Waves, Trophy, Shield, Trees, Sparkles, Heart, Dumbbell, Calendar, Check, Calculator, CheckCircle2, CreditCard, Banknote, Smartphone, FileText, ExternalLink, HelpCircle, Phone, Instagram, MapPin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
+import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
 
 const Membresias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -180,167 +181,11 @@ const Membresias = () => {
         </div>
       </section>
 
-      {/* Comparison Section - Movida para cá (após Benefits) */}
-      <section id="comparison-section" className="bg-muted py-16 sm:py-20 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-              Elige tu membresía ideal
-            </h2>
-          </div>
-
-          {/* Grid de cards - Mobile empilhados, Desktop lado a lado */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            
-            {/* CARD 1: Membresía Familiar */}
-            <div className="relative bg-card rounded-3xl shadow-xl border-2 border-border hover:shadow-2xl transition-all duration-300 flex flex-col">
-              {/* Badge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                <div className="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-bold">Más Popular</span>
-                </div>
-              </div>
-
-              <div className="p-6 sm:p-8 flex flex-col flex-1">
-                {/* Preços */}
-                <div className="text-center mb-6 pt-4">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="text-2xl text-muted-foreground line-through">USD 3.000</span>
-                    <span className="text-5xl font-black text-blue-600">USD 1.500</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">Precio de lanzamiento</p>
-                  
-                  <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
-                    <span className="font-bold text-base">USD 40/mes</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-2">(comienza tras pagar 50%)</p>
-                </div>
-
-                {/* Cobertura */}
-                <div className="mb-6 p-4 bg-muted rounded-xl">
-                  <p className="text-sm font-semibold text-foreground mb-2">
-                    Cobertura: Titular + padres + cónyuge + hijos &lt;18 años
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Opcional: Suegros +USD 250 c/u + USD 20/mes
-                  </p>
-                </div>
-
-                {/* Benefícios */}
-                <div className="flex-1 mb-6">
-                  <h3 className="font-bold text-foreground mb-4">Beneficios incluidos:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Acceso ilimitado a todas las instalaciones</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">30% descuento en hospedaje</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">10% descuento en restaurante</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">20% descuento en estacionamiento</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Transferible y heredable</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Vitalicia (renovación anual)</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* CTA Button */}
-                <Button
-                  size="lg"
-                  onClick={() => handleOpenModal('familiar')}
-                  className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-full"
-                >
-                  Contratar Familiar
-                </Button>
-              </div>
-            </div>
-
-            {/* CARD 2: Membresía VIP */}
-            <div className="relative bg-card rounded-3xl shadow-xl border-3 border-purple-200 hover:shadow-2xl transition-all duration-300 flex flex-col lg:scale-105">
-              {/* Badge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                <div className="bg-purple-600 text-white px-6 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-bold">0% Mantenimiento</span>
-                </div>
-              </div>
-
-              <div className="p-6 sm:p-8 flex flex-col flex-1">
-                {/* Preços */}
-                <div className="text-center mb-6 pt-4">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="text-2xl text-muted-foreground line-through">USD 9.000</span>
-                    <span className="text-5xl font-black text-purple-600">USD 4.500</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">Precio de lanzamiento</p>
-                  
-                  <div className="inline-flex items-center bg-purple-50 text-purple-700 px-4 py-2 rounded-full">
-                    <span className="font-bold text-base">USD 0/mes PARA SIEMPRE</span>
-                  </div>
-                  <p className="text-sm text-purple-700 font-semibold mt-2">Sin cuota mensual NUNCA</p>
-                </div>
-
-                {/* Cobertura */}
-                <div className="mb-6 p-4 bg-purple-50 rounded-xl border border-purple-200">
-                  <p className="text-sm font-semibold text-foreground">
-                    Cobertura: Titular + padres + cónyuge + hijos &lt;18 años
-                  </p>
-                </div>
-
-                {/* Benefícios */}
-                <div className="flex-1 mb-6">
-                  <h3 className="font-bold text-foreground mb-4">Beneficios incluidos:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground font-semibold">Todo lo de Familiar +</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Sin cuota mensual NUNCA</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Prioridad en reservas VIP</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Punto de equilibrio: año 8</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">Ahorro de USD 480/año desde año 9</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* CTA Button */}
-                <Button
-                  size="lg"
-                  onClick={() => handleOpenModal('vip')}
-                  className="w-full h-14 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-full"
-                >
-                  Contratar VIP
-                </Button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/* Comparison Section - Nova versão com animações */}
+      <MembresiaPricingSection 
+        onContratarFamiliar={() => handleOpenModal('familiar')}
+        onContratarVIP={() => handleOpenModal('vip')}
+      />
       
       {/* Calculadora de Ahorro VIP - Sub-Fase 2.1 */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
