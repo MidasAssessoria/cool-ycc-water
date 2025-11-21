@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { smoothScrollToElement, cn } from "@/lib/utils";
@@ -8,13 +8,19 @@ import { VIPComparisonTable } from "@/components/pricing/VIPComparisonTable";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import MembresiaPricingSection from "@/components/pricing/MembresiaPricingSection";
 import Navigation from "@/components/navigation/Navigation";
-import { Timeline } from "@/components/ui/timeline";
 import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
 import { SEOHead } from "@/components/SEOHead";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+
+// Code splitting: lazy load Timeline component
+const Timeline = lazy(() => import("@/components/ui/timeline").then(m => ({ default: m.Timeline })));
 
 const Membresias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'familiar' | 'vip' | null>(null);
+  
+  // Performance: detect reduced motion preference
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   // Intersection observers para cards timeline
   const card1Animation = useIntersectionAnimation({ threshold: 0.2 });
@@ -52,13 +58,17 @@ const Membresias = () => {
               ref={card1Animation.elementRef}
               className={cn(
                 "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-1",
-                card1Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                card1Animation.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                prefersReducedMotion && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: '0ms' }}
+              style={{ transitionDelay: prefersReducedMotion ? '0ms' : '0ms' }}
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-110"
+                )}>
                   <div className="text-4xl">🌊</div>
                 </div>
                 <div>
@@ -77,13 +87,17 @@ const Membresias = () => {
               ref={card2Animation.elementRef}
               className={cn(
                 "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 transition-all duration-500 hover:-translate-y-1",
-                card2Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                card2Animation.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                prefersReducedMotion && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: '100ms' }}
+              style={{ transitionDelay: prefersReducedMotion ? '0ms' : '100ms' }}
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-110"
+                )}>
                   <div className="text-4xl">🏆</div>
                 </div>
                 <div>
@@ -102,13 +116,17 @@ const Membresias = () => {
               ref={card3Animation.elementRef}
               className={cn(
                 "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-400 transition-all duration-500 hover:-translate-y-1",
-                card3Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                card3Animation.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                prefersReducedMotion && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: '200ms' }}
+              style={{ transitionDelay: prefersReducedMotion ? '0ms' : '200ms' }}
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-110"
+                )}>
                   <div className="text-4xl">🛡️</div>
                 </div>
                 <div>
@@ -127,13 +145,17 @@ const Membresias = () => {
               ref={card4Animation.elementRef}
               className={cn(
                 "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-1",
-                card4Animation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                card4Animation.isVisible && !prefersReducedMotion ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                prefersReducedMotion && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: '300ms' }}
+              style={{ transitionDelay: prefersReducedMotion ? '0ms' : '300ms' }}
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-start gap-4">
-                <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-110"
+                )}>
                   <div className="text-4xl">🌳</div>
                 </div>
                 <div>
@@ -154,6 +176,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/natural-lakes.jpg"
                 alt="Lagos naturales"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -167,6 +191,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/tennis-courts.jpg"
                 alt="Canchas deportivas"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -218,6 +244,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/wave-pool.jpg"
                 alt="Piscina de olas"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -231,6 +259,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/water-slides.jpg"
                 alt="Toboganes"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -282,6 +312,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/hydro-spa.jpg"
                 alt="HidroSPA"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -295,6 +327,8 @@ const Membresias = () => {
               <img
                 src="/assets/attractions/restaurant.jpg"
                 alt="Eventos exclusivos"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -376,26 +410,28 @@ const Membresias = () => {
         {/* Gradient Overlay - Diagonal */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/80 via-cyan-600/60 to-orange-500/70" />
         
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          {/* Circle 1 */}
-          <div 
-            className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
-            style={{ animationDelay: '0s' }}
-          />
-          
-          {/* Circle 2 */}
-          <div 
-            className="absolute bottom-40 right-20 w-48 h-48 bg-orange-400/30 rounded-full blur-3xl animate-float"
-            style={{ animationDelay: '1s' }}
-          />
-          
-          {/* Circle 3 */}
-          <div 
-            className="absolute top-1/2 left-1/3 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl animate-float"
-            style={{ animationDelay: '2s' }}
-          />
-        </div>
+        {/* Floating Elements - respects prefers-reduced-motion */}
+        {!prefersReducedMotion && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            {/* Circle 1 */}
+            <div 
+              className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-3xl animate-float"
+              style={{ animationDelay: '0s' }}
+            />
+            
+            {/* Circle 2 */}
+            <div 
+              className="absolute bottom-40 right-20 w-48 h-48 bg-orange-400/30 rounded-full blur-3xl animate-float"
+              style={{ animationDelay: '1s' }}
+            />
+            
+            {/* Circle 3 */}
+            <div 
+              className="absolute top-1/2 left-1/3 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl animate-float"
+              style={{ animationDelay: '2s' }}
+            />
+          </div>
+        )}
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20 md:py-24">
 
@@ -422,8 +458,17 @@ const Membresias = () => {
         </div>
       </section>
 
-      {/* Timeline Benefits Section */}
-      <Timeline data={timelineData} />
+      {/* Timeline Benefits Section - Code Splitting with Lazy Loading */}
+      <Suspense fallback={
+        <div className="flex items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+            <p className="text-lg font-semibold text-muted-foreground">Cargando beneficios...</p>
+          </div>
+        </div>
+      }>
+        <Timeline data={timelineData} />
+      </Suspense>
 
       {/* Comparison Section - Nova versão com animações */}
       <MembresiaPricingSection 
