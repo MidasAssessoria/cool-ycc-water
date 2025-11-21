@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 /**
  * Hook for lazy rendering of accordion items
  * Only renders items that are visible or have been interacted with
+ * Now with responsive rootMargin for better mobile performance
  */
 export const useLazyAccordion = (totalItems: number, initialRenderCount: number = 5) => {
   const [renderedCount, setRenderedCount] = useState(initialRenderCount);
@@ -30,9 +31,14 @@ export const useLazyAccordion = (totalItems: number, initialRenderCount: number 
       observerRef.current.disconnect();
     }
     
-    // Create new observer with memoized callback
+    // Detect mobile vs desktop for responsive rootMargin
+    const isMobile = window.innerWidth < 768;
+    const rootMargin = isMobile ? '100px' : '200px';
+    
+    // Create new observer with memoized callback and responsive rootMargin
     observerRef.current = new IntersectionObserver(handleIntersection, {
-      rootMargin: '200px'
+      rootMargin,
+      threshold: 0.1
     });
     
     if (containerRef.current) {
