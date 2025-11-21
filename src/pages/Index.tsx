@@ -143,7 +143,7 @@ const Index = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('attractions')}
+                    onClick={() => window.location.href = '/membresias'}
                     className="text-white/70 hover:text-white active:text-white/90 transition-colors text-sm text-left py-2 min-h-[44px] w-full touch-manipulation"
                   >
                     Membresías
