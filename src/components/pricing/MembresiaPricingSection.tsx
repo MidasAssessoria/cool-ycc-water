@@ -201,6 +201,9 @@ export default function MembresiaPricingSection({
               customVariants={revealVariants}
             >
               <Card
+                role="article"
+                aria-labelledby={`plan-title-${index}`}
+                aria-describedby={`plan-desc-${index}`}
                 className={cn(
                   "relative text-white border-2 flex flex-col h-full",
                   plan.popular
@@ -220,7 +223,7 @@ export default function MembresiaPricingSection({
 
                 <CardHeader className="text-left pt-8">
                   <div className="flex justify-between mb-4">
-                    <h3 className="text-2xl sm:text-3xl font-black">{plan.name}</h3>
+                    <h3 id={`plan-title-${index}`} className="text-2xl sm:text-3xl font-black">{plan.name}</h3>
                   </div>
 
                   {/* Precio */}
@@ -255,7 +258,7 @@ export default function MembresiaPricingSection({
                     )}
                   </div>
 
-                  <p className="text-sm text-gray-300 mb-4">{plan.description}</p>
+                  <p id={`plan-desc-${index}`} className="text-sm text-gray-300 mb-4">{plan.description}</p>
 
                   {/* Cobertura */}
                   <div className={cn(
@@ -277,6 +280,8 @@ export default function MembresiaPricingSection({
                   <button
                     onClick={handleClick}
                     disabled={loadingPlan !== null}
+                    aria-label={`Contratar membresía ${plan.name} por USD ${plan.precioDescuento}`}
+                    tabIndex={0}
                     className={cn(
                       "w-full mb-6 p-4 text-lg font-bold rounded-xl transition-all duration-300",
                       loadingPlan === planType ? "opacity-70 cursor-wait" : "hover:scale-105",
