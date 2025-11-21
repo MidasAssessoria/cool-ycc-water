@@ -491,7 +491,16 @@ const Membresias = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             {/* Column 1: Logo + Contact */}
             <div className="space-y-4">
-              <img src={logoYCC} alt="YCC Water Park" className="h-12 w-auto mb-2" />
+              {/* Fase 7.2: Logo com lazy loading para melhor performance */}
+              <img 
+                src={logoYCC} 
+                alt="YCC Water Park - Logo oficial" 
+                className="h-12 w-auto mb-2"
+                loading="lazy"
+                decoding="async"
+                width="auto"
+                height="48"
+              />
               <p className="text-white/80 text-sm mb-4">
                 Club, resort y parque acuático premium para toda la familia.
               </p>
