@@ -89,20 +89,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
           </div>
         ))}
-        <div
-          style={{
-            height: height + "px",
-          }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-1 bg-gradient-to-b from-transparent via-cyan-300 to-transparent"
-        >
-          <motion.div
+        {height > 0 && (
+          <div
             style={{
-              height: heightTransform,
-              opacity: opacityTransform,
+              height: height + "px",
             }}
-            className="absolute inset-x-0 top-0 w-1 bg-gradient-to-b from-orange-500 via-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/50"
-          />
-        </div>
+            className="absolute md:left-8 left-8 top-0 overflow-hidden w-1 bg-gradient-to-b from-transparent via-cyan-300 to-transparent"
+          >
+            <motion.div
+              style={{
+                height: heightTransform,
+                opacity: opacityTransform,
+              }}
+              className="absolute inset-x-0 top-0 w-1 bg-gradient-to-b from-orange-500 via-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/50"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
