@@ -40,6 +40,30 @@ const Membresias = () => {
         {/* Gradient Overlay - Diagonal */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/80 via-cyan-600/60 to-orange-500/70" />
         
+        {/* Animated Waves */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+          {/* Wave 1 - Slow */}
+          <div className="absolute bottom-0 left-0 w-[200%] h-32">
+            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-slow" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,60 C150,100 350,0 600,60 C850,120 1050,60 1200,60 L1200,120 L0,120 Z" fill="white" fillOpacity="0.1"/>
+            </svg>
+          </div>
+          
+          {/* Wave 2 - Medium */}
+          <div className="absolute bottom-0 left-0 w-[200%] h-40">
+            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-medium" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,40 C200,80 400,20 600,50 C800,80 1000,30 1200,60 L1200,120 L0,120 Z" fill="cyan" fillOpacity="0.08"/>
+            </svg>
+          </div>
+          
+          {/* Wave 3 - Fast */}
+          <div className="absolute bottom-0 left-0 w-[200%] h-36">
+            <svg className="absolute bottom-0 left-0 w-full h-full animate-wave-fast" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,80 C250,120 450,40 600,80 C750,120 950,50 1200,90 L1200,120 L0,120 Z" fill="white" fillOpacity="0.05"/>
+            </svg>
+          </div>
+        </div>
+        
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Circle 1 - Turquoise/Cyan (água) */}
