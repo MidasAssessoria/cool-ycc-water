@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { VIPComparisonCard } from './VIPComparisonCard';
-import type { VIPComparisonData } from './VIPComparisonTable';
+import type { VIPComparisonData } from '@/data/membership-comparison';
 import { MobileSortingControls } from './MobileSortingControls';
 
 interface MobileCardsViewProps {

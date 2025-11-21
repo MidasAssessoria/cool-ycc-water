@@ -4,32 +4,13 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, ChevronUp, XCircle, CheckCircle, Scale } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-interface VIPComparisonData {
-  id: string;
-  years: number;
-  familiarTotal: number;
-  vipTotal: number;
-  difference: number;
-  annualSavings: number;
-  status: 'desfavorable' | 'equilibrio' | 'ahorro';
-  statusColor: string;
-  description: string;
-}
+import type { VIPComparisonData } from '@/data/membership-comparison';
+import { formatCurrency } from '@/lib/currency';
 
 interface VIPComparisonCardProps {
   data: VIPComparisonData;
   index: number;
 }
-
-const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(value);
-};
 
 const StatusIcon = ({ status }: { status: 'desfavorable' | 'equilibrio' | 'ahorro' }) => {
   const iconProps = { className: "h-6 w-6" };
