@@ -29,6 +29,11 @@ const Membresias = () => {
       title: "Hoy",
       content: (
         <div>
+          {/* Badge DISPONIBLE HOY */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-6 shadow-sm">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            DISPONIBLE HOY
+          </div>
           <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
             Disfruta desde el primer día de todas estas instalaciones incluidas en tu membresía
           </p>
@@ -142,6 +147,11 @@ const Membresias = () => {
       title: "2025-2026",
       content: (
         <div>
+          {/* Badge 2025-2026 */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-6 shadow-sm">
+            <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+            EN CONSTRUCCIÓN 2025-2026
+          </div>
           <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
             Instalaciones en construcción que estarán disponibles durante tu membresía
           </p>
@@ -201,6 +211,11 @@ const Membresias = () => {
       title: "Próximamente",
       content: (
         <div>
+          {/* Badge PRÓXIMAMENTE */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-100 text-purple-700 text-xs font-bold rounded-full mb-6 shadow-sm">
+            <Sparkles className="w-3 h-3" />
+            PRÓXIMAMENTE
+          </div>
           <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
             Expansiones planificadas incluidas en tu membresía sin costo adicional
           </p>
