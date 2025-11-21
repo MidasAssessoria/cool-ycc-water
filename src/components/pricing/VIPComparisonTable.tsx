@@ -200,14 +200,14 @@ export const VIPComparisonTable = () => {
       ) : (
         // 💻 Desktop/Tablet: Tabela completa
         <>
-          {/* Scroll indicator para tablet */}
-          <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground lg:hidden">
+          {/* Scroll indicator para tablet e mobile */}
+          <div className="mb-3 flex items-center justify-center gap-2 text-xs text-muted-foreground md:hidden">
             <span>← Desliza para ver más →</span>
           </div>
           
           <div className="relative max-h-[60vh] overflow-auto rounded-lg border-2 border-border shadow-xl">
-            {/* Gradient overlay for scroll indication */}
-            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent lg:hidden" />
+            {/* Gradient overlay for scroll indication - visible on mobile and tablet */}
+            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
             
             <TableProvider
               columns={columns}
