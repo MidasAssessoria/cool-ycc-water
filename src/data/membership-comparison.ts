@@ -2,6 +2,7 @@
  * VIP vs Familiar membership comparison data
  * Extracted for performance optimization - prevents recalculation on re-renders
  * 
+ * Fase 5.1: Usando constantes centralizadas de pricing.ts
  * Cálculos validados (Fase 6.1):
  * - Familiar: USD 1.500 entrada + USD 480/año (40/mes)
  * - VIP: USD 4.500 pago único
@@ -9,6 +10,16 @@
  * - Antes del año 9: VIP más caro (desfavorable)
  * - Año 9 en adelante: VIP ahorra (status 'ahorro')
  */
+
+import { PRICING } from '@/constants/pricing';
+import { 
+  calculateFamiliarTotal, 
+  calculateVIPTotal,
+  calculateDifference,
+  calculateAnnualSavings,
+  getPricingStatus,
+  getStatusColor
+} from '@/lib/pricing-utils';
 
 export interface VIPComparisonData {
   id: string;

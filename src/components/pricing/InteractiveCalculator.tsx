@@ -5,36 +5,31 @@ import { Badge } from '@/components/ui/badge';
 import { TrendingUp, TrendingDown, Scale } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { formatCurrency } from '@/lib/currency';
-
-const FAMILIAR_ENTRADA = 1500;
-const FAMILIAR_MENSUAL = 480; // 40/mes * 12 meses
-const VIP_TOTAL = 4500;
+// Fase 5: Usando constantes e funções centralizadas
+import { PRICING } from '@/constants/pricing';
+import { 
+  calculateFamiliarTotal, 
+  calculateVIPTotal, 
+  calculateDifference, 
+  calculateAnnualSavings,
+  getPricingStatus,
+  validateYears 
+} from '@/lib/pricing-utils';
 
 export const InteractiveCalculator = () => {
-  const [years, setYears] = useState([9]); // Start at equilibrium point
+  const [years, setYears] = useState<number[]>([PRICING.EQUILIBRIO_ANOS]); // Start at equilibrium point
 
-  // Fase 6.2: Validação de entrada - garante valores dentro do range permitido
-  const currentYears = Math.max(1, Math.min(30, years[0]));
+  // Fase 5.3: Usando funções utilitárias centralizadas
+  const currentYears = validateYears(years[0]);
   
-  // Calculate totals com valores validados
-  const familiarTotal = FAMILIAR_ENTRADA + (FAMILIAR_MENSUAL * currentYears);
-  const vipTotal = VIP_TOTAL;
-  const difference = familiarTotal - vipTotal;
-  
-  // Fase 6.2: Economia anual só começa a partir do ano 9 (ponto de equilibrio)
-  const annualSavings = currentYears >= 9 && difference > 0 ? FAMILIAR_MENSUAL : 0;
+  // Calculate totals usando funções da lib
+  const familiarTotal = calculateFamiliarTotal(currentYears);
+  const vipTotal = calculateVIPTotal();
+  const difference = calculateDifference(currentYears);
+  const annualSavings = calculateAnnualSavings(currentYears);
 
-  // Fase 6.2: Status atualizado - equilibrio é no ano 9, não baseado em diferença pequena
-  const getStatus = () => {
-    // Antes do ano 9: VIP é mais caro (desfavorable)
-    if (currentYears < 9) return 'desfavorable';
-    // Ano 9: ponto de equilibrio onde VIP começa a compensar
-    if (currentYears === 9) return 'equilibrio';
-    // Após ano 9: VIP economiza
-    return 'ahorro';
-  };
-
-  const status = getStatus();
+  // Status usando função centralizada
+  const status = getPricingStatus(currentYears);
 
   return (
     <Card className="p-6 mt-8 bg-gradient-to-br from-purple-50 to-cyan-50">
@@ -88,7 +83,7 @@ export const InteractiveCalculator = () => {
             {formatCurrency(familiarTotal)}
           </p>
           <p className="text-xs text-muted-foreground mt-1">
-            USD 1.500 + (USD 480/año × {currentYears})
+            USD {PRICING.FAMILIAR.ENTRADA.toLocaleString()} + (USD {PRICING.FAMILIAR.ANUAL}/año × {currentYears})
           </p>
         </div>
 
@@ -152,8 +147,8 @@ export const InteractiveCalculator = () => {
 
       {/* Info Message */}
       <div className="mt-4 text-center text-xs text-muted-foreground">
-        💡 El punto de equilibrio es en el <strong>año 9</strong>. 
-        Desde ahí, VIP ahorra USD 480 cada año.
+        💡 El punto de equilibrio es en el <strong>año {PRICING.EQUILIBRIO_ANOS}</strong>. 
+        Desde ahí, VIP ahorra USD {PRICING.FAMILIAR.ANUAL} cada año.
       </div>
     </Card>
   );
