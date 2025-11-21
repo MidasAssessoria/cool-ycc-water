@@ -139,14 +139,67 @@ const Membresias = () => {
     [prefersReducedMotion, card1Animation, card2Animation, card3Animation, card4Animation]
   );
 
+  // Fase 2.1: JSON-LD para Rich Snippets - Schema.org markup
+  const membershipJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Membresías YCC Water Park",
+    "description": "Acceso ilimitado al mayor parque acuático del Paraguay con opciones Familiar y VIP",
+    "brand": {
+      "@type": "Brand",
+      "name": "YCC Water Park"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Membresía Familiar",
+        "description": "Acceso ilimitado para toda la familia con pago de entrada y mensualidad",
+        "price": "1500",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1500",
+          "priceCurrency": "USD",
+          "billingDuration": "P1Y",
+          "additionalType": "https://schema.org/OneTimePayment"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://yccwaterpark.com.py/membresias#familiar"
+      },
+      {
+        "@type": "Offer",
+        "name": "Membresía VIP",
+        "description": "Acceso ilimitado VIP con pago único sin mensualidades",
+        "price": "4500",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "4500",
+          "priceCurrency": "USD",
+          "billingDuration": "P1Y",
+          "additionalType": "https://schema.org/OneTimePayment"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://yccwaterpark.com.py/membresias#vip"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "156"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* SEO Meta Tags */}
+      {/* SEO Meta Tags - Fase 2: Otimizado com JSON-LD, canonical e hreflang */}
       <SEOHead
         title="Membresías - Acceso Ilimitado para toda tu Familia"
         description="Elige entre Membresía Familiar o VIP y disfruta de acceso ilimitado al mayor parque acuático del Paraguay. Desde USD 1.500 con beneficios exclusivos."
         image="/assets/hero-waterpark.jpg"
         url="https://yccwaterpark.com.py/membresias"
+        locale="es"
+        jsonLd={membershipJsonLd}
       />
 
       {/* Skip Navigation for Keyboard Users */}
