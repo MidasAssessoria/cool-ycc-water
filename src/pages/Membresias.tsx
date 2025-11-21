@@ -70,7 +70,7 @@ const Membresias = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-20 md:py-24">
 
           {/* Título principal */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 sm:mb-8 drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 drop-shadow-lg bg-gradient-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
             Membresías YCC Water Park
           </h1>
 
