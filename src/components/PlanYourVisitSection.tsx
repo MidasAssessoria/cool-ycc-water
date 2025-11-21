@@ -118,7 +118,10 @@ const PlanYourVisitSection = () => {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
       
-      console.log("Form submitted:", data);
+      // Removido console.log em produção (Fase 1.1)
+      if (process.env.NODE_ENV === 'development') {
+        console.log("Form submitted:", data);
+      }
       
       toast({
         title: "✅ Visita Agendada com Sucesso!",

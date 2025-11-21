@@ -38,14 +38,14 @@ const Membresias = () => {
   useEffect(() => {
     let isCancelled = false;
     
-    // Prefetch Timeline after initial render - reduced timeout for faster loading
+    // Prefetch Timeline after initial render - otimizado para 200ms (Fase 1.3)
     const timer = setTimeout(() => {
       if (!isCancelled) {
         import("@/components/ui/timeline").catch(() => {
           // Silently fail if prefetch fails
         });
       }
-    }, 500); // Reduced from 1000ms to 500ms
+    }, 200); // Otimizado de 500ms para 200ms
     
     return () => {
       isCancelled = true;
@@ -59,8 +59,8 @@ const Membresias = () => {
   const card3Animation = useIntersectionAnimation({ threshold: 0.2 });
   const card4Animation = useIntersectionAnimation({ threshold: 0.2 });
 
-  // Lazy rendering for FAQ Accordion - improves initial load with responsive rootMargin
-  const { renderedCount, containerRef } = useLazyAccordion(10, 5);
+  // Lazy rendering for FAQ Accordion - otimizado para 8 itens iniciais (Fase 1.2)
+  const { renderedCount, containerRef } = useLazyAccordion(faqData.length, 8);
 
   // Debounce search term to reduce re-renders (300ms delay)
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 300);

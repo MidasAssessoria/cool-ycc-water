@@ -57,8 +57,10 @@ export const BookingForm = () => {
       // Simula processamento
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
-      // Log dos dados (será substituído por chamada API futuramente)
-      console.log("📅 Dados do Agendamento:", data);
+      // Removido console.log em produção (Fase 1.1)
+      if (process.env.NODE_ENV === 'development') {
+        console.log("📅 Dados do Agendamento:", data);
+      }
       
       // Toast de sucesso
       toast.success("Agendamento recebido!", {
