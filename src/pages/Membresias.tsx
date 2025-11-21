@@ -20,8 +20,8 @@ const Membresias = () => {
   };
 
   const handleContinue = () => {
-    // Placeholder URL - será substituído posteriormente
-    window.open('https://example.com/registro-membresias', '_blank');
+    // URL real de registro de membresías
+    window.open('https://yccwaterpark.com.py/registro-membresias', '_blank');
     setIsModalOpen(false);
   };
 
@@ -311,7 +311,7 @@ const Membresias = () => {
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/src/assets/hero-waterpark.jpg')`,
+            backgroundImage: `url('/assets/hero-waterpark.jpg')`,
           }}
         />
         
