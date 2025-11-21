@@ -13,18 +13,24 @@ const VIP_TOTAL = 4500;
 export const InteractiveCalculator = () => {
   const [years, setYears] = useState([9]); // Start at equilibrium point
 
-  const currentYears = years[0];
+  // Fase 6.2: Validação de entrada - garante valores dentro do range permitido
+  const currentYears = Math.max(1, Math.min(30, years[0]));
   
-  // Calculate totals
+  // Calculate totals com valores validados
   const familiarTotal = FAMILIAR_ENTRADA + (FAMILIAR_MENSUAL * currentYears);
   const vipTotal = VIP_TOTAL;
   const difference = familiarTotal - vipTotal;
-  const annualSavings = difference > 0 ? FAMILIAR_MENSUAL : 0;
+  
+  // Fase 6.2: Economia anual só começa a partir do ano 9 (ponto de equilibrio)
+  const annualSavings = currentYears >= 9 && difference > 0 ? FAMILIAR_MENSUAL : 0;
 
-  // Determine status with more precise threshold
+  // Fase 6.2: Status atualizado - equilibrio é no ano 9, não baseado em diferença pequena
   const getStatus = () => {
-    if (difference < -50) return 'desfavorable';
-    if (Math.abs(difference) <= 50) return 'equilibrio';
+    // Antes do ano 9: VIP é mais caro (desfavorable)
+    if (currentYears < 9) return 'desfavorable';
+    // Ano 9: ponto de equilibrio onde VIP começa a compensar
+    if (currentYears === 9) return 'equilibrio';
+    // Após ano 9: VIP economiza
     return 'ahorro';
   };
 
@@ -53,11 +59,19 @@ export const InteractiveCalculator = () => {
         </div>
         <Slider
           value={years}
-          onValueChange={setYears}
+          onValueChange={(value) => {
+            // Fase 6.2: Validação adicional no onChange
+            const validatedValue = Math.max(1, Math.min(30, value[0]));
+            setYears([validatedValue]);
+          }}
           min={1}
           max={30}
           step={1}
           className="w-full"
+          aria-label="Selecciona el número de años de membresía"
+          aria-valuemin={1}
+          aria-valuemax={30}
+          aria-valuenow={currentYears}
         />
         <div className="flex justify-between text-xs text-muted-foreground mt-2">
           <span>1 año</span>
