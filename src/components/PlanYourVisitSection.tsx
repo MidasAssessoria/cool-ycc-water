@@ -600,60 +600,7 @@ const PlanYourVisitSection = () => {
                 </div>
               </div>
 
-              {/* CARD 3: What's Included Checklist - Mobile optimized */}
-              <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border-2 border-coral/20">
-                <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                  <Star className="w-4 h-4 sm:w-5 sm:h-5 text-coral" />
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900">
-                    ✨ Qué está incluido
-                  </h3>
-                </div>
-                <ul className="space-y-2.5 sm:space-y-3">
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
-                    </div>
-                    <span className="font-medium">Recorrido guiado por el parque y áreas del proyecto</span>
-                  </li>
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
-                    </div>
-                    <span className="font-medium">Presentación del masterplan, maquetas y bungalows premium</span>
-                  </li>
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
-                    </div>
-                    <span className="font-medium">Explicación de las membresías y del sistema de time share</span>
-                  </li>
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
-                    </div>
-                    <span className="font-medium">Asesoría personalizada para elegir tu mejor opción</span>
-                  </li>
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-coral/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-coral" />
-                    </div>
-                    <span className="font-medium">Snack y bebidas de cortesía</span>
-                  </li>
-                  <li className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
-                    </div>
-                    <span className="font-medium">100% gratuito y sin compromiso de compra</span>
-                  </li>
-                </ul>
-                
-                {/* Disclaimer Text */}
-                <p className="mt-4 text-xs text-gray-500 italic">
-                  La visita es comercial y no incluye uso de las atracciones del parque.
-                </p>
-              </div>
-
-              {/* CARD 4: Quick Contact WhatsApp - Mobile optimized */}
+              {/* CARD 3: Quick Contact WhatsApp - Mobile optimized */}
               <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md flex items-center justify-between gap-3">
               <div className="min-w-0 flex-1">
                 <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">¿Dudas? Contáctanos</p>
@@ -686,56 +633,6 @@ const PlanYourVisitSection = () => {
         </div>
       </div>
 
-      {/* PART 3: TRUST BAR - Mobile optimized spacing */}
-      <div className="w-full min-h-16 bg-white border-t border-gray-200 py-6 sm:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
-            {/* Stat 1: Famílias */}
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center">
-                <Users className="w-5 h-5 text-coral" aria-hidden="true" />
-              </div>
-              <div className="text-left">
-                <p className="text-xl font-bold text-gray-900">500+</p>
-                <p className="text-sm text-gray-600">Familias felices</p>
-              </div>
-            </div>
-
-            {/* Stat 2: Avaliação */}
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                <Star className="w-5 h-5 text-yellow-600" aria-hidden="true" />
-              </div>
-              <div className="text-left">
-                <p className="text-xl font-bold text-gray-900">4,8/5</p>
-                <p className="text-sm text-gray-600">Valoración promedio</p>
-              </div>
-            </div>
-
-            {/* Stat 3: Bungalows */}
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-turquoise/20 flex items-center justify-center">
-                <Home className="w-5 h-5 text-turquoise" aria-hidden="true" />
-              </div>
-              <div className="text-left">
-                <p className="text-xl font-bold text-gray-900">64</p>
-                <p className="text-sm text-gray-600">Bungalows exclusivos</p>
-              </div>
-            </div>
-
-            {/* Stat 4: Destinos */}
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-                <Globe className="w-5 h-5 text-blue-600" aria-hidden="true" />
-              </div>
-              <div className="text-left">
-                <p className="text-xl font-bold text-gray-900">4.000+</p>
-                <p className="text-sm text-gray-600">Destinos para intercambiar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
