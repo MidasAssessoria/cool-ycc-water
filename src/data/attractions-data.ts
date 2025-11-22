@@ -337,21 +337,29 @@ export const gastronomia: Attraction[] = [
     name: 'Restaurante Lago',
     description: 'Restaurante principal con vistas al lago y cocina internacional',
     image: '/assets/attractions/restaurant.webp',
-    category: 'gastronomia'
+    category: 'gastronomia',
+    icon: '🍽️',
+    capacity: '120 personas',
+    badge: 'Premium'
   },
   {
     id: 'bar-acuatico',
     name: 'Bar Acuático',
     description: 'Bar dentro de la piscina con bebidas refrescantes y snacks',
     image: '/assets/attractions/restaurant.webp',
-    category: 'gastronomia'
+    category: 'gastronomia',
+    icon: '🍹',
+    capacity: '40 personas',
+    badge: 'Popular'
   },
   {
     id: 'patio-comida',
     name: 'Patio de Comida',
     description: 'Variedad de opciones gastronómicas rápidas y económicas',
     image: '/assets/attractions/restaurant.webp',
-    category: 'gastronomia'
+    category: 'gastronomia',
+    icon: '🍕',
+    capacity: '80 personas'
   }
 ];
 
