@@ -32,7 +32,7 @@ export const categories: Category[] = [
     name: 'Atracciones Acuáticas',
     slug: 'acuaticas',
     description: 'Toboganes, piscinas de olas, ríos lentos y más diversión acuática para toda la familia',
-    heroImage: '/assets/attractions/wave-pool.webp',
+    heroImage: '/src/assets/categories/acuaticas-hero.webp',
     icon: 'Waves',
     color: 'from-blue-500 to-cyan-500',
     totalAttractions: 12
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     name: 'Bungalows VIP',
     slug: 'bungalows',
     description: 'Apartamentos exclusivos con amenidades premium, gimnasio VIP, spa privado y más',
-    heroImage: '/assets/attractions/bungalows.webp',
+    heroImage: '/src/assets/categories/bungalows-hero.webp',
     icon: 'Home',
     color: 'from-indigo-500 to-purple-500',
     totalAttractions: 14

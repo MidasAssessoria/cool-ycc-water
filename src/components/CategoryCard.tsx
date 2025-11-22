@@ -46,7 +46,7 @@ export const CategoryCard = ({
         <div className={cn(
           "absolute inset-0 bg-gradient-to-t",
           color,
-          "opacity-60 group-hover:opacity-70 transition-opacity"
+          "opacity-30 group-hover:opacity-40 transition-opacity"
         )} />
         
         {/* Icon Badge */}
