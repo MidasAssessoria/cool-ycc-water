@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-waterpark.jpg";
 import logoYCC from "@/assets/logo-ycc-waterpark.png";
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
-import AttractionsSection from "@/components/AttractionsSection";
+import CategoriesSection from "@/components/CategoriesSection";
 // BungalowsHeroSection disponível para uso futuro em página dedicada /bungalows
 // import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import BungalowsCompactSection from "@/components/BungalowsCompactSection";
@@ -68,9 +68,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Attractions Section */}
+      {/* Categories Section */}
       <section id="attractions">
-        <AttractionsSection />
+        <CategoriesSection />
       </section>
 
       {/* Aqua Park Hero Section */}
