@@ -2,21 +2,7 @@ import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { 
-  Calendar as CalendarIcon, 
-  User, 
-  Phone as PhoneIcon,
-  MapPin,
-  Users,
-  Gift,
-  ExternalLink,
-  Check,
-  Star,
-  Home,
-  Globe,
-  Sunrise,
-  Sunset
-} from "lucide-react";
+import { Calendar as CalendarIcon, User, Phone as PhoneIcon, MapPin, Users, Gift, ExternalLink, Check, Star, Home, Globe, Sunrise, Sunset } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
@@ -27,7 +13,6 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
@@ -37,111 +22,97 @@ import waterparkHeroBg from "@/assets/waterpark-hero-bg.jpg";
 import bungalowsImg from "@/assets/attractions/bungalows.jpg";
 import heroWaterpark from "@/assets/hero-waterpark.jpg";
 import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
-
 const PlanYourVisitSection = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: true,
-      duration: 25,
-      align: 'center',
-      containScroll: 'trimSnaps',
-    },
-    [Autoplay({ 
-      delay: 7000,
-      stopOnInteraction: false,
-      stopOnMouseEnter: false
-    })]
-  );
-
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    duration: 25,
+    align: 'center',
+    containScroll: 'trimSnaps'
+  }, [Autoplay({
+    delay: 7000,
+    stopOnInteraction: false,
+    stopOnMouseEnter: false
+  })]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [phoneValue, setPhoneValue] = useState("+595");
   const [selectedIndex, setSelectedIndex] = useState(0);
-
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {
+      errors
+    },
     setValue,
-    watch,
+    watch
   } = useForm<PlanVisitFormData>({
     resolver: zodResolver(planVisitSchema),
     defaultValues: {
-      numberOfPeople: "3-4",
-    },
+      numberOfPeople: "3-4"
+    }
   });
-
-  const { formatPhoneNumber, handlePhonePaste, handlePhoneBackspace } = usePhoneMask();
+  const {
+    formatPhoneNumber,
+    handlePhonePaste,
+    handlePhoneBackspace
+  } = usePhoneMask();
   const selectedDate = watch("visitDate");
   const selectedTime = watch("visitTime");
   const numberOfPeople = watch("numberOfPeople");
 
   // Hero carousel images
-  const heroImages = [
-    {
-      src: waterparkHeroBg,
-      alt: "Vista aérea do parque aquático YCC",
-    },
-    {
-      src: bungalowsImg,
-      alt: "Bungalows modernos e luxuosos",
-    },
-    {
-      src: heroWaterpark,
-      alt: "Família aproveitando os tobogãs aquáticos",
-    },
-    {
-      src: wavePoolImg,
-      alt: "Experiência completa no parque",
-    },
-  ];
-
-
+  const heroImages = [{
+    src: waterparkHeroBg,
+    alt: "Vista aérea do parque aquático YCC"
+  }, {
+    src: bungalowsImg,
+    alt: "Bungalows modernos e luxuosos"
+  }, {
+    src: heroWaterpark,
+    alt: "Família aproveitando os tobogãs aquáticos"
+  }, {
+    src: wavePoolImg,
+    alt: "Experiência completa no parque"
+  }];
   useEffect(() => {
     if (!emblaApi) return;
-
     const onSelect = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
-
     emblaApi.on("select", onSelect);
     onSelect();
-
     return () => {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi]);
-
   const onSubmit = async (data: PlanVisitFormData) => {
     setIsSubmitting(true);
-    
     try {
       // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
       // Removido console.log em produção (Fase 1.1)
       if (process.env.NODE_ENV === 'development') {
         console.log("Form submitted:", data);
       }
-      
       toast({
         title: "✅ Visita Agendada com Sucesso!",
-        description: `Sua visita foi confirmada para ${format(data.visitDate, "dd/MM/yyyy", { locale: ptBR })} no período da ${data.visitTime === "morning" ? "manhã" : "tarde"}. Em breve entraremos em contato via WhatsApp.`,
+        description: `Sua visita foi confirmada para ${format(data.visitDate, "dd/MM/yyyy", {
+          locale: ptBR
+        })} no período da ${data.visitTime === "morning" ? "manhã" : "tarde"}. Em breve entraremos em contato via WhatsApp.`
       });
-      
+
       // Reset form could be added here if needed
     } catch (error) {
       toast({
         title: "❌ Error al Agendar",
         description: "Ocurrió un error al procesar tu solicitud. Por favor, intenta nuevamente.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section className="relative w-full">
+  return <section className="relative w-full">
       {/* PART 1: HERO VISUAL SECTION - Mobile optimized */}
       <div className="relative w-full h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] max-h-[450px] overflow-hidden bg-gray-900">
         {/* Preload first image */}
@@ -150,23 +121,13 @@ const PlanYourVisitSection = () => {
         {/* Carousel Container */}
         <div className="absolute inset-0 overflow-hidden gpu-accelerated" ref={emblaRef}>
           <div className="flex h-full touch-pan-y">
-            {heroImages.map((image, index) => (
-              <div
-                key={index}
-                className="relative flex-[0_0_100%] min-w-0 h-full"
-              >
+            {heroImages.map((image, index) => <div key={index} className="relative flex-[0_0_100%] min-w-0 h-full">
                 <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover object-center will-change-transform"
-                    loading={index === 0 ? "eager" : "lazy"}
-                    draggable="false"
-                    style={{ pointerEvents: 'none' }}
-                  />
+                  <img src={image.src} alt={image.alt} className="w-full h-full object-cover object-center will-change-transform" loading={index === 0 ? "eager" : "lazy"} draggable="false" style={{
+                pointerEvents: 'none'
+              }} />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -174,14 +135,17 @@ const PlanYourVisitSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 z-10" />
 
         {/* Floating Badge (top-right) - Mobile optimized */}
-        <motion.div 
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 z-20"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <div
-            className="
+        <motion.div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 z-20" initial={{
+        opacity: 0,
+        scale: 0.8
+      }} animate={{
+        opacity: 1,
+        scale: 1
+      }} transition={{
+        duration: 0.6,
+        delay: 0.3
+      }}>
+          <div className="
               relative
               backdrop-blur-md 
               bg-coral/95
@@ -193,10 +157,7 @@ const PlanYourVisitSection = () => {
               shadow-xl
               animate-pulse
               cursor-default
-            "
-            role="status"
-            aria-label="Tour VIP Guiado disponible"
-          >
+            " role="status" aria-label="Tour VIP Guiado disponible">
             🌟 Tour VIP guiado gratuito
           </div>
         </motion.div>
@@ -205,8 +166,7 @@ const PlanYourVisitSection = () => {
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
           <div className="max-w-4xl">
             {/* Main Heading - Mobile optimized */}
-            <motion.h1
-              className="
+            <motion.h1 className="
                 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
                 font-bold 
                 text-white
@@ -214,27 +174,36 @@ const PlanYourVisitSection = () => {
                 [text-shadow:_0_2px_10px_rgba(0,0,0,0.3)]
                 leading-tight
                 px-4
-              "
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
+              " initial={{
+            opacity: 0,
+            y: 30
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.5
+          }}>
               Planea tu Tour Gratuito
             </motion.h1>
 
             {/* Subheading - Mobile optimized */}
-            <motion.p
-              className="
+            <motion.p className="
                 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl
                 font-normal
                 text-white/90
                 [text-shadow:_0_1px_8px_rgba(0,0,0,0.3)]
                 px-4
-              "
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
+              " initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.7
+          }}>
               Ven y descubre el  YCC Water Park, el proyecto completo y tus opciones de inversión  en una visita <span className="font-bold">guiada</span>
             </motion.p>
           </div>
@@ -242,46 +211,34 @@ const PlanYourVisitSection = () => {
 
         {/* Carousel Dots - Indicator */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => emblaApi?.scrollTo(index)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-300 touch-manipulation",
-                selectedIndex === index
-                  ? "bg-white w-8"
-                  : "bg-white/50 hover:bg-white/75 w-2"
-              )}
-              aria-label={`Ir a la diapositiva ${index + 1}`}
-              aria-current={selectedIndex === index ? "true" : "false"}
-            />
-          ))}
+          {heroImages.map((_, index) => <button key={index} onClick={() => emblaApi?.scrollTo(index)} className={cn("h-2 rounded-full transition-all duration-300 touch-manipulation", selectedIndex === index ? "bg-white w-8" : "bg-white/50 hover:bg-white/75 w-2")} aria-label={`Ir a la diapositiva ${index + 1}`} aria-current={selectedIndex === index ? "true" : "false"} />)}
         </div>
 
       </div>
 
       {/* PART 2: BOOKING FORM + INFO SIDEBAR - Mobile optimized spacing */}
-      <div 
-        id="plan-visit-form"
-        className="
+      <div id="plan-visit-form" className="
           w-full 
           bg-gray-50
           py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8
           scroll-mt-20 md:scroll-mt-24
-        "
-      >
+        ">
         <div className="max-w-7xl mx-auto">
 
 
           <div className="grid grid-cols-1 lg:grid-cols-[58%_42%] gap-6 lg:gap-8 items-start">
             {/* LEFT: Smart Booking Form - Mobile: order-2 (appears FIRST), Desktop: order-1 */}
-            <motion.div 
-              className="bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-100 order-2 lg:order-1"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div className="bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-100 order-2 lg:order-1" initial={{
+            opacity: 0,
+            x: -30
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }}>
               {/* Form Header */}
               <div role="heading" aria-level={2}>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -305,41 +262,24 @@ const PlanYourVisitSection = () => {
                   <Label htmlFor="visitDate" className="text-gray-700">Fecha de la Visita *</Label>
                   <Popover>
                     <PopoverTrigger asChild aria-label="Seleccionar fecha de la visita">
-                      <Button
-                        variant="outline"
-                        className={cn(
-                          "w-full justify-start text-left font-normal h-12 border-2 focus:border-coral touch-manipulation",
-                          !selectedDate && "text-muted-foreground"
-                        )}
-                        >
+                      <Button variant="outline" className={cn("w-full justify-start text-left font-normal h-12 border-2 focus:border-coral touch-manipulation", !selectedDate && "text-muted-foreground")}>
                           <CalendarIcon className="mr-2 h-4 w-4" />
-                          {selectedDate ? (
-                            format(selectedDate, "dd/MM/yyyy", { locale: ptBR })
-                          ) : (
-                            <span>Selecciona una fecha</span>
-                          )}
+                          {selectedDate ? format(selectedDate, "dd/MM/yyyy", {
+                          locale: ptBR
+                        }) : <span>Selecciona una fecha</span>}
                         </Button>
                       </PopoverTrigger>
                       <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={selectedDate}
-                          onSelect={(date) => setValue("visitDate", date as Date)}
-                          disabled={(date) => {
-                            const today = new Date();
-                            today.setHours(0, 0, 0, 0);
-                            const maxDate = new Date();
-                            maxDate.setDate(maxDate.getDate() + 90);
-                            return date < today || date > maxDate;
-                          }}
-                          initialFocus
-                          className={cn("p-3 pointer-events-auto")}
-                        />
+                        <Calendar mode="single" selected={selectedDate} onSelect={date => setValue("visitDate", date as Date)} disabled={date => {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+                        const maxDate = new Date();
+                        maxDate.setDate(maxDate.getDate() + 90);
+                        return date < today || date > maxDate;
+                      }} initialFocus className={cn("p-3 pointer-events-auto")} />
                       </PopoverContent>
                     </Popover>
-                    {errors.visitDate && (
-                      <p className="text-sm text-red-600">{errors.visitDate.message}</p>
-                    )}
+                    {errors.visitDate && <p className="text-sm text-red-600">{errors.visitDate.message}</p>}
                   </div>
 
                   {/* Time Button Group */}
@@ -347,19 +287,7 @@ const PlanYourVisitSection = () => {
                   <Label className="text-gray-700">Horario *</Label>
                   <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Selecciona el horario de la visita">
                       {/* Morning Button */}
-                      <button
-                        type="button"
-                        onClick={() => setValue("visitTime", "morning")}
-                        role="radio"
-                        aria-checked={selectedTime === "morning"}
-                        aria-label="Mañana - 9 a 12 horas"
-                        className={cn(
-                          "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
-                          selectedTime === "morning"
-                            ? "bg-coral text-white border-coral shadow-lg"
-                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
-                        )}
-                      >
+                      <button type="button" onClick={() => setValue("visitTime", "morning")} role="radio" aria-checked={selectedTime === "morning"} aria-label="Mañana - 9 a 12 horas" className={cn("h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation", selectedTime === "morning" ? "bg-coral text-white border-coral shadow-lg" : "bg-white text-gray-700 border-gray-300 hover:border-coral")}>
                         <Sunrise className="w-4 h-4 sm:w-5 sm:h-5" />
                         <div className="flex flex-col items-start">
                           <span className="text-xs sm:text-sm font-semibold">Mañana</span>
@@ -368,19 +296,7 @@ const PlanYourVisitSection = () => {
                       </button>
 
                       {/* Afternoon Button */}
-                      <button
-                        type="button"
-                        onClick={() => setValue("visitTime", "afternoon")}
-                        role="radio"
-                        aria-checked={selectedTime === "afternoon"}
-                        aria-label="Tarde - 14 a 17 horas"
-                        className={cn(
-                          "h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation",
-                          selectedTime === "afternoon"
-                            ? "bg-coral text-white border-coral shadow-lg"
-                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
-                        )}
-                      >
+                      <button type="button" onClick={() => setValue("visitTime", "afternoon")} role="radio" aria-checked={selectedTime === "afternoon"} aria-label="Tarde - 14 a 17 horas" className={cn("h-12 px-3 rounded-lg border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2 flex items-center justify-center gap-1.5 sm:gap-2 touch-manipulation", selectedTime === "afternoon" ? "bg-coral text-white border-coral shadow-lg" : "bg-white text-gray-700 border-gray-300 hover:border-coral")}>
                         <Sunset className="w-4 h-4 sm:w-5 sm:h-5" />
                         <div className="flex flex-col items-start">
                           <span className="text-xs sm:text-sm font-semibold">Tarde</span>
@@ -388,9 +304,7 @@ const PlanYourVisitSection = () => {
                         </div>
                       </button>
                     </div>
-                    {errors.visitTime && (
-                      <p className="text-sm text-red-600">{errors.visitTime.message}</p>
-                    )}
+                    {errors.visitTime && <p className="text-sm text-red-600">{errors.visitTime.message}</p>}
                   </div>
                 </div>
 
@@ -399,19 +313,9 @@ const PlanYourVisitSection = () => {
                   <Label htmlFor="fullName" className="text-gray-700">Nombre Completo *</Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
-                    <Input
-                      id="fullName"
-                      {...register("fullName")}
-                      placeholder="Tu nombre"
-                      className="h-12 pl-10 border-2 focus:border-coral touch-manipulation"
-                      aria-required="true"
-                      aria-invalid={!!errors.fullName}
-                      aria-describedby={errors.fullName ? "fullName-error" : undefined}
-                    />
+                    <Input id="fullName" {...register("fullName")} placeholder="Tu nombre" className="h-12 pl-10 border-2 focus:border-coral touch-manipulation" aria-required="true" aria-invalid={!!errors.fullName} aria-describedby={errors.fullName ? "fullName-error" : undefined} />
                   </div>
-                  {errors.fullName && (
-                    <p className="text-sm text-red-600" id="fullName-error" role="alert">{errors.fullName.message}</p>
-                  )}
+                  {errors.fullName && <p className="text-sm text-red-600" id="fullName-error" role="alert">{errors.fullName.message}</p>}
                 </div>
 
                 {/* Phone Input */}
@@ -419,78 +323,39 @@ const PlanYourVisitSection = () => {
                   <Label htmlFor="phone" className="text-gray-700">Tu WhatsApp *</Label>
                   <div className="relative">
                     <PhoneIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={phoneValue}
-                      onChange={(e) => {
-                        const formatted = formatPhoneNumber(e.target.value);
-                        setPhoneValue(formatted);
-                        setValue("phone", formatted);
-                      }}
-                      onPaste={(e) => handlePhonePaste(e, (value) => {
-                        setPhoneValue(value);
-                        setValue("phone", value);
-                      })}
-                      onKeyDown={(e) => handlePhoneBackspace(e, phoneValue, (value) => {
-                        setPhoneValue(value);
-                        setValue("phone", value);
-                      })}
-                      placeholder="+595 XXX XXX XXX"
-                      className="h-12 pl-10 border-2 focus:border-coral touch-manipulation"
-                      aria-required="true"
-                      aria-invalid={!!errors.phone}
-                      aria-describedby={errors.phone ? "phone-error" : undefined}
-                    />
+                    <Input id="phone" type="tel" value={phoneValue} onChange={e => {
+                    const formatted = formatPhoneNumber(e.target.value);
+                    setPhoneValue(formatted);
+                    setValue("phone", formatted);
+                  }} onPaste={e => handlePhonePaste(e, value => {
+                    setPhoneValue(value);
+                    setValue("phone", value);
+                  })} onKeyDown={e => handlePhoneBackspace(e, phoneValue, value => {
+                    setPhoneValue(value);
+                    setValue("phone", value);
+                  })} placeholder="+595 XXX XXX XXX" className="h-12 pl-10 border-2 focus:border-coral touch-manipulation" aria-required="true" aria-invalid={!!errors.phone} aria-describedby={errors.phone ? "phone-error" : undefined} />
                   </div>
-                  {errors.phone && (
-                    <p className="text-sm text-red-600" id="phone-error" role="alert">{errors.phone.message}</p>
-                  )}
+                  {errors.phone && <p className="text-sm text-red-600" id="phone-error" role="alert">{errors.phone.message}</p>}
                 </div>
 
                 {/* Number of People */}
                 <div className="space-y-2">
                   <Label className="text-gray-700">Número de Personas *</Label>
                   <div className="flex gap-2" role="radiogroup" aria-label="Selecciona el número de personas">
-                    {(["1-2", "3-4", "5+"] as const).map((option) => (
-                      <button
-                        key={option}
-                        type="button"
-                        onClick={() => setValue("numberOfPeople", option)}
-                        role="radio"
-                        aria-checked={numberOfPeople === option}
-                        aria-label={`${option} personas`}
-                        className={cn(
-                          "flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2",
-                          numberOfPeople === option
-                            ? "bg-coral text-white border-coral"
-                            : "bg-white text-gray-700 border-gray-300 hover:border-coral"
-                        )}
-                      >
+                    {(["1-2", "3-4", "5+"] as const).map(option => <button key={option} type="button" onClick={() => setValue("numberOfPeople", option)} role="radio" aria-checked={numberOfPeople === option} aria-label={`${option} personas`} className={cn("flex-1 py-3 px-4 rounded-full border-2 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2", numberOfPeople === option ? "bg-coral text-white border-coral" : "bg-white text-gray-700 border-gray-300 hover:border-coral")}>
                         {option}
-                      </button>
-                    ))}
+                      </button>)}
                   </div>
-                  {errors.numberOfPeople && (
-                    <p className="text-sm text-red-600">{errors.numberOfPeople.message}</p>
-                  )}
+                  {errors.numberOfPeople && <p className="text-sm text-red-600">{errors.numberOfPeople.message}</p>}
                 </div>
 
                 {/* Submit Button */}
                 <div className="space-y-3">
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full h-14 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral active:from-coral active:to-coral-dark text-white font-bold text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all touch-manipulation"
-                  >
-                    {isSubmitting ? (
-                      <>
+                  <Button type="submit" disabled={isSubmitting} className="w-full h-14 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral active:from-coral active:to-coral-dark text-white font-bold text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all touch-manipulation">
+                    {isSubmitting ? <>
                         <span className="animate-spin mr-2">⏳</span>
                         Enviando...
-                      </>
-                    ) : (
-                      "Confirmar mi Tour VIP"
-                    )}
+                      </> : "Confirmar mi Tour VIP"}
                   </Button>
                   
                   {/* Helper Text */}
@@ -503,33 +368,26 @@ const PlanYourVisitSection = () => {
             </motion.div>
 
             {/* RIGHT: Info Sidebar - Mobile: order-1 (appears AFTER form), Desktop: order-2 */}
-            <motion.div 
-              className="flex flex-col gap-4 sm:gap-5 md:gap-6 order-1 lg:order-2"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <motion.div className="flex flex-col gap-4 sm:gap-5 md:gap-6 order-1 lg:order-2" initial={{
+            opacity: 0,
+            x: 30
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.2
+          }}>
               {/* CARD 1: Interactive Google Maps - Mobile optimized height */}
               <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200" role="region" aria-label="Mapa de ubicación">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación YCC Water Park - Ypané, Paraguay"
-                  className="w-full h-full"
-                />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57844.84976851745!2d-57.5634!3d-25.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5b16e52b7a1%3A0x8e4b51e9e0c8f0c8!2sYpan%C3%A9%2C%20Paraguay!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style={{
+                border: 0
+              }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Ubicación YCC Water Park - Ypané, Paraguay" className="w-full h-full" />
                 
                 {/* Button Overlay */}
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Ypané,Paraguay"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
+                <a href="https://www.google.com/maps/search/?api=1&query=Ypané,Paraguay" target="_blank" rel="noopener noreferrer" className="
                     absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2
                     flex items-center gap-1.5 sm:gap-2
                     bg-white hover:bg-gray-50
@@ -542,8 +400,7 @@ const PlanYourVisitSection = () => {
                     border border-gray-200
                     touch-manipulation
                     min-h-[44px]
-                  "
-                >
+                  ">
                   <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-coral" />
                   <span className="whitespace-nowrap">Ver en Google Maps</span>
                   <ExternalLink className="w-3 h-3" />
@@ -597,7 +454,7 @@ const PlanYourVisitSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-xs font-medium text-gray-600">Bonus</p>
-                      <p className="text-xs sm:text-sm font-bold text-gray-900">Snack y bebidas de cortesía</p>
+                      <p className="text-xs sm:text-sm font-bold text-gray-900">​Condición especial de lanzamiento        </p>
                     </div>
                   </div>
                 </div>
@@ -609,11 +466,7 @@ const PlanYourVisitSection = () => {
                 <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">¿Dudas? Contáctanos</p>
                 <p className="text-[10px] sm:text-xs text-gray-600 truncate">Respuesta rápida por WhatsApp</p>
               </div>
-              <a
-                href="https://wa.me/595994306666?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20el%20Tour%20VIP%20en%20YCC%20Water%20Park"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
+              <a href="https://wa.me/595994306666?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20el%20Tour%20VIP%20en%20YCC%20Water%20Park" target="_blank" rel="noopener noreferrer" className="
                     flex items-center justify-center
                     w-11 h-11 sm:w-12 sm:h-12
                     bg-green-500 hover:bg-green-600 active:bg-green-700
@@ -625,9 +478,7 @@ const PlanYourVisitSection = () => {
                     shadow-md hover:shadow-lg
                     touch-manipulation
                     flex-shrink-0
-                  "
-                  aria-label="Contactar por WhatsApp"
-                >
+                  " aria-label="Contactar por WhatsApp">
                   <PhoneIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </div>
@@ -636,8 +487,6 @@ const PlanYourVisitSection = () => {
         </div>
       </div>
 
-    </section>
-  );
+    </section>;
 };
-
 export default PlanYourVisitSection;
