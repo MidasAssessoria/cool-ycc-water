@@ -42,7 +42,7 @@ export const categories: Category[] = [
     name: 'Spa & Relax',
     slug: 'spa',
     description: 'Tratamientos de relajación, masajes, sauna y bienestar para renovar cuerpo y mente',
-    heroImage: '/assets/attractions/hydro-spa.webp',
+    heroImage: '/src/assets/categories/spa-hero.webp',
     icon: 'Sparkles',
     color: 'from-purple-500 to-pink-500',
     totalAttractions: 6
@@ -52,7 +52,7 @@ export const categories: Category[] = [
     name: 'Deportes',
     slug: 'deportes',
     description: 'Canchas deportivas, gimnasio, crossfit y actividades para mantenerte activo',
-    heroImage: '/assets/attractions/tennis-courts.webp',
+    heroImage: '/src/assets/categories/deportes-hero.webp',
     icon: 'Trophy',
     color: 'from-green-500 to-emerald-500',
     totalAttractions: 8
@@ -62,7 +62,7 @@ export const categories: Category[] = [
     name: 'Gastronomía',
     slug: 'gastronomia',
     description: 'Restaurantes, bares acuáticos y patio de comidas con sabores para todos',
-    heroImage: '/assets/attractions/restaurant.webp',
+    heroImage: '/src/assets/categories/gastronomia-hero.webp',
     icon: 'UtensilsCrossed',
     color: 'from-orange-500 to-red-500',
     totalAttractions: 3
@@ -72,7 +72,7 @@ export const categories: Category[] = [
     name: 'Kids Zone',
     slug: 'kids',
     description: 'Área exclusiva de juegos, castillos, playa infantil y diversión segura para niños',
-    heroImage: '/assets/attractions/kids-zone.webp',
+    heroImage: '/src/assets/categories/kids-zone-hero.webp',
     icon: 'Baby',
     color: 'from-yellow-500 to-amber-500',
     totalAttractions: 5
