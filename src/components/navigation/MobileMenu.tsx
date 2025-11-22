@@ -1,119 +1,131 @@
-import { Calendar, Menu } from "lucide-react";
-import { RippleButton } from "@/components/ui/ripple-button";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import logoYCC from "@/assets/logo-ycc-waterpark.png";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, ChevronDown } from "lucide-react";
+import { useState } from "react";
+import logoYCC from "@/assets/logo-ycc-waterpark-new.png";
 import { navigateToSection } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
-const MobileMenu = React.memo(() => {
-  const [isOpen, setIsOpen] = useState(false);
+const MobileMenu = () => {
+  const [open, setOpen] = useState(false);
+  const [atraccionesOpen, setAtraccionesOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleNavigation = (sectionId: string) => {
-    navigateToSection(sectionId, 80);
-    setIsOpen(false);
+    setOpen(false);
+    setTimeout(() => {
+      navigateToSection(sectionId, 80);
+    }, 100);
+  };
+
+  const handleNavigateToPage = (path: string) => {
+    setOpen(false);
+    navigate(path);
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          className="lg:hidden text-white hover:bg-white/10 active:bg-white/20 min-h-[44px] touch-manipulation flex items-center gap-2 px-3"
-          aria-label="Abrir menú de navegación"
-          aria-expanded={isOpen}
+        <button
+          className="p-2 text-white hover:bg-white/10 rounded-md transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          aria-label="Abrir menú de navegação"
         >
-          <Menu className="h-5 w-5" />
-          <span className="font-semibold text-sm">Menú</span>
-        </Button>
+          <Menu className="h-6 w-6" />
+        </button>
       </SheetTrigger>
-      
       <SheetContent 
         side="right" 
-        className="w-[280px] sm:w-[320px] md:w-[400px] overflow-y-auto p-0 safe-area-inset flex flex-col"
-        aria-label="Menú de navegación principal"
+        className="w-[300px] sm:w-[400px] bg-background border-l border-border overflow-y-auto"
       >
-        {/* Header com gradiente laranja */}
-        <div className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 text-white p-4 sm:p-6 shadow-lg">
-          <SheetHeader>
-            <SheetTitle className="flex items-center justify-center">
-              <img 
-                src={logoYCC} 
-                alt="YCC Water Park" 
-                className="h-10 sm:h-12 w-auto"
-              />
-            </SheetTitle>
-          </SheetHeader>
-        </div>
-        
-        {/* Nav Links */}
-        <div className="flex flex-col p-4 sm:p-6 bg-background flex-1">
-          <nav className="flex flex-col gap-1" aria-label="Menú principal">
-            <button
-              onClick={() => handleNavigation('hero')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              🏠 Inicio
-            </button>
-            <button
-              onClick={() => handleNavigation('attractions')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              🎢 Atracciones
-            </button>
-            <button
-              onClick={() => handleNavigation('plan-visit-form')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              📅 Visitar
-            </button>
-            <button
-              onClick={() => handleNavigation('bungalows')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              🏡 Bungalows
-            </button>
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                window.location.href = '/membresias';
-              }}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              💎 Membresias
-            </button>
-            <button
-              onClick={() => handleNavigation('contact')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-foreground hover:bg-accent active:bg-accent/80 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              📞 Contacto
-            </button>
-            
-            {/* Separator */}
-            <div className="border-t border-border my-2" />
-            
-            {/* Agendar Visita - Destaque */}
-            <button
-              onClick={() => handleNavigation('plan-visit-form')}
-              className="py-3.5 text-base sm:text-lg font-semibold text-coral hover:bg-coral/10 active:bg-coral/20 rounded-lg transition-all text-left px-4 min-h-[52px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 flex items-center gap-2"
-            >
-              <Calendar className="w-5 h-5" />
-              <span>📅 Agendar Visita</span>
-            </button>
-          </nav>
-        </div>
+        <SheetHeader className="border-b border-border pb-4">
+          <SheetTitle className="text-left">
+            <img 
+              src={logoYCC} 
+              alt="YCC Water Park" 
+              className="h-12 w-auto"
+            />
+          </SheetTitle>
+        </SheetHeader>
 
+        {/* Navigation Links */}
+        <nav className="flex flex-col gap-4 mt-8">
+          {/* Atracciones with Submenu */}
+          <div className="border-b border-border pb-2">
+            <button
+              onClick={() => setAtraccionesOpen(!atraccionesOpen)}
+              className="w-full flex items-center justify-between text-left text-lg font-semibold text-foreground hover:text-primary transition-colors py-3 px-4 rounded-md hover:bg-accent"
+            >
+              Atracciones
+              <ChevronDown className={cn(
+                "w-5 h-5 transition-transform",
+                atraccionesOpen && "rotate-180"
+              )} />
+            </button>
+            
+            {atraccionesOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+                <button
+                  onClick={() => handleNavigateToPage('/atracciones/acuaticas')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  🌊 Atracciones Acuáticas
+                </button>
+                <button
+                  onClick={() => handleNavigateToPage('/atracciones/spa')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  ✨ Spa & Relax
+                </button>
+                <button
+                  onClick={() => handleNavigateToPage('/atracciones/deportes')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  🏆 Deportes
+                </button>
+                <button
+                  onClick={() => handleNavigateToPage('/atracciones/gastronomia')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  🍽️ Gastronomía
+                </button>
+                <button
+                  onClick={() => handleNavigateToPage('/atracciones/kids')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  🎈 Kids Zone
+                </button>
+                <button
+                  onClick={() => handleNavigateToPage('/bungalows')}
+                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                >
+                  🏡 Bungalows VIP
+                </button>
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => handleNavigation('plan-visit-form')}
+            className="text-left text-lg font-semibold text-foreground hover:text-primary transition-colors py-3 px-4 rounded-md hover:bg-accent"
+          >
+            Visitar
+          </button>
+          <button
+            onClick={() => handleNavigation('contact')}
+            className="text-left text-lg font-semibold text-foreground hover:text-primary transition-colors py-3 px-4 rounded-md hover:bg-accent"
+          >
+            Contacto
+          </button>
+          <button
+            onClick={() => handleNavigateToPage('/membresias')}
+            className="text-left text-lg font-semibold text-foreground hover:text-primary transition-colors py-3 px-4 rounded-md hover:bg-accent"
+          >
+            Membresías
+          </button>
+        </nav>
       </SheetContent>
     </Sheet>
   );
-});
-
-MobileMenu.displayName = "MobileMenu";
+};
 
 export default MobileMenu;
