@@ -6,6 +6,10 @@ export interface Attraction {
   description: string;
   image: string;
   category: string;
+  icon?: string;
+  duration?: string;
+  capacity?: string;
+  badge?: string;
 }
 
 export interface Category {
@@ -94,84 +98,108 @@ export const atraccionesAcuaticas: Attraction[] = [
     name: 'Piscina de Olas',
     description: 'Experimenta la emoción del mar con olas artificiales de hasta 1.5 metros',
     image: '/assets/attractions/wave-pool.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🌊',
+    capacity: '200 personas'
   },
   {
     id: 'tobogan-kamikaze',
     name: 'Tobogán Kamikaze',
     description: 'Caída vertical extrema para los más aventureros',
     image: '/assets/attractions/water-slides.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🎢',
+    duration: '15 segundos',
+    badge: 'Extremo'
   },
   {
     id: 'tobogan-speed-6',
     name: 'Tobogán Speed 6 Lugares',
     description: 'Competición familiar en tobogán con 6 pistas simultáneas',
     image: '/assets/attractions/water-slides.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🏁',
+    capacity: '6 pistas'
   },
   {
     id: 'rio-lento',
     name: 'Río Lento',
     description: 'Relájate flotando en el río de corriente suave que rodea el parque',
     image: '/assets/attractions/lazy-river.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🏞️',
+    duration: '20 minutos'
   },
   {
     id: 'rio-suave',
     name: 'Río Suave',
     description: 'Recorrido tranquilo ideal para familias y niños',
     image: '/assets/attractions/lazy-river.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🚣',
+    duration: '15 minutos'
   },
   {
     id: 'pileta-adultos',
     name: 'Pileta Adultos',
     description: 'Piscina recreativa exclusiva para adultos con área de descanso',
     image: '/assets/attractions/recreational-pools.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🏊',
+    capacity: '100 personas',
+    badge: 'Solo adultos'
   },
   {
     id: 'piscina-caliente',
     name: 'Piscina Caliente',
     description: 'Piscina temperada para relajación en cualquier época del año',
     image: '/assets/attractions/hydro-spa.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '♨️',
+    capacity: '50 personas'
   },
   {
     id: 'jacuzzi',
     name: 'Jacuzzi',
     description: 'Hidromasaje con chorros terapéuticos y agua temperada',
     image: '/assets/attractions/hydro-spa.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '💆',
+    capacity: '15 personas'
   },
   {
     id: 'parque-flotante',
     name: 'Parque Flotante',
     description: 'Obstáculos inflables y juegos acuáticos para toda la familia',
     image: '/assets/attractions/recreational-pools.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🎈',
+    badge: 'Nuevo'
   },
   {
     id: 'mirador-lago',
     name: 'Mirador del Lago',
     description: 'Vistas panorámicas espectaculares del lago natural',
     image: '/assets/attractions/natural-lakes.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🔭'
   },
   {
     id: 'terrazas-lago',
     name: 'Terrazas del Lago',
     description: 'Área de descanso con vistas al lago y espacios sombreados',
     image: '/assets/attractions/natural-lakes.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🌅'
   },
   {
     id: 'area-camaratas',
     name: 'Área de Camaratas',
     description: 'Zona de camarotes privados con acceso directo al lago',
     image: '/assets/attractions/natural-lakes.webp',
-    category: 'acuaticas'
+    category: 'acuaticas',
+    icon: '🏕️',
+    badge: 'Premium'
   }
 ];
 
