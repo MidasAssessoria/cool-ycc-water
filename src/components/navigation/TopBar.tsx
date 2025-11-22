@@ -57,41 +57,68 @@ const TopBar = React.memo(() => {
                   )} />
                 </button>
                 
+                {/* Backdrop */}
+                {isDropdownOpen && (
+                  <div 
+                    className="fixed inset-0 z-40" 
+                    onClick={() => setIsDropdownOpen(false)}
+                    aria-hidden="true"
+                  />
+                )}
+                
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border z-50 overflow-hidden">
                     <button
-                      onClick={() => navigate('/atracciones/acuaticas')}
+                      onClick={() => {
+                        navigate('/atracciones/acuaticas');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
                       🌊 Atracciones Acuáticas
                     </button>
                     <button
-                      onClick={() => navigate('/atracciones/spa')}
+                      onClick={() => {
+                        navigate('/atracciones/spa');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
                       ✨ Spa & Relax
                     </button>
                     <button
-                      onClick={() => navigate('/atracciones/deportes')}
+                      onClick={() => {
+                        navigate('/atracciones/deportes');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
                       🏆 Deportes
                     </button>
                     <button
-                      onClick={() => navigate('/atracciones/gastronomia')}
+                      onClick={() => {
+                        navigate('/atracciones/gastronomia');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
                       🍽️ Gastronomía
                     </button>
                     <button
-                      onClick={() => navigate('/atracciones/kids')}
+                      onClick={() => {
+                        navigate('/atracciones/kids');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
                       🎈 Kids Zone
                     </button>
                     <button
-                      onClick={() => navigate('/bungalows')}
+                      onClick={() => {
+                        navigate('/bungalows');
+                        setIsDropdownOpen(false);
+                      }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium"
                     >
                       🏡 Bungalows VIP
