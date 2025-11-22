@@ -391,35 +391,48 @@ export const kidsZone: Attraction[] = [
     name: 'Salón de Juegos',
     description: 'Área cubierta con videojuegos, juegos de mesa y entretenimiento infantil',
     image: '/assets/attractions/kids-zone.webp',
-    category: 'kids'
+    category: 'kids',
+    icon: '🎮',
+    capacity: '30 niños',
+    badge: 'Popular'
   },
   {
     id: 'castillo-infantil',
     name: 'Castillo Infantil',
     description: 'Castillo acuático con toboganes y juegos para los más pequeños',
     image: '/assets/attractions/kids-zone.webp',
-    category: 'kids'
+    category: 'kids',
+    icon: '🏰',
+    capacity: '25 niños',
+    badge: 'Favorito'
   },
   {
     id: 'playa-ninos',
     name: 'Playa de Niños',
     description: 'Piscina de profundidad gradual tipo playa, segura para niños',
     image: '/assets/attractions/kids-zone.webp',
-    category: 'kids'
+    category: 'kids',
+    icon: '🏖️',
+    capacity: '40 niños'
   },
   {
     id: 'body-slide-kids',
     name: 'Body Slide',
     description: 'Toboganes adaptados para niños con seguridad garantizada',
     image: '/assets/attractions/water-slides.webp',
-    category: 'kids'
+    category: 'kids',
+    icon: '🎢',
+    capacity: '20 niños',
+    badge: 'Seguro'
   },
   {
     id: 'area-rompecas',
     name: 'Área de Rompecas',
     description: 'Zona de juegos didácticos y rompecabezas gigantes',
     image: '/assets/attractions/kids-zone.webp',
-    category: 'kids'
+    category: 'kids',
+    icon: '🧩',
+    capacity: '15 niños'
   }
 ];
 
