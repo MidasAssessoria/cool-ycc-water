@@ -13,7 +13,7 @@ const CategoriesSection = () => {
   return (
     <div className="bg-background py-16 md:py-24">
       {/* Hero Section */}
-      <div className="relative pb-12 overflow-hidden">
+      <div className="relative pb-16 md:pb-20 overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-10 left-10 opacity-10">
           <Waves className="w-24 h-24 text-primary" />
