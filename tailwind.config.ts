@@ -127,7 +127,16 @@ export default {
           "0%": { transform: "scale(1)" },
           "100%": { transform: "scale(1.1)" },
         },
-        ripple: {
+      ripple: {
+        "0%": {
+          transform: "translate(-50%, -50%) scale(1)",
+          opacity: "0.4",
+        },
+        "100%": {
+          transform: "translate(-50%, -50%) scale(25)",
+          opacity: "0",
+        },
+      },
           '0%': { width: '0', height: '0', opacity: '0.5' },
           '100%': { width: '500px', height: '500px', opacity: '0', transform: 'translate(-50%, -50%)' },
         },
@@ -173,7 +182,7 @@ export default {
       animation: {
         "ken-burns": "ken-burns 20s ease-in-out infinite alternate",
         "bounce-slow": "bounce 2s infinite",
-        ripple: 'ripple 0.6s ease-out',
+        ripple: "ripple 600ms cubic-bezier(0.4, 0, 0.2, 1)",
         'gradient-shift': 'gradient-shift 3s ease infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
         'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
