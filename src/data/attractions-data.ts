@@ -97,7 +97,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'piscina-olas',
     name: 'Piscina de Olas',
     description: 'Experimenta la emoción del mar con olas artificiales de hasta 1.5 metros',
-    image: '/assets/attractions/wave-pool.webp',
+    image: '/assets/attractions/wave-pool-real.webp',
     category: 'acuaticas',
     icon: '🌊',
     capacity: '200 personas'
@@ -106,7 +106,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'tobogan-kamikaze',
     name: 'Tobogán Kamikaze',
     description: 'Caída vertical extrema para los más aventureros',
-    image: '/assets/attractions/water-slides.webp',
+    image: '/assets/attractions/kamikaze-slides.webp',
     category: 'acuaticas',
     icon: '🎢',
     duration: '15 segundos',
@@ -116,7 +116,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'tobogan-speed-6',
     name: 'Tobogán Speed 6 Lugares',
     description: 'Competición familiar en tobogán con 6 pistas simultáneas',
-    image: '/assets/attractions/water-slides.webp',
+    image: '/assets/attractions/speed-slides.webp',
     category: 'acuaticas',
     icon: '🏁',
     capacity: '6 pistas'
@@ -125,7 +125,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'rio-lento',
     name: 'Río Lento',
     description: 'Relájate flotando en el río de corriente suave que rodea el parque',
-    image: '/assets/attractions/lazy-river.webp',
+    image: '/assets/attractions/lazy-river-real.webp',
     category: 'acuaticas',
     icon: '🏞️',
     duration: '20 minutos'
@@ -134,7 +134,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'rio-suave',
     name: 'Río Suave',
     description: 'Recorrido tranquilo ideal para familias y niños',
-    image: '/assets/attractions/lazy-river.webp',
+    image: '/assets/attractions/rio-suave.webp',
     category: 'acuaticas',
     icon: '🚣',
     duration: '15 minutos'
@@ -143,7 +143,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'pileta-adultos',
     name: 'Pileta Adultos',
     description: 'Piscina recreativa exclusiva para adultos con área de descanso',
-    image: '/assets/attractions/recreational-pools.webp',
+    image: '/assets/attractions/adults-pool.webp',
     category: 'acuaticas',
     icon: '🏊',
     capacity: '100 personas',
@@ -153,7 +153,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'piscina-caliente',
     name: 'Piscina Caliente',
     description: 'Piscina temperada para relajación en cualquier época del año',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/heated-pool.webp',
     category: 'acuaticas',
     icon: '♨️',
     capacity: '50 personas'
@@ -162,7 +162,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'jacuzzi',
     name: 'Jacuzzi',
     description: 'Hidromasaje con chorros terapéuticos y agua temperada',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/jacuzzi-real.webp',
     category: 'acuaticas',
     icon: '💆',
     capacity: '15 personas'
@@ -171,7 +171,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'parque-flotante',
     name: 'Parque Flotante',
     description: 'Obstáculos inflables y juegos acuáticos para toda la familia',
-    image: '/assets/attractions/recreational-pools.webp',
+    image: '/assets/attractions/floating-park.webp',
     category: 'acuaticas',
     icon: '🎈',
     badge: 'Nuevo'
@@ -188,7 +188,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'terrazas-lago',
     name: 'Terrazas del Lago',
     description: 'Área de descanso con vistas al lago y espacios sombreados',
-    image: '/assets/attractions/natural-lakes.webp',
+    image: '/assets/attractions/lake-terraces.webp',
     category: 'acuaticas',
     icon: '🌅'
   },
