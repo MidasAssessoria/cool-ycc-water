@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation/Navigation";
 import { SEOHead } from "@/components/SEOHead";
 import { AttractionCard } from "@/components/AttractionCard";
+import { AttractionBreadcrumb } from "@/components/AttractionBreadcrumb";
 import { gastronomia } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
 import { UtensilsCrossed, ChefHat, Wine } from "lucide-react";
@@ -15,9 +16,10 @@ const AtraccionesGastronomia = () => {
       
       <div className="min-h-screen bg-background">
         <Navigation />
+        <AttractionBreadcrumb categoryName="Gastronomía" />
         
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-br from-orange-500/10 via-background to-red-500/10">
+        <section className="relative pb-20 bg-gradient-to-br from-orange-500/10 via-background to-red-500/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">

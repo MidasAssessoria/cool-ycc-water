@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation/Navigation";
 import { SEOHead } from "@/components/SEOHead";
 import { AttractionCard } from "@/components/AttractionCard";
+import { AttractionBreadcrumb } from "@/components/AttractionBreadcrumb";
 import { kidsZone } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
 import { Baby, Shield, Heart, Sparkles, Star } from "lucide-react";
@@ -15,9 +16,10 @@ const AtraccionesKids = () => {
       
       <div className="min-h-screen bg-background">
         <Navigation />
+        <AttractionBreadcrumb categoryName="Kids Zone" />
         
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-br from-yellow-500/10 via-amber-500/5 to-orange-500/10">
+        <section className="relative pb-20 bg-gradient-to-br from-yellow-500/10 via-amber-500/5 to-orange-500/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6">
