@@ -429,7 +429,7 @@ export const bungalowsAmenities: Attraction[] = [
     id: 'recepcion-vip',
     name: 'Recepción VIP',
     description: 'Recepción exclusiva 24/7 para residentes de bungalows',
-    image: '/assets/attractions/bungalows.webp',
+    image: '/assets/attractions/recepcion-vip.webp',
     category: 'bungalows',
     icon: '🎩',
     badge: '24/7'
