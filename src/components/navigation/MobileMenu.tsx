@@ -95,7 +95,7 @@ const MobileMenu = () => {
                   🎈 Kids Zone
                 </button>
                 <button
-                  onClick={() => handleNavigateToPage('/bungalows')}
+                  onClick={() => handleNavigateToPage('/atracciones/bungalows')}
                   className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
                 >
                   🏡 Bungalows VIP
