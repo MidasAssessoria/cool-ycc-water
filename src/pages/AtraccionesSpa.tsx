@@ -59,7 +59,6 @@ const AtraccionesSpa = () => {
                   name={treatment.name}
                   description={treatment.description}
                   image={treatment.image}
-                  icon={treatment.icon || '✨'}
                   duration={treatment.duration}
                   capacity={treatment.capacity}
                   badge={treatment.badge}

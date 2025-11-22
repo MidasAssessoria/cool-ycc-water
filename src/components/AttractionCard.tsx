@@ -7,7 +7,6 @@ interface AttractionCardProps {
   name: string;
   description: string;
   image: string;
-  icon?: string;
   duration?: string;
   capacity?: string;
   badge?: string;
@@ -17,7 +16,6 @@ export const AttractionCard = ({
   name,
   description,
   image,
-  icon,
   duration,
   capacity,
   badge,
@@ -36,10 +34,6 @@ export const AttractionCard = ({
           <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
             {badge}
           </Badge>
-        )}
-        
-        {icon && (
-          <div className="absolute top-4 left-4 text-4xl">{icon}</div>
         )}
       </div>
       

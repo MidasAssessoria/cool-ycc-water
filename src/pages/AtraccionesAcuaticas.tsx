@@ -57,7 +57,6 @@ const AtraccionesAcuaticas = () => {
                   name={attraction.name}
                   description={attraction.description}
                   image={attraction.image}
-                  icon={attraction.icon}
                   duration={attraction.duration}
                   capacity={attraction.capacity}
                   badge={attraction.badge}
