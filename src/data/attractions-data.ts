@@ -211,9 +211,8 @@ export const spaRelax: Attraction[] = [
     id: 'exfoliacion',
     name: 'Exfoliación',
     description: 'Tratamiento de renovación celular para piel suave y luminosa',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/exfoliacion.webp',
     category: 'spa',
-    icon: '✨',
     duration: '45 minutos',
     badge: 'Popular'
   },
@@ -221,27 +220,24 @@ export const spaRelax: Attraction[] = [
     id: 'limpieza-facial',
     name: 'Limpieza Facial',
     description: 'Limpieza profunda y purificación de la piel del rostro',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/limpieza-facial.webp',
     category: 'spa',
-    icon: '🧖',
     duration: '60 minutos'
   },
   {
     id: 'hidratacion',
     name: 'Hidratación',
     description: 'Tratamiento intensivo de hidratación corporal completa',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/hidratacion.webp',
     category: 'spa',
-    icon: '💧',
     duration: '50 minutos'
   },
   {
     id: 'sauna',
     name: 'Sauna',
     description: 'Sauna tradicional para desintoxicación y relajación muscular',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/sauna.webp',
     category: 'spa',
-    icon: '♨️',
     duration: '30 minutos',
     capacity: '8 personas'
   },
@@ -249,9 +245,8 @@ export const spaRelax: Attraction[] = [
     id: 'masaje',
     name: 'Masaje',
     description: 'Masajes terapéuticos y relajantes por profesionales certificados',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/masaje.webp',
     category: 'spa',
-    icon: '💆',
     duration: '60 minutos',
     badge: 'Recomendado'
   },
@@ -259,9 +254,8 @@ export const spaRelax: Attraction[] = [
     id: 'bano-pies',
     name: 'Baño de Pies',
     description: 'Reflexología y tratamiento relajante para pies cansados',
-    image: '/assets/attractions/hydro-spa.webp',
+    image: '/assets/attractions/bano-pies.webp',
     category: 'spa',
-    icon: '🦶',
     duration: '30 minutos'
   }
 ];
