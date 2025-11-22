@@ -1,6 +1,7 @@
 import { SEOHead } from "@/components/SEOHead";
 import Navigation from "@/components/navigation/Navigation";
 import { AttractionCard } from "@/components/AttractionCard";
+import { AttractionBreadcrumb } from "@/components/AttractionBreadcrumb";
 import { spaRelax } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Sparkles } from "lucide-react";
@@ -19,9 +20,10 @@ const AtraccionesSpa = () => {
       
       <div className="min-h-screen bg-background">
         <Navigation />
+        <AttractionBreadcrumb categoryName="Spa & Relax" />
         
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 px-4 bg-gradient-to-b from-purple-500/5 via-pink-500/5 to-background">
+        <section className="relative pb-16 px-4 bg-gradient-to-b from-purple-500/5 via-pink-500/5 to-background">
           <div className="max-w-7xl mx-auto">
             <Button
               variant="ghost"
