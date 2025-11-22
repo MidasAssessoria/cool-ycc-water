@@ -63,42 +63,54 @@ const MobileMenu = () => {
             </button>
             
             {atraccionesOpen && (
-              <div className="ml-4 mt-2 space-y-2">
+              <div className="ml-4 mt-2 space-y-2 animate-slide-in-right">
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/acuaticas')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-cyan-500/10 hover:text-blue-600 flex items-center gap-3 group"
+                  aria-label="Ir a atracciones acuáticas"
                 >
-                  🌊 Atracciones Acuáticas
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-150 transition-transform duration-300"></span>
+                  Atracciones Acuáticas
                 </button>
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/spa')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-400/10 hover:text-purple-600 flex items-center gap-3 group"
+                  aria-label="Ir a spa y relax"
                 >
-                  ✨ Spa & Relax
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-purple-500 to-pink-400 group-hover:scale-150 transition-transform duration-300"></span>
+                  Spa & Relax
                 </button>
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/deportes')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-green-500/10 hover:to-emerald-600/10 hover:text-green-600 flex items-center gap-3 group"
+                  aria-label="Ir a deportes"
                 >
-                  🏆 Deportes
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 group-hover:scale-150 transition-transform duration-300"></span>
+                  Deportes
                 </button>
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/gastronomia')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-orange-500/10 hover:to-amber-500/10 hover:text-orange-600 flex items-center gap-3 group"
+                  aria-label="Ir a gastronomía"
                 >
-                  🍽️ Gastronomía
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 group-hover:scale-150 transition-transform duration-300"></span>
+                  Gastronomía
                 </button>
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/kids')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-rose-500/10 hover:text-pink-600 flex items-center gap-3 group"
+                  aria-label="Ir a kids zone"
                 >
-                  🎈 Kids Zone
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 group-hover:scale-150 transition-transform duration-300"></span>
+                  Kids Zone
                 </button>
                 <button
                   onClick={() => handleNavigateToPage('/atracciones/bungalows')}
-                  className="w-full text-left text-base text-muted-foreground hover:text-primary transition-colors py-2 px-4 rounded-md hover:bg-accent"
+                  className="w-full text-left text-base text-foreground hover:font-bold transition-all duration-300 py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-amber-600/10 hover:to-yellow-600/10 hover:text-amber-600 flex items-center gap-3 group"
+                  aria-label="Ir a bungalows VIP"
                 >
-                  🏡 Bungalows VIP
+                  <span className="w-2 h-2 rounded-full bg-gradient-to-br from-amber-600 to-yellow-600 group-hover:scale-150 transition-transform duration-300"></span>
+                  Bungalows VIP
                 </button>
               </div>
             )}

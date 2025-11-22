@@ -74,54 +74,60 @@ const TopBar = React.memo(() => {
                         navigate('/atracciones/acuaticas');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-blue-500 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-cyan-500/10 hover:text-blue-600 hover:shadow-[0_4px_12px_rgba(59,130,246,0.2)]"
+                      aria-label="Ir a atracciones acuáticas"
                     >
-                      🌊 Atracciones Acuáticas
+                      Atracciones Acuáticas
                     </button>
                     <button
                       onClick={() => {
                         navigate('/atracciones/spa');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-purple-500 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-400/10 hover:text-purple-600 hover:shadow-[0_4px_12px_rgba(168,85,247,0.2)]"
+                      aria-label="Ir a spa y relax"
                     >
-                      ✨ Spa & Relax
+                      Spa & Relax
                     </button>
                     <button
                       onClick={() => {
                         navigate('/atracciones/deportes');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-green-500 hover:bg-gradient-to-r hover:from-green-500/10 hover:to-emerald-600/10 hover:text-green-600 hover:shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
+                      aria-label="Ir a deportes"
                     >
-                      🏆 Deportes
+                      Deportes
                     </button>
                     <button
                       onClick={() => {
                         navigate('/atracciones/gastronomia');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-orange-500 hover:bg-gradient-to-r hover:from-orange-500/10 hover:to-amber-500/10 hover:text-orange-600 hover:shadow-[0_4px_12px_rgba(249,115,22,0.2)]"
+                      aria-label="Ir a gastronomía"
                     >
-                      🍽️ Gastronomía
+                      Gastronomía
                     </button>
                     <button
                       onClick={() => {
                         navigate('/atracciones/kids');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-pink-500 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-rose-500/10 hover:text-pink-600 hover:shadow-[0_4px_12px_rgba(236,72,153,0.2)]"
+                      aria-label="Ir a kids zone"
                     >
-                      🎈 Kids Zone
+                      Kids Zone
                     </button>
                     <button
                       onClick={() => {
                         navigate('/atracciones/bungalows');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium"
+                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-l-4 border-l-transparent hover:border-l-amber-600 hover:bg-gradient-to-r hover:from-amber-600/10 hover:to-yellow-600/10 hover:text-amber-600 hover:shadow-[0_4px_12px_rgba(217,119,6,0.2)]"
+                      aria-label="Ir a bungalows VIP"
                     >
-                      🏡 Bungalows VIP
+                      Bungalows VIP
                     </button>
                   </div>
                 )}
