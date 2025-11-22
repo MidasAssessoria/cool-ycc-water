@@ -445,98 +445,135 @@ export const bungalowsAmenities: Attraction[] = [
     name: 'Recepción VIP',
     description: 'Recepción exclusiva 24/7 para residentes de bungalows',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🎩',
+    badge: '24/7'
   },
   {
     id: 'bloque-apartamentos',
     name: 'Bloque de Apartamentos',
     description: 'Apartamentos de 2 plantas con acabados premium',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🏢',
+    badge: 'Premium',
+    capacity: '64 unidades'
   },
   {
     id: 'servicio-concierge',
     name: 'Servicio de Concierge',
     description: 'Atención personalizada y servicios a la carta',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🔔',
+    badge: 'Personalizado'
   },
   {
     id: 'hidromassagem-privada',
     name: 'Hidromassagem Privada',
     description: 'Cada bungalow cuenta con jacuzzi privado',
     image: '/assets/attractions/hydro-spa.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '💧',
+    badge: 'Exclusivo',
+    capacity: '6 personas'
   },
   {
     id: 'salon-spa-vip',
     name: 'Salón & SPA Exclusivo',
     description: 'Spa privado solo para residentes con tratamientos premium',
     image: '/assets/attractions/hydro-spa.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '✨',
+    badge: 'VIP'
   },
   {
     id: 'cancha-cubierta',
     name: 'Cancha Cubierta',
     description: 'Cancha deportiva techada de uso exclusivo',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🏆',
+    badge: 'Techada',
+    capacity: '12 jugadores'
   },
   {
     id: 'salon-convivencia',
     name: 'Salón de Convivencia',
     description: 'Espacio social para eventos y reuniones familiares',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '👥',
+    badge: 'Social',
+    capacity: '50 personas'
   },
   {
     id: 'gimnasio-vip',
     name: 'Gimnasio VIP Bungalows',
     description: 'Gimnasio privado equipado exclusivo para residentes',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '💪',
+    badge: 'Equipado',
+    capacity: '20 personas'
   },
   {
     id: 'sala-cine',
     name: 'Sala de Cine',
     description: 'Cine privado con pantalla grande y sonido envolvente',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🎬',
+    badge: 'HD 4K',
+    capacity: '30 personas'
   },
   {
     id: 'bar-restaurante-vip',
     name: 'Bar y Restaurante VIP',
     description: 'Restaurante exclusivo con menú gourmet para residentes',
     image: '/assets/attractions/restaurant.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🍽️',
+    badge: 'Gourmet',
+    capacity: '40 personas'
   },
   {
     id: 'parrilla-privada',
     name: 'Parrilla',
     description: 'Área de parrillas y quincho para eventos privados',
     image: '/assets/attractions/bbq-area.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🔥',
+    badge: 'Quincho'
   },
   {
     id: 'salon-eventos',
     name: 'Salón de Eventos',
     description: 'Salón para celebraciones y eventos especiales',
     image: '/assets/attractions/bungalows.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🎉',
+    badge: 'Fiestas',
+    capacity: '80 personas'
   },
   {
     id: 'fuentes-ornamentales',
     name: 'Fuentes',
     description: 'Fuentes ornamentales y espacios ajardinados',
     image: '/assets/attractions/natural-lakes.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '⛲',
+    badge: 'Ornamental'
   },
   {
     id: 'senderismo',
     name: 'Senderismo',
     description: 'Rutas de senderismo privadas alrededor del complejo',
     image: '/assets/attractions/eco-trails.webp',
-    category: 'bungalows'
+    category: 'bungalows',
+    icon: '🌲',
+    badge: 'Naturaleza',
+    duration: '30-45 min'
   }
 ];
 
