@@ -13,6 +13,7 @@ import naturalLakesImg from "@/assets/attractions/natural-lakes.jpg";
 import ecoTrailsImg from "@/assets/attractions/eco-trails.jpg";
 import bbqAreaImg from "@/assets/attractions/bbq-area.jpg";
 import { Badge } from "@/components/ui/badge";
+import { OptimizedPicture } from "@/components/OptimizedPicture";
 
 interface Attraction {
   id: number;
@@ -307,7 +308,7 @@ const AttractionCard = ({ attraction, index }: AttractionCardProps) => {
     >
       {/* Image Container - 16:9 Aspect Ratio */}
       <div className="relative w-full aspect-video overflow-hidden bg-muted">
-        <img
+        <OptimizedPicture
           src={attraction.image}
           alt={attraction.altText}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
