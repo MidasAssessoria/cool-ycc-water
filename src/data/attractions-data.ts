@@ -545,7 +545,7 @@ export const bungalowsAmenities: Attraction[] = [
     id: 'fuentes-ornamentales',
     name: 'Fuentes',
     description: 'Fuentes ornamentales y espacios ajardinados',
-    image: '/assets/attractions/natural-lakes.webp',
+    image: '/assets/attractions/fuentes-ornamentales.webp',
     category: 'bungalows',
     icon: '⛲',
     badge: 'Ornamental'
