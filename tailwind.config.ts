@@ -103,10 +103,24 @@ export default {
           cyan: "hsl(var(--hero-cyan))",
           orange: "hsl(var(--hero-orange))",
         },
+        "spa": {
+          sand: "hsl(35, 45%, 92%)",        // #F5EDE0 - bege claro
+          cream: "hsl(40, 50%, 98%)",       // #FAF7F2 - creme
+          brown: "hsl(30, 25%, 45%)",       // #8B7355 - marrom terroso
+          dark: "hsl(30, 20%, 30%)",        // #5D4E37 - marrom escuro
+          accent: "hsl(25, 30%, 68%)",      // #C9A690 - bronze/rose gold
+          text: "hsl(30, 10%, 28%)",        // #4A4239 - texto escuro suave
+        },
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-water": "var(--gradient-water)",
+        "gradient-spa": "linear-gradient(135deg, hsl(40, 50%, 98%), hsl(35, 45%, 92%))",
+        "gradient-spa-dark": "linear-gradient(135deg, hsl(30, 25%, 45%), hsl(30, 20%, 30%))",
+      },
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        cormorant: ['Cormorant Garamond', 'serif'],
       },
       keyframes: {
         "ken-burns": {
