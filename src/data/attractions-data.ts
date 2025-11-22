@@ -275,56 +275,75 @@ export const deportes: Attraction[] = [
     name: 'Fútbol',
     description: 'Canchas de césped natural y sintético para partidos y entrenamientos',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '⚽',
+    capacity: '22 jugadores'
   },
   {
     id: 'voleybol',
     name: 'Voleybol',
     description: 'Canchas de voleybol y voley de playa con arena',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🏐',
+    capacity: '12 jugadores'
   },
   {
     id: 'basketball',
     name: 'Basketball',
     description: 'Cancha profesional de basketball para juegos y práctica',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🏀',
+    capacity: '10 jugadores'
   },
   {
     id: 'tenis',
     name: 'Tenis',
     description: 'Canchas de tenis con pista dura y equipamiento completo',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🎾',
+    capacity: '4 jugadores',
+    badge: 'Popular'
   },
   {
     id: 'padel',
     name: 'Padel',
     description: 'Canchas de padel techadas para disfrutar en cualquier clima',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🎾',
+    capacity: '4 jugadores',
+    badge: 'Nuevo'
   },
   {
     id: 'natacion',
     name: 'Natación',
     description: 'Clases y entrenamientos de natación con instructores profesionales',
     image: '/assets/attractions/recreational-pools.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🏊',
+    duration: '45 minutos'
   },
   {
     id: 'crossfit',
     name: 'Crossfit',
     description: 'Área de crossfit equipada para entrenamientos funcionales',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '💪',
+    capacity: '15 personas'
   },
   {
     id: 'gimnasio-publico',
     name: 'Gimnasio Público',
     description: 'Gimnasio completo con equipamiento profesional de última generación',
     image: '/assets/attractions/tennis-courts.webp',
-    category: 'deportes'
+    category: 'deportes',
+    icon: '🏋️',
+    capacity: '30 personas',
+    badge: 'Premium'
   }
 ];
 
