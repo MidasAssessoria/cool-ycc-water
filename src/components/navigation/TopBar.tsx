@@ -1,6 +1,5 @@
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { RippleButton } from "@/components/ui/ripple-button";
-import { ColoredRipple } from "@/components/ui/colored-ripple";
 import { cn, navigateToSection } from "@/lib/utils";
 import React, { useState } from "react";
 import MobileMenu from "./MobileMenu";
@@ -70,72 +69,60 @@ const TopBar = React.memo(() => {
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border z-50 overflow-hidden">
-                    <ColoredRipple
-                      color="rgb(59, 130, 246)"
+                    <button
                       onClick={() => {
                         navigate('/atracciones/acuaticas');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-blue-500 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-cyan-500/10 hover:text-blue-600 hover:shadow-[0_4px_12px_rgba(59,130,246,0.2)]"
-                      ariaLabel="Ir a atracciones acuáticas"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
-                      Atracciones Acuáticas
-                    </ColoredRipple>
-                    <ColoredRipple
-                      color="rgb(168, 85, 247)"
+                      🌊 Atracciones Acuáticas
+                    </button>
+                    <button
                       onClick={() => {
                         navigate('/atracciones/spa');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-purple-500 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-400/10 hover:text-purple-600 hover:shadow-[0_4px_12px_rgba(168,85,247,0.2)]"
-                      ariaLabel="Ir a spa y relax"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
-                      Spa & Relax
-                    </ColoredRipple>
-                    <ColoredRipple
-                      color="rgb(16, 185, 129)"
+                      ✨ Spa & Relax
+                    </button>
+                    <button
                       onClick={() => {
                         navigate('/atracciones/deportes');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-green-500 hover:bg-gradient-to-r hover:from-green-500/10 hover:to-emerald-600/10 hover:text-green-600 hover:shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
-                      ariaLabel="Ir a deportes"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
-                      Deportes
-                    </ColoredRipple>
-                    <ColoredRipple
-                      color="rgb(249, 115, 22)"
+                      🏆 Deportes
+                    </button>
+                    <button
                       onClick={() => {
                         navigate('/atracciones/gastronomia');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-orange-500 hover:bg-gradient-to-r hover:from-orange-500/10 hover:to-amber-500/10 hover:text-orange-600 hover:shadow-[0_4px_12px_rgba(249,115,22,0.2)]"
-                      ariaLabel="Ir a gastronomía"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
-                      Gastronomía
-                    </ColoredRipple>
-                    <ColoredRipple
-                      color="rgb(236, 72, 153)"
+                      🍽️ Gastronomía
+                    </button>
+                    <button
                       onClick={() => {
                         navigate('/atracciones/kids');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-b border-border/50 border-l-4 border-l-transparent hover:border-l-pink-500 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-rose-500/10 hover:text-pink-600 hover:shadow-[0_4px_12px_rgba(236,72,153,0.2)]"
-                      ariaLabel="Ir a kids zone"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium border-b border-border/50"
                     >
-                      Kids Zone
-                    </ColoredRipple>
-                    <ColoredRipple
-                      color="rgb(217, 119, 6)"
+                      🎈 Kids Zone
+                    </button>
+                    <button
                       onClick={() => {
                         navigate('/atracciones/bungalows');
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full text-left px-4 py-3 transition-all duration-300 text-foreground font-medium border-l-4 border-l-transparent hover:border-l-amber-600 hover:bg-gradient-to-r hover:from-amber-600/10 hover:to-yellow-600/10 hover:text-amber-600 hover:shadow-[0_4px_12px_rgba(217,119,6,0.2)]"
-                      ariaLabel="Ir a bungalows VIP"
+                      className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium"
                     >
-                      Bungalows VIP
-                    </ColoredRipple>
+                      🏡 Bungalows VIP
+                    </button>
                   </div>
                 )}
               </div>
