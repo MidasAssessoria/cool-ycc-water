@@ -100,7 +100,7 @@ const attractions: Attraction[] = [
   },
   {
     id: 6,
-    title: "Bungalows RCI",
+    title: "Bungalows",
     description: "Tu hogar de vacaciones frente al agua",
     status: "construccion",
     badge: "Próximamente",
