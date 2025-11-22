@@ -55,17 +55,6 @@ const AtraccionesKids = () => {
               </div>
             </div>
           </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-20 left-10 text-6xl opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}>
-            🎈
-          </div>
-          <div className="absolute top-40 right-20 text-5xl opacity-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}>
-            ⭐
-          </div>
-          <div className="absolute bottom-20 left-1/4 text-4xl opacity-20 animate-bounce" style={{ animationDelay: '2s', animationDuration: '3.5s' }}>
-            🌈
-          </div>
         </section>
 
         {/* Features Section */}
@@ -135,7 +124,9 @@ const AtraccionesKids = () => {
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="p-6 rounded-2xl bg-background border-2 border-blue-500/20 text-center">
-                  <div className="text-5xl mb-4">👶</div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center mx-auto mb-4">
+                    <Baby className="w-8 h-8 text-blue-600" />
+                  </div>
                   <h3 className="font-bold text-xl mb-2">2-4 años</h3>
                   <p className="text-sm text-muted-foreground">
                     Playa de Niños, Área de Rompecabezas
@@ -143,7 +134,9 @@ const AtraccionesKids = () => {
                 </div>
                 
                 <div className="p-6 rounded-2xl bg-background border-2 border-green-500/20 text-center">
-                  <div className="text-5xl mb-4">🧒</div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center mx-auto mb-4">
+                    <Baby className="w-8 h-8 text-green-600" />
+                  </div>
                   <h3 className="font-bold text-xl mb-2">5-8 años</h3>
                   <p className="text-sm text-muted-foreground">
                     Castillo Infantil, Body Slide, Salón de Juegos
@@ -151,7 +144,9 @@ const AtraccionesKids = () => {
                 </div>
                 
                 <div className="p-6 rounded-2xl bg-background border-2 border-purple-500/20 text-center">
-                  <div className="text-5xl mb-4">👦</div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center mx-auto mb-4">
+                    <Baby className="w-8 h-8 text-purple-600" />
+                  </div>
                   <h3 className="font-bold text-xl mb-2">9-12 años</h3>
                   <p className="text-sm text-muted-foreground">
                     Todas las atracciones + Áreas acuáticas principales
