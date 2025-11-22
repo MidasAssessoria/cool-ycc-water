@@ -116,7 +116,7 @@ const TopBar = React.memo(() => {
                     </button>
                     <button
                       onClick={() => {
-                        navigate('/bungalows');
+                        navigate('/atracciones/bungalows');
                         setIsDropdownOpen(false);
                       }}
                       className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors text-foreground font-medium"
