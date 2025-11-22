@@ -438,7 +438,7 @@ export const bungalowsAmenities: Attraction[] = [
     id: 'bloque-apartamentos',
     name: 'Bloque de Apartamentos',
     description: 'Apartamentos de 2 plantas con acabados premium',
-    image: '/assets/attractions/bungalows.webp',
+    image: '/assets/attractions/bloque-apartamentos.webp',
     category: 'bungalows',
     icon: '🏢',
     badge: 'Premium',
@@ -448,7 +448,7 @@ export const bungalowsAmenities: Attraction[] = [
     id: 'servicio-concierge',
     name: 'Servicio de Concierge',
     description: 'Atención personalizada y servicios a la carta',
-    image: '/assets/attractions/bungalows.webp',
+    image: '/assets/attractions/servicio-concierge.webp',
     category: 'bungalows',
     icon: '🔔',
     badge: 'Personalizado'
