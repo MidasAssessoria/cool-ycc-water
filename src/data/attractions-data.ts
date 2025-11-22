@@ -418,15 +418,6 @@ export const kidsZone: Attraction[] = [
     icon: '🎢',
     capacity: '20 niños',
     badge: 'Seguro'
-  },
-  {
-    id: 'area-rompecas',
-    name: 'Área de Rompecas',
-    description: 'Zona de juegos didácticos y rompecabezas gigantes',
-    image: '/assets/attractions/kids-zone.webp',
-    category: 'kids',
-    icon: '🧩',
-    capacity: '15 niños'
   }
 ];
 

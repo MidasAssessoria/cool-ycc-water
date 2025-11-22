@@ -11,7 +11,7 @@ const AtraccionesKids = () => {
     <>
       <SEOHead 
         title="Kids Zone - YCC Water Park"
-        description="Descubre nuestra zona infantil con 5 atracciones seguras y divertidas: Salón de Juegos, Castillo Infantil, Playa de Niños, Body Slide y Área de Rompecabezas."
+        description="Descubre nuestra zona infantil con 4 atracciones seguras y divertidas: Salón de Juegos, Castillo Infantil, Playa de Niños y Body Slide."
       />
       
       <div className="min-h-screen bg-background">
@@ -129,7 +129,7 @@ const AtraccionesKids = () => {
                   </div>
                   <h3 className="font-bold text-xl mb-2">2-4 años</h3>
                   <p className="text-sm text-muted-foreground">
-                    Playa de Niños, Área de Rompecabezas
+                    Playa de Niños, Salón de Juegos
                   </p>
                 </div>
                 
