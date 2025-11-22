@@ -180,7 +180,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'mirador-lago',
     name: 'Mirador del Lago',
     description: 'Vistas panorámicas espectaculares del lago natural',
-    image: '/assets/attractions/natural-lakes.webp',
+    image: '/assets/attractions/mirador-lago.webp',
     category: 'acuaticas',
     icon: '🔭'
   },
@@ -196,7 +196,7 @@ export const atraccionesAcuaticas: Attraction[] = [
     id: 'area-camaratas',
     name: 'Área de Camaratas',
     description: 'Zona de camarotes privados con acceso directo al lago',
-    image: '/assets/attractions/natural-lakes.webp',
+    image: '/assets/attractions/area-camaratas.webp',
     category: 'acuaticas',
     icon: '🏕️',
     badge: 'Premium'
