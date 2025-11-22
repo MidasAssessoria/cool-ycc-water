@@ -1,7 +1,6 @@
 import { Ticket, CalendarCheck, MessageCircle } from "lucide-react";
 import { smoothScrollToElement } from "@/lib/utils";
 import backgroundImage from "@/assets/waterpark-hero-bg.jpg";
-
 const AquaParkSection = () => {
   const handleWhatsApp = () => {
     const phoneNumber = "595994306666";
@@ -9,17 +8,11 @@ const AquaParkSection = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
-
-  return (
-    <section className="relative w-full pb-[100px] md:pb-[140px] lg:pb-[180px]">
+  return <section className="relative w-full pb-[100px] md:pb-[140px] lg:pb-[180px]">
       
       {/* Background com overlay escuro */}
       <div className="absolute inset-0">
-        <img 
-          src={backgroundImage} 
-          alt="Parque aquático com toboáguas coloridos e piscinas" 
-          className="h-full w-full object-cover" 
-        />
+        <img src={backgroundImage} alt="Parque aquático com toboáguas coloridos e piscinas" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
@@ -50,58 +43,40 @@ const AquaParkSection = () => {
           <nav className="space-y-2.5 md:space-y-0 md:flex md:flex-row md:gap-2 lg:gap-3 xl:gap-4">
             
             {/* Botão 1: Membresías - Touch optimized */}
-            <div 
-              onClick={() => window.location.href = '/membresias'}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
-            >
+            <div onClick={() => window.location.href = '/membresias'} className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation">
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <Ticket className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
                 Membresías
               </span>
-              <button 
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Ver planes de membresías"
-              >
+              <button className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]" aria-label="Ver planes de membresías">
                 VER PLANES
               </button>
             </div>
 
             {/* Botão 2: Visita gratis - Touch optimized */}
-            <div 
-              onClick={() => smoothScrollToElement('plan-visit-form', 80)}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
-            >
+            <div onClick={() => smoothScrollToElement('plan-visit-form', 80)} className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation">
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <CalendarCheck className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
                 Visita gratis
               </span>
-              <button 
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Agendar visita guiada"
-              >
+              <button className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]" aria-label="Agendar visita guiada">
                 AGENDAR
               </button>
             </div>
 
             {/* Botão 3: WhatsApp - Touch optimized */}
-            <div 
-              onClick={handleWhatsApp}
-              className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation"
-            >
+            <div onClick={handleWhatsApp} className="flex items-center justify-start gap-2 md:gap-3 bg-white rounded-2xl px-3 md:px-5 lg:px-6 py-3 md:py-3.5 lg:py-4 min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer [@media(hover:hover)]:hover:scale-[1.02] md:flex-1 touch-manipulation">
               <div className="bg-orange-500 p-2 md:p-2.5 lg:p-3 rounded-full transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <span className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg truncate min-w-0 max-w-[140px] md:max-w-none">
                 Whatsapp
               </span>
-              <button 
-                className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]"
-                aria-label="Hablar por WhatsApp"
-              >
+              <button className="bg-orange-500 px-4 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-white font-bold text-[10px] md:text-xs lg:text-sm uppercase hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 flex-shrink-0 ml-auto flex items-center gap-1.5 min-h-[36px]" aria-label="Hablar por WhatsApp">
                 ESCRIBIR
               </button>
             </div>
@@ -112,22 +87,8 @@ const AquaParkSection = () => {
       </div>
 
       {/* EFEITO ONDA NA TRANSIÇÃO */}
-      <div className="absolute -bottom-[1px] left-0 w-full overflow-hidden leading-[0] z-20">
-        <svg 
-          className="relative block w-full h-[100px] md:h-[140px] lg:h-[180px] pointer-events-none" 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-            className="fill-white"
-          />
-        </svg>
-      </div>
+      
 
-    </section>
-  );
+    </section>;
 };
-
 export default AquaParkSection;
