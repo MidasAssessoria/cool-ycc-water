@@ -24,7 +24,7 @@ const AtraccionesSpa = () => {
         <AttractionBreadcrumb categoryName="Spa & Relax" />
         
         {/* Hero Section - Elegante e Sereno */}
-        <section className="relative pb-20 px-4 bg-gradient-to-b from-spa-sand via-spa-cream to-spa-cream">
+        <section className="relative pb-12 px-4 bg-gradient-to-b from-spa-sand via-spa-cream to-spa-cream">
           <div className="max-w-7xl mx-auto">
             <Button
               variant="ghost"
@@ -35,7 +35,7 @@ const AtraccionesSpa = () => {
               Volver a Atracciones
             </Button>
             
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               {/* Icon decorativo */}
               <div className="inline-block mb-6 animate-float">
                 <SpaIcon variant="lotus" className="w-20 h-20 text-spa-accent" />
@@ -72,7 +72,7 @@ const AtraccionesSpa = () => {
         </section>
 
         {/* Treatments Grid */}
-        <section className="py-20 px-4 bg-spa-cream">
+        <section className="py-12 px-4 bg-spa-cream">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-playfair text-3xl md:text-4xl font-semibold text-spa-dark mb-4">
