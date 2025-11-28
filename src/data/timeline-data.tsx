@@ -12,6 +12,18 @@ import waterSlidesImg from "@/assets/attractions/water-slides.webp";
 import hydroSpaImg from "@/assets/attractions/hydro-spa.webp";
 import restaurantImg from "@/assets/attractions/restaurant.webp";
 
+// ============= DEBUG: Log de URLs de imágenes para diagnóstico =============
+console.log('🖼️ Timeline images loaded:', {
+  naturalLakesImg,
+  tennisCourtsImg,
+  wavePoolImg,
+  waterSlidesImg,
+  hydroSpaImg,
+  restaurantImg
+});
+console.log('✅ All timeline images imported successfully');
+// ===========================================================================
+
 interface TimelineDataItem {
   title: string;
   content: JSX.Element;
@@ -167,7 +179,7 @@ export const getTimelineData = (
 
         {/* Galeria moderna com overlay */}
         <div className="grid grid-cols-2 gap-4 mt-8">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={naturalLakesImg}
               alt="Lagos naturales"
@@ -176,6 +188,14 @@ export const getTimelineData = (
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', naturalLakesImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', naturalLakesImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -184,7 +204,7 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={tennisCourtsImg}
               alt="Canchas deportivas"
@@ -193,6 +213,14 @@ export const getTimelineData = (
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', tennisCourtsImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', tennisCourtsImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -239,7 +267,7 @@ export const getTimelineData = (
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={wavePoolImg}
               alt="Piscina de olas"
@@ -247,6 +275,14 @@ export const getTimelineData = (
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', wavePoolImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', wavePoolImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -255,7 +291,7 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={waterSlidesImg}
               alt="Toboganes"
@@ -263,6 +299,14 @@ export const getTimelineData = (
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', waterSlidesImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', waterSlidesImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -309,7 +353,7 @@ export const getTimelineData = (
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={hydroSpaImg}
               alt="HidroSPA"
@@ -317,6 +361,14 @@ export const getTimelineData = (
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', hydroSpaImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', hydroSpaImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -325,7 +377,7 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
             <img
               src={restaurantImg}
               alt="Eventos exclusivos"
@@ -333,6 +385,14 @@ export const getTimelineData = (
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('❌ Error loading image:', restaurantImg, e);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                console.log('✅ Image loaded successfully:', restaurantImg);
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
