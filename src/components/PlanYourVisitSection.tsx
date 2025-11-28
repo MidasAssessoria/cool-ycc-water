@@ -19,9 +19,9 @@ import { cn } from "@/lib/utils";
 
 // Image imports
 import waterparkHeroBg from "@/assets/waterpark-hero-bg.jpg";
-import bungalowsImg from "@/assets/attractions/bungalows.jpg";
+import bungalowsImg from "@/assets/attractions/bungalows.webp";
 import heroWaterpark from "@/assets/hero-waterpark.jpg";
-import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
+import wavePoolImg from "@/assets/attractions/wave-pool.webp";
 const PlanYourVisitSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
