@@ -29,14 +29,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       return;
     }
     
-    // Calcular altura inicial
-    const rect = ref.current.getBoundingClientRect();
-    setHeight(rect.height);
+    // Calcular altura inicial con requestAnimationFrame para mejor precisión
+    // Esto asegura que el cálculo se hace después de que el DOM está completamente renderizado
+    requestAnimationFrame(() => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        setHeight(rect.height);
+      }
+    });
     
     // Adicionar ResizeObserver para recalcular quando imagens carregam
     let timeoutId: NodeJS.Timeout;
     let stabilityTimeoutId: NodeJS.Timeout;
-    let lastHeight = rect.height;
+    let lastHeight = 0;
     let unchangedCount = 0;
     
     const resizeObserver = new ResizeObserver((entries) => {
@@ -62,9 +67,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           // Se altura não mudou por 3 verificações consecutivas, considerar estável
           if (unchangedCount >= 3) {
             clearTimeout(stabilityTimeoutId);
+            // Delay aumentado para garantizar que todas las imágenes terminaron de cargar
             stabilityTimeoutId = setTimeout(() => {
               setIsHeightStable(true);
-            }, 500);
+            }, 800);
           }
         }
       }, 150); // Debounce aumentado para 150ms
