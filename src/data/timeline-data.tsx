@@ -14,18 +14,6 @@ const waterSlidesImg = "/assets/attractions/water-slides.webp";
 const hydroSpaImg = "/assets/attractions/hydro-spa.webp";
 const restaurantImg = "/assets/attractions/restaurant.webp";
 
-// ============= DEBUG: Log de URLs de imágenes para diagnóstico =============
-console.log('🖼️ Timeline images (public paths):', {
-  naturalLakesImg,
-  tennisCourtsImg,
-  wavePoolImg,
-  waterSlidesImg,
-  hydroSpaImg,
-  restaurantImg
-});
-console.log('✅ All timeline image paths configured');
-// ===========================================================================
-
 interface TimelineDataItem {
   title: string;
   content: JSX.Element;
@@ -191,11 +179,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', naturalLakesImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', naturalLakesImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
@@ -216,11 +202,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', tennisCourtsImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', tennisCourtsImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
@@ -278,11 +262,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', wavePoolImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', wavePoolImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
@@ -302,11 +284,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', waterSlidesImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', waterSlidesImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
@@ -364,11 +344,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', hydroSpaImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', hydroSpaImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
@@ -388,11 +366,9 @@ export const getTimelineData = (
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
-                console.error('❌ Error loading image:', restaurantImg, e);
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                console.log('✅ Image loaded successfully:', restaurantImg);
                 e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
               }}
             />
