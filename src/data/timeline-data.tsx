@@ -5,15 +5,17 @@
 
 import { Sparkles, Dumbbell, Heart, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
-import naturalLakesImg from "@/assets/attractions/natural-lakes.webp";
-import tennisCourtsImg from "@/assets/attractions/tennis-courts.webp";
-import wavePoolImg from "@/assets/attractions/wave-pool.webp";
-import waterSlidesImg from "@/assets/attractions/water-slides.webp";
-import hydroSpaImg from "@/assets/attractions/hydro-spa.webp";
-import restaurantImg from "@/assets/attractions/restaurant.webp";
+
+// Using absolute paths from public folder for reliable image loading
+const naturalLakesImg = "/assets/attractions/natural-lakes.webp";
+const tennisCourtsImg = "/assets/attractions/tennis-courts.webp";
+const wavePoolImg = "/assets/attractions/wave-pool.webp";
+const waterSlidesImg = "/assets/attractions/water-slides.webp";
+const hydroSpaImg = "/assets/attractions/hydro-spa.webp";
+const restaurantImg = "/assets/attractions/restaurant.webp";
 
 // ============= DEBUG: Log de URLs de imágenes para diagnóstico =============
-console.log('🖼️ Timeline images loaded:', {
+console.log('🖼️ Timeline images (public paths):', {
   naturalLakesImg,
   tennisCourtsImg,
   wavePoolImg,
@@ -21,7 +23,7 @@ console.log('🖼️ Timeline images loaded:', {
   hydroSpaImg,
   restaurantImg
 });
-console.log('✅ All timeline images imported successfully');
+console.log('✅ All timeline image paths configured');
 // ===========================================================================
 
 interface TimelineDataItem {
