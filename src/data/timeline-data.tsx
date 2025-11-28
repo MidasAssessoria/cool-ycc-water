@@ -5,12 +5,12 @@
 
 import { Sparkles, Dumbbell, Heart, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
-import naturalLakesImg from "@/assets/attractions/natural-lakes.jpg";
-import tennisCourtsImg from "@/assets/attractions/tennis-courts.jpg";
-import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
-import waterSlidesImg from "@/assets/attractions/water-slides.jpg";
-import hydroSpaImg from "@/assets/attractions/hydro-spa.jpg";
-import restaurantImg from "@/assets/attractions/restaurant.jpg";
+import naturalLakesImg from "@/assets/attractions/natural-lakes.webp";
+import tennisCourtsImg from "@/assets/attractions/tennis-courts.webp";
+import wavePoolImg from "@/assets/attractions/wave-pool.webp";
+import waterSlidesImg from "@/assets/attractions/water-slides.webp";
+import hydroSpaImg from "@/assets/attractions/hydro-spa.webp";
+import restaurantImg from "@/assets/attractions/restaurant.webp";
 
 interface TimelineDataItem {
   title: string;
