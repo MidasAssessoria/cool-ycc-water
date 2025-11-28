@@ -6,7 +6,7 @@ import { Calendar as CalendarIcon, User, Phone as PhoneIcon, MapPin, Users, Gift
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { es } from "date-fns/locale";
 import { planVisitSchema, type PlanVisitFormData } from "@/lib/validation/plan-visit-schema";
 import { usePhoneMask } from "@/hooks/usePhoneMask";
 import { toast } from "@/hooks/use-toast";
@@ -62,16 +62,16 @@ const PlanYourVisitSection = () => {
   // Hero carousel images
   const heroImages = [{
     src: waterparkHeroBg,
-    alt: "Vista aérea do parque aquático YCC"
+    alt: "Vista aérea del parque acuático YCC"
   }, {
     src: bungalowsImg,
-    alt: "Bungalows modernos e luxuosos"
+    alt: "Bungalows modernos y lujosos"
   }, {
     src: heroWaterpark,
-    alt: "Família aproveitando os tobogãs aquáticos"
+    alt: "Familia disfrutando de los toboganes acuáticos"
   }, {
     src: wavePoolImg,
-    alt: "Experiência completa no parque"
+    alt: "Experiencia completa en el parque"
   }];
   useEffect(() => {
     if (!emblaApi) return;
@@ -95,10 +95,10 @@ const PlanYourVisitSection = () => {
         console.log("Form submitted:", data);
       }
       toast({
-        title: "✅ Visita Agendada com Sucesso!",
-        description: `Sua visita foi confirmada para ${format(data.visitDate, "dd/MM/yyyy", {
-          locale: ptBR
-        })} no período da ${data.visitTime === "morning" ? "manhã" : "tarde"}. Em breve entraremos em contato via WhatsApp.`
+        title: "✅ Visita Agendada con Éxito!",
+        description: `Tu visita fue confirmada para el ${format(data.visitDate, "dd/MM/yyyy", {
+          locale: es
+        })} en el período de la ${data.visitTime === "morning" ? "mañana" : "tarde"}. Pronto nos pondremos en contacto vía WhatsApp.`
       });
 
       // Reset form could be added here if needed
@@ -265,7 +265,7 @@ const PlanYourVisitSection = () => {
                       <Button variant="outline" className={cn("w-full justify-start text-left font-normal h-12 border-2 focus:border-coral touch-manipulation", !selectedDate && "text-muted-foreground")}>
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {selectedDate ? format(selectedDate, "dd/MM/yyyy", {
-                          locale: ptBR
+                          locale: es
                         }) : <span>Selecciona una fecha</span>}
                         </Button>
                       </PopoverTrigger>

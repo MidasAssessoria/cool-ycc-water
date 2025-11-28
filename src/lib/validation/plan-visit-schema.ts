@@ -2,23 +2,23 @@ import { z } from "zod";
 
 export const planVisitSchema = z.object({
   visitDate: z.date({
-    required_error: "Por favor, selecione uma data para sua visita",
+    required_error: "Por favor, seleccione una fecha para su visita",
   }),
   visitTime: z.enum(["morning", "afternoon"], {
-    required_error: "Por favor, selecione um horário",
+    required_error: "Por favor, seleccione un horario",
   }),
   fullName: z
     .string()
     .trim()
-    .min(3, { message: "Nome deve ter no mínimo 3 caracteres" })
-    .max(100, { message: "Nome deve ter no máximo 100 caracteres" }),
+    .min(3, { message: "El nombre debe tener mínimo 3 caracteres" })
+    .max(100, { message: "El nombre debe tener máximo 100 caracteres" }),
   phone: z
     .string()
     .trim()
-    .min(10, { message: "Telefone inválido" })
-    .max(20, { message: "Telefone muito longo" }),
+    .min(10, { message: "Teléfono inválido" })
+    .max(20, { message: "Teléfono muy largo" }),
   numberOfPeople: z.enum(["1-2", "3-4", "5+"], {
-    required_error: "Por favor, selecione o número de pessoas",
+    required_error: "Por favor, seleccione el número de personas",
   }),
 });
 

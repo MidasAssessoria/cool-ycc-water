@@ -63,8 +63,8 @@ export const BookingForm = () => {
       }
       
       // Toast de sucesso
-      toast.success("Agendamento recebido!", {
-        description: "Nossa equipe entrará em contato em breve.",
+      toast.success("¡Agendamiento recibido!", {
+        description: "Nuestro equipo se pondrá en contacto pronto.",
       });
       
       // Reset do formulário
@@ -84,8 +84,8 @@ export const BookingForm = () => {
         bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } catch (error) {
-      toast.error("Erro ao enviar agendamento", {
-        description: "Por favor, tente novamente.",
+      toast.error("Error al enviar agendamiento", {
+        description: "Por favor, intente nuevamente.",
       });
     }
   };
@@ -96,8 +96,8 @@ export const BookingForm = () => {
     
     if (firstError) {
       // Toast informando o erro
-      toast.error("Preencha todos os campos obrigatórios", {
-        description: "Verifique os campos destacados em vermelho.",
+      toast.error("Complete todos los campos obligatorios", {
+        description: "Verifique los campos resaltados en rojo.",
       });
       
       // Aguarda um momento antes de focar e scrollar
@@ -126,18 +126,18 @@ export const BookingForm = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            Agende sua Visita
+            Agende su Visita
           </h2>
           <p className="text-lg text-muted-foreground">
-            Preencha o formulário e nossa equipe entrará em contato
+            Complete el formulario y nuestro equipo se pondrá en contacto
           </p>
         </div>
 
         {/* Banner Informativo */}
         <div className="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg shadow-sm">
           <p className="text-sm sm:text-base text-blue-900 dark:text-blue-100 leading-relaxed">
-            📌 Após o envio, nossa equipe entrará em contato para confirmar 
-            sua visita e fornecer mais informações sobre horários disponíveis.
+            📌 Después del envío, nuestro equipo se pondrá en contacto para confirmar 
+            su visita y proporcionar más información sobre los horarios disponibles.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export const BookingForm = () => {
                   render={({ field }) => (
                     <FormItem className="flex flex-col">
                       <FormLabel className="relative flex items-center gap-2">
-                        Data da Visita *
+                        Fecha de Visita *
                         <ValidationIcon name="visitDate" />
                       </FormLabel>
                       <Popover>
@@ -170,14 +170,14 @@ export const BookingForm = () => {
                                 "w-full pl-3 text-left font-normal",
                                 !field.value && "text-muted-foreground"
                               )}
-                              aria-label="Selecione a data da visita"
+                              aria-label="Seleccione la fecha de visita"
                               aria-required="true"
                               aria-invalid={!!form.formState.errors.visitDate}
                             >
                               {field.value ? (
                                 format(field.value, "dd/MM/yyyy")
                               ) : (
-                                <span>Selecione uma data</span>
+                                <span>Seleccione una fecha</span>
                               )}
                               <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                             </Button>
@@ -197,7 +197,7 @@ export const BookingForm = () => {
                         </PopoverContent>
                       </Popover>
                       <FormDescription>
-                        Escolha uma data entre hoje e 90 dias
+                        Elija una fecha entre hoy y 90 días
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -211,7 +211,7 @@ export const BookingForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="relative flex items-center gap-2">
-                        Número de Pessoas *
+                        Número de Personas *
                         <ValidationIcon name="numberOfPeople" />
                       </FormLabel>
                       <Select 
@@ -220,23 +220,23 @@ export const BookingForm = () => {
                       >
                         <FormControl>
                           <SelectTrigger
-                            aria-label="Selecione o número de pessoas"
+                            aria-label="Seleccione el número de personas"
                             aria-required="true"
                             aria-invalid={!!form.formState.errors.numberOfPeople}
                           >
-                            <SelectValue placeholder="Selecione..." />
+                            <SelectValue placeholder="Seleccione..." />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           {[1, 2, 3, 4, 5, 6, 7, 8, 9, "10+"].map((num) => (
                             <SelectItem key={num} value={String(num)}>
-                              {num} {num === 1 ? "pessoa" : "pessoas"}
+                              {num} {num === 1 ? "persona" : "personas"}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                       <FormDescription>
-                        Quantas pessoas visitarão o parque?
+                        ¿Cuántas personas visitarán el parque?
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -250,14 +250,14 @@ export const BookingForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="relative flex items-center gap-2">
-                        Nome Completo *
+                        Nombre Completo *
                         <ValidationIcon name="fullName" />
                       </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Seu nome completo"
+                          placeholder="Su nombre completo"
                           {...field}
-                          aria-label="Digite seu nome completo"
+                          aria-label="Digite su nombre completo"
                           aria-required="true"
                           aria-invalid={!!form.formState.errors.fullName}
                         />
@@ -277,7 +277,7 @@ export const BookingForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="relative flex items-center gap-2">
-                        Telefone *
+                        Teléfono *
                         <ValidationIcon name="phone" />
                       </FormLabel>
                       <FormControl>
@@ -292,7 +292,7 @@ export const BookingForm = () => {
                           onKeyDown={(e) => 
                             handlePhoneBackspace(e, field.value, field.onChange)
                           }
-                          aria-label="Digite seu telefone"
+                          aria-label="Digite su teléfono"
                           aria-required="true"
                           aria-invalid={!!form.formState.errors.phone}
                         />
@@ -319,14 +319,14 @@ export const BookingForm = () => {
                     <FormControl>
                       <Input
                         type="email"
-                        placeholder="seu@email.com"
+                        placeholder="su@email.com"
                         {...field}
-                        aria-label="Digite seu email"
+                        aria-label="Digite su email"
                         aria-invalid={!!form.formState.errors.email}
                       />
                     </FormControl>
                     <FormDescription>
-                      Deixe seu email para receber confirmação
+                      Deje su email para recibir confirmación
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -340,22 +340,22 @@ export const BookingForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="relative flex items-center gap-2">
-                      Mensagem (opcional)
+                      Mensaje (opcional)
                       <ValidationIcon name="message" />
                     </FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Alguma observação ou solicitação especial?"
+                        placeholder="¿Alguna observación o solicitud especial?"
                         className="resize-none"
                         rows={4}
                         {...field}
-                        aria-label="Digite sua mensagem"
+                        aria-label="Digite su mensaje"
                         aria-invalid={!!form.formState.errors.message}
                       />
                     </FormControl>
                     <div className="flex justify-between items-center">
                       <FormDescription>
-                        Compartilhe qualquer informação adicional
+                        Comparta cualquier información adicional
                       </FormDescription>
                       <span 
                         className={cn(
@@ -390,11 +390,11 @@ export const BookingForm = () => {
                     </FormControl>
                     <div className="space-y-1 leading-none">
                       <FormLabel className="relative flex items-center gap-2">
-                        Aceito os termos e condições *
+                        Acepto los términos y condiciones *
                         <ValidationIcon name="acceptTerms" />
                       </FormLabel>
                       <FormDescription>
-                        Você concorda com nossa política de privacidade
+                        Usted acepta nuestra política de privacidad
                       </FormDescription>
                       <FormMessage />
                     </div>
@@ -408,7 +408,7 @@ export const BookingForm = () => {
                 className="w-full font-semibold text-base sm:text-lg" 
                 size="lg"
                 disabled={isSubmitting}
-                aria-label={isSubmitting ? "Enviando agendamento" : "Enviar agendamento"}
+                aria-label={isSubmitting ? "Enviando agendamiento" : "Enviar agendamiento"}
               >
                 {isSubmitting ? (
                   <>
