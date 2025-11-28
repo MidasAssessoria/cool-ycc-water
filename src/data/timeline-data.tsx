@@ -177,12 +177,14 @@ export const getTimelineData = (
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -200,12 +202,14 @@ export const getTimelineData = (
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -260,12 +264,14 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -282,12 +288,14 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -342,12 +350,14 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -364,12 +374,14 @@ export const getTimelineData = (
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
               onLoad={(e) => {
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'from-gray-100', 'to-gray-200');
+                e.currentTarget.classList.remove('opacity-0');
+                e.currentTarget.classList.add('opacity-100');
+                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
