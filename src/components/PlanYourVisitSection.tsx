@@ -21,7 +21,8 @@ import { cn } from "@/lib/utils";
 import waterparkHeroBg from "@/assets/waterpark-hero-bg.jpg";
 import bungalowsImg from "@/assets/attractions/bungalows.webp";
 import heroWaterpark from "@/assets/hero-waterpark.jpg";
-import wavePoolImg from "@/assets/attractions/wave-pool.webp";
+// Using public path for wave-pool image (moved to public/assets/)
+const wavePoolImg = "/assets/attractions/wave-pool.webp";
 const PlanYourVisitSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
