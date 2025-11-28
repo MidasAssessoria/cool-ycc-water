@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Users, Baby, Zap, Waves, ListFilter, Ruler, Flame, Accessibility } from "lucide-react";
-import wavePoolImg from "@/assets/attractions/wave-pool.webp";
-import waterSlidesImg from "@/assets/attractions/water-slides.webp";
+// Using public paths for images moved to public/assets/
+const wavePoolImg = "/assets/attractions/wave-pool.webp";
+const waterSlidesImg = "/assets/attractions/water-slides.webp";
+const hydroSpaImg = "/assets/attractions/hydro-spa.webp";
+const restaurantImg = "/assets/attractions/restaurant.webp";
+const tennisCourtsImg = "/assets/attractions/tennis-courts.webp";
+const naturalLakesImg = "/assets/attractions/natural-lakes.webp";
+// Keeping ES6 imports for images still in src/assets/
 import lazyRiverImg from "@/assets/attractions/lazy-river.webp";
-import hydroSpaImg from "@/assets/attractions/hydro-spa.webp";
-import restaurantImg from "@/assets/attractions/restaurant.webp";
 import bungalowsImg from "@/assets/attractions/bungalows.webp";
 import recreationalPoolsImg from "@/assets/attractions/recreational-pools.webp";
 import kidsZoneImg from "@/assets/attractions/kids-zone.webp";
-import tennisCourtsImg from "@/assets/attractions/tennis-courts.webp";
-import naturalLakesImg from "@/assets/attractions/natural-lakes.webp";
 import ecoTrailsImg from "@/assets/attractions/eco-trails.webp";
 import bbqAreaImg from "@/assets/attractions/bbq-area.webp";
 import { Badge } from "@/components/ui/badge";
