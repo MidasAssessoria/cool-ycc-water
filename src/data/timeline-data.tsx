@@ -5,6 +5,12 @@
 
 import { Sparkles, Dumbbell, Heart, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import naturalLakesImg from "@/assets/attractions/natural-lakes.jpg";
+import tennisCourtsImg from "@/assets/attractions/tennis-courts.jpg";
+import wavePoolImg from "@/assets/attractions/wave-pool.jpg";
+import waterSlidesImg from "@/assets/attractions/water-slides.jpg";
+import hydroSpaImg from "@/assets/attractions/hydro-spa.jpg";
+import restaurantImg from "@/assets/attractions/restaurant.jpg";
 
 interface TimelineDataItem {
   title: string;
@@ -163,7 +169,7 @@ export const getTimelineData = (
         <div className="grid grid-cols-2 gap-4 mt-8">
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/natural-lakes.jpg"
+              src={naturalLakesImg}
               alt="Lagos naturales"
               loading="eager"
               decoding="async"
@@ -180,7 +186,7 @@ export const getTimelineData = (
           </div>
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/tennis-courts.jpg"
+              src={tennisCourtsImg}
               alt="Canchas deportivas"
               loading="eager"
               decoding="async"
@@ -235,7 +241,7 @@ export const getTimelineData = (
         <div className="grid grid-cols-2 gap-4">
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/wave-pool.jpg"
+              src={wavePoolImg}
               alt="Piscina de olas"
               loading="lazy"
               decoding="async"
@@ -251,7 +257,7 @@ export const getTimelineData = (
           </div>
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/water-slides.jpg"
+              src={waterSlidesImg}
               alt="Toboganes"
               loading="lazy"
               decoding="async"
@@ -305,7 +311,7 @@ export const getTimelineData = (
         <div className="grid grid-cols-2 gap-4">
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/hydro-spa.jpg"
+              src={hydroSpaImg}
               alt="HidroSPA"
               loading="lazy"
               decoding="async"
@@ -321,7 +327,7 @@ export const getTimelineData = (
           </div>
           <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
-              src="/assets/attractions/restaurant.jpg"
+              src={restaurantImg}
               alt="Eventos exclusivos"
               loading="lazy"
               decoding="async"
