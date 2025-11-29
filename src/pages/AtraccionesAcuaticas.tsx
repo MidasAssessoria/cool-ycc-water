@@ -4,6 +4,8 @@ import { AttractionCard } from "@/components/AttractionCard";
 import { AquaticsBreadcrumb } from "@/components/AquaticsBreadcrumb";
 import { AnimatedSwimmerIcon } from "@/components/aquatics/AnimatedSwimmerIcon";
 import { StatsBadges } from "@/components/aquatics/StatsBadges";
+import { WaveDecoration } from "@/components/aquatics/WaveDecoration";
+import { FloatingDrops } from "@/components/aquatics/FloatingDrops";
 import { atraccionesAcuaticas } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
@@ -25,8 +27,9 @@ const AtraccionesAcuaticas = () => {
         <AquaticsBreadcrumb />
         
         {/* Hero Section */}
-        <section className="relative pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative pb-16 px-4 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
+          <FloatingDrops />
+          <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-12">
               <div className="mb-6 flex justify-center">
                 <AnimatedSwimmerIcon />
@@ -49,6 +52,7 @@ const AtraccionesAcuaticas = () => {
               </Button>
             </div>
           </div>
+          <WaveDecoration />
         </section>
 
         {/* Attractions Grid */}
