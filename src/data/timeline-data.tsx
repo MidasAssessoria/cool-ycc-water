@@ -39,8 +39,9 @@ export const getTimelineData = (
     title: "Hoy",
     content: (
       <div className="relative overflow-hidden">
-        {/* Background Layer com Dots Pattern */}
+        {/* Background Layer com Dots Pattern e Formas Geométricas */}
         <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Dots Pattern */}
           <div 
             className="absolute inset-0 opacity-[0.08]"
             style={{
@@ -48,6 +49,22 @@ export const getTimelineData = (
               backgroundSize: '24px 24px'
             }}
           />
+          
+          {/* Formas Geométricas Flutuantes */}
+          {/* Círculo Cyan - Canto Superior Direito */}
+          <div className="absolute -top-8 -right-8 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl" />
+          
+          {/* Círculo Orange - Canto Inferior Esquerdo */}
+          <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-orange-400/10 rounded-full blur-3xl" />
+          
+          {/* Retângulo Verde - Topo Esquerdo */}
+          <div className="absolute top-20 -left-6 w-24 h-16 bg-green-400/8 rounded-3xl blur-xl rotate-12" />
+          
+          {/* Retângulo Azul - Meio Direito */}
+          <div className="absolute top-1/2 -right-10 w-28 h-20 bg-blue-400/8 rounded-3xl blur-2xl -rotate-6" />
+          
+          {/* Círculo Emerald - Centro-Inferior */}
+          <div className="absolute bottom-1/4 left-1/3 w-16 h-16 bg-emerald-400/6 rounded-full blur-xl" />
         </div>
 
         {/* Main Content Layer */}
