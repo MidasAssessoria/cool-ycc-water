@@ -25,8 +25,8 @@ const AtraccionesBungalows = () => {
   return (
     <>
       <SEOHead 
-        title="Bungalows VIP Exclusivos - YCC Water Park | Compra de Fração 28 Dias"
-        description="Adquira sua fração de bungalow premium no YCC Water Park. 50 anos de direito, 28 dias/ano de uso, ROI até 29,4%. Intercâmbio global em 4.000+ destinos."
+        title="Bungalows VIP Exclusivos - YCC Water Park | Compra de Fracción 28 Días"
+        description="Adquiere tu fracción de bungalow premium en YCC Water Park. 50 años de derecho, 28 días/año de uso, ROI hasta 29,4%. Intercambio global en 4.000+ destinos."
       />
       
       <div className="min-h-screen bg-background">
@@ -42,10 +42,10 @@ const AtraccionesBungalows = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  O que é a Compra de Fração?
+                  ¿Qué es la Compra de Fracción?
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Sistema inteligente de propriedade compartilhada
+                  Sistema inteligente de propiedad compartida
                 </p>
               </div>
 
@@ -54,17 +54,17 @@ const AtraccionesBungalows = () => {
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-bold text-bungalow-primary mb-4">
-                      Sistema de Fração Inteligente
+                      Sistema de Fracción Inteligente
                     </h3>
                     <p className="text-lg text-muted-foreground mb-4">
-                      A compra de fração permite que você adquira o direito de uso de um bungalow premium 
-                      por <strong className="text-foreground">50 anos</strong>, utilizando-o por 
-                      <strong className="text-foreground"> 28 dias por ano</strong>.
+                      La compra de fracción te permite adquirir el derecho de uso de un bungalow premium 
+                      por <strong className="text-foreground">50 años</strong>, utilizándolo por 
+                      <strong className="text-foreground"> 28 días por año</strong>.
                     </p>
                     <p className="text-lg text-muted-foreground">
-                      É a forma mais inteligente de ter sua propriedade de férias sem os custos 
-                      e responsabilidades de uma propriedade integral. Você paga apenas uma fração 
-                      do valor total e desfruta de todos os benefícios!
+                      Es la forma más inteligente de tener tu propiedad de vacaciones sin los costos 
+                      y responsabilidades de una propiedad completa. ¡Pagas solo una fracción 
+                      del valor total y disfrutas de todos los beneficios!
                     </p>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ const AtraccionesBungalows = () => {
                       <div className="text-center p-6 rounded-2xl bg-bungalow-primary/5 border border-bungalow-primary/20">
                         <Calendar className="w-12 h-12 text-bungalow-primary mx-auto mb-3" />
                         <div className="text-4xl font-bold text-bungalow-primary mb-2">28 dias/ano</div>
-                        <p className="text-sm text-muted-foreground">Uso garantido</p>
+                        <p className="text-sm text-muted-foreground">Uso garantizado</p>
                       </div>
                       
                       <div className="flex items-center justify-center gap-4 text-2xl font-bold text-muted-foreground">
@@ -89,12 +89,12 @@ const AtraccionesBungalows = () => {
                       <div className="text-center p-6 rounded-2xl bg-bungalow-secondary/5 border border-bungalow-secondary/20">
                         <Key className="w-12 h-12 text-bungalow-secondary mx-auto mb-3" />
                         <div className="text-4xl font-bold text-bungalow-secondary mb-2">50 anos</div>
-                        <p className="text-sm text-muted-foreground">Direito total</p>
+                        <p className="text-sm text-muted-foreground">Derecho total</p>
                       </div>
 
                       <div className="mt-6 p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl border border-green-500/20">
                         <p className="text-center text-sm font-medium">
-                          <strong className="text-green-600">1 ano = 365 dias ÷ 13 frações = 28 dias</strong>
+                          <strong className="text-green-600">1 año = 365 días ÷ 13 fracciones = 28 días</strong>
                         </p>
                       </div>
                     </div>
@@ -106,9 +106,9 @@ const AtraccionesBungalows = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
                 <div className="p-6 rounded-2xl bg-background border-2 border-green-500/20 hover:border-green-500/40 transition-colors">
                   <DollarSign className="w-12 h-12 text-green-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2">Custo Reduzido</h4>
+                  <h4 className="font-bold text-lg mb-2">Costo Reducido</h4>
                   <p className="text-sm text-muted-foreground">
-                    Fração do preço de uma propriedade completa
+                    Fracción del precio de una propiedad completa
                   </p>
                 </div>
 
@@ -116,39 +116,39 @@ const AtraccionesBungalows = () => {
                   <Calendar className="w-12 h-12 text-blue-500 mb-4" />
                   <h4 className="font-bold text-lg mb-2">Sistema Rotativo</h4>
                   <p className="text-sm text-muted-foreground">
-                    Períodos variados cada ano para máxima flexibilidade
+                    Períodos variados cada año para máxima flexibilidad
                   </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-background border-2 border-purple-500/20 hover:border-purple-500/40 transition-colors">
                   <TrendingUp className="w-12 h-12 text-purple-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2">Rentabilidade</h4>
+                  <h4 className="font-bold text-lg mb-2">Rentabilidad</h4>
                   <p className="text-sm text-muted-foreground">
-                    80% da renda de aluguel é sua quando não usar
+                    80% de los ingresos de alquiler son tuyos cuando no lo uses
                   </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-background border-2 border-cyan-500/20 hover:border-cyan-500/40 transition-colors">
                   <Globe className="w-12 h-12 text-cyan-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2">Intercâmbio Global</h4>
+                  <h4 className="font-bold text-lg mb-2">Intercambio Global</h4>
                   <p className="text-sm text-muted-foreground">
-                    4.000+ destinos em 110 países disponíveis
+                    4.000+ destinos en 110 países disponibles
                   </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-background border-2 border-orange-500/20 hover:border-orange-500/40 transition-colors">
                   <Users className="w-12 h-12 text-orange-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2">Transferível</h4>
+                  <h4 className="font-bold text-lg mb-2">Transferible</h4>
                   <p className="text-sm text-muted-foreground">
-                    Pode ser herdado ou vendido legalmente
+                    Puede ser heredado o vendido legalmente
                   </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-background border-2 border-pink-500/20 hover:border-pink-500/40 transition-colors">
                   <Shield className="w-12 h-12 text-pink-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2">Zero Manutenção</h4>
+                  <h4 className="font-bold text-lg mb-2">Cero Mantenimiento</h4>
                   <p className="text-sm text-muted-foreground">
-                    Gestão profissional incluída no pacote
+                    Gestión profesional incluida en el paquete
                   </p>
                 </div>
               </div>
@@ -162,10 +162,10 @@ const AtraccionesBungalows = () => {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Como Funciona?
+                  ¿Cómo Funciona?
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Seu caminho para a propriedade de férias perfeita
+                  Tu camino hacia la propiedad de vacaciones perfecta
                 </p>
               </div>
 
@@ -176,10 +176,10 @@ const AtraccionesBungalows = () => {
                     1
                   </div>
                   <div className="flex-1 pt-2">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Escolha seu Bungalow</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Elige tu Bungalow</h3>
                     <p className="text-lg text-muted-foreground">
-                      64 unidades exclusivas de 81m², todas com acabamentos premium, hidromassagem privada 
-                      e vista privilegiada. Cada uma totalmente equipada e pronta para uso.
+                      64 unidades exclusivas de 81m², todas con acabados premium, hidromasaje privado 
+                      y vista privilegiada. Cada una totalmente equipada y lista para usar.
                     </p>
                   </div>
                 </div>
@@ -193,10 +193,10 @@ const AtraccionesBungalows = () => {
                     2
                   </div>
                   <div className="flex-1 pt-2">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Adquira sua Fração</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Adquiere tu Fracción</h3>
                     <p className="text-lg text-muted-foreground">
-                      Contrato legal de 50 anos garantindo 28 dias de uso anual. Escritura registrada 
-                      em cartório com toda segurança jurídica. Investimento acessível comparado à propriedade integral.
+                      Contrato legal de 50 años garantizando 28 días de uso anual. Escritura registrada 
+                      en escribanía con toda seguridad jurídica. Inversión accesible comparada a la propiedad completa.
                     </p>
                   </div>
                 </div>
@@ -210,10 +210,10 @@ const AtraccionesBungalows = () => {
                     3
                   </div>
                   <div className="flex-1 pt-2">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Reserve seus Períodos</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Reserva tus Períodos</h3>
                     <p className="text-lg text-muted-foreground">
-                      Sistema rotativo inteligente online garante que você tenha acesso a diferentes períodos 
-                      do ano. Reserve com antecedência e planeje suas férias com total flexibilidade.
+                      Sistema rotativo inteligente online garantiza que tengas acceso a diferentes períodos 
+                      del año. Reserva con anticipación y planea tus vacaciones con total flexibilidad.
                     </p>
                   </div>
                 </div>
@@ -227,10 +227,10 @@ const AtraccionesBungalows = () => {
                     4
                   </div>
                   <div className="flex-1 pt-2">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Use, Alugue ou Troque</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Usa, Alquila o Intercambia</h3>
                     <p className="text-lg text-muted-foreground">
-                      Máxima flexibilidade: use nos seus 28 dias, alugue para terceiros (80% da renda é sua), 
-                      ou troque por destinos globais em 4.000+ propriedades pelo mundo através do programa de intercâmbio.
+                      Máxima flexibilidad: usa tus 28 días, alquila a terceros (80% de los ingresos son tuyos), 
+                      o intercambia por destinos globales en 4.000+ propiedades por el mundo a través del programa de intercambio.
                     </p>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const AtraccionesBungalows = () => {
                 Amenidades Exclusivas VIP
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Acesso ilimitado a instalações premium durante sua estadia
+                Acceso ilimitado a instalaciones premium durante tu estadía
               </p>
             </div>
             
@@ -269,10 +269,10 @@ const AtraccionesBungalows = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Vantagens Financeiras
+                  Ventajas Financieras
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Compare e veja por que a fração é a escolha inteligente
+                  Compara y descubre por qué la fracción es la elección inteligente
                 </p>
               </div>
 
@@ -283,34 +283,34 @@ const AtraccionesBungalows = () => {
                     TRADICIONAL
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-2xl">Propriedade Tradicional</CardTitle>
+                    <CardTitle className="text-2xl">Propiedad Tradicional</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold text-red-500">USD 80.000</span>
-                      <span className="text-muted-foreground">Investimento total</span>
+                      <span className="text-muted-foreground">Inversión total</span>
                     </div>
                     
                     <div className="space-y-3 pt-4 border-t">
                       <div className="flex items-start gap-3">
                         <span className="text-red-500 mt-1">✗</span>
-                        <span className="text-muted-foreground">Manutenção anual elevada (USD 2.000+/ano)</span>
+                        <span className="text-muted-foreground">Mantenimiento anual elevado (USD 2.000+/año)</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-red-500 mt-1">✗</span>
-                        <span className="text-muted-foreground">Impostos e taxas integrais</span>
+                        <span className="text-muted-foreground">Impuestos y tasas completas</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-red-500 mt-1">✗</span>
-                        <span className="text-muted-foreground">Uso limitado (geralmente 2-3 semanas/ano)</span>
+                        <span className="text-muted-foreground">Uso limitado (generalmente 2-3 semanas/año)</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-red-500 mt-1">✗</span>
-                        <span className="text-muted-foreground">Sem retorno financeiro quando não usa</span>
+                        <span className="text-muted-foreground">Sin retorno financiero cuando no lo usas</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-red-500 mt-1">✗</span>
-                        <span className="text-muted-foreground">Responsabilidade total de gestão</span>
+                        <span className="text-muted-foreground">Responsabilidad total de gestión</span>
                       </div>
                     </div>
                   </CardContent>
@@ -323,40 +323,40 @@ const AtraccionesBungalows = () => {
                     RECOMENDADO
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-2xl">Fração de Bungalow VIP</CardTitle>
+                    <CardTitle className="text-2xl">Fracción de Bungalow VIP</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold text-green-500">USD 16.800</span>
-                      <span className="text-muted-foreground">Investimento acessível</span>
+                      <span className="text-muted-foreground">Inversión accesible</span>
                     </div>
                     
                     <div className="space-y-3 pt-4 border-t">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground font-medium">Zero manutenção (incluída no pacote)</span>
+                        <span className="text-foreground font-medium">Cero mantenimiento (incluido en el paquete)</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground font-medium">28 dias garantidos + intercâmbio global</span>
+                        <span className="text-foreground font-medium">28 días garantizados + intercambio global</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground font-medium">ROI de até 29,4% ao ano com aluguel</span>
+                        <span className="text-foreground font-medium">ROI de hasta 29,4% al año con alquiler</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground font-medium">80% da renda de aluguel é sua</span>
+                        <span className="text-foreground font-medium">80% de los ingresos de alquiler son tuyos</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground font-medium">Gestão profissional completa incluída</span>
+                        <span className="text-foreground font-medium">Gestión profesional completa incluida</span>
                       </div>
                     </div>
 
                     <div className="mt-6 p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl">
                       <p className="text-center font-bold text-green-600">
-                        Economize USD 63.200 no investimento inicial!
+                        ¡Ahorra USD 63.200 en la inversión inicial!
                       </p>
                     </div>
                   </CardContent>
@@ -372,10 +372,10 @@ const AtraccionesBungalows = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Plantas e Especificações
+                  Plantas y Especificaciones
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Conheça cada detalhe do seu futuro bungalow
+                  Conoce cada detalle de tu futuro bungalow
                 </p>
               </div>
 
@@ -383,7 +383,7 @@ const AtraccionesBungalows = () => {
                 {/* Ground Floor */}
                 <Card className="overflow-hidden">
                   <CardHeader className="bg-gradient-to-br from-bungalow-primary/10 to-bungalow-secondary/10">
-                    <CardTitle className="text-xl">Planta Térrea</CardTitle>
+                    <CardTitle className="text-xl">Planta Baja</CardTitle>
                     <p className="text-sm text-muted-foreground">58,70m² + deck 13,61m²</p>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -393,19 +393,19 @@ const AtraccionesBungalows = () => {
                     <ul className="space-y-2">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Living/Jantar integrado</span>
+                        <span className="text-sm">Living/Comedor integrado</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Cozinha completa equipada</span>
+                        <span className="text-sm">Cocina completa equipada</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Banheiro social</span>
+                        <span className="text-sm">Baño social</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Deck com hidromassagem privada</span>
+                        <span className="text-sm">Deck con hidromasaje privado</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -424,19 +424,19 @@ const AtraccionesBungalows = () => {
                     <ul className="space-y-2">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Suite master com closet</span>
+                        <span className="text-sm">Suite master con vestidor</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Dormitório adicional</span>
+                        <span className="text-sm">Dormitorio adicional</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Banheiro privativo</span>
+                        <span className="text-sm">Baño privado</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Sacada privativa com vista</span>
+                        <span className="text-sm">Balcón privado con vista</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -446,7 +446,7 @@ const AtraccionesBungalows = () => {
               {/* Technical Specifications */}
               <Card className="border-2 border-bungalow-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Especificações Técnicas</CardTitle>
+                  <CardTitle className="text-2xl">Especificaciones Técnicas</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -456,7 +456,7 @@ const AtraccionesBungalows = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-foreground">Área Total</p>
-                        <p className="text-sm text-muted-foreground">81m² construídos</p>
+                        <p className="text-sm text-muted-foreground">81m² construidos</p>
                       </div>
                     </div>
                     
@@ -465,8 +465,8 @@ const AtraccionesBungalows = () => {
                         🛏️
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Capacidade</p>
-                        <p className="text-sm text-muted-foreground">6 pessoas</p>
+                        <p className="font-semibold text-foreground">Capacidad</p>
+                        <p className="text-sm text-muted-foreground">6 personas</p>
                       </div>
                     </div>
                     
@@ -475,8 +475,8 @@ const AtraccionesBungalows = () => {
                         ❄️
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Climatização</p>
-                        <p className="text-sm text-muted-foreground">Ar em todos ambientes</p>
+                        <p className="font-semibold text-foreground">Climatización</p>
+                        <p className="text-sm text-muted-foreground">Aire en todos los ambientes</p>
                       </div>
                     </div>
                     
@@ -485,8 +485,8 @@ const AtraccionesBungalows = () => {
                         🌊
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Hidromassagem</p>
-                        <p className="text-sm text-muted-foreground">Na terraza privada</p>
+                        <p className="font-semibold text-foreground">Hidromasaje</p>
+                        <p className="text-sm text-muted-foreground">En la terraza privada</p>
                       </div>
                     </div>
                     
@@ -495,8 +495,8 @@ const AtraccionesBungalows = () => {
                         📶
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Conectividade</p>
-                        <p className="text-sm text-muted-foreground">WiFi alta velocidade</p>
+                        <p className="font-semibold text-foreground">Conectividad</p>
+                        <p className="text-sm text-muted-foreground">WiFi alta velocidad</p>
                       </div>
                     </div>
                     
@@ -505,7 +505,7 @@ const AtraccionesBungalows = () => {
                         📺
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Entretenimento</p>
+                        <p className="font-semibold text-foreground">Entretenimiento</p>
                         <p className="text-sm text-muted-foreground">Smart TV</p>
                       </div>
                     </div>
@@ -515,7 +515,7 @@ const AtraccionesBungalows = () => {
                         🍳
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Cozinha</p>
+                        <p className="font-semibold text-foreground">Cocina</p>
                         <p className="text-sm text-muted-foreground">Totalmente equipada</p>
                       </div>
                     </div>
@@ -525,8 +525,8 @@ const AtraccionesBungalows = () => {
                         🏠
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">Mobília</p>
-                        <p className="text-sm text-muted-foreground">Completa e moderna</p>
+                        <p className="font-semibold text-foreground">Mobiliario</p>
+                        <p className="text-sm text-muted-foreground">Completo y moderno</p>
                       </div>
                     </div>
                   </div>
@@ -542,17 +542,17 @@ const AtraccionesBungalows = () => {
             <div className="max-w-5xl mx-auto text-center">
               <Globe className="w-20 h-20 text-bungalow-primary mx-auto mb-6" />
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Intercambie seu Bungalow em 110 Países
+                Intercambia tu Bungalow en 110 Países
               </h2>
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-                Através do programa Férias Fácil, troque seus dias de uso por estadias em milhares 
-                de propriedades ao redor do mundo. Uma semana aqui, outra em Paris, outra em Miami!
+                A través del programa Férias Fácil, cambia tus días de uso por estadías en miles 
+                de propiedades alrededor del mundo. ¡Una semana aquí, otra en París, otra en Miami!
               </p>
 
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="p-8 rounded-2xl bg-background border-2 border-cyan-500/20">
                   <div className="text-5xl font-bold text-cyan-500 mb-2">4.000+</div>
-                  <p className="text-lg text-muted-foreground">Destinos disponíveis</p>
+                  <p className="text-lg text-muted-foreground">Destinos disponibles</p>
                 </div>
                 
                 <div className="p-8 rounded-2xl bg-background border-2 border-blue-500/20">
@@ -562,12 +562,12 @@ const AtraccionesBungalows = () => {
                 
                 <div className="p-8 rounded-2xl bg-background border-2 border-purple-500/20">
                   <div className="text-5xl font-bold text-purple-500 mb-2">∞</div>
-                  <p className="text-lg text-muted-foreground">Possibilidades de viagem</p>
+                  <p className="text-lg text-muted-foreground">Posibilidades de viaje</p>
                 </div>
               </div>
 
               <Button size="lg" className="text-lg px-8">
-                Conheça os Destinos Disponíveis
+                Conoce los Destinos Disponibles
               </Button>
             </div>
           </div>
@@ -579,10 +579,10 @@ const AtraccionesBungalows = () => {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Garantias e Segurança Jurídica
+                  Garantías y Seguridad Jurídica
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Seu investimento protegido por lei
+                  Tu inversión protegida por ley
                 </p>
               </div>
 
@@ -596,7 +596,7 @@ const AtraccionesBungalows = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Contrato legal de 50 anos protocolado em cartório de registro de imóveis
+                      Contrato legal de 50 años protocolado en escribanía de registro de inmuebles
                     </p>
                   </CardContent>
                 </Card>
@@ -606,11 +606,11 @@ const AtraccionesBungalows = () => {
                     <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-8 h-8 text-green-500" />
                     </div>
-                    <CardTitle>Segurança Jurídica</CardTitle>
+                    <CardTitle>Seguridad Jurídica</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Todos os direitos garantidos por lei, com assessoria jurídica completa
+                      Todos los derechos garantizados por ley, con asesoría jurídica completa
                     </p>
                   </CardContent>
                 </Card>
@@ -620,11 +620,11 @@ const AtraccionesBungalows = () => {
                     <div className="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
                       <Users className="w-8 h-8 text-purple-500" />
                     </div>
-                    <CardTitle>Herança Familiar</CardTitle>
+                    <CardTitle>Herencia Familiar</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Transferível para herdeiros ou terceiros, preservando o patrimônio familiar
+                      Transferible a herederos o terceros, preservando el patrimonio familiar
                     </p>
                   </CardContent>
                 </Card>
@@ -640,13 +640,13 @@ const AtraccionesBungalows = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center text-white">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Reserve seu Bungalow VIP Hoje
+                Reserva tu Bungalow VIP Hoy
               </h2>
               <p className="text-xl md:text-2xl mb-4 opacity-90">
-                Vagas limitadas - Apenas 64 unidades exclusivas
+                Vacantes limitadas - Solo 64 unidades exclusivas
               </p>
               <p className="text-lg mb-10 opacity-80">
-                Garanta agora seu investimento com ROI comprovado e férias garantidas por 50 anos
+                Asegura ahora tu inversión con ROI comprobado y vacaciones garantizadas por 50 años
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -661,13 +661,13 @@ const AtraccionesBungalows = () => {
                   variant="outline" 
                   className="text-lg px-10 py-6 bg-transparent border-2 border-white text-white hover:bg-white/10"
                 >
-                  Baixar Prospecto PDF
+                  Descargar Prospecto PDF
                 </Button>
               </div>
 
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
                 <TrendingUp className="w-5 h-5" />
-                <span className="font-medium">Alta demanda - Últimas unidades disponíveis</span>
+                <span className="font-medium">Alta demanda - Últimas unidades disponibles</span>
               </div>
             </div>
           </div>
