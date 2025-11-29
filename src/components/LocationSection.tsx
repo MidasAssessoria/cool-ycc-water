@@ -56,32 +56,32 @@ const LocationSection = () => {
       "amenityFeature": [
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Parking",
+          "name": "Estacionamiento",
           "value": true
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Restaurant",
+          "name": "Restaurante",
           "value": true
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Swimming Pool",
+          "name": "Piscina",
           "value": true
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Water Slides",
+          "name": "Toboganes Acuáticos",
           "value": true
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Wave Pool",
+          "name": "Piscina de Olas",
           "value": true
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Kids Area",
+          "name": "Área Infantil",
           "value": true
         }
       ],
