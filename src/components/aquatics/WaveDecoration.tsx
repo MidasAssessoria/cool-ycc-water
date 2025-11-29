@@ -7,20 +7,20 @@ export const WaveDecoration = () => {
   return (
     <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none z-[5] -mb-1">
       <motion.svg
-        className="w-full h-16 sm:h-20 md:h-28 lg:h-32"
+        className="w-[120%] -ml-[10%] h-16 sm:h-20 md:h-28 lg:h-32"
         viewBox="0 0 1200 120"
         preserveAspectRatio="none"
         animate={
           prefersReducedMotion
             ? {}
             : {
-                x: [0, -50, 0],
+                x: ["0%", "-8%", "0%"],
               }
         }
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "linear",
+          ease: "easeInOut",
         }}
       >
         <path
