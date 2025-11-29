@@ -455,7 +455,7 @@ export const bungalowsAmenities: Attraction[] = [
   },
   {
     id: 'hidromassagem-privada',
-    name: 'Hidromassagem Privada',
+    name: 'Hidromasaje Privado',
     description: 'Cada bungalow cuenta con jacuzzi privado',
     image: '/assets/attractions/hidromassagem-privada.webp',
     category: 'bungalows',
