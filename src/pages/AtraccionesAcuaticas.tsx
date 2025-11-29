@@ -3,6 +3,7 @@ import Navigation from "@/components/navigation/Navigation";
 import { AttractionCard } from "@/components/AttractionCard";
 import { AquaticsBreadcrumb } from "@/components/AquaticsBreadcrumb";
 import { AnimatedSwimmerIcon } from "@/components/aquatics/AnimatedSwimmerIcon";
+import { StatsBadges } from "@/components/aquatics/StatsBadges";
 import { atraccionesAcuaticas } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
@@ -33,6 +34,7 @@ const AtraccionesAcuaticas = () => {
               <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-deepblue to-primary bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
                 Atracciones Acuáticas
               </h1>
+              <StatsBadges />
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Disfruta de nuestras 12 atracciones acuáticas diseñadas para toda la familia. 
                 Desde emocionantes toboganes hasta relajantes piscinas.
