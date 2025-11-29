@@ -30,7 +30,7 @@ const AtraccionesAcuaticas = () => {
               <div className="mb-6 flex justify-center">
                 <AnimatedSwimmerIcon />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-deepblue to-primary bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
                 Atracciones Acuáticas
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
