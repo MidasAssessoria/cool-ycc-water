@@ -3,7 +3,7 @@
  * Extracted for performance optimization - prevents recreation on every render
  */
 
-import { Sparkles, Dumbbell, Heart, Calendar } from "lucide-react";
+import { Sparkles, Dumbbell, Heart, Calendar, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Using absolute paths from public folder for reliable image loading
@@ -69,9 +69,10 @@ export const getTimelineData = (
 
         {/* Main Content Layer */}
         <div className="relative z-10">
-          {/* Badge DISPONIBLE HOY */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-6 shadow-sm">
+          {/* Badge DISPONIBLE HOY - Melhorado */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-100 via-green-50 to-green-100 text-green-700 text-xs font-bold rounded-full mb-6 shadow-md border border-green-200/50">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <Check className="w-3.5 h-3.5 text-green-600" />
             DISPONIBLE HOY
           </div>
           <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
