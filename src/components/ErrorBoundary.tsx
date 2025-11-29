@@ -20,14 +20,14 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error('Error capturado por boundary:', error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return this.props.fallback || (
         <div className="p-8 text-center">
-          <p className="text-muted-foreground">Algo salió mal. Por favor, recarga la página.</p>
+          <p className="text-muted-foreground">Algo salió mal. Por favor, recargá la página.</p>
         </div>
       );
     }
