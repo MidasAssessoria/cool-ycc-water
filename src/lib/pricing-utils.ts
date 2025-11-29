@@ -1,16 +1,16 @@
 /**
  * Pricing Utility Functions
- * Fase 5.3: Funções centralizadas para cálculos de pricing
+ * Fase 5.3: Funciones centralizadas para cálculos de pricing
  * 
- * Evita duplicação de lógica de cálculo e garante consistência
+ * Evita duplicación de lógica de cálculo y garantiza consistencia
  */
 
 import { PRICING } from '@/constants/pricing';
 
 /**
- * Calcula o custo total da Membresía Familiar para N anos
- * @param years - Número de anos (deve ser >= 1)
- * @returns Custo total em USD
+ * Calcula el costo total de la Membresía Familiar para N años
+ * @param years - Número de años (debe ser >= 1)
+ * @returns Costo total en USD
  */
 export const calculateFamiliarTotal = (years: number): number => {
   if (years < 1) {
@@ -21,29 +21,29 @@ export const calculateFamiliarTotal = (years: number): number => {
 };
 
 /**
- * Calcula o custo total da Membresía VIP (constante)
- * @returns Custo total em USD
+ * Calcula el costo total de la Membresía VIP (constante)
+ * @returns Costo total en USD
  */
 export const calculateVIPTotal = (): number => {
   return PRICING.VIP.TOTAL;
 };
 
 /**
- * Calcula a diferença entre Familiar e VIP
- * @param years - Número de anos
- * @returns Diferença (positivo = Familiar custa mais, negativo = VIP custa mais)
+ * Calcula la diferencia entre Familiar y VIP
+ * @param years - Número de años
+ * @returns Diferencia (positivo = Familiar cuesta más, negativo = VIP cuesta más)
  */
 export const calculateDifference = (years: number): number => {
   return calculateFamiliarTotal(years) - calculateVIPTotal();
 };
 
 /**
- * Calcula a economia anual com VIP após o ponto de equilibrio
- * @param years - Número de anos
- * @returns Economia anual em USD (0 se ainda não atingiu equilibrio)
+ * Calcula el ahorro anual con VIP después del punto de equilibrio
+ * @param years - Número de años
+ * @returns Ahorro anual en USD (0 si aún no alcanzó equilibrio)
  */
 export const calculateAnnualSavings = (years: number): number => {
-  // Só há economia se atingiu o ponto de equilibrio e Familiar custa mais
+  // Solo hay ahorro si alcanzó el punto de equilibrio y Familiar cuesta más
   if (years >= PRICING.EQUILIBRIO_ANOS && calculateDifference(years) > 0) {
     return PRICING.FAMILIAR.ANUAL;
   }
@@ -51,26 +51,26 @@ export const calculateAnnualSavings = (years: number): number => {
 };
 
 /**
- * Determina o status da comparação VIP vs Familiar
- * @param years - Número de anos
+ * Determina el status de la comparación VIP vs Familiar
+ * @param years - Número de años
  * @returns Status: 'desfavorable' | 'equilibrio' | 'ahorro'
  */
 export const getPricingStatus = (years: number): 'desfavorable' | 'equilibrio' | 'ahorro' => {
   if (years < PRICING.EQUILIBRIO_ANOS) {
-    return 'desfavorable'; // VIP ainda é mais caro
+    return 'desfavorable'; // VIP aún es más caro
   }
   
   if (years === PRICING.EQUILIBRIO_ANOS) {
-    return 'equilibrio'; // Ponto onde VIP começa a compensar
+    return 'equilibrio'; // Punto donde VIP comienza a compensar
   }
   
-  return 'ahorro'; // VIP economiza
+  return 'ahorro'; // VIP ahorra
 };
 
 /**
- * Obtém a cor do status para UI
- * @param status - Status do pricing
- * @returns Cor em formato hexadecimal
+ * Obtiene el color del status para UI
+ * @param status - Status del pricing
+ * @returns Color en formato hexadecimal
  */
 export const getStatusColor = (status: 'desfavorable' | 'equilibrio' | 'ahorro'): string => {
   const colors = {
@@ -83,20 +83,20 @@ export const getStatusColor = (status: 'desfavorable' | 'equilibrio' | 'ahorro')
 };
 
 /**
- * Valida se um número de anos está dentro do range permitido
- * @param years - Número de anos a validar
+ * Valida si un número de años está dentro del rango permitido
+ * @param years - Número de años a validar
  * @param min - Mínimo permitido (default: 1)
  * @param max - Máximo permitido (default: 30)
- * @returns Número de anos validado dentro do range
+ * @returns Número de años validado dentro del rango
  */
 export const validateYears = (years: number, min: number = 1, max: number = 30): number => {
   return Math.max(min, Math.min(max, years));
 };
 
 /**
- * Calcula o desconto de pagamento à vista para Familiar
- * @param totalAmount - Valor total antes do desconto
- * @returns Valor do desconto em USD
+ * Calcula el descuento de pago al contado para Familiar
+ * @param totalAmount - Valor total antes del descuento
+ * @returns Valor del descuento en USD
  */
 export const calculateCashDiscount = (totalAmount: number): number => {
   return totalAmount * PRICING.FAMILIAR.DESCONTO_CONTADO;

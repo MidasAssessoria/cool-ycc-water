@@ -42,7 +42,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: wavePoolImg,
-    altText: "Piscina de ondas com águas cristalinas turquesa em ambiente tropical com palmeiras",
+    altText: "Piscina de olas con aguas cristalinas turquesa en ambiente tropical con palmeras",
     categories: ['familia', 'radical'],
     metadata: {
       adrenalineLevel: 2
@@ -55,7 +55,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: waterSlidesImg,
-    altText: "Tobogãs aquáticos coloridos de alta velocidade com tubos em espiral",
+    altText: "Toboganes acuáticos coloridos de alta velocidad con tubos en espiral",
     categories: ['radical'],
     metadata: {
       minHeight: 120,
@@ -69,7 +69,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: lazyRiverImg,
-    altText: "Rio lento tranquilo com boias flutuando em ambiente tropical com vegetação exuberante",
+    altText: "Río lento tranquilo con flotadores en ambiente tropical con vegetación exuberante",
     categories: ['familia', 'relax'],
     metadata: {
       wheelchairAccessible: true
@@ -82,7 +82,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: hydroSpaImg,
-    altText: "Spa luxuoso com piscinas de hidromassagem e jacuzzi em design moderno",
+    altText: "Spa lujoso con piscinas de hidromasaje y jacuzzi en diseño moderno",
     categories: ['relax'],
     metadata: {
       wheelchairAccessible: true
@@ -95,7 +95,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: restaurantImg,
-    altText: "Restaurante moderno ao ar livre com mesas sob guarda-sóis e vista panorâmica do parque",
+    altText: "Restaurante moderno al aire libre con mesas bajo sombrillas y vista panorámica del parque",
     categories: ['familia', 'relax'],
     metadata: {
       wheelchairAccessible: true
@@ -108,7 +108,7 @@ const attractions: Attraction[] = [
     status: "construccion",
     badge: "Próximamente",
     image: bungalowsImg,
-    altText: "Bangalôs de madeira luxuosos à beira d'água cercados por palmeiras em ambiente tropical",
+    altText: "Bungalows de madera lujosos frente al agua rodeados de palmeras en ambiente tropical",
     categories: ['familia', 'relax']
   },
   // YA DISPONIBLES
@@ -119,7 +119,7 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: recreationalPoolsImg,
-    altText: "Piscinas recreativas com água cristalina azul, famílias nadando e guarda-sóis coloridos",
+    altText: "Piscinas recreativas con agua cristalina azul, familias nadando y sombrillas coloridas",
     categories: ['familia', 'infantil'],
     metadata: {
       wheelchairAccessible: true
@@ -132,7 +132,7 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: kidsZoneImg,
-    altText: "Área aquática infantil colorida com escorregadores pequenos e crianças brincando",
+    altText: "Área acuática infantil colorida con toboganes pequeños y niños jugando",
     categories: ['infantil', 'familia'],
     metadata: {
       adrenalineLevel: 1,
@@ -159,7 +159,7 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: naturalLakesImg,
-    altText: "Lagos naturais serenos com reflexos no céu, vegetação exuberante e pássaros",
+    altText: "Lagos naturales serenos con reflejos en el cielo, vegetación exuberante y pájaros",
     categories: ['relax', 'familia'],
     metadata: {
       wheelchairAccessible: true
@@ -172,7 +172,7 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: ecoTrailsImg,
-    altText: "Trilha ecológica de madeira através de floresta tropical com vegetação verde exuberante",
+    altText: "Sendero ecológico de madera a través de bosque tropical con vegetación verde exuberante",
     categories: ['relax', 'familia'],
     metadata: {
       wheelchairAccessible: true
@@ -185,7 +185,7 @@ const attractions: Attraction[] = [
     status: "disponible",
     badge: "Disponible Hoy",
     image: bbqAreaImg,
-    altText: "Área de churrasqueiras ao ar livre com mesas de piquenique e áreas sombreadas",
+    altText: "Área de parrillas al aire libre con mesas de picnic y áreas con sombra",
     categories: ['familia', 'relax'],
     metadata: {
       wheelchairAccessible: true
