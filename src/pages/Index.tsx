@@ -5,6 +5,7 @@ import logoYCC from "@/assets/logo-ycc-waterpark.png";
 import Navigation from "@/components/navigation/Navigation";
 import AquaParkSection from "@/components/AquaParkSection";
 import CategoriesSection from "@/components/CategoriesSection";
+import { SEOHead } from "@/components/SEOHead";
 // BungalowsHeroSection disponível para uso futuro em página dedicada /bungalows
 // import BungalowsHeroSection from "@/components/BungalowsHeroSection";
 import BungalowsCompactSection from "@/components/BungalowsCompactSection";
@@ -15,6 +16,14 @@ const Index = () => {
     smoothScrollToElement(sectionId, 80);
   };
   return <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="YCC Water Park - El Mayor Parque Acuático del Paraguay | Club Resort Premium"
+        description="Club, resort y parque acuático premium a 25 minutos de Asunción. Atracciones acuáticas, spa, deportes, gastronomía y bungalows VIP. Tu refugio familiar y tu mejor inversión."
+        image="/assets/hero-waterpark.webp"
+        url="https://yccwaterpark.com.py"
+        locale="es"
+      />
+      
       {/* Navigation */}
       <Navigation />
       
