@@ -26,7 +26,7 @@ const TopBar = React.memo(() => {
             <button 
               onClick={() => window.location.href = '/'}
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-md transition-transform active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
-              aria-label="Ir para página inicial"
+              aria-label="Ir a la página de inicio"
             >
               <img 
                 src={logoYCC} 
