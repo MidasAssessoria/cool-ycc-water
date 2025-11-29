@@ -294,66 +294,155 @@ export const getTimelineData = (
   {
     title: "EN CONSTRUCCIÓN",
     content: (
-      <div>
-        {/* Badge PRÓXIMAMENTE */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-6 shadow-sm">
-          <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
-          PRÓXIMAMENTE
-        </div>
-        <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
-          Instalaciones en construcción que estarán disponibles durante tu membresía
-        </p>
-        <div className="mb-8 space-y-3">
-          <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
-            <div className="bg-purple-100 p-2 rounded-lg">
-              <Sparkles className="w-5 h-5 text-purple-700" />
-            </div>
-            <div>
-              <span className="font-bold">Water Park Premium</span>
-              <p className="text-xs text-muted-foreground">Piscina de olas, toboganes gigantes</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 text-neutral-700 text-sm md:text-base">
-            <div className="bg-orange-100 p-2 rounded-lg">
-              <Dumbbell className="w-5 h-5 text-orange-700" />
-            </div>
-            <div>
-              <span className="font-bold">Gimnasio moderno</span>
-              <p className="text-xs text-muted-foreground">Equipamiento de última generación</p>
-            </div>
-          </div>
+      <div className="relative overflow-hidden">
+        {/* Background Layer com Dots Pattern e Formas Geométricas */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {/* Dots Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage: `radial-gradient(circle, #94a3b8 1px, transparent 1px)`,
+              backgroundSize: '24px 24px'
+            }}
+          />
+          
+          {/* Formas Geométricas Flutuantes - Responsivas */}
+          {/* Círculo Purple - Canto Superior Direito */}
+          <div className="absolute -top-8 -right-8 w-24 h-24 md:w-32 md:h-32 bg-purple-400/10 rounded-full blur-2xl" />
+          
+          {/* Círculo Orange - Canto Inferior Esquerdo */}
+          <div className="absolute -bottom-12 -left-12 w-32 h-32 md:w-40 md:h-40 bg-orange-400/10 rounded-full blur-3xl" />
+          
+          {/* Retângulo Purple - Topo Esquerdo (oculto em mobile) */}
+          <div className="hidden md:block absolute top-20 -left-6 w-24 h-16 bg-purple-400/8 rounded-3xl blur-xl rotate-12" />
+          
+          {/* Retângulo Orange - Meio Direito */}
+          <div className="absolute top-1/2 -right-10 w-20 h-14 md:w-28 md:h-20 bg-orange-400/8 rounded-3xl blur-2xl -rotate-6" />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
-            <img
-              src={wavePoolImg}
-              alt="Piscina de olas"
-              loading="lazy"
-              decoding="async"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <p className="font-bold text-lg">Piscina de Olas</p>
-                <p className="text-sm opacity-90">Emociones garantizadas</p>
+        {/* Main Content Layer */}
+        <div className="relative z-10">
+          {/* Badge PRÓXIMAMENTE - Melhorado */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-100 via-orange-50 to-orange-100 text-orange-700 text-xs font-bold rounded-full mb-6 shadow-md border border-orange-200/50">
+            <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+            PRÓXIMAMENTE
+          </div>
+          <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
+            Instalaciones en construcción que estarán disponibles durante tu membresía
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 mb-8">
+            {/* Card 1: Water Park Premium */}
+            <motion.div
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={
+                prefersReducedMotion 
+                  ? {} 
+                  : { opacity: 1, y: 0, scale: 1 }
+              }
+              viewport={{ once: true, margin: "-100px" }}
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-purple-50/30 border border-purple-200/50 border-l-4 border-l-purple-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-purple-500/20 hover:border-purple-300 hover:scale-105 transition-all duration-500"
+            >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-purple-200/50 select-none">
+                01
+              </span>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">🌊</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors">
+                    Water Park Premium
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Piscina de olas, toboganes gigantes y río lento
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Gimnasio Moderno */}
+            <motion.div
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={
+                prefersReducedMotion 
+                  ? {} 
+                  : { opacity: 1, y: 0, scale: 1 }
+              }
+              viewport={{ once: true, margin: "-100px" }}
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0.1,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 border-l-4 border-l-orange-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-300 hover:scale-105 transition-all duration-500"
+            >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-orange-200/50 select-none">
+                02
+              </span>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">💪</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
+                    Gimnasio moderno
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Equipamiento de última generación y entrenadores
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Galeria moderna com overlay */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src={wavePoolImg}
+                alt="Piscina de olas"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Piscina de Olas</p>
+                  <p className="text-sm opacity-90">Emociones garantizadas</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
-            <img
-              src={waterSlidesImg}
-              alt="Toboganes"
-              loading="lazy"
-              decoding="async"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <p className="font-bold text-lg">Toboganes Gigantes</p>
-                <p className="text-sm opacity-90">Adrenalina pura</p>
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src={waterSlidesImg}
+                alt="Toboganes"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Toboganes Gigantes</p>
+                  <p className="text-sm opacity-90">Adrenalina pura</p>
+                </div>
               </div>
             </div>
           </div>
