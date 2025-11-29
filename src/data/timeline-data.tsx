@@ -82,7 +82,6 @@ export const getTimelineData = (
               "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-300 transition-all duration-500 hover:-translate-y-0.5",
               !prefersReducedMotion && !animations.card2.isVisible && !forceVisible && "opacity-0 translate-y-4"
             )}
-            style={{ transitionDelay: prefersReducedMotion ? '0ms' : '100ms' }}
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
@@ -110,7 +109,6 @@ export const getTimelineData = (
               "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-green-500/10 hover:border-green-300 transition-all duration-500 hover:-translate-y-0.5",
               !prefersReducedMotion && !animations.card3.isVisible && !forceVisible && "opacity-0 translate-y-4"
             )}
-            style={{ transitionDelay: prefersReducedMotion ? '0ms' : '200ms' }}
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
@@ -138,7 +136,6 @@ export const getTimelineData = (
               "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 rounded-3xl p-6 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-300 transition-all duration-500 hover:-translate-y-0.5",
               !prefersReducedMotion && !animations.card4.isVisible && !forceVisible && "opacity-0 translate-y-4"
             )}
-            style={{ transitionDelay: prefersReducedMotion ? '0ms' : '300ms' }}
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-start gap-4">
@@ -162,7 +159,7 @@ export const getTimelineData = (
 
         {/* Galeria moderna com overlay */}
         <div className="grid grid-cols-2 gap-4 mt-8">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={naturalLakesImg}
               alt="Lagos naturales"
@@ -170,15 +167,7 @@ export const getTimelineData = (
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -187,7 +176,7 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={tennisCourtsImg}
               alt="Canchas deportivas"
@@ -195,15 +184,7 @@ export const getTimelineData = (
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -250,22 +231,14 @@ export const getTimelineData = (
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={wavePoolImg}
               alt="Piscina de olas"
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -274,22 +247,14 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={waterSlidesImg}
               alt="Toboganes"
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -336,22 +301,14 @@ export const getTimelineData = (
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={hydroSpaImg}
               alt="HidroSPA"
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -360,22 +317,14 @@ export const getTimelineData = (
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
             <img
               src={restaurantImg}
               alt="Eventos exclusivos"
               loading="lazy"
               decoding="async"
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={(e) => {
-                e.currentTarget.classList.remove('opacity-0');
-                e.currentTarget.classList.add('opacity-100');
-                e.currentTarget.parentElement?.classList.remove('animate-pulse', 'bg-gradient-to-br', 'from-gray-100', 'to-gray-200');
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
