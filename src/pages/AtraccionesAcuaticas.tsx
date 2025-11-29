@@ -8,7 +8,7 @@ import { WaveDecoration } from "@/components/aquatics/WaveDecoration";
 import { FloatingDrops } from "@/components/aquatics/FloatingDrops";
 import { atraccionesAcuaticas } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection } from "@/lib/utils";
 
@@ -30,7 +30,7 @@ const AtraccionesAcuaticas = () => {
         <section className="relative pt-8 pb-20 md:pt-12 md:pb-24 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
           <FloatingDrops />
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center space-y-8 md:space-y-10">
+            <div className="text-center space-y-6 md:space-y-8">
               <div className="flex justify-center">
                 <AnimatedSwimmerIcon />
               </div>
@@ -38,20 +38,10 @@ const AtraccionesAcuaticas = () => {
                 Atracciones Acuáticas
               </h1>
               <StatsBadges />
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl lg:max-w-3xl mx-auto px-4 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl lg:max-w-3xl mx-auto px-4 leading-relaxed mt-2">
                 Disfruta de nuestras 12 atracciones acuáticas diseñadas para toda la familia. 
                 Desde emocionantes toboganes hasta relajantes piscinas.
               </p>
-              <div className="pt-2">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-white/80 backdrop-blur-sm border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  <MapPin className="w-5 h-5" />
-                  Ver no Mapa
-                </Button>
-              </div>
             </div>
           </div>
           <WaveDecoration />
