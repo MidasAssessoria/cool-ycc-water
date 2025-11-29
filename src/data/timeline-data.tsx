@@ -40,7 +40,7 @@ export const getTimelineData = (
     content: (
       <div className="relative overflow-hidden">
         {/* Background Layer com Dots Pattern e Formas Geométricas */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Dots Pattern */}
           <div 
             className="absolute inset-0 opacity-[0.08]"
@@ -50,21 +50,21 @@ export const getTimelineData = (
             }}
           />
           
-          {/* Formas Geométricas Flutuantes */}
+          {/* Formas Geométricas Flutuantes - Responsivas */}
           {/* Círculo Cyan - Canto Superior Direito */}
-          <div className="absolute -top-8 -right-8 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl" />
+          <div className="absolute -top-8 -right-8 w-24 h-24 md:w-32 md:h-32 bg-cyan-400/10 rounded-full blur-2xl" />
           
           {/* Círculo Orange - Canto Inferior Esquerdo */}
-          <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-orange-400/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-12 -left-12 w-32 h-32 md:w-40 md:h-40 bg-orange-400/10 rounded-full blur-3xl" />
           
-          {/* Retângulo Verde - Topo Esquerdo */}
-          <div className="absolute top-20 -left-6 w-24 h-16 bg-green-400/8 rounded-3xl blur-xl rotate-12" />
+          {/* Retângulo Verde - Topo Esquerdo (oculto em mobile) */}
+          <div className="hidden md:block absolute top-20 -left-6 w-24 h-16 bg-green-400/8 rounded-3xl blur-xl rotate-12" />
           
           {/* Retângulo Azul - Meio Direito */}
-          <div className="absolute top-1/2 -right-10 w-28 h-20 bg-blue-400/8 rounded-3xl blur-2xl -rotate-6" />
+          <div className="absolute top-1/2 -right-10 w-20 h-14 md:w-28 md:h-20 bg-blue-400/8 rounded-3xl blur-2xl -rotate-6" />
           
-          {/* Círculo Emerald - Centro-Inferior */}
-          <div className="absolute bottom-1/4 left-1/3 w-16 h-16 bg-emerald-400/6 rounded-full blur-xl" />
+          {/* Círculo Emerald - Centro-Inferior (oculto em mobile) */}
+          <div className="hidden md:block absolute bottom-1/4 left-1/3 w-16 h-16 bg-emerald-400/6 rounded-full blur-xl" />
         </div>
 
         {/* Main Content Layer */}
