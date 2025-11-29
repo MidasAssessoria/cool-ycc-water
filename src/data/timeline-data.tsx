@@ -87,6 +87,10 @@ export const getTimelineData = (
                 !prefersReducedMotion && !animations.card1.isVisible && !forceVisible && "opacity-0 translate-y-4"
               )}
             >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-cyan-200/50 select-none">
+                01
+              </span>
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-start gap-4">
                 <div className={cn(
@@ -114,6 +118,10 @@ export const getTimelineData = (
                 !prefersReducedMotion && !animations.card2.isVisible && !forceVisible && "opacity-0 translate-y-4"
               )}
             >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-orange-200/50 select-none">
+                02
+              </span>
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-start gap-4">
                 <div className={cn(
@@ -141,6 +149,10 @@ export const getTimelineData = (
                 !prefersReducedMotion && !animations.card3.isVisible && !forceVisible && "opacity-0 translate-y-4"
               )}
             >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-green-200/50 select-none">
+                03
+              </span>
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-start gap-4">
                 <div className={cn(
@@ -168,6 +180,10 @@ export const getTimelineData = (
                 !prefersReducedMotion && !animations.card4.isVisible && !forceVisible && "opacity-0 translate-y-4"
               )}
             >
+              {/* Número de identificação */}
+              <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-emerald-200/50 select-none">
+                04
+              </span>
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-start gap-4">
                 <div className={cn(
