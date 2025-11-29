@@ -87,7 +87,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 20%", "end 80%"],
+    offset: ["start 10%", "end 50%"],
   });
 
   // Suavizar o scroll progress com spring para animação mais fluida
