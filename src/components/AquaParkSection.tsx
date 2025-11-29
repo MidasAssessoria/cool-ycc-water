@@ -12,7 +12,7 @@ const AquaParkSection = () => {
       
       {/* Background com overlay escuro */}
       <div className="absolute inset-0">
-        <img src={backgroundImage} alt="Parque aquático com toboáguas coloridos e piscinas" className="h-full w-full object-cover" />
+        <img src={backgroundImage} alt="Parque acuático con toboganes coloridos y piscinas" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
