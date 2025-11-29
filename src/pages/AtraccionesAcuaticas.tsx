@@ -6,7 +6,7 @@ import { AnimatedSwimmerIcon } from "@/components/aquatics/AnimatedSwimmerIcon";
 import { StatsBadges } from "@/components/aquatics/StatsBadges";
 import { atraccionesAcuaticas } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection } from "@/lib/utils";
 
@@ -35,10 +35,18 @@ const AtraccionesAcuaticas = () => {
                 Atracciones Acuáticas
               </h1>
               <StatsBadges />
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
                 Disfruta de nuestras 12 atracciones acuáticas diseñadas para toda la familia. 
                 Desde emocionantes toboganes hasta relajantes piscinas.
               </p>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/80 backdrop-blur-sm border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <MapPin className="w-5 h-5" />
+                Ver no Mapa
+              </Button>
             </div>
           </div>
         </section>
