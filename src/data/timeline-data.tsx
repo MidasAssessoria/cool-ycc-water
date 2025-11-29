@@ -4,6 +4,7 @@
  */
 
 import { Sparkles, Dumbbell, Heart, Calendar, Check } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // Using absolute paths from public folder for reliable image loading
@@ -80,12 +81,22 @@ export const getTimelineData = (
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Card 1: Acceso Ilimitado */}
-            <div 
+            <motion.div 
               ref={animations.card1.elementRef}
-              className={cn(
-                "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 border-l-4 border-l-cyan-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 hover:border-cyan-300 hover:scale-105 transition-all duration-500",
-                !prefersReducedMotion && !animations.card1.isVisible && !forceVisible && "opacity-0 translate-y-4"
-              )}
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              animate={
+                prefersReducedMotion 
+                  ? {} 
+                  : (animations.card1.isVisible || forceVisible)
+                    ? { opacity: 1, y: 0, scale: 1 }
+                    : { opacity: 0, y: 20, scale: 0.95 }
+              }
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 border-l-4 border-l-cyan-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 hover:border-cyan-300 hover:scale-105 transition-all duration-500"
             >
               {/* Número de identificação */}
               <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-cyan-200/50 select-none">
@@ -108,15 +119,25 @@ export const getTimelineData = (
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2: Deportes */}
-            <div 
+            <motion.div 
               ref={animations.card2.elementRef}
-              className={cn(
-                "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 border-l-4 border-l-orange-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-300 hover:scale-105 transition-all duration-500",
-                !prefersReducedMotion && !animations.card2.isVisible && !forceVisible && "opacity-0 translate-y-4"
-              )}
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              animate={
+                prefersReducedMotion 
+                  ? {} 
+                  : (animations.card2.isVisible || forceVisible)
+                    ? { opacity: 1, y: 0, scale: 1 }
+                    : { opacity: 0, y: 20, scale: 0.95 }
+              }
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0.1,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 border-l-4 border-l-orange-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-300 hover:scale-105 transition-all duration-500"
             >
               {/* Número de identificação */}
               <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-orange-200/50 select-none">
@@ -139,7 +160,7 @@ export const getTimelineData = (
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Separador decorativo central */}
             <div className="col-span-1 sm:col-span-2 my-2 md:my-4 hidden sm:block">
@@ -147,12 +168,22 @@ export const getTimelineData = (
             </div>
 
             {/* Card 3: Zona Kids */}
-            <div 
+            <motion.div 
               ref={animations.card3.elementRef}
-              className={cn(
-                "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 border-l-4 border-l-green-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-green-500/20 hover:border-green-300 hover:scale-105 transition-all duration-500",
-                !prefersReducedMotion && !animations.card3.isVisible && !forceVisible && "opacity-0 translate-y-4"
-              )}
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              animate={
+                prefersReducedMotion 
+                  ? {} 
+                  : (animations.card3.isVisible || forceVisible)
+                    ? { opacity: 1, y: 0, scale: 1 }
+                    : { opacity: 0, y: 20, scale: 0.95 }
+              }
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0.2,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 border-l-4 border-l-green-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-green-500/20 hover:border-green-300 hover:scale-105 transition-all duration-500"
             >
               {/* Número de identificação */}
               <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-green-200/50 select-none">
@@ -175,15 +206,25 @@ export const getTimelineData = (
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 4: Áreas Verdes */}
-            <div 
+            <motion.div 
               ref={animations.card4.elementRef}
-              className={cn(
-                "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 border-l-4 border-l-emerald-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-emerald-500/20 hover:border-emerald-300 hover:scale-105 transition-all duration-500",
-                !prefersReducedMotion && !animations.card4.isVisible && !forceVisible && "opacity-0 translate-y-4"
-              )}
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20, scale: 0.95 }}
+              animate={
+                prefersReducedMotion 
+                  ? {} 
+                  : (animations.card4.isVisible || forceVisible)
+                    ? { opacity: 1, y: 0, scale: 1 }
+                    : { opacity: 0, y: 20, scale: 0.95 }
+              }
+              transition={prefersReducedMotion ? {} : { 
+                duration: 0.5, 
+                delay: 0.3,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 border-l-4 border-l-emerald-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-emerald-500/20 hover:border-emerald-300 hover:scale-105 transition-all duration-500"
             >
               {/* Número de identificação */}
               <span className="absolute top-4 right-4 text-2xl font-mono font-bold text-emerald-200/50 select-none">
@@ -206,7 +247,7 @@ export const getTimelineData = (
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Galeria moderna com overlay */}
