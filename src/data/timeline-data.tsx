@@ -292,13 +292,13 @@ export const getTimelineData = (
     ),
   },
   {
-    title: "2025-2026",
+    title: "EN CONSTRUCCIÓN",
     content: (
       <div>
-        {/* Badge 2025-2026 */}
+        {/* Badge PRÓXIMAMENTE */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-6 shadow-sm">
           <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
-          EN CONSTRUCCIÓN 2025-2026
+          PRÓXIMAMENTE
         </div>
         <p className="text-neutral-800 text-xs md:text-sm font-normal mb-4">
           Instalaciones en construcción que estarán disponibles durante tu membresía
