@@ -142,7 +142,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             style={{
               height: height + "px",
             }}
-            className="absolute md:left-8 left-8 top-0 overflow-hidden w-1 bg-gradient-to-b from-transparent via-cyan-300 to-transparent"
+            className="absolute md:left-[30px] left-[30px] top-0 overflow-hidden w-1 bg-gradient-to-b from-transparent via-cyan-300 to-transparent"
           >
             <motion.div
               style={{
