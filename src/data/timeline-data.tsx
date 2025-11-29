@@ -141,6 +141,11 @@ export const getTimelineData = (
               </div>
             </div>
 
+            {/* Separador decorativo central */}
+            <div className="col-span-1 sm:col-span-2 my-2 md:my-4 hidden sm:block">
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300/40 to-transparent" />
+            </div>
+
             {/* Card 3: Zona Kids */}
             <div 
               ref={animations.card3.elementRef}
