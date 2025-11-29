@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export const AquaticsBreadcrumb = () => {
   return (
-    <div className="container mx-auto px-4 pt-24 pb-4">
-      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-6">
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm md:text-base">
         <Link 
           to="/" 
           className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline underline-offset-4"
