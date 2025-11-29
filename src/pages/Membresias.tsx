@@ -30,9 +30,19 @@ const Membresias = () => {
   const [selectedPlan, setSelectedPlan] = useState<'familiar' | 'vip' | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [forceVisible, setForceVisible] = useState(false);
   
   // Performance: detect reduced motion preference
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  // FASE 2: Fallback de visibilidade - força cards a aparecerem após 2s
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setForceVisible(true);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   // Prefetch Timeline component on mount for faster loading
   useEffect(() => {
@@ -135,8 +145,8 @@ const Membresias = () => {
         card2: card2Animation,
         card3: card3Animation,
         card4: card4Animation,
-      }),
-    [prefersReducedMotion, card1Animation, card2Animation, card3Animation, card4Animation]
+      }, forceVisible),
+    [prefersReducedMotion, card1Animation, card2Animation, card3Animation, card4Animation, forceVisible]
   );
 
   // Fase 2.1: JSON-LD para Rich Snippets - Schema.org markup
