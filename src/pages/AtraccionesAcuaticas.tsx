@@ -1,10 +1,11 @@
 import { SEOHead } from "@/components/SEOHead";
 import Navigation from "@/components/navigation/Navigation";
 import { AttractionCard } from "@/components/AttractionCard";
-import { AttractionBreadcrumb } from "@/components/AttractionBreadcrumb";
+import { AquaticsBreadcrumb } from "@/components/AquaticsBreadcrumb";
+import { AnimatedSwimmerIcon } from "@/components/aquatics/AnimatedSwimmerIcon";
 import { atraccionesAcuaticas } from "@/data/attractions-data";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { navigateToSection } from "@/lib/utils";
 
@@ -20,22 +21,15 @@ const AtraccionesAcuaticas = () => {
       
       <div className="min-h-screen bg-background">
         <Navigation />
-        <AttractionBreadcrumb categoryName="Atracciones Acuáticas" />
+        <AquaticsBreadcrumb />
         
         {/* Hero Section */}
         <section className="relative pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
           <div className="max-w-7xl mx-auto">
-            <Button
-              variant="ghost"
-              onClick={() => navigate('/atracciones')}
-              className="mb-6 text-muted-foreground hover:text-foreground"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver a Atracciones
-            </Button>
-            
             <div className="text-center mb-12">
-              <div className="inline-block text-6xl mb-4">🌊</div>
+              <div className="mb-6 flex justify-center">
+                <AnimatedSwimmerIcon />
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
                 Atracciones Acuáticas
               </h1>
