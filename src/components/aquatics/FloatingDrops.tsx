@@ -2,31 +2,29 @@ import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 const drops = [
-  { left: "10%", delay: 0, duration: 4 },
-  { left: "25%", delay: 1, duration: 5 },
-  { left: "50%", delay: 0.5, duration: 4.5 },
-  { left: "75%", delay: 2, duration: 4 },
-  { left: "90%", delay: 1.5, duration: 5 },
+  { left: "15%", delay: 0, duration: 5 },
+  { left: "45%", delay: 1.5, duration: 5.5 },
+  { left: "75%", delay: 0.8, duration: 6 },
 ];
 
 export const FloatingDrops = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {drops.map((drop, index) => (
         <motion.div
           key={index}
           className="absolute top-0"
           style={{ left: drop.left }}
-          initial={prefersReducedMotion ? { opacity: 0.3 } : { y: -20, opacity: 0 }}
+          initial={prefersReducedMotion ? { opacity: 0.2 } : { y: "-10%", opacity: 0 }}
           animate={
             prefersReducedMotion
-              ? { opacity: 0.3 }
+              ? { opacity: 0.2 }
               : {
-                  y: ["0%", "100vh"],
-                  opacity: [0, 0.6, 0.6, 0],
-                  scale: [0.8, 1, 1, 0.8],
+                  y: ["-10%", "110%"],
+                  opacity: [0, 0.4, 0.4, 0],
+                  scale: [0.6, 0.8, 0.8, 0.6],
                 }
           }
           transition={{
@@ -37,8 +35,7 @@ export const FloatingDrops = () => {
           }}
         >
           <svg
-            width="24"
-            height="32"
+            className="w-4 h-5 sm:w-5 sm:h-7 md:w-6 md:h-8"
             viewBox="0 0 24 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +46,8 @@ export const FloatingDrops = () => {
             />
             <defs>
               <linearGradient id="drop-gradient" x1="12" y1="0" x2="12" y2="32">
-                <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.6" />
+                <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.4" />
               </linearGradient>
             </defs>
           </svg>

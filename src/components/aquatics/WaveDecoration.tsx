@@ -5,9 +5,9 @@ export const WaveDecoration = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
+    <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none z-[5] -mb-1">
       <motion.svg
-        className="w-full h-24 md:h-32"
+        className="w-full h-16 sm:h-20 md:h-28 lg:h-32"
         viewBox="0 0 1200 120"
         preserveAspectRatio="none"
         animate={
