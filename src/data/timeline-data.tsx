@@ -62,7 +62,7 @@ export const getTimelineData = (
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
                 !prefersReducedMotion && "group-hover:scale-105"
               )}>
-                <div className="text-4xl">🌊</div>
+                <div className="text-4xl">🎫</div>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors">
@@ -89,7 +89,7 @@ export const getTimelineData = (
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
                 !prefersReducedMotion && "group-hover:scale-105"
               )}>
-                <div className="text-4xl">🏆</div>
+                <div className="text-4xl">⚽</div>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
@@ -116,7 +116,7 @@ export const getTimelineData = (
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
                 !prefersReducedMotion && "group-hover:scale-105"
               )}>
-                <div className="text-4xl">🛡️</div>
+                <div className="text-4xl">🎈</div>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
@@ -143,7 +143,7 @@ export const getTimelineData = (
                 "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
                 !prefersReducedMotion && "group-hover:scale-105"
               )}>
-                <div className="text-4xl">🌳</div>
+                <div className="text-4xl">🌿</div>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
