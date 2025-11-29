@@ -38,158 +38,172 @@ export const getTimelineData = (
   {
     title: "Hoy",
     content: (
-      <div>
-        {/* Badge DISPONIBLE HOY */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-6 shadow-sm">
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          DISPONIBLE HOY
-        </div>
-        <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
-          Disfruta desde el primer día de todas estas instalaciones incluidas en tu membresía
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
-          {/* Card 1: Acceso Ilimitado */}
+      <div className="relative overflow-hidden">
+        {/* Background Layer com Dots Pattern */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <div 
-            ref={animations.card1.elementRef}
-            className={cn(
-              "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 border-l-4 border-l-cyan-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 hover:border-cyan-300 hover:scale-105 transition-all duration-500",
-              !prefersReducedMotion && !animations.card1.isVisible && !forceVisible && "opacity-0 translate-y-4"
-            )}
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex items-start gap-4">
-              <div className={cn(
-                "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-105"
-              )}>
-                <div className="text-4xl">🎫</div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors">
-                  Acceso ilimitado
-                </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Piscinas recreativas y lagos naturales para toda la familia
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Deportes */}
-          <div 
-            ref={animations.card2.elementRef}
-            className={cn(
-              "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 border-l-4 border-l-orange-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-300 hover:scale-105 transition-all duration-500",
-              !prefersReducedMotion && !animations.card2.isVisible && !forceVisible && "opacity-0 translate-y-4"
-            )}
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex items-start gap-4">
-              <div className={cn(
-                "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-105"
-              )}>
-                <div className="text-4xl">⚽</div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
-                  Deportes
-                </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Canchas de tenis, fútbol, básquet, vóley
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: Zona Kids */}
-          <div 
-            ref={animations.card3.elementRef}
-            className={cn(
-              "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 border-l-4 border-l-green-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-green-500/20 hover:border-green-300 hover:scale-105 transition-all duration-500",
-              !prefersReducedMotion && !animations.card3.isVisible && !forceVisible && "opacity-0 translate-y-4"
-            )}
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex items-start gap-4">
-              <div className={cn(
-                "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-105"
-              )}>
-                <div className="text-4xl">🎈</div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
-                  Zona kids 100% segura
-                </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Áreas infantiles supervisadas con salvavidas
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 4: Áreas Verdes */}
-          <div 
-            ref={animations.card4.elementRef}
-            className={cn(
-              "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 border-l-4 border-l-emerald-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-emerald-500/20 hover:border-emerald-300 hover:scale-105 transition-all duration-500",
-              !prefersReducedMotion && !animations.card4.isVisible && !forceVisible && "opacity-0 translate-y-4"
-            )}
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex items-start gap-4">
-              <div className={cn(
-                "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
-                !prefersReducedMotion && "group-hover:scale-105"
-              )}>
-                <div className="text-4xl">🌿</div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
-                  Áreas verdes
-                </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Senderos ecológicos y churrasqueras
-                </p>
-              </div>
-            </div>
-          </div>
+            className="absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage: `radial-gradient(circle, #94a3b8 1px, transparent 1px)`,
+              backgroundSize: '24px 24px'
+            }}
+          />
         </div>
 
-        {/* Galeria moderna com overlay */}
-        <div className="grid grid-cols-2 gap-4 mt-8">
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
-            <img
-              src={naturalLakesImg}
-              alt="Lagos naturales"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <p className="font-bold text-lg">Lagos Naturales</p>
-                <p className="text-sm opacity-90">3 lagos cristalinos</p>
+        {/* Main Content Layer */}
+        <div className="relative z-10">
+          {/* Badge DISPONIBLE HOY */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-6 shadow-sm">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            DISPONIBLE HOY
+          </div>
+          <p className="text-neutral-800 text-xs md:text-sm font-normal mb-8">
+            Disfruta desde el primer día de todas estas instalaciones incluidas en tu membresía
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
+            {/* Card 1: Acceso Ilimitado */}
+            <div 
+              ref={animations.card1.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-cyan-50/30 border border-cyan-200/50 border-l-4 border-l-cyan-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 hover:border-cyan-300 hover:scale-105 transition-all duration-500",
+                !prefersReducedMotion && !animations.card1.isVisible && !forceVisible && "opacity-0 translate-y-4"
+              )}
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">🎫</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors">
+                    Acceso ilimitado
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Piscinas recreativas y lagos naturales para toda la familia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Deportes */}
+            <div 
+              ref={animations.card2.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-orange-50/30 border border-orange-200/50 border-l-4 border-l-orange-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-300 hover:scale-105 transition-all duration-500",
+                !prefersReducedMotion && !animations.card2.isVisible && !forceVisible && "opacity-0 translate-y-4"
+              )}
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">⚽</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
+                    Deportes
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Canchas de tenis, fútbol, básquet, vóley
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Zona Kids */}
+            <div 
+              ref={animations.card3.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-green-50/30 border border-green-200/50 border-l-4 border-l-green-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-green-500/20 hover:border-green-300 hover:scale-105 transition-all duration-500",
+                !prefersReducedMotion && !animations.card3.isVisible && !forceVisible && "opacity-0 translate-y-4"
+              )}
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">🎈</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
+                    Zona kids 100% segura
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Áreas infantiles supervisadas con salvavidas
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Áreas Verdes */}
+            <div 
+              ref={animations.card4.elementRef}
+              className={cn(
+                "group relative bg-gradient-to-br from-white to-emerald-50/30 border border-emerald-200/50 border-l-4 border-l-emerald-500 rounded-3xl p-6 hover:shadow-lg hover:shadow-emerald-500/20 hover:border-emerald-300 hover:scale-105 transition-all duration-500",
+                !prefersReducedMotion && !animations.card4.isVisible && !forceVisible && "opacity-0 translate-y-4"
+              )}
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-start gap-4">
+                <div className={cn(
+                  "relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300",
+                  !prefersReducedMotion && "group-hover:scale-105"
+                )}>
+                  <div className="text-4xl">🌿</div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                    Áreas verdes
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Senderos ecológicos y churrasqueras
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
-            <img
-              src={tennisCourtsImg}
-              alt="Canchas deportivas"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <p className="font-bold text-lg">Canchas Deportivas</p>
-                <p className="text-sm opacity-90">Tenis, fútbol y más</p>
+
+          {/* Galeria moderna com overlay */}
+          <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src={naturalLakesImg}
+                alt="Lagos naturales"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Lagos Naturales</p>
+                  <p className="text-sm opacity-90">3 lagos cristalinos</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl aspect-video">
+              <img
+                src={tennisCourtsImg}
+                alt="Canchas deportivas"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="font-bold text-lg">Canchas Deportivas</p>
+                  <p className="text-sm opacity-90">Tenis, fútbol y más</p>
+                </div>
               </div>
             </div>
           </div>
